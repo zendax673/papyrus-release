@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://zendax673.github.io/papyrus-site/">
-    <img src="https://zendax673.github.io/papyrus-site/assets/icon.svg" width="128" height="128" alt="Papyrus Papers">
+  <a href="https://zendax673.github.io/papyrus-release/">
+    <img src="https://zendax673.github.io/papyrus-release/assets/icon.svg" width="128" height="128" alt="Papyrus Papers">
   </a>
 </p>
 
@@ -12,9 +12,9 @@
 </p>
 
 <p align="center">
-  <a href="https://zendax673.github.io/papyrus-site/download.html">
-    <img src="https://zendax673.github.io/papyrus-site/assets/app-store-badge-black.svg#gh-light-mode-only" height="56" alt="Download on the Mac App Store">
-    <img src="https://zendax673.github.io/papyrus-site/assets/app-store-badge-white.svg#gh-dark-mode-only" height="56" alt="Download on the Mac App Store">
+  <a href="https://zendax673.github.io/papyrus-release/download.html">
+    <img src="https://zendax673.github.io/papyrus-release/assets/app-store-badge-black.svg#gh-light-mode-only" height="56" alt="Download on the Mac App Store">
+    <img src="https://zendax673.github.io/papyrus-release/assets/app-store-badge-white.svg#gh-dark-mode-only" height="56" alt="Download on the Mac App Store">
   </a>
 </p>
 
@@ -27,10 +27,10 @@
 </p>
 
 <p align="center">
-  <a href="https://zendax673.github.io/papyrus-site/">Website</a> &middot;
-  <a href="https://zendax673.github.io/papyrus-site/download.html">Download</a> &middot;
-  <a href="https://zendax673.github.io/papyrus-site/support.html">Support</a> &middot;
-  <a href="https://zendax673.github.io/papyrus-site/privacy.html">Privacy</a> &middot;
+  <a href="https://zendax673.github.io/papyrus-release/">Website</a> &middot;
+  <a href="https://zendax673.github.io/papyrus-release/download.html">Download</a> &middot;
+  <a href="https://zendax673.github.io/papyrus-release/support.html">Support</a> &middot;
+  <a href="https://zendax673.github.io/papyrus-release/privacy.html">Privacy</a> &middot;
   <a href="FAQ.md">FAQ</a> &middot;
   <a href="CHANGELOG.md">Changelog</a>
 </p>
@@ -39,8 +39,8 @@
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://zendax673.github.io/papyrus-site/assets/app-captures/library-window-dark.png">
-    <img src="https://zendax673.github.io/papyrus-site/assets/app-captures/library-window-light.png" alt="Papyrus Papers library window — sidebar with smart collections, paper list, and detail panel with metadata, abstract, and Markdown notes">
+    <source media="(prefers-color-scheme: dark)" srcset="https://zendax673.github.io/papyrus-release/assets/app-captures/library-window-dark.png">
+    <img src="https://zendax673.github.io/papyrus-release/assets/app-captures/library-window-light.png" alt="Papyrus Papers library window — sidebar with smart collections, paper list, and detail panel with metadata, abstract, and Markdown notes">
   </picture>
 </p>
 
@@ -60,7 +60,7 @@ Local-first by design. Your library, notes, PDFs, indexes, and backups stay on y
 
 Network requests only happen when you use a feature that needs them: metadata lookup (Crossref, OpenAlex), WebDAV sync, or Apple's on-device Foundation Models for background metadata synthesis. No Papyrus account. No analytics. No telemetry SDKs.
 
-Full policy: <a href="https://zendax673.github.io/papyrus-site/privacy.html">Privacy</a>.
+Full policy: <a href="https://zendax673.github.io/papyrus-release/privacy.html">Privacy</a>.
 
 ## System requirements
 
@@ -83,8 +83,8 @@ Requires Xcode 16+. Self-builds skip the App Store sandbox and won't include the
 
 - [FAQ](FAQ.md)
 - [Changelog](CHANGELOG.md)
-- <a href="https://zendax673.github.io/papyrus-site/privacy.html">Privacy Policy</a>
-- <a href="https://zendax673.github.io/papyrus-site/support.html">Support</a>
+- <a href="https://zendax673.github.io/papyrus-release/privacy.html">Privacy Policy</a>
+- <a href="https://zendax673.github.io/papyrus-release/support.html">Support</a>
 
 ## Contact
 
