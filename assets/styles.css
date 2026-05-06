@@ -36,7 +36,22 @@
   --radius-lg: 18px;
   --radius-xl: 28px;
 
-  --serif: "Source Serif 4", "Iowan Old Style", "Palatino", "Georgia", serif;
+  --serif-display:
+    "New York",
+    "New York Display",
+    "Iowan Old Style",
+    "Source Serif 4",
+    "Palatino",
+    "Georgia",
+    serif;
+
+  --serif:
+    "Source Serif 4",
+    "Iowan Old Style",
+    "Palatino",
+    "Georgia",
+    serif;
+
   --sans:  -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", "Inter", system-ui, sans-serif;
   --mono:  "SF Mono", "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
 }
@@ -95,7 +110,7 @@ h4 { font-size: 17px; font-family: var(--sans); font-weight: 600; letter-spacing
 em  { font-style: italic; color: var(--gold-deep); font-feature-settings: "ss01"; }
 p   { margin: 0; }
 
-.display { font-family: var(--serif); }
+.display { font-family: var(--serif-display); }
 .eyebrow, .section-eyebrow {
   display: inline-block;
   font-family: var(--sans);
@@ -580,7 +595,7 @@ p   { margin: 0; }
 .section-header.text-center, .section .section-header { text-align: left; }
 .section-header { text-align: left; }
 .section .text-center .section-header { text-align: center; margin-left: auto; margin-right: auto; }
-.section-title { margin-top: 18px; }
+.section-title { margin-top: 18px; font-family: var(--serif-display);}
 .section-desc { margin-top: 22px; font-size: 19px; color: var(--ink-mute); line-height: 1.5; max-width: 620px; }
 
 /* ===== Reveal ===== */
@@ -927,7 +942,7 @@ p   { margin: 0; }
   padding-left: 28px;
 }
 .spec-num {
-  font-family: var(--serif);
+  font-family: var(--serif-display);
   font-size: 64px;
   line-height: 1;
   letter-spacing: -0.03em;
@@ -1103,7 +1118,7 @@ p   { margin: 0; }
 .dl-pricing h2 { color: var(--paper); }
 .dl-pricing em { color: var(--gold-deep); }
 .dl-price-tag {
-  font-family: var(--serif);
+  font-family: var(--serif-display);
   font-size: clamp(60px, 7vw, 96px);
   line-height: 1;
   margin: 24px 0 12px;
