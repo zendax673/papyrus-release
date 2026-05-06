@@ -150,7 +150,7 @@ p   { margin: 0; }
 }
 .nav__brand {
   display: inline-flex; align-items: center; gap: 10px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--serif-display);
   font-size: 20px; font-weight: 700;
   letter-spacing: -0.015em;
   color: var(--ink-strong, var(--ink));
@@ -980,7 +980,7 @@ p   { margin: 0; }
 }
 .footer__brand {
   display: inline-flex; align-items: center; gap: 10px;
-  font-family: var(--serif); font-size: 21px;
+  font-family: var(--serif-display); font-size: 21px;
   margin-bottom: 14px;
 }
 .footer__brand img { width: 28px; height: 28px; }
