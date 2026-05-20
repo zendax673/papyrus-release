@@ -24,6 +24,7 @@
       <li class="hide-mobile"><a href="index.html#features">Features</a></li>
       <li class="hide-mobile"><a href="support.html">Support</a></li>
       <li class="hide-mobile"><a href="privacy.html">Privacy</a></li>
+      <li class="hide-mobile"><a href="terms.html">Terms</a></li>
       <li><a href="download.html" class="nav__download">Download</a></li>
       <li>
         <button class="nav__theme" id="themeToggle" aria-label="Toggle theme">
@@ -55,7 +56,7 @@
     <div class="card">
       <p><strong>Bug reports and feature requests:</strong> <a href="https://github.com/zendax673/papyrus-release/issues" target="_blank" rel="noopener">github.com/zendax673/papyrus-release/issues</a></p>
       <p><strong>Email:</strong> <a href="mailto:zdfu189@gmail.com">zdfu189@gmail.com</a></p>
-      <p>Before opening an issue, check the in-app Help screens, the FAQ below, and the latest <a href="https://github.com/zendax673/papyrus-release/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Changelog</a>.</p>
+      <p>Before opening an issue, check the in-app Help screens, the FAQ below, and the latest <a href="https://github.com/zendax673/papyrus-release/blob/gh-pages/CHANGELOG.md" target="_blank" rel="noopener">Changelog</a>.</p>
     </div>
 
     <div class="toc" aria-label="Quick links">
@@ -64,7 +65,6 @@
       <a href="#logs">Logs &amp; diagnostics</a>
       <a href="#sensitive">Sensitive data</a>
       <a href="#security">Security</a>
-      <a href="#self-build">Self-build</a>
     </div>
 
     <h2 id="faq">Frequently Asked Questions</h2>
@@ -79,7 +79,7 @@
     <p>No. Papyrus Papers only sends files off your Mac when you explicitly enable WebDAV sync, share via the macOS share sheet, or export. Metadata lookup sends identifiers and queries, not your library.</p>
 
     <h3>Which metadata services does Papyrus Papers use?</h3>
-    <p>Crossref and OpenAlex for DOI lookup, title repair, and metadata completion. arXiv identifiers are extracted from PDF text. Papyrus Papers also reads embedded XMP metadata directly from PDFs (no network). The resolver registry is pluggable, so additional sources can be added without code changes.</p>
+    <p>Papyrus Papers can use Crossref, arXiv, Semantic Scholar, OpenAlex, OpenLibrary, NCBI / PubMed / PMC identifier services, Zenodo, and doi.org links for metadata lookup, identifier conversion, title repair, and citation-count enrichment. It also reads embedded XMP metadata directly from PDFs without a network request. The resolver registry is pluggable, so additional sources can be added without changing the rest of the app.</p>
 
     <h3>Where is the library stored?</h3>
     <p>Under <code>~/Library/Group Containers/group.com.zhendafu.Papyrus/Library/Application Support/</code>. Managed PDFs and the full-text index live in the same App Group container.</p>
@@ -88,13 +88,13 @@
     <p>Yes. Rolling local database backups, up to seven snapshots. You can also trigger a manual backup from Settings.</p>
 
     <h3>How does sync work?</h3>
-    <p>The built-in sync path is WebDAV. You choose the server, username, password, and remote folder. Papyrus Papers can also coexist with folders synced by other tools.</p>
+    <p>The built-in v1.0 sync path is WebDAV. You choose the server, username, password, and remote folder. Papyrus Papers can also coexist with folders synced by other tools, but iCloud Drive sync is not part of the v1.0 app.</p>
 
     <h3>Does Papyrus Papers need an account?</h3>
     <p>No Papyrus Papers account is required.</p>
 
     <h3>Does Papyrus Papers include AI features?</h3>
-    <p>On supported Macs and locales, Papyrus Papers can call Apple's system language-model APIs (Foundation Models) for background metadata synthesis when an enrichment source returns ambiguous or partial data. Nothing in Papyrus Papers requires AI to function — every user-facing feature works without it, and enrichment falls back to non-AI heuristics on unsupported hardware.</p>
+    <p>On supported Macs and locales, Papyrus Papers can call Apple-provided Foundation Models for background metadata synthesis when an enrichment source returns ambiguous or partial data. Nothing in Papyrus Papers requires AI to function — every user-facing feature works without it, and enrichment falls back to non-AI heuristics on unsupported hardware.</p>
 
     <h3>Does Papyrus Papers index my library in Spotlight?</h3>
     <p>Yes. Core Spotlight integration lets papers appear in macOS system search. This is local, not a cloud service.</p>
@@ -124,16 +124,7 @@
     <h2 id="security">Security Issues</h2>
     <p>If you believe you found a security issue, avoid posting exploit details publicly. Email <a href="mailto:zdfu189@gmail.com">zdfu189@gmail.com</a> with a minimal description and we will follow up with a private reporting channel.</p>
 
-    <h2 id="self-build">Self-Build Support</h2>
-    <p>If building from source, include:</p>
-    <ul>
-      <li>Xcode version</li>
-      <li>Whether you modified the project locally</li>
-      <li>The build or test command you ran</li>
-      <li>The first relevant compiler or runtime error</li>
-    </ul>
-
-    <p class="updated-date">Last updated: May 2026</p>
+    <p class="updated-date">Last updated: May 19, 2026</p>
   </div>
 </main>
 
@@ -151,7 +142,7 @@
             <li><a href="index.html#features">Features</a></li>
             <li><a href="index.html#workflow">Workflow</a></li>
             <li><a href="download.html">Download</a></li>
-            <li><a href="https://github.com/zendax673/papyrus-release/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Changelog</a></li>
+            <li><a href="https://github.com/zendax673/papyrus-release/blob/gh-pages/CHANGELOG.md" target="_blank" rel="noopener">Changelog</a></li>
           </ul>
         </div>
         <div class="footer__col">
@@ -159,6 +150,7 @@
           <ul>
             <li><a href="support.html">Support &amp; FAQ</a></li>
             <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
             <li><a href="mailto:zdfu189@gmail.com">Contact</a></li>
             <li><a href="https://github.com/zendax673/papyrus-release/issues" target="_blank" rel="noopener">Report an issue</a></li>
           </ul>
@@ -166,8 +158,8 @@
         <div class="footer__col">
           <h4>Resources</h4>
           <ul>
-            <li><a href="https://github.com/zendax673/papyrus-release" target="_blank" rel="noopener">GitHub</a></li>
-            <li><a href="https://github.com/zendax673/papyrus-release/blob/main/FAQ.md" target="_blank" rel="noopener">FAQ</a></li>
+            <li><a href="https://github.com/zendax673/papyrus-release" target="_blank" rel="noopener">Release repository</a></li>
+            <li><a href="https://github.com/zendax673/papyrus-release/blob/gh-pages/FAQ.md" target="_blank" rel="noopener">FAQ</a></li>
           </ul>
         </div>
       </div>

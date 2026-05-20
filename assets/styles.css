@@ -258,6 +258,12 @@ p   { margin: 0; }
 .btn svg { width: 16px; height: 16px; }
 .btn--primary { background: var(--ink); color: var(--paper); }
 .btn--primary:hover { background: var(--gold-deep); color: #fff; }
+.btn--disabled,
+.btn--disabled:hover {
+  cursor: default;
+  transform: none;
+  opacity: 0.72;
+}
 .btn--outline {
   background: transparent; color: var(--ink);
   border-color: var(--rule);

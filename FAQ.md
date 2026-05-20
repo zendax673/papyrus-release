@@ -33,13 +33,19 @@ library.
 Papyrus Papers currently uses:
 
 - Crossref
+- arXiv
+- Semantic Scholar
 - OpenAlex
-- arXiv (identifier extraction from PDF text only — no API call)
+- OpenLibrary
+- NCBI / PubMed / PMC identifier services
+- Zenodo
+- doi.org links for DOI-based lookup and navigation
 - Embedded XMP metadata read directly from PDFs (no network)
 
-These services help with DOI or arXiv lookup, title repair, and metadata
-completion. The resolver registry is pluggable, so additional sources can be
-added without code changes. When several sources disagree on a field, Papyrus Papers
+These services help with DOI, arXiv, ISBN, PMID, title repair, metadata
+completion, identifier conversion, and citation-count enrichment. The resolver
+registry is pluggable, so additional sources can be added without changing the
+rest of the app. When several sources disagree on a field, Papyrus Papers
 records the provenance of each value and surfaces a conflict picker.
 
 ## Where Is The Library Stored?
@@ -58,7 +64,7 @@ snapshots. You can also trigger a manual backup from Settings.
 
 ## How Does Sync Work?
 
-The current built-in sync path is WebDAV. You choose the server, username,
+The current built-in v1.0 sync path is WebDAV. You choose the server, username,
 password, and remote folder. Papyrus Papers then syncs the library package to that
 destination.
 
