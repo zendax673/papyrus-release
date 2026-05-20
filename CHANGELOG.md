@@ -35,7 +35,8 @@ and this project follows semantic versioning when tagged releases begin.
   the system accent. Custom buttons honor `isEnabled` and draw focus rings.
   All custom motion respects Reduce Motion. Type scales with Larger Text via
   `@ScaledMetric` while preserving the designed three-pane hierarchy.
-  Subscription sheet discloses auto-renewal, Terms, and Privacy.
+  Purchase sheet discloses the 30-day trial, lifetime unlock, Terms, and
+  Privacy.
   Option/Shift-drag are discoverable from keyboard alone. Shortcut recorder
   surfaces an explicit Replace flow on binding conflicts.
 

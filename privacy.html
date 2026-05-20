@@ -24,6 +24,7 @@
       <li class="hide-mobile"><a href="index.html#features">Features</a></li>
       <li class="hide-mobile"><a href="support.html">Support</a></li>
       <li class="hide-mobile"><a href="privacy.html">Privacy</a></li>
+      <li class="hide-mobile"><a href="terms.html">Terms</a></li>
       <li><a href="download.html" class="nav__download">Download</a></li>
       <li>
         <button class="nav__theme" id="themeToggle" aria-label="Toggle theme">
@@ -45,7 +46,7 @@
   <div class="container container--narrow">
     <span class="eyebrow">Privacy Policy</span>
     <h1 class="display" style="margin-top: 22px;">Your library<br><em>stays yours.</em></h1>
-    <p class="text-secondary" style="margin-top: 18px; font-size: 17px;">Last updated · May 3, 2026</p>
+    <p class="text-secondary" style="margin-top: 18px; font-size: 17px;">Last updated · May 19, 2026</p>
   </div>
 </header>
 
@@ -61,7 +62,7 @@
       <li>Papyrus Papers does not require a Papyrus Papers account.</li>
       <li>Papyrus Papers does not ship analytics, telemetry, or crash-report SDKs.</li>
       <li>Your data is stored locally on your Mac.</li>
-      <li>Some features contact third-party services when you use them, including Crossref, OpenAlex, your configured WebDAV server, and Apple's system language-model APIs.</li>
+      <li>Some features contact third-party services when you use them, including public metadata providers, your configured WebDAV server, and Apple-provided Foundation Models on supported systems.</li>
     </ul>
 
     <h2>Data Stored Locally</h2>
@@ -76,7 +77,7 @@
     </ul>
 
     <h2>Credentials and Sensitive Configuration</h2>
-    <p>Papyrus Papers uses the macOS Keychain for secrets that should not live in plain text, including WebDAV passwords and OAuth tokens. Papyrus Papers does not store secrets in the repository or in a bundled remote service.</p>
+    <p>Papyrus Papers uses the macOS Keychain for secrets that should not live in plain text, including WebDAV passwords. Preparatory OAuth configuration code exists for possible future cloud integrations, but the v1.0 app surfaces WebDAV sync and does not require a cloud account.</p>
 
     <h2>System Integrations</h2>
     <ul>
@@ -89,19 +90,24 @@
     <p>Papyrus Papers makes network requests only when you use features that need them.</p>
 
     <h3>Metadata and Citation Services</h3>
-    <p>Papyrus Papers may send identifiers or search queries (DOI, arXiv ID, title, author names) to:</p>
+    <p>Papyrus Papers may send public identifiers or search queries (such as DOI, arXiv ID, ISBN, PMID, title, or author names) to:</p>
     <ul>
       <li>Crossref</li>
+      <li>arXiv</li>
+      <li>Semantic Scholar</li>
       <li>OpenAlex</li>
-      <li>arXiv (identifier extraction from PDF text — no API call)</li>
+      <li>OpenLibrary</li>
+      <li>NCBI / PubMed / PMC identifier services</li>
+      <li>Zenodo</li>
+      <li>doi.org links for DOI-based lookups</li>
     </ul>
-    <p>These are used for metadata lookup, title repair, and citation graph features.</p>
+    <p>These are used for metadata lookup, title repair, identifier conversion, and citation-count enrichment. Papyrus Papers also reads embedded XMP metadata directly from PDFs without a network request.</p>
 
     <h3>WebDAV Sync</h3>
     <p>If you enable sync, Papyrus Papers connects to the WebDAV server you configure. This can include the library database, imported PDFs, sync manifests, and your server URL and username. You are responsible for the WebDAV server you choose.</p>
 
-    <h3>Foundation Models (on-device)</h3>
-    <p>On supported Macs and locales, Papyrus Papers can call Apple's system language-model APIs (Foundation Models) for background metadata synthesis when an enrichment source returns ambiguous or partial data. Papyrus Papers does not operate its own hosted AI backend, and availability is controlled by Apple and the operating system. Whether a particular query stays fully on-device or escalates through Apple's Private Cloud Compute is determined by Apple's system policy.</p>
+    <h3>Apple Foundation Models</h3>
+    <p>On supported Macs and locales, Papyrus Papers can call Apple's system language-model APIs for background metadata synthesis when an enrichment source returns ambiguous or partial data. Papyrus Papers does not operate its own hosted AI backend. Availability and processing behavior are controlled by Apple and the operating system.</p>
 
     <h2>What Papyrus Papers Does Not Do by Default</h2>
     <ul>
@@ -134,7 +140,7 @@
     <h2>Questions</h2>
     <p>For privacy or data-handling questions, email <a href="mailto:zdfu189@gmail.com">zdfu189@gmail.com</a>, see the <a href="support.html">Support page</a>, or open an issue on <a href="https://github.com/zendax673/papyrus-release/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 
-    <p class="updated-date">Last updated: May 3, 2026</p>
+    <p class="updated-date">Last updated: May 19, 2026</p>
   </div>
 </main>
 
@@ -152,7 +158,7 @@
             <li><a href="index.html#features">Features</a></li>
             <li><a href="index.html#workflow">Workflow</a></li>
             <li><a href="download.html">Download</a></li>
-            <li><a href="https://github.com/zendax673/papyrus-release/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Changelog</a></li>
+            <li><a href="https://github.com/zendax673/papyrus-release/blob/gh-pages/CHANGELOG.md" target="_blank" rel="noopener">Changelog</a></li>
           </ul>
         </div>
         <div class="footer__col">
@@ -160,6 +166,7 @@
           <ul>
             <li><a href="support.html">Support &amp; FAQ</a></li>
             <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
             <li><a href="mailto:zdfu189@gmail.com">Contact</a></li>
             <li><a href="https://github.com/zendax673/papyrus-release/issues" target="_blank" rel="noopener">Report an issue</a></li>
           </ul>
@@ -167,8 +174,8 @@
         <div class="footer__col">
           <h4>Resources</h4>
           <ul>
-            <li><a href="https://github.com/zendax673/papyrus-release" target="_blank" rel="noopener">GitHub</a></li>
-            <li><a href="https://github.com/zendax673/papyrus-release/blob/main/FAQ.md" target="_blank" rel="noopener">FAQ</a></li>
+            <li><a href="https://github.com/zendax673/papyrus-release" target="_blank" rel="noopener">Release repository</a></li>
+            <li><a href="https://github.com/zendax673/papyrus-release/blob/gh-pages/FAQ.md" target="_blank" rel="noopener">FAQ</a></li>
           </ul>
         </div>
       </div>
