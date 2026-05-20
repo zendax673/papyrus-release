@@ -87,7 +87,7 @@ The public App Store listing is not live yet. When Apple publishes it, this page
 
 [Check App Store availability](https://zendax673.github.io/papyrus-release/download.html)
 
-This public website does not provide a separate ZIP, DMG, or alternate installer.
+The Mac App Store is the only public download path.
 
 ---
 
