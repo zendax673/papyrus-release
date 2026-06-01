@@ -7,6 +7,10 @@ and this project follows semantic versioning when tagged releases begin.
 
 ## [Unreleased]
 
+No unreleased changes documented yet.
+
+## [1.2.0] - 2026-06-01
+
 ### Removed
 
 - **Research Atlas** surface and its supporting services
@@ -16,8 +20,8 @@ and this project follows semantic versioning when tagged releases begin.
 ### Added
 
 - **Per-field metadata provenance and conflict picker.** Every metadata field
-  now records which source produced it (Crossref, arXiv, Semantic Scholar,
-  XMP, manual edit). When sources disagree, the conflict picker lets you
+  now records which source produced it (Crossref, OpenAlex, arXiv identifier
+  extraction, XMP, manual edit). When sources disagree, the conflict picker lets you
   choose which value wins without losing the alternatives.
 - **XMP metadata extraction** with merge policy. Papers carrying embedded XMP
   (publishers like Springer, Elsevier, IEEE) are recognised at import without
@@ -25,7 +29,22 @@ and this project follows semantic versioning when tagged releases begin.
 - **Zotero / Better-BibTeX import.** Brace-balanced BibTeX field scanner
   understands nested braces and Zotero-style note fields. Zotero `keywords`
   become tags, `groups` become folders, the `note` field is extracted, and
-  `langid` / `language` map to BCP-47 on the paper record.
+  `langid` / `language` map to BCP-47 on the paper record. Linked PDF
+  attachments can be brought into the library during import.
+- **Project writing workflows.** Projects now include an Evidence Board,
+  project-specific paper roles, synthesis search, Theme Map, manuscript
+  preflight checks, project note templates, and lightweight note history.
+- **Evidence capture and reuse.** Claims, themes, evidence quotes, pages,
+  interpretations, section use, citation keys, and confidence can be captured
+  at the project level and copied out as Markdown, paragraphs with citations,
+  blockquotes, or evidence matrices.
+- **Citation and export tools for writing.** Project export now supports CSL
+  JSON, BibTeX, Markdown, PDF bundles, export reports, duplicate citekey checks,
+  metadata-gap reporting, and quick copy actions for Pandoc and LaTeX cite
+  commands.
+- **WebDAV restore points.** Successful WebDAV syncs keep dated restore points
+  so an earlier synced copy can be inspected and staged for safe restore on the
+  next launch.
 - **Pluggable resolver registry.** Metadata sources are now data-driven, so
   additional resolvers can be added without touching call sites.
 - Public release documentation set:
@@ -48,3 +67,11 @@ and this project follows semantic versioning when tagged releases begin.
 - Balanced security-scoped file access for linked PDFs across reader, share,
   export, and Finder-reveal flows.
 - Restored default TLS certificate validation for WebDAV sync requests.
+- Improved Settings and Help copy for sync setup, restore behavior, project
+  writing tools, and diagnostics.
+- Fixed layout issues in Trash, Settings, Help, and Project views where rows,
+  controls, or headers could overflow at narrow widths.
+- Restored visible reading-progress percentages in library and project views,
+  including completed papers and imported records without a saved page number.
+- Reduced runtime overhead in library filtering, full-text indexing, PDF
+  loading, and diagnostic surfaces.

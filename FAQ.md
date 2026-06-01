@@ -62,8 +62,38 @@ The current built-in sync path is WebDAV. You choose the server, username,
 password, and remote folder. Papyrus Papers then syncs the library package to that
 destination.
 
+Each successful WebDAV sync can keep a dated restore point. Restore points are
+inspected before being applied, and the selected synced copy is staged so it can
+replace the local library safely on the next launch.
+
 Papyrus Papers can also coexist with local folders that you sync through tools you
 already use, but the in-app sync UI is currently centered on WebDAV.
+
+## What Is A Project For?
+
+Projects are manuscript or research workspaces that span your library. A project
+can hold papers without moving them out of folders, and the same paper can play a
+different role in different projects.
+
+Project tools include an Evidence Board, project-specific paper roles, synthesis
+search, Theme Map, manuscript preflight checks, note templates, and note history.
+They are designed for the middle step between reading papers and writing a
+related-work section, thesis chapter, review, or rebuttal.
+
+## What Is The Evidence Board?
+
+The Evidence Board is a project-level table for claims and supporting material.
+It can track a claim or theme, the paper, quoted evidence, page, interpretation,
+section use, citation key, and confidence. Highlights and project search results
+can be collected into the board, then copied back out as Markdown, a matrix, a
+paragraph with citation, or a blockquote with citation.
+
+## What Can Project Export Produce?
+
+Project export can include Markdown notes, PDFs, BibTeX, CSL JSON, evidence,
+theme and method-comparison material, and an export report. The report calls out
+metadata gaps, duplicate citation keys, missing PDFs, and generated bibliography
+entries so manuscript packages are easier to audit before submission.
 
 ## Does Papyrus Papers Need An Account?
 
@@ -84,7 +114,7 @@ This is a local system integration, not a Papyrus Papers cloud service.
 
 ## How Should I Report A Crash Or Data Problem?
 
-Use the guidance in [SUPPORT.md](SUPPORT.md). If possible, include:
+Use the guidance on the [Support page](https://zendax673.github.io/papyrus-release/support.html). If possible, include:
 
 - Reproduction steps
 - Your macOS version and Papyrus Papers build

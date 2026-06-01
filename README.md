@@ -8,7 +8,7 @@
 
 <p align="center">
   <strong>A native macOS research workspace.</strong><br>
-  Literature, technical documents, reading notes, citations &mdash; and your next decision.
+  Literature, technical documents, reading notes, citations &mdash; and the evidence behind your next draft.
 </p>
 
 <p align="center">
@@ -46,13 +46,15 @@
 
 ## What it does
 
-Papyrus Papers is a local-first macOS workspace that connects literature, technical documents, reading notes, citations, and your next decision. One native Mac app instead of a folder, a browser tab, a PDF reader, a knowledge base, and a reference manager.
+Papyrus Papers is a local-first macOS workspace that connects literature, technical documents, reading notes, citations, and the evidence behind your next draft. One native Mac app instead of a folder, a browser tab, a PDF reader, a knowledge base, a spreadsheet of claims, and a reference manager.
 
 - **Import once, keep context.** PDFs, DOIs, arXiv IDs, BibTeX, RIS, Zotero / Better-BibTeX exports, and recursive folders all flow through one dialog. Joint enrichment from Crossref, OpenAlex, embedded XMP, and arXiv-ID extraction. Per-field provenance and a conflict picker when sources disagree.
-- **Read and think in one place.** Native PDFKit reader paired with Markdown notes that understand LaTeX. Full-text search across titles, authors, abstracts, notes, highlights, and the PDF body.
+- **Read and think in one place.** Native PDFKit reader paired with Markdown notes that understand LaTeX. Full-text search across titles, authors, abstracts, notes, highlights, and the PDF body. Reading progress is visible from the library and project views.
 - **Decide what to read next.** Build your own Smart Collections from any combination of tags, journals, year ranges, BibTeX type, favorites, and PDF status. The reading queue and a Needs-Metadata-Attention surface turn a pile of PDFs into a queue you can act on.
-- **Three shapes for one library.** Smart Collections (saved queries), Projects (working sets that span the library), and Folders (classic hierarchy). A paper can sit in many projects without being moved or duplicated.
-- **Export the way you came in.** Copy citation in 8 styles &mdash; APA, MLA, Chicago, IEEE, Harvard, Vancouver, BibTeX, RIS. Markdown snapshots per paper or project. Full project export bundles preserve folder hierarchy.
+- **Turn papers into an argument.** Projects now include paper roles, an Evidence Board, synthesis search, Theme Map, manuscript preflight checks, note templates, and lightweight note history. Capture claims, quotes, pages, interpretations, and citation keys before drafting.
+- **Three shapes for one library.** Smart Collections (saved queries), Projects (working sets that span the library), and Folders (classic hierarchy). A paper can sit in many projects without being moved or duplicated, and its role can be different in each project.
+- **Export the way you write.** Copy citation in 8 styles &mdash; APA, MLA, Chicago, IEEE, Harvard, Vancouver, BibTeX, RIS &mdash; plus Pandoc and LaTeX cite commands. Markdown snapshots per paper or project, CSL JSON, BibTeX, export reports, and full project bundles preserve folder hierarchy.
+- **Sync with recovery points.** WebDAV sync can keep dated restore points so a previous library copy can be inspected and restored safely on the next launch.
 
 ## Privacy
 
