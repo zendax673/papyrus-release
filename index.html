@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Papyrus Papers — A Native macOS Research Workspace</title>
-  <meta name="description" content="A local-first macOS workspace that connects literature, technical documents, reading notes, citations, and your next decision.">
+  <title>Papyrus Papers — Research Ready To Write</title>
+  <meta name="description" content="A local-first macOS workspace for papers, PDFs, notes, citations, and the evidence behind your next draft.">
   <meta name="theme-color" content="#faf6ef">
-  <meta property="og:title" content="Papyrus Papers — Research, connected.">
-  <meta property="og:description" content="One native Mac app instead of a folder, a browser tab, a PDF reader, a knowledge base, and a reference manager.">
+  <meta property="og:title" content="Papyrus Papers — Research ready to write.">
+  <meta property="og:description" content="Read papers, capture evidence, organize claims, and export the citation material your writing tools expect.">
   <meta property="og:type" content="website">
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/styles.css">
@@ -41,6 +41,7 @@
           <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
           <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
         </button>
+      </li>
       <li class="nav__hamburger-li">
         <button class="nav__hamburger" id="navHamburger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navMobilePanel">
           <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -56,15 +57,15 @@
 <section class="hero">
   <div class="hero__text">
     <span class="eyebrow hero-a1">Native macOS Research Workspace</span>
-    <h1 class="display hero__title hero-a2">Research,<br><em>connected.</em></h1>
-    <p class="hero__sub hero-a3">A local-first macOS workspace that connects literature, technical documents, reading notes, citations, and your next decision.</p>
-    <p class="hero__sub-tight hero-a3">One native Mac app instead of a folder, a browser tab, a PDF reader, a knowledge base, and a reference manager.</p>
+    <h1 class="display hero__title hero-a2">Research,<br><em>ready to write.</em></h1>
+    <p class="hero__sub hero-a3">A local-first macOS workspace for papers, PDFs, notes, citations, and the evidence behind your next draft.</p>
+    <p class="hero__sub-tight hero-a3">Import from Zotero, BibTeX, RIS, folders, or PDFs; read in a native PDF window; capture highlights into project-level claims; then export the material your manuscript toolchain expects.</p>
     <div class="hero__actions hero-a4">
-      <a href="download.html" class="btn btn--primary">Mac App Store</a>
-      <a href="https://github.com/zendax673/papyrus-release" class="btn btn--outline" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 00-3.8 23.38c.6.1.82-.26.82-.58v-2.15c-3.34.73-4.04-1.61-4.04-1.61a3.18 3.18 0 00-1.33-1.76c-1.09-.74.08-.73.08-.73a2.52 2.52 0 011.84 1.24 2.56 2.56 0 003.5 1 2.56 2.56 0 01.76-1.6c-2.67-.3-5.47-1.33-5.47-5.93a4.64 4.64 0 011.24-3.22 4.3 4.3 0 01.12-3.18s1-.32 3.3 1.23a11.38 11.38 0 016 0c2.28-1.55 3.28-1.23 3.28-1.23a4.3 4.3 0 01.12 3.18 4.64 4.64 0 011.24 3.22c0 4.61-2.8 5.63-5.48 5.92a2.87 2.87 0 01.82 2.23v3.29c0 .32.21.69.82.58A12 12 0 0012 .3"/></svg>
-        View on GitHub
+      <a href="https://apps.apple.com/us/app/papyrus-papers/id6766133716?mt=12&uo=4" class="app-store-badge" aria-label="Download on the Mac App Store" target="_blank" rel="noopener">
+        <img class="app-store-badge__img app-store-badge__img--light" src="assets/app-store-badge-black.svg" alt="Download on the Mac App Store">
+        <img class="app-store-badge__img app-store-badge__img--dark" src="assets/app-store-badge-white.svg" alt="" aria-hidden="true">
       </a>
+      <a href="#workflow" class="btn btn--outline">See the writing workflow</a>
     </div>
   </div>
 
@@ -79,23 +80,23 @@
   <div class="callouts__inner">
     <div class="callout">
       <span class="callout__num">01</span>
-      <h3 class="callout__label">Smart collections</h3>
-      <p class="callout__desc">Recent High-Impact, Conference Papers, Unread with PDF — your sidebar is a working set, not a folder tree.</p>
+      <h3 class="callout__label">Project roles</h3>
+      <p class="callout__desc">Mark a paper as To Skim, Deep Read, Cite in Method, Background Only, Excluded, or Needs Re-check without changing its global state.</p>
     </div>
     <div class="callout">
       <span class="callout__num">02</span>
-      <h3 class="callout__label">Citation-grade metadata</h3>
-      <p class="callout__desc">DOI, venue, citation key, and counts — joined from public scholarly services and embedded PDF metadata.</p>
+      <h3 class="callout__label">Evidence Board</h3>
+      <p class="callout__desc">Collect claims, quotes, pages, citation keys, confidence, and your interpretation before drafting the manuscript.</p>
     </div>
     <div class="callout">
       <span class="callout__num">03</span>
-      <h3 class="callout__label">Tags &amp; reading state</h3>
-      <p class="callout__desc">Color-coded tags double as filters; reading state and ratings travel with the paper.</p>
+      <h3 class="callout__label">Citation preflight</h3>
+      <p class="callout__desc">Spot missing metadata, duplicate citekeys, uncited project papers, and references used in notes before export.</p>
     </div>
     <div class="callout">
       <span class="callout__num">04</span>
-      <h3 class="callout__label">Markdown notes, in-context</h3>
-      <p class="callout__desc">Side-by-side notes with LaTeX math, tables, and code — saved as plain Markdown next to the paper.</p>
+      <h3 class="callout__label">Restore points</h3>
+      <p class="callout__desc">Optional WebDAV sync keeps dated restore points so a synced library can be inspected and restored safely.</p>
     </div>
   </div>
 </section>
@@ -106,7 +107,7 @@
     <div class="section-header reveal">
       <span class="section-eyebrow">Design principles</span>
       <h2 class="section-title">Built to fit your<br><em>research, not own it.</em></h2>
-      <p class="section-desc">Most research tools want to take over your workflow. Papyrus Papers is designed to slot into it — and stay out of the way.</p>
+      <p class="section-desc">Most research tools want to take over your workflow. Papyrus Papers is designed to fit the way you already read, write, and keep evidence under your own control.</p>
     </div>
 
     <div class="pillars-grid">
@@ -115,7 +116,7 @@
           <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
         </div>
         <h3>Native macOS, not a web wrapper</h3>
-        <p>Built entirely on SwiftUI, SwiftData, and PDFKit. No Electron, no embedded Chromium. Windows, keyboard shortcuts, drag-and-drop, and Settings behave like a real Mac app.</p>
+        <p>Built on SwiftUI, SwiftData, and PDFKit. Windows, keyboard shortcuts, drag-and-drop, and Settings behave like a real Mac app because they are native macOS surfaces.</p>
       </div>
       <div class="pillar reveal reveal-d1">
         <div class="pillar__icon">
@@ -129,7 +130,7 @@
           <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
         </div>
         <h3>Open formats, your data</h3>
-        <p>BibTeX, RIS, Markdown, project bundles. Copy Into Library or Keep PDFs In Place. Files stay portable, the workflow stays yours.</p>
+        <p>BibTeX, RIS, CSL JSON, Markdown, and project bundles. Copy Into Library or Keep PDFs In Place. Files stay portable, the workflow stays yours.</p>
       </div>
     </div>
   </div>
@@ -187,14 +188,14 @@
     <!-- Feature 3 -->
     <div class="feature-row reveal">
       <div class="feature-content">
-        <span class="section-eyebrow">Decide what's next</span>
-        <h2 class="section-title">A library becomes<br><em>a working set.</em></h2>
-        <p class="section-desc">Smart Collections, the reading queue, and full-text search turn a pile of PDFs into a queue you can act on.</p>
+        <span class="section-eyebrow">Write from evidence</span>
+        <h2 class="section-title">A project becomes<br><em>an argument.</em></h2>
+        <p class="section-desc">Project tools help you move from reading individual papers to organizing claims, counterpoints, methods, and citations for a manuscript.</p>
         <div class="feature-bullets">
-          <div class="feature-bullet"><span class="feature-bullet__dot"></span><p>Build your own Smart Collections from any combination of tags, journals, year ranges, BibTeX type, favorites, and PDF status</p></div>
-          <div class="feature-bullet"><span class="feature-bullet__dot"></span><p>Reading queue keeps work-in-progress visible across sessions</p></div>
-          <div class="feature-bullet"><span class="feature-bullet__dot"></span><p>Full-text search across titles, authors, abstracts, notes, highlights, and PDF body</p></div>
-          <div class="feature-bullet"><span class="feature-bullet__dot"></span><p>Needs-Metadata-Attention surfaces records that still need a human eye</p></div>
+          <div class="feature-bullet"><span class="feature-bullet__dot"></span><p>Evidence Board for claim, theme, paper, quote, page, interpretation, section, citation key, and confidence</p></div>
+          <div class="feature-bullet"><span class="feature-bullet__dot"></span><p>Project-specific paper roles such as To Skim, Deep Read, Relevant, Cite in Intro, Cite in Method, Excluded, and Need Re-check</p></div>
+          <div class="feature-bullet"><span class="feature-bullet__dot"></span><p>Scoped synthesis search across the current project's metadata, notes, highlights, and PDF text</p></div>
+          <div class="feature-bullet"><span class="feature-bullet__dot"></span><p>Theme Map and manuscript preflight views for literature synthesis before export</p></div>
         </div>
       </div>
       <div class="feature-image reveal reveal-d2">
@@ -233,7 +234,7 @@
         </div>
         <div class="org-card__text">
           <h3>Projects</h3>
-          <p>Working sets for the writing or shipping you're doing right now — a literature review, a thesis chapter, a design submission. A paper can sit in many projects without being moved or duplicated.</p>
+          <p>Working sets for the writing or shipping you're doing right now — a literature review, a thesis chapter, a design submission. A paper can sit in many projects with different project-specific roles, evidence, and citations.</p>
         </div>
       </div>
 
@@ -258,12 +259,12 @@
       <div class="feature-content">
         <span class="section-eyebrow">Export</span>
         <h2 class="section-title">Out the way<br><em>you came in.</em></h2>
-        <p class="section-desc">Everything you read and organized flows into the formats your writing tools expect. Citations, notes, and project bundles are one command away.</p>
+        <p class="section-desc">Everything you read and organized flows into the formats your writing tools expect. Citations, notes, evidence, and project bundles are one command away.</p>
         <div class="feature-bullets">
-          <div class="feature-bullet"><span class="feature-bullet__dot"></span><p>Copy citation in 8 styles — APA, MLA, Chicago, IEEE, Harvard, Vancouver, BibTeX, RIS</p></div>
-          <div class="feature-bullet"><span class="feature-bullet__dot"></span><p>BibTeX and RIS export</p></div>
-          <div class="feature-bullet"><span class="feature-bullet__dot"></span><p>Markdown snapshot per paper or project</p></div>
-          <div class="feature-bullet"><span class="feature-bullet__dot"></span><p>Full project export bundles</p></div>
+          <div class="feature-bullet"><span class="feature-bullet__dot"></span><p>Copy citation in APA, MLA, Chicago, IEEE, Harvard, Vancouver, BibTeX, and RIS styles</p></div>
+          <div class="feature-bullet"><span class="feature-bullet__dot"></span><p>Project-level BibTeX, RIS, CSL JSON, Markdown, and full bundle export</p></div>
+          <div class="feature-bullet"><span class="feature-bullet__dot"></span><p>Copy cite commands for LaTeX, Pandoc Markdown, and citation-key-based workflows</p></div>
+          <div class="feature-bullet"><span class="feature-bullet__dot"></span><p>Export report flags missing PDFs, duplicate citekeys, missing DOI/year/pages, and skipped files</p></div>
         </div>
       </div>
       <div class="feature-image reveal reveal-d2">
@@ -278,15 +279,15 @@
   <div class="container">
     <div class="section-header reveal">
       <span class="section-eyebrow">A real workflow</span>
-      <h2 class="section-title">Import, read, decide<br><em>— one loop, one app.</em></h2>
+      <h2 class="section-title">Import, read, synthesize<br><em>— one loop, one app.</em></h2>
     </div>
     <div class="workflow-steps">
-      <div class="workflow-step reveal"><div class="workflow-step__num">Step 01</div><h3>Import</h3><p>Drop PDFs, paste a DOI or arXiv ID, drag a folder, or paste BibTeX/RIS.</p></div>
-      <div class="workflow-step reveal reveal-d1"><div class="workflow-step__num">Step 02</div><h3>Read</h3><p>Open in the native reader; highlight, underline, draw, comment.</p></div>
-      <div class="workflow-step reveal reveal-d2"><div class="workflow-step__num">Step 03</div><h3>Note</h3><p>Write Markdown next to the page with math, code, and image embeds.</p></div>
-      <div class="workflow-step reveal"><div class="workflow-step__num">Step 04</div><h3>Organize</h3><p>Tags, folders, projects, smart collections, and a reading queue.</p></div>
-      <div class="workflow-step reveal reveal-d1"><div class="workflow-step__num">Step 05</div><h3>Search</h3><p>Full-text across titles, authors, abstracts, notes, highlights, and PDF body.</p></div>
-      <div class="workflow-step reveal reveal-d2"><div class="workflow-step__num">Step 06</div><h3>Export</h3><p>Citation, BibTeX/RIS, Markdown, or full project bundle — one command.</p></div>
+      <div class="workflow-step reveal"><div class="workflow-step__num">Step 01</div><h3>Import</h3><p>Bring in PDFs, Zotero / Better BibTeX, RIS, DOI, arXiv, folders, and linked attachments.</p></div>
+      <div class="workflow-step reveal reveal-d1"><div class="workflow-step__num">Step 02</div><h3>Read</h3><p>Open in the native reader; highlight, underline, draw, comment, bookmark, and keep notes beside the page.</p></div>
+      <div class="workflow-step reveal reveal-d2"><div class="workflow-step__num">Step 03</div><h3>Capture</h3><p>Send a quote, highlight, or manual note into the Evidence Board with paper, page, citation key, and context.</p></div>
+      <div class="workflow-step reveal"><div class="workflow-step__num">Step 04</div><h3>Synthesize</h3><p>Group evidence by claim, theme, method, limitation, or manuscript section inside the current project.</p></div>
+      <div class="workflow-step reveal reveal-d1"><div class="workflow-step__num">Step 05</div><h3>Preflight</h3><p>Check citekeys, missing metadata, PDFs, note references, and project bibliography gaps before drafting.</p></div>
+      <div class="workflow-step reveal reveal-d2"><div class="workflow-step__num">Step 06</div><h3>Export</h3><p>Send out citations, CSL JSON, BibTeX/RIS, Markdown, evidence, PDFs, or a full project bundle.</p></div>
     </div>
   </div>
 </section>
@@ -299,7 +300,7 @@
       <h2 class="section-title">For anyone who reads<br><em>for a living.</em></h2>
     </div>
     <div class="audience-grid">
-      <div class="audience-card reveal"><h4>Academic research</h4><p>Literature reading, lit review, proposals, and paper writing.</p></div>
+      <div class="audience-card reveal"><h4>Academic research</h4><p>Literature reading, related work, thesis chapters, proposals, and paper writing.</p></div>
       <div class="audience-card reveal reveal-d1"><h4>Engineering R&amp;D</h4><p>Datasheets, manuals, reference designs, standards, and design reviews.</p></div>
       <div class="audience-card reveal reveal-d2"><h4>Cross-disciplinary</h4><p>Papers, technical reports, lab material, and notes side by side.</p></div>
       <div class="audience-card reveal reveal-d3"><h4>Independent scholars</h4><p>Anyone who reads a lot but doesn't want their workflow tied to a web product.</p></div>
@@ -314,7 +315,7 @@
       <div class="spec-item reveal"><div class="spec-num">100<em>%</em></div><div class="spec-label">Local-first.<br>Your library lives on your Mac.</div></div>
       <div class="spec-item reveal reveal-d1"><div class="spec-num">0</div><div class="spec-label">Analytics, telemetry,<br>or third-party SDKs.</div></div>
       <div class="spec-item reveal reveal-d2"><div class="spec-num">15.6<em>+</em></div><div class="spec-label">macOS Sequoia or later.<br>Apple Silicon and Intel.</div></div>
-      <div class="spec-item reveal reveal-d3"><div class="spec-num">7</div><div class="spec-label">Rolling local backups.<br>Auto and manual snapshots.</div></div>
+      <div class="spec-item reveal reveal-d3"><div class="spec-num">10</div><div class="spec-label">Dated WebDAV restore points.<br>Inspect before restoring.</div></div>
     </div>
   </div>
 </section>
@@ -325,11 +326,14 @@
     <div class="section-header reveal">
       <span class="section-eyebrow">Mac App Store</span>
       <h2 class="section-title">Bring your reading<br><em>back together.</em></h2>
-      <p class="section-desc">Free to try for 30 days, then a $3.99 lifetime unlock through Apple's in-app purchase. No account. No subscription. Your library stays yours.</p>
+      <p class="section-desc">Papyrus Papers is now available on the Mac App Store. Free to download, with a 30-day full-access trial and a $3.99 lifetime unlock through Apple's in-app purchase.</p>
     </div>
     <div class="cta-actions reveal reveal-d1">
-      <a href="download.html" class="btn btn--primary">Check App Store availability</a>
-      <a href="https://github.com/zendax673/papyrus-release" class="btn btn--outline" target="_blank" rel="noopener">View release repo</a>
+      <a href="https://apps.apple.com/us/app/papyrus-papers/id6766133716?mt=12&uo=4" class="app-store-badge" aria-label="Download on the Mac App Store" target="_blank" rel="noopener">
+        <img class="app-store-badge__img app-store-badge__img--light" src="assets/app-store-badge-black.svg" alt="Download on the Mac App Store">
+        <img class="app-store-badge__img app-store-badge__img--dark" src="assets/app-store-badge-white.svg" alt="" aria-hidden="true">
+      </a>
+      <a href="support.html" class="btn btn--outline">Read support notes</a>
     </div>
   </div>
 </section>
@@ -365,8 +369,8 @@
         <div class="footer__col">
           <h4>Resources</h4>
           <ul>
-            <li><a href="https://github.com/zendax673/papyrus-release" target="_blank" rel="noopener">Release repository</a></li>
-            <li><a href="https://github.com/zendax673/papyrus-release/blob/gh-pages/FAQ.md" target="_blank" rel="noopener">FAQ</a></li>
+            <li><a href="FAQ.md">FAQ</a></li>
+            <li><a href="CHANGELOG.md">Changelog</a></li>
           </ul>
         </div>
       </div>

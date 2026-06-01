@@ -50,7 +50,7 @@ records the provenance of each value and surfaces a conflict picker.
 
 ## Where Is The Library Stored?
 
-The current repository stores the main SwiftData store under:
+Papyrus Papers stores the main SwiftData library under:
 
 `~/Library/Group Containers/group.com.zhendafu.Papyrus/Library/Application Support/`
 
@@ -64,12 +64,58 @@ snapshots. You can also trigger a manual backup from Settings.
 
 ## How Does Sync Work?
 
-The current built-in v1.0 sync path is WebDAV. You choose the server, username,
+The built-in sync path is WebDAV. You choose the server, username,
 password, and remote folder. Papyrus Papers then syncs the library package to that
 destination.
 
 Papyrus Papers can also coexist with local folders that you sync through tools you
 already use, but the in-app sync UI is currently centered on WebDAV.
+
+## Can I Restore From WebDAV?
+
+Yes. Successful WebDAV syncs keep dated restore points. In Settings, inspect the
+remote copy, choose the restore point you want, and let Papyrus Papers apply it
+safely on the next launch. You can use a local NAS, Nextcloud, Fastmail,
+Synology, or any standard WebDAV server; Synology is only one example.
+
+## What Is A Project For?
+
+A Project is a writing or synthesis workspace. Use it for a literature review,
+thesis chapter, paper draft, proposal, reading group, or method comparison. A
+paper can belong to multiple projects without being duplicated.
+
+Project-specific roles let the same paper be `Background Only` in one project,
+`Cite In Method` in another, and `Excluded` in a third without changing the
+global paper record.
+
+## What Is The Evidence Board?
+
+The Evidence Board is a project-level table for turning reading into writing
+material. It tracks:
+
+- Claim or theme
+- Paper
+- Evidence quote or manual note
+- Page
+- Your interpretation
+- Intended manuscript section
+- Citation key
+- Confidence
+
+Use it when you need to compare 30-100 papers around a related-work argument,
+method limitation, dataset choice, or claim/evidence matrix.
+
+## What Can Project Export Produce?
+
+Project export can produce writing material for common academic workflows:
+
+- BibTeX
+- RIS
+- CSL JSON
+- Markdown notes and evidence
+- Copyable LaTeX or Pandoc cite commands
+- Project bundles with PDFs when available
+- Export reports that call out missing PDFs, missing metadata, and duplicate citekeys
 
 ## Does Papyrus Papers Need An Account?
 
@@ -90,7 +136,7 @@ This is a local system integration, not a Papyrus Papers cloud service.
 
 ## How Should I Report A Crash Or Data Problem?
 
-Use the guidance in [SUPPORT.md](SUPPORT.md). If possible, include:
+Use the guidance on the [Support page](https://zendax673.github.io/papyrus-release/support.html). If possible, include:
 
 - Reproduction steps
 - Your macOS version and Papyrus Papers build
