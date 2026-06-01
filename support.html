@@ -31,6 +31,7 @@
           <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
           <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
         </button>
+      </li>
       <li class="nav__hamburger-li">
         <button class="nav__hamburger" id="navHamburger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navMobilePanel">
           <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -61,6 +62,7 @@
 
     <div class="toc" aria-label="Quick links">
       <a href="#faq">FAQ</a>
+      <a href="#writing">Writing workflow</a>
       <a href="#bug">Filing a bug</a>
       <a href="#logs">Logs &amp; diagnostics</a>
       <a href="#sensitive">Sensitive data</a>
@@ -88,7 +90,16 @@
     <p>Yes. Rolling local database backups, up to seven snapshots. You can also trigger a manual backup from Settings.</p>
 
     <h3>How does sync work?</h3>
-    <p>The built-in v1.0 sync path is WebDAV. You choose the server, username, password, and remote folder. Papyrus Papers can also coexist with folders synced by other tools, but iCloud Drive sync is not part of the v1.0 app.</p>
+    <p>The built-in sync path is WebDAV. You choose the server, username, password, and remote folder. Papyrus Papers can also coexist with folders synced by other tools, but iCloud Drive sync is not part of the app.</p>
+
+    <h3>Can I restore an older synced library?</h3>
+    <p>Yes. Successful WebDAV syncs keep dated restore points. The restore flow inspects the remote copy first, shows the available snapshots, and applies the selected copy safely on the next launch.</p>
+
+    <h3>What is the Evidence Board?</h3>
+    <p>The Evidence Board is a project-level table for turning reading into writing material. It keeps the claim or theme, paper, quote, page, interpretation, manuscript section, citation key, and confidence together so you can draft from evidence instead of hunting through separate notes.</p>
+
+    <h3>Do project roles change the paper globally?</h3>
+    <p>No. Project roles are specific to one project. The same paper can be background reading in one manuscript, cited in the method section of another, and excluded from a third.</p>
 
     <h3>Does Papyrus Papers need an account?</h3>
     <p>No Papyrus Papers account is required.</p>
@@ -98,6 +109,10 @@
 
     <h3>Does Papyrus Papers index my library in Spotlight?</h3>
     <p>Yes. Core Spotlight integration lets papers appear in macOS system search. This is local, not a cloud service.</p>
+
+    <h2 id="writing">Writing Workflow</h2>
+    <p>For a manuscript, start with a Project. Add papers, assign project-specific roles, capture quotes or manual evidence into the Evidence Board, and use project-scoped synthesis search to find notes, highlights, and PDF text across only that working set.</p>
+    <p>Before exporting, run project preflight to catch missing DOI/year/pages, duplicate citation keys, project papers without PDFs, references mentioned in notes but missing from the project, and bibliography entries that are never cited in the project note.</p>
 
     <h2 id="bug">Filing a Bug Report</h2>
     <p>Include enough detail to reproduce the problem:</p>
@@ -124,7 +139,7 @@
     <h2 id="security">Security Issues</h2>
     <p>If you believe you found a security issue, avoid posting exploit details publicly. Email <a href="mailto:zdfu189@gmail.com">zdfu189@gmail.com</a> with a minimal description and we will follow up with a private reporting channel.</p>
 
-    <p class="updated-date">Last updated: May 19, 2026</p>
+    <p class="updated-date">Last updated: June 1, 2026</p>
   </div>
 </main>
 
@@ -158,8 +173,8 @@
         <div class="footer__col">
           <h4>Resources</h4>
           <ul>
-            <li><a href="https://github.com/zendax673/papyrus-release" target="_blank" rel="noopener">Release repository</a></li>
-            <li><a href="https://github.com/zendax673/papyrus-release/blob/gh-pages/FAQ.md" target="_blank" rel="noopener">FAQ</a></li>
+            <li><a href="FAQ.md">FAQ</a></li>
+            <li><a href="CHANGELOG.md">Changelog</a></li>
           </ul>
         </div>
       </div>

@@ -197,7 +197,7 @@ p   { margin: 0; }
 [data-theme="dark"] .nav__theme .icon-moon { display: none; }
 
 /* ===== Mobile hamburger menu =====
- * Desktop: hidden. Mobile (≤720px): replaces the inline links.
+ * Desktop: hidden. Compact nav (≤900px): replaces the inline links.
  * Tap → slides down a panel populated by JS from the .hide-mobile items
  * (Features / Workflow / Support / Privacy). Download + theme stay
  * always-visible inline so the most common actions don't need a tap. */
@@ -238,7 +238,8 @@ p   { margin: 0; }
 .nav__mobile-panel a + a { border-top: 1px solid var(--rule-soft); }
 .nav__mobile-panel a:hover { background: var(--paper-mid); color: var(--gold-deep); }
 
-@media (max-width: 720px) {
+@media (max-width: 900px) {
+  .hide-mobile { display: none !important; }
   .nav__hamburger-li { display: inline-flex !important; }
   .nav.is-menu-open .nav__mobile-panel { display: flex; }
 }

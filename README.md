@@ -1,15 +1,15 @@
 # Papyrus Papers
 
-A native, local-first research library and PDF manager for macOS.
+A native, local-first research library, PDF reader, notes workspace, and evidence organizer for macOS.
 
-Papyrus Papers is built for researchers, graduate students, engineers, and anyone who works through large collections of academic PDFs. It brings importing, metadata cleanup, reading, annotation, notes, search, citation export, and backup into one Mac-native workspace while keeping your library local by default.
+Papyrus Papers is built for researchers, graduate students, engineers, and anyone who works through large collections of academic PDFs. It brings importing, metadata cleanup, reading, annotation, notes, project-level evidence boards, citation export, and backup into one Mac-native workspace while keeping your library local by default.
 
 ![macOS](https://img.shields.io/badge/macOS-15.6%2B-black)
 ![SwiftUI](https://img.shields.io/badge/SwiftUI-native-blue)
 ![SwiftData](https://img.shields.io/badge/SwiftData-local-green)
 ![PDFKit](https://img.shields.io/badge/PDFKit-reader-orange)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
-![App Store](https://img.shields.io/badge/App%20Store-coming%20soon-lightgrey)
+![App Store](https://img.shields.io/badge/Mac%20App%20Store-available-black)
 
 [Features](#features) · [Install](#install) · [Quick Start](#quick-start) · [Shortcuts](#default-shortcuts) · [Screenshots](#screenshots) · [Roadmap](#roadmap) · [Privacy](#privacy) · [License](#license)
 
@@ -24,6 +24,7 @@ Papyrus Papers is built for researchers, graduate students, engineers, and anyon
 - Recursively import folders and mirror the source structure inside Papyrus Papers.
 - Choose whether PDFs are linked in place or copied into the managed library.
 - Organize papers with folders, projects, tags, favorites, read / unread state, Read Later, and Smart Collections.
+- Assign project-specific writing roles such as To Skim, Deep Read, Cite in Intro, Cite in Method, Excluded, and Need Re-check without changing the global paper record.
 - Store the library locally with SwiftData and app-group storage.
 
 ### PDF Reading & Annotation
@@ -49,10 +50,14 @@ Papyrus Papers is built for researchers, graduate students, engineers, and anyon
 
 - Write Markdown notes per paper with headings, task lists, tables, block quotes, code fences, links, images, footnotes, table of contents, and LaTeX math.
 - Open notes beside the PDF, in the detail panel, or in an independent note window.
+- Use project-level Evidence Boards to connect claims, themes, papers, quotes, pages, interpretations, manuscript sections, citation keys, and confidence.
+- Search within a project across metadata, notes, highlights, and PDF text, then send useful results into the Evidence Board.
 - Copy citations in APA 7, MLA 9, Chicago 17, IEEE, Harvard, Vancouver, BibTeX, and RIS formats.
-- Export a writing pack with citation, BibTeX, notes, and annotation evidence.
+- Copy cite commands for LaTeX and Pandoc-style writing workflows.
+- Export a writing pack with citation, BibTeX, CSL JSON, notes, and annotation evidence.
 - Export Markdown notes for use in Obsidian, Apple Notes, or another knowledge base.
-- Export projects as bundles containing PDFs, BibTeX, RIS, and optional Markdown notes.
+- Export projects as bundles containing PDFs, BibTeX, RIS, CSL JSON, evidence, and optional Markdown notes.
+- Run project preflight to catch duplicate citekeys, missing DOI/year/pages, papers without PDFs, note references missing from the project, and unused bibliography entries.
 
 ### Optional Apple Intelligence Support
 
@@ -75,6 +80,7 @@ Papyrus Papers is built for researchers, graduate students, engineers, and anyon
 - Native menus, keyboard shortcuts, drag-and-drop import, Finder reveal, share sheet, and Settings panes.
 - Configurable shortcuts in Settings -> Shortcuts with conflict detection.
 - Automatic local backups and a Storage settings pane for backup management.
+- Optional WebDAV sync with dated restore points for recent successful syncs.
 - Built for Apple Silicon and Intel Macs.
 
 ---
@@ -83,11 +89,9 @@ Papyrus Papers is built for researchers, graduate students, engineers, and anyon
 
 Papyrus Papers is distributed through the Mac App Store.
 
-The public App Store listing is not live yet. When Apple publishes it, this page will link directly to the store listing:
+[Download Papyrus Papers on the Mac App Store](https://apps.apple.com/us/app/papyrus-papers/id6766133716?mt=12&uo=4)
 
-[Check App Store availability](https://zendax673.github.io/papyrus-release/download.html)
-
-The Mac App Store is the only public download path.
+The Mac App Store listing is the official public download path.
 
 ---
 
@@ -111,8 +115,10 @@ Large libraries are mostly limited by the PDFs you import. The app itself is sma
 5. Organize papers with folders, projects, tags, favorites, Read Later, and Smart Collections.
 6. Open a PDF in the native reader.
 7. Add highlights, annotations, bookmarks, and Markdown notes.
-8. Search metadata, notes, annotations, and PDF full text.
-9. Export citations, notes, or project bundles when you are ready to write.
+8. Capture quotes or manual entries into a project Evidence Board.
+9. Search metadata, notes, annotations, and PDF full text.
+10. Run project preflight when the manuscript is close to export.
+11. Export citations, notes, evidence, or project bundles when you are ready to write.
 
 ---
 
@@ -167,13 +173,15 @@ Shortcuts can be changed in Settings -> Shortcuts. Conflicts are detected and cl
 - Metadata enrichment, provenance, and conflict picking
 - Duplicate detection for imports
 - Folders, projects, tags, favorites, Read Later, and Smart Collections
+- Project-specific writing roles and Evidence Board
 - Native PDF reader with highlights, note annotations, free text, bookmarks, and annotation inspector
 - Paper-linked Markdown notes
-- Citation copying and project export
+- Citation copying, cite commands, CSL JSON export, and project export reports
 - Full-text PDF indexing and search
+- Project-scoped synthesis search, theme map, and manuscript preflight
 - Core Spotlight indexing
 - Automatic local backups and manual backup creation
-- Optional WebDAV sync, restore, and connection testing
+- Optional WebDAV sync, dated restore points, restore, and connection testing
 - Configurable keyboard shortcuts
 - StoreKit 2 lifetime unlock and 30-day trial flow
 
@@ -197,9 +205,9 @@ Roadmap items may change based on App Store review, bug reports, and real resear
 
 ---
 
-## Repository
+## Public Website
 
-This repository hosts the public release materials for Papyrus Papers:
+This repository hosts public-facing materials for Papyrus Papers:
 
 - Marketing site: <https://zendax673.github.io/papyrus-release/>
 - Download status: <https://zendax673.github.io/papyrus-release/download.html>
@@ -207,8 +215,6 @@ This repository hosts the public release materials for Papyrus Papers:
 - Terms: <https://zendax673.github.io/papyrus-release/terms.html>
 - Support: <https://zendax673.github.io/papyrus-release/support.html>
 - FAQ and changelog
-
-It is not an alternate app distribution channel. Please use the Mac App Store build when it becomes available.
 
 ---
 
@@ -221,7 +227,7 @@ Issues and feature requests are welcome:
 For bug reports, include:
 
 - macOS version
-- Papyrus Papers version, build number, or commit hash
+- Papyrus Papers version or build number
 - Steps to reproduce
 - Whether the issue involves import, metadata, PDF reading, annotations, notes, search, export, sync, backup, or purchase
 - Whether the PDF was linked in place or copied into the library
@@ -252,4 +258,4 @@ Read the full policy here: <https://zendax673.github.io/papyrus-release/privacy.
 
 ## License
 
-This public release repository is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+This public website and documentation package is licensed under the MIT License. See [LICENSE](LICENSE) for details.
