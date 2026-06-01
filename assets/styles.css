@@ -1136,6 +1136,14 @@ p   { margin: 0; }
 .dl-price-tag em { font-size: 40%; color: var(--gold-deep); font-style: normal; vertical-align: top; margin-right: 4px; }
 .dl-price-sub { color: color-mix(in oklab, var(--paper) 70%, transparent); font-size: 16px; margin-bottom: 28px; }
 .dl-pricing .btn--appstore { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+.dl-pricing .btn--outline {
+  color: var(--paper);
+  border-color: color-mix(in oklab, var(--paper) 62%, transparent);
+}
+.dl-pricing .btn--outline:hover {
+  background: color-mix(in oklab, var(--paper) 10%, transparent);
+  border-color: var(--paper);
+}
 
 .changelog-strip {
   margin-top: 64px;
