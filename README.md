@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <a href="https://zendax673.github.io/papyrus-release/download.html">
+  <a href="https://apps.apple.com/us/app/papyrus-papers/id6766133716?mt=12&uo=4">
     <img src="https://zendax673.github.io/papyrus-release/assets/app-store-badge-black.svg#gh-light-mode-only" height="56" alt="Download on the Mac App Store">
     <img src="https://zendax673.github.io/papyrus-release/assets/app-store-badge-white.svg#gh-dark-mode-only" height="56" alt="Download on the Mac App Store">
   </a>
@@ -67,19 +67,7 @@ Full policy: <a href="https://zendax673.github.io/papyrus-release/privacy.html">
 ## System requirements
 
 - **macOS 15.6 (Sequoia)** or later
-- **Apple Silicon (arm64) and Intel (x86_64)** &mdash; universal binary, ~38 MB
-
-## Self-build
-
-The full project is open under the MIT License. Source is at <a href="https://github.com/zendax673/Papyrus">github.com/zendax673/Papyrus</a>.
-
-```sh
-git clone https://github.com/zendax673/Papyrus.git
-cd Papyrus
-open Papyrus.xcodeproj
-```
-
-Requires Xcode 16+. Self-builds skip the App Store sandbox and won't include the paid signing key.
+- **Apple Silicon (arm64) and Intel (x86_64)** &mdash; approximately 17 MB for the architecture delivered to your Mac
 
 ## Documentation
 
