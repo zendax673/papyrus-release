@@ -4,7 +4,7 @@ A native, local-first research library, PDF reader, notes workspace, and evidenc
 
 Papyrus Papers is built for researchers, graduate students, engineers, and anyone who works through large collections of academic PDFs. It brings importing, metadata cleanup, reading, annotation, notes, project-level evidence boards, citation export, and backup into one Mac-native workspace while keeping your library local by default.
 
-![macOS](https://img.shields.io/badge/macOS-15.6%2B-black)
+![macOS](https://img.shields.io/badge/macOS-14.0%2B-black)
 ![SwiftUI](https://img.shields.io/badge/SwiftUI-native-blue)
 ![SwiftData](https://img.shields.io/badge/SwiftData-local-green)
 ![PDFKit](https://img.shields.io/badge/PDFKit-reader-orange)
@@ -76,7 +76,7 @@ Papyrus Papers is built for researchers, graduate students, engineers, and anyon
 
 ### macOS Native Workflow
 
-- SwiftUI interface designed for macOS Sequoia.
+- SwiftUI interface designed for macOS Sonoma.
 - Native menus, keyboard shortcuts, drag-and-drop import, Finder reveal, share sheet, and Settings panes.
 - Configurable shortcuts in Settings -> Shortcuts with conflict detection.
 - Automatic local backups and a Storage settings pane for backup management.
@@ -97,7 +97,7 @@ The Mac App Store listing is the official public download path.
 
 ## Requirements
 
-- macOS 15.6 Sequoia or later
+- macOS 14.0 Sonoma or later
 - Apple Silicon or Intel Mac
 - Disk space for your PDFs, metadata, notes, annotations, full-text indexes, and backups
 - Optional: a WebDAV-compatible server if you want library sync across Macs

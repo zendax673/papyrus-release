@@ -9,6 +9,27 @@ and this project follows semantic versioning when tagged releases begin.
 
 No unreleased changes documented yet.
 
+## [1.2.1] - 2026-06-05
+
+### Added
+
+- **Citation export.** Copy or export formatted citations for selected papers
+  directly from the library.
+
+### Changed
+
+- Now runs on macOS 14.0 Sonoma and later (previously macOS 15 Sequoia).
+- Clearer confirmations before deleting projects, tags, and collections, plus a
+  more balanced first-run experience and a more consistent interface throughout.
+
+### Fixed
+
+- More accurate titles when importing open-access PDFs and titles that end in a
+  version number (for example, "Covid-19" or "GPT-4").
+- Correct in-page navigation for table-of-contents and footnote links in note
+  previews.
+- Broad metadata-extraction and import-stability improvements.
+
 ## [1.2.0] - 2026-06-01
 
 ### Added
@@ -25,8 +46,8 @@ No unreleased changes documented yet.
   skipped files.
 - **WebDAV restore points.** Successful syncs keep dated restore points so a
   remote library copy can be inspected and restored safely.
-- **Zotero / Better-BibTeX import.** Zotero-linked PDFs, keywords, groups,
-  notes, language fields, and nested BibTeX fields are imported more reliably.
+- **BibTeX / RIS import.** Linked PDFs, keywords, groups, notes, language
+  fields, and nested BibTeX fields are imported more reliably.
 
 ### Changed
 
