@@ -1,206 +1,201 @@
 /* ============================================================
-   Papyrus Design System — Tokens
-   Derived from zendax673/Papyrus-release/docs/assets/styles.css
-   + in-app SwiftUI color/spacing conventions.
+   Papyrus Papers — "Evidence Desk" Design Tokens
+   A warm, tactile research-desk identity built around the app's
+   real Evidence Board (claim-cards → threaded citation drawer).
+   Deliberately divergent from the cloned generic-Apple-minimal look:
+   parchment surface (not white), serif display (not sans), mono
+   citation ornament, no radial glow.
+
+   Theme model: light is the :root default. Dark applies when the OS
+   prefers dark (unless the user forced light) OR when [data-theme="dark"]
+   is set by the in-page toggle. Forced light via [data-theme="light"].
    ============================================================ */
 
 :root {
-  /* ---------- Color: neutral scale (Apple-system aligned) ---------- */
-  --pp-bg:              #ffffff;
-  --pp-bg-alt:          #f5f5f7;
-  --pp-bg-card:         #fbfbfd;
-  --pp-bg-sidebar:      #f2f1ec;   /* warm sidebar tint (macOS vibrancy approx) */
-  --pp-fg1:             #1d1d1f;   /* primary text */
-  --pp-fg2:             #6e6e73;   /* secondary text */
-  --pp-fg3:             #86868b;   /* tertiary text, captions */
-  --pp-fg4:             #a1a1a6;   /* disabled / placeholder */
-  --pp-border:          #d2d2d7;   /* standard hairline */
-  --pp-border-light:    #e8e8ed;   /* subtle hairline */
-  --pp-divider:         #ececf0;
+  /* ---------- Surface: "the desk" (light) ---------- */
+  --pp-desk:         #EFEEE9;  /* page canvas — warm paper stock      */
+  --pp-desk-sunk:    #E7E4DB;  /* recessed wells (citation drawer)    */
+  --pp-card:         #FBF8F1;  /* claim-card / panel paper            */
+  --pp-card-raised:  #FFFFFF;  /* hover / active rows                 */
+  --pp-ink:          #1D1D1F;  /* primary text  (≈14:1 on card)       */
+  --pp-ink-2:        #5E5E63;  /* secondary text                      */
+  --pp-ink-3:        #86868B;  /* captions / meta                     */
+  --pp-hairline:     #E3DCCB;  /* card rules, dividers                */
+  --pp-hairline-2:   #D8CDB8;  /* stronger rule                       */
 
-  /* ---------- Color: brand accents ---------- */
-  --pp-papyrus-warm:    #c8922a;   /* primary brand accent */
-  --pp-papyrus-gold:    #d4a23a;   /* hover / gradient partner */
-  --pp-papyrus-dark:    #9a6f12;   /* text-on-cream */
-  --pp-papyrus-cream:   #faf6ef;   /* soft CTA bg */
-  --pp-papyrus-beta-bg: #fef7ec;   /* beta badge bg gradient start */
-  --pp-papyrus-beta-bd: #e8c97a;   /* beta badge border */
+  /* ---------- Brand accents (UNCHANGED from the app) ---------- */
+  --pp-gold:         #C8922A;  /* primary accent — claim / pins       */
+  --pp-gold-hover:   #D4A23A;
+  --pp-gold-deep:    #9A6F12;  /* gold text on cream (AA-safe)        */
+  --pp-blue:         #0071E3;  /* citation chips + links ONLY         */
+  --pp-blue-deep:    #005BBF;
 
-  /* ---------- Color: system accents ---------- */
-  --pp-accent:          #0071e3;   /* macOS system blue */
-  --pp-accent-hover:    #0077ed;
-  --pp-accent-press:    #005bbf;
+  /* ---------- Seven-section spectrum == ProjectEvidenceSection ---------- */
+  --pp-claim:        #C8922A;  /* Claim         */
+  --pp-related:      #5E6470;  /* Related Work  */
+  --pp-method:       #2DA44E;  /* Method        */
+  --pp-result:       #0071E3;  /* Result        */
+  --pp-limitation:   #B06A1F;  /* Limitation    */
+  --pp-future:       #1D9E75;  /* Future Work   */
+  --pp-rebuttal:     #D1453B;  /* Rebuttal      */
 
-  /* ---------- Color: semantic status ---------- */
-  --pp-success:         #2da44e;   /* license badge green */
-  --pp-warning:         #c8922a;   /* reuses papyrus warm */
-  --pp-danger:          #d1453b;
-  --pp-info:            #0071e3;
+  /* ---------- Threads + semantic ---------- */
+  --pp-thread:       rgba(200, 146, 42, 0.42);  /* connective leader lines */
+  --pp-success:      #2DA44E;
+  --pp-danger:       #D1453B;
 
-  /* ---------- Color: tag chips (in-app) ---------- */
-  --pp-tag-blue:        #0071e3;
-  --pp-tag-teal:        #1e9eb3;
-  --pp-tag-green:       #2da44e;
-  --pp-tag-orange:      #e8861f;
-  --pp-tag-pink:        #d9457e;
-  --pp-tag-purple:      #7b61d1;
-  --pp-tag-grey:        #8a8a90;
-  --pp-tag-gold:        #c8922a;
+  /* ---------- Ledger (the dark "board summary" strip) ---------- */
+  --pp-ledger-bg:    #1B1A17;
+  --pp-ledger-card:  #232220;
+  --pp-ledger-ink:   #F2ECDD;
+  --pp-ledger-ink-2: #B4AC97;
+  --pp-ledger-hair:  #34322B;
 
-  /* ---------- Typography ---------- */
-  --pp-font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
-                  "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --pp-font-serif: "Iowan Old Style", "Source Serif 4", Baskerville, Georgia,
-                   "Times New Roman", serif;
-  --pp-font-mono: "SF Mono", ui-monospace, Menlo, Monaco, Consolas,
-                  "Liberation Mono", monospace;
+  /* ---------- Typography (the three-way split) ---------- */
+  --pp-serif: "Source Serif 4", "Iowan Old Style", "Source Serif Pro", Georgia, "Times New Roman", serif;
+  --pp-sans:  "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, "Helvetica Neue", Arial, sans-serif;
+  --pp-mono:  "JetBrains Mono", "IBM Plex Mono", "SF Mono", ui-monospace, Menlo, Monaco, monospace;
 
-  /* ---------- Type scale ---------- */
-  --pp-fs-display:      clamp(2.75rem, 5.5vw, 4rem);   /* hero H1: 44–64px */
-  --pp-fs-h1:           3.25rem;    /* 52px */
-  --pp-fs-h2:           2.125rem;   /* 34px */
-  --pp-fs-h3:           1.375rem;   /* 22px */
-  --pp-fs-h4:           1.125rem;   /* 18px */
-  --pp-fs-lead:         1.3125rem;  /* 21px — hero tagline */
-  --pp-fs-body:         1rem;       /* 16px */
-  --pp-fs-body-sm:      0.9375rem;  /* 15px */
-  --pp-fs-small:        0.875rem;   /* 14px */
-  --pp-fs-xs:           0.8125rem;  /* 13px — nav links, caption */
-  --pp-fs-xxs:          0.75rem;    /* 12px — badge, meta */
+  /* serif = argument/voice · sans = interface · mono = evidence/data */
 
-  --pp-lh-display:      1.12;
-  --pp-lh-tight:        1.3;
-  --pp-lh-body:         1.6;
-  --pp-lh-loose:        1.7;
+  --pp-fs-display:   clamp(2.6rem, 5.2vw, 4rem);   /* hero serif headline 42–64px */
+  --pp-fs-h2:        clamp(1.9rem, 3.4vw, 2.6rem);  /* section serif title 30–42px */
+  --pp-fs-h3:        1.3125rem;  /* 21px card / feature heading */
+  --pp-fs-h4:        1.0625rem;  /* 17px */
+  --pp-fs-lead:      1.1875rem;  /* 19px hero standfirst */
+  --pp-fs-body:      1rem;       /* 16px */
+  --pp-fs-sm:        0.9375rem;  /* 15px */
+  --pp-fs-xs:        0.8125rem;  /* 13px */
+  --pp-fs-xxs:       0.6875rem;  /* 11px — mono eyebrows / keys */
 
-  --pp-tracking-tight:  -0.025em;
-  --pp-tracking-normal: 0;
-  --pp-tracking-wide:   0.01em;
+  --pp-lh-display:   1.1;
+  --pp-lh-tight:     1.3;
+  --pp-lh-body:      1.6;
 
-  --pp-weight-regular:  400;
-  --pp-weight-medium:   500;
-  --pp-weight-semibold: 600;
-  --pp-weight-bold:     700;
+  --pp-track-tight:  -0.01em;
+  --pp-track-mono:   0.04em;   /* mono labels */
+  --pp-track-eyebrow:0.14em;   /* small-caps-style eyebrows */
 
-  /* ---------- Spacing scale ---------- */
-  --pp-space-0:   0;
-  --pp-space-1:   4px;
-  --pp-space-2:   8px;
-  --pp-space-3:   12px;
-  --pp-space-4:   16px;
-  --pp-space-5:   20px;
-  --pp-space-6:   24px;
-  --pp-space-7:   28px;
-  --pp-space-8:   32px;
-  --pp-space-10:  40px;
-  --pp-space-12:  48px;
-  --pp-space-14:  56px;
-  --pp-space-16:  64px;
-  --pp-space-20:  80px;
-  --pp-space-24:  96px;
+  --pp-w-regular:    400;
+  --pp-w-medium:     500;
+  --pp-w-semibold:   600;
+
+  /* ---------- Spacing ---------- */
+  --pp-s1: 4px;  --pp-s2: 8px;  --pp-s3: 12px; --pp-s4: 16px;
+  --pp-s5: 20px; --pp-s6: 24px; --pp-s8: 32px; --pp-s10: 40px;
+  --pp-s12: 48px; --pp-s14: 56px; --pp-s16: 64px; --pp-s20: 80px; --pp-s24: 96px;
 
   /* ---------- Layout ---------- */
-  --pp-width-page:   1080px;
-  --pp-width-narrow: 760px;
-  --pp-width-text:   640px;
-  --pp-gutter:       24px;
+  --pp-w-page:   1120px;
+  --pp-w-narrow: 760px;
+  --pp-w-text:   640px;   /* reading measure for serif body */
+  --pp-gutter:   24px;
 
-  /* ---------- Radii ---------- */
-  --pp-radius-sm:   8px;
-  --pp-radius-md:   12px;
-  --pp-radius-lg:   20px;
-  --pp-radius-pill: 980px;
+  /* ---------- Radii (cards are gently rounded, not pill-soft) ---------- */
+  --pp-r-sm:  6px;
+  --pp-r-md:  10px;
+  --pp-r-lg:  14px;
+  --pp-r-pill: 980px;
 
-  /* ---------- Shadows ---------- */
-  --pp-shadow-card:   0 2px 12px rgba(0, 0, 0, 0.06);
-  --pp-shadow-float:  0 12px 40px rgba(0, 0, 0, 0.12);
-  --pp-shadow-modal:  0 20px 60px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(0,0,0,.04);
-  --pp-shadow-glow:   0 0 60px rgba(200, 146, 42, 0.12);
-  --pp-shadow-btn-blue:    0 4px 16px rgba(0, 113, 227, 0.30);
-  --pp-shadow-btn-blue-hv: 0 6px 20px rgba(0, 113, 227, 0.35);
-  --pp-shadow-btn-warm:    0 4px 16px rgba(200, 146, 42, 0.30);
-  --pp-shadow-btn-warm-hv: 0 6px 20px rgba(200, 146, 42, 0.35);
-  --pp-focus-ring:  0 0 0 3px rgba(0, 113, 227, 0.35);
+  /* ---------- Shadows (single-direction, warm, soft — never glow) ---------- */
+  --pp-shadow-card:  0 6px 18px rgba(60, 46, 18, 0.09);
+  --pp-shadow-card-hv: 0 12px 30px rgba(60, 46, 18, 0.14);
+  --pp-shadow-plate: 0 18px 50px rgba(40, 30, 10, 0.16);
+  --pp-shadow-pin:   0 1px 2px rgba(0, 0, 0, 0.28);
 
   /* ---------- Motion ---------- */
-  --pp-ease:          cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  --pp-dur-fast:      0.15s;
-  --pp-dur-base:      0.3s;
-  --pp-dur-slow:      0.5s;
-  --pp-dur-fade:      0.7s;
-  --pp-transition:    0.3s var(--pp-ease);
+  --pp-ease:  cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --pp-dur:   0.3s;
+  --pp-dur-fast: 0.15s;
 
-  /* ---------- Blur / translucent surfaces ---------- */
-  --pp-blur-nav:  saturate(180%) blur(20px);
-  --pp-blur-md:   blur(12px);
-  --pp-blur-sm:   blur(8px);
-  --pp-surface-translucent: rgba(255, 255, 255, 0.82);
-  --pp-surface-card-glass:  rgba(255, 255, 255, 0.90);
-  --pp-surface-badge-glass: rgba(255, 255, 255, 0.80);
-
-  /* ---------- Gradients ---------- */
-  --pp-grad-text-dark: linear-gradient(135deg, #1d1d1f 0%, #3a3a3c 100%);
-  --pp-grad-warm:      linear-gradient(135deg, #c8922a 0%, #b57d1e 100%);
-  --pp-grad-warm-hv:   linear-gradient(135deg, #d4a23a 0%, #c8922a 100%);
-  --pp-grad-blue:      linear-gradient(135deg, #0071e3 0%, #005bbf 100%);
-  --pp-grad-beta:      linear-gradient(135deg, #fef7ec, #fdf0d8);
-  --pp-grad-cta:       linear-gradient(180deg, #ffffff 0%, #faf6ef 100%);
-  --pp-grad-divider:   linear-gradient(90deg, #c8922a, #d4a23a);
-  --pp-grad-hero-bg:
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(200, 146, 42, 0.08) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 40% at 70% 80%, rgba(0, 113, 227, 0.04) 0%, transparent 50%),
-    #ffffff;
+  /* ---------- Translucent nav ---------- */
+  --pp-nav-bg:   rgba(239, 238, 233, 0.78);
+  --pp-nav-blur: saturate(160%) blur(18px);
 }
 
-/* ============================================================
-   Semantic defaults — apply by tagging the root
-   ============================================================ */
+/* ---------- Dark = "oxidized manuscript" ---------- */
+:root[data-theme="dark"],
+.pp-dark-vars {
+  --pp-desk:         #1C1C1E;  /* warm charcoal desk, never pure black */
+  --pp-desk-sunk:    #161617;
+  --pp-card:         #252528;  /* card paper stays WARM, never gray    */
+  --pp-card-raised:  #2C2C2E;
+  --pp-ink:          #F5EFE2;  /* warm paper-text                      */
+  --pp-ink-2:        #C5C0B6;
+  --pp-ink-3:        #97917F;
+  --pp-hairline:     #38383B;
+  --pp-hairline-2:   #44444A;
 
-body.pp {
-  font-family: var(--pp-font-sans);
-  font-size: var(--pp-fs-body);
-  line-height: var(--pp-lh-body);
-  color: var(--pp-fg1);
-  background: var(--pp-bg);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --pp-gold:         #E8C987;  /* ember — gold survives on dark        */
+  --pp-gold-hover:   #F0D69A;
+  --pp-gold-deep:    #E8C987;
+  --pp-blue:         #4C9AFF;
+  --pp-blue-deep:    #6E9BC4;
+
+  --pp-claim:        #E8C987;
+  --pp-related:      #8A909C;
+  --pp-method:       #4FBE6E;
+  --pp-result:       #4C9AFF;
+  --pp-limitation:   #D89A4F;
+  --pp-future:       #4FBE9A;
+  --pp-rebuttal:     #E8736B;
+
+  --pp-thread:       rgba(232, 201, 135, 0.50);
+  --pp-success:      #4FBE6E;
+  --pp-danger:       #E8736B;
+
+  /* ledger inverts only slightly — it is already dark in light mode */
+  --pp-ledger-bg:    #131211;
+  --pp-ledger-card:  #1E1D1B;
+  --pp-ledger-ink:   #F2ECDD;
+  --pp-ledger-ink-2: #ABA48F;
+  --pp-ledger-hair:  #2C2A24;
+
+  --pp-nav-bg:   rgba(28, 28, 30, 0.74);
+  --pp-shadow-card:  0 8px 22px rgba(0, 0, 0, 0.45);
+  --pp-shadow-card-hv: 0 14px 34px rgba(0, 0, 0, 0.55);
+  --pp-shadow-plate: 0 20px 56px rgba(0, 0, 0, 0.6);
 }
 
-.pp h1, .pp h2, .pp h3, .pp h4 {
-  font-weight: var(--pp-weight-semibold);
-  line-height: var(--pp-lh-display);
-  letter-spacing: var(--pp-tracking-tight);
-  color: var(--pp-fg1);
+/* Follow the OS when the user has NOT forced a theme via the toggle. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --pp-desk:         #1C1C1E;
+    --pp-desk-sunk:    #161617;
+    --pp-card:         #252528;
+    --pp-card-raised:  #2C2C2E;
+    --pp-ink:          #F5EFE2;
+    --pp-ink-2:        #C5C0B6;
+    --pp-ink-3:        #97917F;
+    --pp-hairline:     #38383B;
+    --pp-hairline-2:   #44444A;
+    --pp-gold:         #E8C987;
+    --pp-gold-hover:   #F0D69A;
+    --pp-gold-deep:    #E8C987;
+    --pp-blue:         #4C9AFF;
+    --pp-blue-deep:    #6E9BC4;
+    --pp-claim:        #E8C987;
+    --pp-related:      #8A909C;
+    --pp-method:       #4FBE6E;
+    --pp-result:       #4C9AFF;
+    --pp-limitation:   #D89A4F;
+    --pp-future:       #4FBE9A;
+    --pp-rebuttal:     #E8736B;
+    --pp-thread:       rgba(232, 201, 135, 0.50);
+    --pp-success:      #4FBE6E;
+    --pp-danger:       #E8736B;
+    --pp-ledger-bg:    #131211;
+    --pp-ledger-card:  #1E1D1B;
+    --pp-ledger-ink:   #F2ECDD;
+    --pp-ledger-ink-2: #ABA48F;
+    --pp-ledger-hair:  #2C2A24;
+    --pp-nav-bg:       rgba(28, 28, 30, 0.74);
+    --pp-shadow-card:  0 8px 22px rgba(0, 0, 0, 0.45);
+    --pp-shadow-card-hv: 0 14px 34px rgba(0, 0, 0, 0.55);
+    --pp-shadow-plate: 0 20px 56px rgba(0, 0, 0, 0.6);
+  }
 }
-.pp h1 { font-size: var(--pp-fs-h1); }
-.pp h2 { font-size: var(--pp-fs-h2); }
-.pp h3 { font-size: var(--pp-fs-h3); }
-.pp h4 { font-size: var(--pp-fs-h4); }
 
-.pp .display {
-  font-size: var(--pp-fs-display);
-  font-weight: var(--pp-weight-semibold);
-  line-height: var(--pp-lh-display);
-  letter-spacing: var(--pp-tracking-tight);
-  background: var(--pp-grad-text-dark);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+@media (prefers-reduced-motion: reduce) {
+  :root { --pp-dur: 0.001s; --pp-dur-fast: 0.001s; }
 }
-
-.pp .lead   { font-size: var(--pp-fs-lead); color: var(--pp-fg2); line-height: 1.5; }
-.pp .body   { font-size: var(--pp-fs-body); color: var(--pp-fg1); }
-.pp .body-sm{ font-size: var(--pp-fs-body-sm); color: var(--pp-fg2); }
-.pp .caption{ font-size: var(--pp-fs-xs); color: var(--pp-fg3); }
-.pp .meta   { font-size: var(--pp-fs-xxs); color: var(--pp-fg3); }
-.pp code, .pp .mono {
-  font-family: var(--pp-font-mono);
-  font-size: 0.875em;
-  background: var(--pp-bg-alt);
-  padding: 2px 7px;
-  border-radius: 5px;
-}
-.pp .serif { font-family: var(--pp-font-serif); }
-
-.pp a { color: var(--pp-accent); text-decoration: none; transition: color var(--pp-transition); }
-.pp a:hover { color: var(--pp-accent-hover); text-decoration: underline; }
