@@ -3,434 +3,310 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Papyrus Papers — A research desk for Mac &amp; iPad</title>
-  <meta name="description" content="A native, local-first research desk for macOS and iPadOS. Read and annotate papers, capture claims into an evidence board, and export the citations your manuscript expects.">
+  <title>Papyrus Papers — a local-first research desk for Mac &amp; iPad</title>
+  <meta name="description" content="Papyrus Papers is a native, local-first app for macOS and iPad: read and annotate PDFs, take Markdown + LaTeX notes, organize a reference library, and build a structured evidence board you can export as BibTeX, RIS, CSL JSON, or Markdown. One-time purchase, no account, no telemetry.">
   <meta name="theme-color" content="#efeee9">
-  <meta property="og:title" content="Papyrus Papers — A research desk for Mac & iPad">
-  <meta property="og:description" content="Read papers, pin claims with confidence and a page, thread quotes to their citations, and export BibTeX/RIS/CSL/Markdown. Local-first. No account.">
+  <meta property="og:title" content="Papyrus Papers — a research desk for Mac & iPad">
+  <meta property="og:description" content="Read, annotate, and turn what you read into a cited argument. Local-first, one-time purchase. macOS 14+ and iPadOS 17+ with Apple Pencil.">
   <meta property="og:type" content="website">
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
+<script>(function(){var t=localStorage.getItem('pp-theme');if(t)document.documentElement.setAttribute('data-theme',t);document.documentElement.classList.add('js');})();</script>
 
-<script>
-  (function(){ var t = localStorage.getItem('pp-theme'); if (t) document.documentElement.setAttribute('data-theme', t); })();
-</script>
+<!-- ===== Running-head rail (replaces the nav bar) ===== -->
+<header class="runhead">
+  <span class="runhead__left"><img src="assets/icon.svg" alt=""><span class="hide-xs">Papyrus Papers&nbsp;·&nbsp;</span><span class="sc">A local-first research desk</span></span>
+  <span class="runhead__sec" id="runSec">Abstract</span>
+  <span class="runhead__right">
+    <a class="runhead__get" href="#availability">Get it ↗</a>
+    <button class="runhead__theme" id="themeToggle" aria-label="Toggle light or dark">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </span>
+</header>
 
-<!-- ============ Nav ============ -->
-<nav class="nav">
-  <div class="nav__inner">
-    <a href="./index.html" class="nav__brand"><img src="assets/icon.svg" alt="">Papyrus Papers</a>
-    <ul class="nav__links">
-      <li class="hide-mobile"><a href="#evidence">Evidence</a></li>
-      <li class="hide-mobile"><a href="#features">Features</a></li>
-      <li class="hide-mobile"><a href="#platforms">Mac &amp; iPad</a></li>
-      <li class="hide-mobile"><a href="#pricing">Pricing</a></li>
-      <li class="hide-mobile"><a href="support.html">Support</a></li>
-      <li><a href="download.html" class="nav__cta">Download</a></li>
-      <li><span class="nav__ver">v1.2.2</span></li>
-      <li>
-        <button class="nav__theme" id="themeToggle" aria-label="Toggle theme">
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-        </button>
-      </li>
-      <li class="nav__hamburger-li">
-        <button class="nav__hamburger" id="navHamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navMobilePanel">
-          <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-          <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-        </button>
-      </li>
-    </ul>
-  </div>
-  <div class="nav__mobile-panel" id="navMobilePanel" hidden></div>
-</nav>
+<main class="paper">
 
-<!-- ============ Hero — a live evidence board ============ -->
-<section class="hero" id="evidence">
-  <div class="container">
-    <div class="hero__head">
-      <span class="eyebrow">The Evidence Board</span>
-      <h1 class="display hero__title">Pin the claim. Thread the<br><em>quote to its citation.</em></h1>
-      <p class="hero__sub">A native research desk for macOS and iPadOS. Read and annotate papers, capture claims with a confidence and a page, then export the citations your manuscript expects — all on your own device.</p>
-      <div class="hero__actions">
-        <a href="https://apps.apple.com/app/id6766133716" class="btn btn--gold" target="_blank" rel="noopener">Get Papyrus</a>
-        <a href="https://testflight.apple.com/" class="testflight-badge" target="_blank" rel="noopener" aria-label="Join the public TestFlight beta">
-          <svg class="tf-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg>
-          <span><span class="tf-sub">PUBLIC BETA</span><span class="tf-main">Join on TestFlight</span></span>
-        </a>
-        <a href="#features" class="btn btn--ghost">See the workflow ↓</a>
-      </div>
-      <p class="hero__meta">macOS 14+ · iPadOS 17+ &nbsp;·&nbsp; $3.99 Mac · $5.99 iPad &nbsp;·&nbsp; local-first · no account · no telemetry</p>
+  <!-- ===== Margin apparatus ===== -->
+  <aside class="paper__margin" aria-label="Contents and references">
+    <nav class="toc" aria-label="Sections">
+      <div class="toc__head">Contents</div>
+      <a href="#s-intro"><span class="n">1</span>Introduction</a>
+      <a href="#s-evidence"><span class="n">2</span>The Evidence Board</a>
+      <a href="#s-reading"><span class="n">3</span>Reading &amp; Annotation</a>
+      <a href="#s-library"><span class="n">4</span>The Library</a>
+      <a href="#s-export"><span class="n">5</span>Export &amp; Citation</a>
+      <a href="#s-method"><span class="n">6</span>Method &amp; Provenance</a>
+    </nav>
+    <div class="ledger-margin" id="ledger" aria-label="Citations used in this document">
+      <div class="ledger-margin__head">Citation ledger</div>
+      <div class="ledger-margin__item" data-key="vaswani2017attention" style="--pp-sec:var(--pp-claim)"><span class="k">[@vaswani2017attention]</span><span class="pips">●●●●●</span> 5/5 · Claim</div>
+      <div class="ledger-margin__item" data-key="dao2023flashattention2" style="--pp-sec:var(--pp-method)"><span class="k">[@dao2023flashattention2]</span><span class="pips">●●●●○</span> 4/5 · Method</div>
+      <div class="ledger-margin__item" data-key="gu2024mamba" style="--pp-sec:var(--pp-limitation)"><span class="k">[@gu2024mamba]</span><span class="pips">●●●●○</span> 4/5 · Limitation</div>
+      <div class="ledger-margin__item" data-key="liu2023ringattention" style="--pp-sec:var(--pp-future)"><span class="k">[@liu2023ringattention]</span><span class="pips">●●●○○</span> 3/5 · Future Work</div>
+      <button class="ledger-margin__copy" id="copyBib" type="button">Copy .bib ↧</button>
+    </div>
+  </aside>
+
+  <!-- ===== Body ===== -->
+  <article class="paper__body">
+
+    <div class="titleblock">
+      <h1 class="paper-title">Papyrus Papers: a local-first desk for reading, annotating, and building evidence.</h1>
+      <div class="byline">Native for macOS 14+<span class="sep">·</span>iPadOS 17+ with Apple Pencil</div>
+      <div class="dateline">Version 1.2.2 &nbsp;·&nbsp; one-time purchase, 30-day trial<sup class="fnref"><a href="#fn1" id="fnref1">1</a></sup> &nbsp;·&nbsp; <a href="#availability">Availability ↓</a></div>
     </div>
 
-    <div class="board reveal">
-      <svg class="board__threads" viewBox="0 0 1000 420" preserveAspectRatio="none" aria-hidden="true">
-        <path class="thread-path" d="M676,64 C760,64 740,40 798,40" fill="none" stroke="var(--pp-thread)" stroke-width="1.4"/>
-        <path class="thread-path" d="M676,210 C760,210 740,150 798,150" fill="none" stroke="var(--pp-thread)" stroke-width="1.4"/>
-        <path class="thread-path" d="M676,356 C760,356 740,260 798,260" fill="none" stroke="var(--pp-thread)" stroke-width="1.4"/>
-      </svg>
-      <div class="board__grid">
-        <div class="board__cards">
-          <article class="claim-card" style="--pp-sec: var(--pp-claim); --rot:-0.4deg;">
-            <span class="claim-card__pin"></span>
-            <div class="claim-card__top"><span class="claim-card__key">Claim · p.2</span><span class="claim-card__meter">●●●●●</span></div>
-            <p class="claim-card__claim">Exact self-attention is the baseline that later efficient models position against.</p>
-            <p class="claim-card__quote">“We propose a new simple network architecture, the Transformer, based solely on attention mechanisms.”</p>
-            <span class="chip">[@vaswani2017attention]</span>
-          </article>
-          <article class="claim-card" style="--pp-sec: var(--pp-method); --rot:0.3deg;">
-            <span class="claim-card__pin"></span>
-            <div class="claim-card__top"><span class="claim-card__key">Method · p.3</span><span class="claim-card__meter">●●●●○</span></div>
-            <p class="claim-card__claim">Some efficiency gains are implementation-level, not modeling approximations.</p>
-            <p class="claim-card__quote">“FlashAttention-2 parallelizes over the sequence length dimension to increase occupancy.”</p>
-            <span class="chip">[@dao2023flashattention2]</span>
-          </article>
-          <article class="claim-card" style="--pp-sec: var(--pp-limitation); --rot:-0.3deg;">
-            <span class="claim-card__pin"></span>
-            <div class="claim-card__top"><span class="claim-card__key">Limitation · p.4</span><span class="claim-card__meter">●●●●○</span></div>
-            <p class="claim-card__claim">State-space models are a separate family of long-sequence alternatives.</p>
-            <p class="claim-card__quote">“Selective state spaces let the model condition dynamics on the input.”</p>
-            <span class="chip">[@gu2024mamba]</span>
-          </article>
-        </div>
+    <section class="abstract">
+      <div class="abstract__label">Abstract</div>
+      <p>Papyrus Papers is a native, local-first app for macOS and iPad that keeps your papers, PDFs, annotations, notes, and citations in one place — and turns what you read into a structured, citable argument. You import PDFs, DOIs, arXiv IDs, BibTeX, or RIS; read and mark up documents in a native reader; capture each claim with its quote, page, citation key, section role, and a confidence; then export BibTeX, RIS, CSL&nbsp;JSON, or Markdown for the writing tools you already use. It is a one-time purchase with no account, no subscription, and no telemetry; your library lives on your own device.</p>
+    </section>
 
-        <aside class="drawer">
-          <div class="drawer__label">CITATION DRAWER</div>
-          <div class="drawer__row"><div class="drawer__key">vaswani2017attention</div><div class="drawer__title">Attention Is All You Need</div></div>
-          <div class="drawer__row"><div class="drawer__key">dao2023flashattention2</div><div class="drawer__title">FlashAttention-2: Faster Attention with Better Parallelism</div></div>
-          <div class="drawer__row"><div class="drawer__key">gu2024mamba</div><div class="drawer__title">Mamba: Linear-Time Sequence Modeling</div></div>
-          <div class="drawer__exports"><span>.bib</span><span>.ris</span><span>CSL</span><span>.md</span></div>
-        </aside>
-      </div>
-    </div>
-  </div>
-</section>
+    <div class="keywords"><b>Keywords —</b> PDF annotation · Apple Pencil · citation keys · evidence board · BibTeX / RIS / CSL JSON · Smart Collections</div>
 
-<!-- ============ Workflow stations ============ -->
-<section class="section section--sunk">
-  <div class="container">
-    <div class="section-head section-head--center reveal">
-      <span class="eyebrow">One loop, one app</span>
-      <h2 class="section-title">From a stack of PDFs<br><em>to a cited argument.</em></h2>
-    </div>
-    <div class="stations">
-      <div class="station reveal"><div class="station__step">Station 01</div><h3>Import &amp; read</h3><p>Drop a PDF, paste a DOI, drag a folder. Read in a native window and mark it up — highlight, underline, ink, and notes. <kbd>⌘O</kbd> <kbd>⌘F</kbd></p></div>
-      <div class="station reveal reveal-d1"><div class="station__step">Station 02</div><h3>Capture a claim</h3><p>Send a quote into the Evidence Board with its paper, page, and section role — Claim, Method, Limitation, and more.</p></div>
-      <div class="station reveal reveal-d2"><div class="station__step">Station 03</div><h3>Set confidence</h3><p>Rate how strongly the source supports the claim and add your own interpretation before you draft.</p></div>
-      <div class="station reveal reveal-d3"><div class="station__step">Station 04</div><h3>Export the argument</h3><p>Thread each claim to its citation key and export BibTeX, RIS, CSL JSON, Markdown, or a full bundle.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ Three rules of the desk ============ -->
-<section class="section">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">Three rules of the desk</span>
-      <h2 class="section-title">Built to fit your research,<br><em>not to own it.</em></h2>
-      <p class="section-desc">Most reference tools want to become your workflow and hold your library hostage in a web account. Papyrus Papers is a desk, not a destination.</p>
-    </div>
-    <div class="rules">
-      <div class="rule reveal">
-        <div class="rule__icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-        <h3>Local-first, always</h3>
-        <p>Your library, PDFs, notes, and indexes live on your Mac and iPad. No Papyrus account. The network is touched only when you choose metadata lookup or WebDAV sync.</p>
-      </div>
-      <div class="rule reveal reveal-d1">
-        <div class="rule__icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg></div>
-        <h3>Yours to verify</h3>
-        <p>Every claim keeps its quote, page, citation key, and a confidence you set. Per-field provenance shows where metadata came from when sources disagree.</p>
-      </div>
-      <div class="rule reveal reveal-d2">
-        <div class="rule__icon"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-        <h3>Every format, open</h3>
-        <p>In: PDF, DOI, arXiv, BibTeX, RIS, folders. Out: BibTeX, RIS, CSL JSON, Markdown, and project bundles. Files stay portable; the workflow stays yours.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ Features ============ -->
-<section class="section section--sunk" id="features">
-  <div class="container">
-
-    <!-- F1 — Read & annotate -->
-    <div class="feature reveal">
-      <div class="feature__text">
-        <span class="eyebrow">Read &amp; think</span>
-        <h2 class="section-title">PDF and notes,<br><em>side by side.</em></h2>
-        <p class="section-desc">A native PDFKit reader paired with Markdown notes that understand LaTeX — reading and writing in one window, not two apps.</p>
-        <ul class="feature__bullets">
-          <li>Highlight, underline, strikethrough, freehand ink, notes, and bookmarks</li>
-          <li>Markdown notes with LaTeX math and code, right beside the page</li>
-          <li>Full-text search across the entire library</li>
-          <li>A reading queue and projects keep work-in-progress visible across sessions</li>
-        </ul>
-      </div>
-      <figure class="feature__media">
+    <!-- §1 -->
+    <section class="sec" id="s-intro">
+      <h2 class="sec__h">Introduction</h2>
+      <p><span class="lead-in">Reference managers</span> are good at storing citations and bad at storing reasoning. The sentence you actually want — “this paper supports my method, on page 3, with medium confidence” — ends up scattered across a PDF highlight, a note in another app, and a key in a <code>.bib</code> file that no longer remembers why it is there. Papyrus Papers closes that gap: it is one native desk where reading, annotating, and citing happen next to each other, so the evidence behind a draft stays attached to the draft.</p>
+      <p>The rest of this page is laid out the way Papyrus thinks: a worked example from a real project, <span class="term">Efficient Models Manuscript</span>, shown with its actual claims and citation keys (Fig. 1–4, Table 1).</p>
+      <figure class="plate">
         <div class="shot">
-          <img class="screenshot screenshot--light" src="assets/app-captures/reader-window-light.png" alt="Papyrus Papers reader: a PDF beside Markdown notes with LaTeX math, tags, and metadata">
+          <img class="screenshot screenshot--light" src="assets/app-captures/library-window-light.png" alt="The Papyrus Papers library window on macOS: a sidebar of collections, a list of papers, and a detail pane.">
+          <img class="screenshot screenshot--dark" src="assets/app-captures/library-window-dark.png" alt="" aria-hidden="true">
+        </div>
+        <figcaption><b>1</b> The library on macOS — sidebar, paper list, and a detail pane with notes, tags, and per-field metadata.</figcaption>
+      </figure>
+    </section>
+
+    <!-- §2 -->
+    <section class="sec" id="s-evidence">
+      <h2 class="sec__h">The Evidence Board</h2>
+      <p><span class="lead-in">The Evidence Board</span> is where Papyrus differs from a reference manager. A piece of evidence is not just a citation — it records the <span class="term">claim</span> you are making, the <span class="term">quote</span> that backs it, your own <span class="term">interpretation</span>, the <span class="term">page</span>, the <span class="term">citation key</span>, a <span class="term">section role</span>, and a <span class="term">confidence</span> from 1 to 5. Evidence is grouped by seven roles — Claim, Related Work, Method, Result, Limitation, Future Work, and Rebuttal — so a project reads as an argument before you have written a word of it.</p>
+      <figure class="plate">
+        <div class="evidence-figure" role="group" aria-label="Three evidence cards from the Efficient Models Manuscript project">
+          <div class="ec" style="--pp-sec:var(--pp-claim)">
+            <div class="ec__top"><span class="ec__key">Claim · p.2</span><span class="ec__pips">●●●●●</span></div>
+            <p class="ec__claim">Exact self-attention is the baseline that later efficient models position against.</p>
+            <p class="ec__quote">“We propose a new simple network architecture, the Transformer, based solely on attention mechanisms.”</p>
+            <span class="ec__chip">[@vaswani2017attention]</span>
+          </div>
+          <div class="ec" style="--pp-sec:var(--pp-method)">
+            <div class="ec__top"><span class="ec__key">Method · p.3</span><span class="ec__pips">●●●●○</span></div>
+            <p class="ec__claim">Some efficiency gains are implementation-level, not modeling approximations.</p>
+            <span class="ec__chip">[@dao2023flashattention2]</span>
+          </div>
+          <div class="ec" style="--pp-sec:var(--pp-limitation)">
+            <div class="ec__top"><span class="ec__key">Limitation · p.4</span><span class="ec__pips">●●●●○</span></div>
+            <p class="ec__claim">State-space models are a separate family of long-sequence alternatives.</p>
+            <span class="ec__chip">[@gu2024mamba]</span>
+          </div>
+        </div>
+        <figcaption><b>2</b> Three of the four evidence cards in <span class="term">Efficient Models Manuscript</span>, each carrying its section role, page, confidence, and citation key.</figcaption>
+      </figure>
+
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <caption><b>Table 1</b> &nbsp;The evidence matrix — the same fields Papyrus exports for a project.</caption>
+          <thead><tr><th>Cite key</th><th>Section</th><th>Page</th><th>Conf.</th><th>Claim</th></tr></thead>
+          <tbody>
+            <tr><td class="m">vaswani2017attention</td><td>Claim</td><td>p.2</td><td>5/5</td><td>Exact self-attention is the baseline efficient models position against.</td></tr>
+            <tr><td class="m">dao2023flashattention2</td><td>Method</td><td>p.3</td><td>4/5</td><td>Some gains are implementation-level, not approximations.</td></tr>
+            <tr><td class="m">gu2024mamba</td><td>Limitation</td><td>p.4</td><td>4/5</td><td>State-space models are a separate long-sequence family.</td></tr>
+            <tr><td class="m">liu2023ringattention</td><td>Future Work</td><td>p.1</td><td>3/5</td><td>Distributed exact attention changes system requirements.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- §3 -->
+    <section class="sec" id="s-reading">
+      <h2 class="sec__h">Reading &amp; Annotation</h2>
+      <p><span class="lead-in">Reading happens in a native window</span>, not a web viewer. On both platforms you can highlight, underline, strike through, draw freehand ink, leave notes, and set bookmarks; on iPad the ink is Apple Pencil. A Markdown notes pane sits beside the page and renders LaTeX math and code, so a derivation lives next to the figure it explains. Full-text search runs across the whole library, and a reading queue keeps work-in-progress visible between sessions.<sup class="fnref"><a href="#fn3" id="fnref3">3</a></sup></p>
+      <figure class="plate two-up">
+        <div class="shot">
+          <img class="screenshot screenshot--light" src="assets/app-captures/reader-window-light.png" alt="macOS split view: a PDF beside a Markdown note with LaTeX math.">
           <img class="screenshot screenshot--dark" src="assets/app-captures/reader-window-dark.png" alt="" aria-hidden="true">
         </div>
-      </figure>
-    </div>
-
-    <!-- F2 — Evidence Board (the differentiator) -->
-    <div class="feature feature--rev reveal">
-      <div class="feature__text">
-        <span class="eyebrow">Write from evidence</span>
-        <h2 class="section-title">A project becomes<br><em>an argument.</em></h2>
-        <p class="section-desc">The Evidence Board turns scattered highlights into a structured case — every claim carries its source, page, citation key, and your confidence.</p>
-        <ul class="feature__bullets">
-          <li>Capture claim, quote, interpretation, page, citation key, and a 1–5 confidence</li>
-          <li>Group evidence by Claim, Related Work, Method, Result, Limitation, Future Work, or Rebuttal</li>
-          <li>Project-specific paper roles — To Skim, Deep Read, Cite in Method, Background, Excluded, Needs Re-check</li>
-          <li>Scoped synthesis search across the project's metadata, notes, highlights, and PDF text</li>
-        </ul>
-      </div>
-      <figure class="feature__media">
         <div class="shot">
-          <img class="screenshot screenshot--light" src="assets/app-captures/library-window-project-light.png" alt="Papyrus Papers project workspace with source papers, roles, and evidence">
-          <img class="screenshot screenshot--dark" src="assets/app-captures/library-window-project-dark.png" alt="" aria-hidden="true">
+          <img class="screenshot screenshot--light" src="assets/app-captures/library-sidebar-light.png" alt="iPad reader with an Apple Pencil annotation and the reading-notes panel.">
+          <img class="screenshot screenshot--dark" src="assets/app-captures/library-sidebar-dark.png" alt="" aria-hidden="true">
         </div>
+        <figcaption><b>3</b> Two surfaces, one library — <i>(a)</i> macOS split view, PDF and a Markdown + LaTeX note; <i>(b)</i> iPad with Apple Pencil ink and the reading-notes panel.</figcaption>
       </figure>
-    </div>
+    </section>
 
-    <!-- F3 — Export specimen -->
-    <div class="feature reveal">
-      <div class="feature__text">
-        <span class="eyebrow">Export</span>
-        <h2 class="section-title">Out the way<br><em>you came in.</em></h2>
-        <p class="section-desc">Everything you read and organized flows into the formats your writing tools expect — one command, no reformatting.</p>
-        <ul class="feature__bullets">
-          <li>Copy citations in APA, MLA, Chicago, IEEE, Harvard, Vancouver, BibTeX, and RIS</li>
-          <li>Project-level BibTeX, RIS, CSL JSON, Markdown, and full bundle export</li>
-          <li>Copy cite commands for LaTeX and Pandoc Markdown workflows</li>
-          <li>An export report flags missing PDFs, duplicate citekeys, and missing DOI / year / pages</li>
-        </ul>
-      </div>
-      <figure class="feature__media">
-        <div class="shot" style="padding:18px 20px; box-shadow:var(--pp-shadow-card);">
-          <div class="drawer__label" style="margin-bottom:14px;">EXPORT · references.bib</div>
-<pre style="margin:0; font-family:var(--pp-mono); font-size:12.5px; line-height:1.7; color:var(--pp-ink-2); overflow:auto;"><span style="color:var(--pp-gold-deep);">@inproceedings</span>{<span style="color:var(--pp-blue);">vaswani2017attention</span>,
-  title     = {Attention Is All You Need},
-  author    = {Vaswani, Ashish and others},
-  booktitle = {Advances in NeurIPS},
-  year      = {2017}
-}
-<span style="color:var(--pp-gold-deep);">@article</span>{<span style="color:var(--pp-blue);">dao2023flashattention2</span>,
-  title  = {FlashAttention-2},
-  author = {Dao, Tri},
-  year   = {2023}
-}</pre>
-        </div>
-      </figure>
-    </div>
-
-  </div>
-</section>
-
-<!-- ============ Organize three ways ============ -->
-<section class="section">
-  <div class="container">
-    <div class="section-head section-head--center reveal">
-      <span class="eyebrow">Three shapes for one library</span>
-      <h2 class="section-title">Smart Collections, Projects,<br><em>and Folders.</em></h2>
-      <p class="section-desc">Saved queries that update themselves, working sets that span the library, and a hierarchy for things with a stable home. Use one. Use all three.</p>
-    </div>
-    <div class="feature reveal" style="grid-template-columns: 1fr 1fr; align-items:start; gap:var(--pp-s10);">
-      <figure class="feature__media">
+    <!-- §4 -->
+    <section class="sec" id="s-library">
+      <h2 class="sec__h">The Library</h2>
+      <p><span class="lead-in">One library, three shapes.</span> <span class="term">Smart Collections</span> are saved queries that always reflect the current library — build them from tags, journals, year ranges, type, favorites, or PDF status. <span class="term">Projects</span> are working sets for the writing you are doing now, like <span class="term">Lit Review: Efficient Transformers</span>; a paper can sit in several projects with its own role and evidence in each. <span class="term">Folders</span> are a stable hierarchy for material with a permanent home, and they travel into project-bundle exports. Import is recursive across folders and enriches metadata from Crossref, arXiv, Semantic Scholar, OpenAlex, OpenLibrary, PubMed, Zenodo, and embedded XMP, with per-field provenance when sources disagree.</p>
+      <figure class="plate two-up">
         <div class="shot">
-          <img class="screenshot screenshot--light" src="assets/app-captures/library-window-smart-light.png" alt="A Smart Collection selected in the Papyrus Papers library">
+          <img class="screenshot screenshot--light" src="assets/app-captures/library-window-smart-light.png" alt="A Smart Collection selected in the library.">
           <img class="screenshot screenshot--dark" src="assets/app-captures/library-window-smart-dark.png" alt="" aria-hidden="true">
         </div>
-        <figcaption class="shot__caption">Smart Collections — saved queries that always reflect the library.</figcaption>
-      </figure>
-      <figure class="feature__media">
         <div class="shot">
-          <img class="screenshot screenshot--light" src="assets/app-captures/library-window-folder-light.png" alt="A Folder selected in the Papyrus Papers library">
+          <img class="screenshot screenshot--light" src="assets/app-captures/library-window-folder-light.png" alt="A Folder selected in the library.">
           <img class="screenshot screenshot--dark" src="assets/app-captures/library-window-folder-dark.png" alt="" aria-hidden="true">
         </div>
-        <figcaption class="shot__caption">Folders — a stable home that travels into project bundles.</figcaption>
+        <figcaption><b>4</b> A Smart Collection <i>(a)</i> and a Folder <i>(b)</i> over the same library.</figcaption>
       </figure>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ============ Mac + iPad showcase ============ -->
-<section class="section section--sunk" id="platforms">
-  <div class="container">
-    <div class="section-head section-head--center reveal">
-      <span class="eyebrow">Two surfaces, one board</span>
-      <h2 class="section-title">Capture on iPad.<br><em>Assemble on Mac.</em></h2>
-      <p class="section-desc">The same library and the same evidence board on macOS and iPadOS. Mark up a PDF with Apple Pencil on iPad; pin the claim and write from it on the Mac.</p>
-    </div>
-    <div class="showcase reveal">
-      <div class="showcase__stage">
-        <div class="showcase__mac">
-          <div class="shot">
-            <img class="screenshot screenshot--light" src="assets/app-captures/library-window-light.png" alt="The Papyrus Papers library and evidence board on macOS">
-            <img class="screenshot screenshot--dark" src="assets/app-captures/library-window-dark.png" alt="" aria-hidden="true">
-          </div>
-        </div>
-        <div class="showcase__ipad">
-          <div class="shot">
-            <img class="screenshot screenshot--light" src="assets/app-captures/reader-window-light.png" alt="A PDF annotated with Apple Pencil on iPad">
-            <img class="screenshot screenshot--dark" src="assets/app-captures/reader-window-dark.png" alt="" aria-hidden="true">
-          </div>
-        </div>
+    <!-- §5 -->
+    <section class="sec" id="s-export">
+      <h2 class="sec__h">Export &amp; Citation</h2>
+      <p><span class="lead-in">Everything leaves the way it came in.</span> A single paper or a whole project exports as <span class="term">BibTeX</span>, <span class="term">RIS</span>, <span class="term">CSL&nbsp;JSON</span>, <span class="term">Markdown</span>, or a full bundle, and a copied citation is available in six styles. An export report flags missing PDFs, duplicate citekeys, and missing DOI, year, or pages before you hand off. The reference for <code>vaswani2017attention</code>, formatted six ways:</p>
+      <div class="stamps" role="group" aria-label="Citation style">
+        <button data-style="apa" class="is-active">APA</button>
+        <button data-style="mla">MLA</button>
+        <button data-style="chicago">Chicago</button>
+        <button data-style="ieee">IEEE</button>
+        <button data-style="harvard">Harvard</button>
+        <button data-style="vancouver">Vancouver</button>
       </div>
-      <p class="showcase__caption">The same board — captured on iPad, assembled on Mac.</p>
-      <p class="showcase__meta">macOS 14 Sonoma · iPadOS 17 · Apple Pencil</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ Audience ============ -->
-<section class="section">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">Who it's for</span>
-      <h2 class="section-title">For anyone who reads<br><em>for a living.</em></h2>
-    </div>
-    <div class="audience">
-      <div class="claim-card reveal" style="--pp-sec:var(--pp-claim);"><h4>Academic research</h4><p>Literature reviews, related work, thesis chapters, proposals, and paper writing.</p></div>
-      <div class="claim-card reveal reveal-d1" style="--pp-sec:var(--pp-method);"><h4>Engineering R&amp;D</h4><p>Datasheets, manuals, reference designs, standards, and design reviews.</p></div>
-      <div class="claim-card reveal reveal-d2" style="--pp-sec:var(--pp-result);"><h4>Clinical &amp; lab</h4><p>Papers, technical reports, and lab material with notes side by side.</p></div>
-      <div class="claim-card reveal reveal-d3" style="--pp-sec:var(--pp-future);"><h4>Independent scholars</h4><p>Anyone who reads a lot but won't tie their workflow to a web product.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ Ledger (dark board summary) ============ -->
-<section class="section">
-  <div class="container">
-    <div class="ledger reveal">
-      <div class="ledger__grid">
-        <div class="ledger__row"><div class="ledger__num">$3.99<small> Mac</small></div><div class="ledger__label">One-time lifetime unlock. <span class="ledger__check">No subscription ✓</span></div></div>
-        <div class="ledger__row"><div class="ledger__num">$5.99<small> iPad</small></div><div class="ledger__label">One-time lifetime unlock on iPadOS.</div></div>
-        <div class="ledger__row"><div class="ledger__num">30<small>-day</small></div><div class="ledger__label">Full-access trial. No card to start.</div></div>
-        <div class="ledger__row"><div class="ledger__num">0</div><div class="ledger__label">Trackers, analytics, or third-party SDKs.</div></div>
-        <div class="ledger__row"><div class="ledger__num">100%</div><div class="ledger__label">Local-first. Your library lives on your device.</div></div>
-        <div class="ledger__row"><div class="ledger__num">BibTeX<small> · RIS · CSL · .md</small></div><div class="ledger__label">Open export formats. <span class="ledger__check">Yours to take ✓</span></div></div>
+      <div class="cite-render">
+        <p class="cite-line" id="citeLine">Vaswani, A., et al. (2017). Attention is all you need. <i>Advances in Neural Information Processing Systems.</i></p>
+        <dl class="nojs-list">
+          <dt>APA</dt><dd>Vaswani, A., et al. (2017). Attention is all you need. Advances in Neural Information Processing Systems.</dd>
+          <dt>MLA</dt><dd>Vaswani, Ashish, et al. “Attention Is All You Need.” Advances in Neural Information Processing Systems, 2017.</dd>
+          <dt>Chicago</dt><dd>Vaswani, Ashish, et al. “Attention Is All You Need.” Advances in Neural Information Processing Systems (2017).</dd>
+          <dt>IEEE</dt><dd>A. Vaswani et al., “Attention is all you need,” in Advances in Neural Information Processing Systems, 2017.</dd>
+          <dt>Harvard</dt><dd>Vaswani, A. et al. (2017) ‘Attention is all you need’, Advances in Neural Information Processing Systems.</dd>
+          <dt>Vancouver</dt><dd>Vaswani A, et al. Attention is all you need. Advances in Neural Information Processing Systems. 2017.</dd>
+        </dl>
       </div>
-    </div>
-  </div>
-</section>
+      <pre class="spec"><span class="tk">@inproceedings</span>{<span class="ky">vaswani2017attention</span>,
+  title     = {Attention Is All You Need},
+  author    = {Vaswani, Ashish and others},
+  booktitle = {Advances in Neural Information Processing Systems},
+  year      = {2017}
+}</pre>
+    </section>
 
-<!-- ============ CTA ============ -->
-<section class="section" id="pricing">
-  <div class="container">
-    <div class="cta-card reveal">
-      <span class="cta-card__pin"></span>
-      <span class="eyebrow">Start your evidence board</span>
-      <h2 class="section-title">Bring your reading<br><em>back together.</em></h2>
-      <p class="section-desc" style="margin:0 auto var(--pp-s6);">Free to download with a 30-day full-access trial, then a one-time lifetime unlock — $3.99 on Mac, $5.99 on iPad.</p>
+    <!-- §6 -->
+    <section class="sec" id="s-method">
+      <h2 class="sec__h">Method &amp; Provenance</h2>
+      <p><span class="lead-in">Local-first by construction.</span> Your library, PDFs, notes, and search index live on your Mac and iPad. There is no Papyrus account and no telemetry: the app reaches the network only when you ask it to look up metadata or sync. Sync, when enabled, is your own <span class="term">WebDAV</span> server, and it keeps dated restore points so a synced library can be inspected before it is restored.<sup class="fnref"><a href="#fn3b" id="fnref3b">4</a></sup> Open formats in and out mean the library is never a hostage: it is yours to verify, export, and move.</p>
+    </section>
+
+    <!-- Footnotes -->
+    <section class="footnotes" aria-label="Footnotes">
+      <ol>
+        <li id="fn1"><sup>1</sup>&nbsp;Mac App Store, US $3.99; App Store for iPad, US $5.99. Each is a single one-time purchase that includes a 30-day full-access trial; there is no subscription. Prices vary by region. <a class="back" href="#fnref1">↩</a></li>
+        <li id="fn2"><sup>2</sup>&nbsp;A public TestFlight beta is offered for trying pre-release builds; the join link is provided with each beta. <a class="back" href="#fnref2">↩</a></li>
+        <li id="fn3"><sup>3</sup>&nbsp;Annotation tools: highlight, underline, strikethrough, freehand ink (Apple Pencil on iPad), notes, and bookmarks. Notes are Markdown with LaTeX math. <a class="back" href="#fnref3">↩</a></li>
+        <li id="fn3b"><sup>4</sup>&nbsp;Sync is optional and uses a WebDAV destination you control; iCloud sync is not part of this release. <a class="back" href="#fnref3b">↩</a></li>
+      </ol>
+    </section>
+
+    <!-- Availability colophon = conversion -->
+    <section class="colophon" id="availability">
+      <div class="colophon__label">Availability</div>
+      <p>Papyrus Papers is available on the <b>Mac App Store</b> (US $3.99) and the <b>App Store</b> for iPad (US $5.99), each a one-time purchase that includes a 30-day full-access trial.</p>
+      <p class="imprint">One-time lifetime unlock — no account, no telemetry, no subscription.</p>
       <div class="store-row">
-        <a href="https://apps.apple.com/app/id6766133716" class="btn btn--gold" target="_blank" rel="noopener">Download on the App Store</a>
-        <a href="https://testflight.apple.com/" class="testflight-badge" target="_blank" rel="noopener" aria-label="Join the public TestFlight beta">
-          <svg class="tf-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg>
-          <span><span class="tf-sub">PUBLIC BETA</span><span class="tf-main">Join on TestFlight</span></span>
+        <a class="app-store-badge" href="https://apps.apple.com/app/id6766133716" target="_blank" rel="noopener" aria-label="Download Papyrus Papers on the App Store">
+          <img class="app-store-badge__black" src="assets/badge-appstore-black.svg" alt="Download on the App Store">
+          <img class="app-store-badge__white" src="assets/badge-appstore-white.svg" alt="" aria-hidden="true">
         </a>
       </div>
-    </div>
-  </div>
-</section>
+      <p class="testflight-line">Testing a pre-release build? <a href="https://testflight.apple.com/" target="_blank" rel="noopener">Join the public TestFlight beta ↗</a><sup class="fnref"><a href="#fn2" id="fnref2">2</a></sup></p>
+    </section>
 
-<!-- ============ Footer ============ -->
-<footer class="footer">
-  <div class="footer__inner">
-    <div class="footer__top">
-      <div>
-        <div class="footer__brand"><img src="assets/icon.svg" alt="">Papyrus Papers</div>
-        <p class="footer__tagline">A native research desk for Mac and iPad — for researchers, engineers, and anyone who reads to think.</p>
-      </div>
-      <div class="footer__links">
-        <div class="footer__col">
-          <h4>Product</h4>
-          <ul>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#platforms">Mac &amp; iPad</a></li>
-            <li><a href="download.html">Download</a></li>
-            <li><a href="https://github.com/zendax673/papyrus-release/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Changelog</a></li>
-          </ul>
-        </div>
-        <div class="footer__col">
-          <h4>Support</h4>
-          <ul>
-            <li><a href="support.html">Support &amp; FAQ</a></li>
-            <li><a href="privacy.html">Privacy</a></li>
-            <li><a href="terms.html">Terms</a></li>
-            <li><a href="mailto:zdfu189@gmail.com">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer__col">
-          <h4>Get it</h4>
-          <ul>
-            <li><a href="https://apps.apple.com/app/id6766133716" target="_blank" rel="noopener">App Store</a></li>
-            <li><a href="https://testflight.apple.com/" target="_blank" rel="noopener">Public TestFlight</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <p class="footer__copy">© 2026 Papyrus Papers.</p>
-      <p class="footer__colophon">Set locally · v1.2.2 · No telemetry</p>
-    </div>
-  </div>
-</footer>
+    <!-- References -->
+    <section class="refs" id="refs">
+      <h2>References</h2>
+      <ol>
+        <li>Papyrus Papers. <a href="download.html">Download &amp; system requirements.</a> macOS 14+, iPadOS 17+.</li>
+        <li>Papyrus Papers. <a href="support.html">Support &amp; FAQ.</a></li>
+        <li>Papyrus Papers. <a href="privacy.html">Privacy.</a> Local-first; no account; no telemetry.</li>
+        <li>Papyrus Papers. <a href="https://github.com/zendax673/papyrus-release/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Changelog, v1.2.2.</a></li>
+      </ol>
+      <pre class="bibblock" id="bibblock"><span class="tk">@inproceedings</span>{<span class="ky">vaswani2017attention</span>, title={Attention Is All You Need}, author={Vaswani, Ashish and others}, booktitle={Advances in NeurIPS}, year={2017}}
+<span class="tk">@article</span>{<span class="ky">dao2023flashattention2</span>, title={FlashAttention-2}, author={Dao, Tri}, year={2023}}
+<span class="tk">@article</span>{<span class="ky">gu2024mamba</span>, title={Mamba: Linear-Time Sequence Modeling}, author={Gu, Albert and Dao, Tri}, year={2024}}
+<span class="tk">@inproceedings</span>{<span class="ky">liu2023ringattention</span>, title={Ring Attention with Blockwise Transformers}, author={Liu, Hao and others}, year={2023}}</pre>
+      <p class="colophon-foot">Set in Source Serif &amp; JetBrains Mono · Typeset locally · © 2026 Papyrus Papers · v1.2.2 · no telemetry</p>
+    </section>
+
+  </article>
+</main>
+
+<div class="lightbox" aria-hidden="true"><button class="lightbox__close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button><img alt=""></div>
 
 <script>
 (function(){
   var root = document.documentElement;
-  function effective(){ var e = root.getAttribute('data-theme'); return e || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); }
-  function applyTheme(t){
-    if (t === 'system'){ root.removeAttribute('data-theme'); localStorage.removeItem('pp-theme'); }
-    else { root.setAttribute('data-theme', t); localStorage.setItem('pp-theme', t); }
-  }
-  var tb = document.getElementById('themeToggle');
-  if (tb) tb.addEventListener('click', function(){ applyTheme(effective() === 'dark' ? 'light' : 'dark'); });
+  function eff(){ return root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light'); }
+  document.getElementById('themeToggle').addEventListener('click', function(){ var n = eff()==='dark'?'light':'dark'; root.setAttribute('data-theme', n); localStorage.setItem('pp-theme', n); });
 
-  // Reveal on scroll
+  // Running-head section + TOC current + ledger "cited" as you pass each section
+  var secs = [].slice.call(document.querySelectorAll('.sec'));
+  var names = {'s-intro':'1 · Introduction','s-evidence':'2 · The Evidence Board','s-reading':'3 · Reading & Annotation','s-library':'4 · The Library','s-export':'5 · Export & Citation','s-method':'6 · Method & Provenance'};
+  var runSec = document.getElementById('runSec');
+  var tocLinks = [].slice.call(document.querySelectorAll('.toc a'));
   if ('IntersectionObserver' in window){
-    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); } }); }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
-  } else { document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('is-visible'); }); }
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.isIntersecting){
+          var id = e.target.id;
+          runSec.textContent = names[id] || 'Abstract';
+          tocLinks.forEach(function(a){ a.classList.toggle('is-current', a.getAttribute('href') === '#'+id); });
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    secs.forEach(function(s){ io.observe(s); });
+    // ledger fills in as each cited section enters
+    var keyBySec = { 's-evidence': ['vaswani2017attention','dao2023flashattention2','gu2024mamba','liu2023ringattention'] };
+    var io2 = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting){ (keyBySec[e.target.id]||[]).forEach(function(k){ var el = document.querySelector('.ledger-margin__item[data-key="'+k+'"]'); if (el) el.classList.add('is-cited'); }); } });
+    }, { rootMargin: '0px 0px -30% 0px' });
+    secs.forEach(function(s){ io2.observe(s); });
+  } else { document.querySelectorAll('.ledger-margin__item').forEach(function(el){ el.classList.add('is-cited'); }); }
 
-  // Screenshot lightbox
-  var lb = document.createElement('div');
-  lb.className = 'screenshot-lightbox'; lb.setAttribute('aria-hidden','true');
-  lb.innerHTML = '<button class="screenshot-lightbox__close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button><figure style="margin:0;text-align:center"><img alt=""><figcaption class="screenshot-lightbox__caption" hidden></figcaption></figure>';
-  document.body.appendChild(lb);
-  var lbImg = lb.querySelector('img'), lbCap = lb.querySelector('figcaption'), lbClose = lb.querySelector('.screenshot-lightbox__close'), lastTrig = null;
-  function openLb(src, alt, trig){ lbImg.src = src; lbImg.alt = alt||''; if (alt && alt.trim()){ lbCap.textContent = alt; lbCap.hidden = false; } else lbCap.hidden = true; lb.classList.add('is-open'); document.body.style.overflow='hidden'; lastTrig = trig; setTimeout(function(){ lbClose.focus(); }, 50); }
-  function closeLb(){ lb.classList.remove('is-open'); document.body.style.overflow=''; if (lastTrig) lastTrig.focus(); }
-  lbClose.addEventListener('click', closeLb);
-  lb.addEventListener('click', function(e){ if (e.target === lb) closeLb(); });
-  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeLb(); });
-  var zoom = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>';
-  document.querySelectorAll('.shot').forEach(function(host){
-    if (!host.querySelector('.screenshot')) return;
-    var t = document.createElement('button'); t.type='button'; t.className='screenshot-zoom-trigger'; t.setAttribute('aria-label','Enlarge'); t.innerHTML = zoom; host.appendChild(t);
-    t.addEventListener('click', function(){ var v = Array.prototype.find.call(host.querySelectorAll('.screenshot'), function(i){ return i.offsetParent !== null; }) || host.querySelector('.screenshot'); if (v) openLb(v.currentSrc || v.src, v.alt, t); });
+  // Citation style stamps
+  var CITES = {
+    apa: 'Vaswani, A., et al. (2017). Attention is all you need. <i>Advances in Neural Information Processing Systems.</i>',
+    mla: 'Vaswani, Ashish, et al. “Attention Is All You Need.” <i>Advances in Neural Information Processing Systems,</i> 2017.',
+    chicago: 'Vaswani, Ashish, et al. “Attention Is All You Need.” <i>Advances in Neural Information Processing Systems</i> (2017).',
+    ieee: 'A. Vaswani et al., “Attention is all you need,” in <i>Advances in Neural Information Processing Systems,</i> 2017.',
+    harvard: 'Vaswani, A. et al. (2017) ‘Attention is all you need’, <i>Advances in Neural Information Processing Systems.</i>',
+    vancouver: 'Vaswani A, et al. Attention is all you need. Advances in Neural Information Processing Systems. 2017.'
+  };
+  var line = document.getElementById('citeLine');
+  document.querySelectorAll('.stamps button').forEach(function(b){
+    b.addEventListener('click', function(){
+      document.querySelectorAll('.stamps button').forEach(function(x){ x.classList.remove('is-active'); });
+      b.classList.add('is-active');
+      line.innerHTML = CITES[b.dataset.style];
+    });
   });
 
-  // Mobile nav
-  (function(){
-    var nav = document.querySelector('.nav'), btn = document.getElementById('navHamburger'), panel = document.getElementById('navMobilePanel');
-    if (!nav || !btn || !panel) return;
-    document.querySelectorAll('.nav__links .hide-mobile a').forEach(function(a){ panel.appendChild(a.cloneNode(true)); });
-    function close(){ nav.classList.remove('is-menu-open'); panel.hidden = true; btn.setAttribute('aria-expanded','false'); }
-    btn.addEventListener('click', function(){ var open = nav.classList.toggle('is-menu-open'); panel.hidden = !open; btn.setAttribute('aria-expanded', open ? 'true':'false'); });
-    panel.addEventListener('click', function(e){ if (e.target.tagName === 'A') close(); });
-    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
-    window.matchMedia('(min-width: 721px)').addEventListener('change', function(e){ if (e.matches) close(); });
-  })();
+  // Copy .bib
+  var copyBtn = document.getElementById('copyBib');
+  if (copyBtn) copyBtn.addEventListener('click', function(){
+    var txt = document.getElementById('bibblock').innerText;
+    navigator.clipboard && navigator.clipboard.writeText(txt).then(function(){ var o = copyBtn.textContent; copyBtn.textContent = 'Copied ✓'; setTimeout(function(){ copyBtn.textContent = o; }, 1400); });
+  });
+
+  // Lightbox
+  var lb = document.querySelector('.lightbox'), lbImg = lb.querySelector('img'), lbClose = lb.querySelector('.lightbox__close'), last=null;
+  function open(src, alt, t){ lbImg.src = src; lbImg.alt = alt||''; lb.classList.add('is-open'); document.body.style.overflow='hidden'; last=t; }
+  function close(){ lb.classList.remove('is-open'); document.body.style.overflow=''; if(last)last.focus(); }
+  lbClose.addEventListener('click', close);
+  lb.addEventListener('click', function(e){ if (e.target===lb) close(); });
+  document.addEventListener('keydown', function(e){ if (e.key==='Escape') close(); });
+  var zoom='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>';
+  document.querySelectorAll('.shot').forEach(function(host){
+    if (!host.querySelector('.screenshot')) return;
+    var t = document.createElement('button'); t.type='button'; t.className='zoom'; t.setAttribute('aria-label','Enlarge'); t.innerHTML=zoom; host.appendChild(t);
+    t.addEventListener('click', function(){ var v = Array.prototype.find.call(host.querySelectorAll('.screenshot'), function(i){ return i.offsetParent!==null; }) || host.querySelector('.screenshot'); if (v) open(v.currentSrc||v.src, v.alt, t); });
+  });
 })();
 </script>
-
 </body>
 </html>
