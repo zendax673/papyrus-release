@@ -4,275 +4,139 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Support — Papyrus Papers</title>
-  <meta name="description" content="Support and frequently asked questions for Papyrus Papers.">
+  <meta name="description" content="Support, FAQ, troubleshooting, and contact information for Papyrus Papers.">
+  <meta name="theme-color" content="#efeee9">
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
+<script>(function(){var t=localStorage.getItem('pp-theme');if(t)document.documentElement.setAttribute('data-theme',t);document.documentElement.classList.add('js');})();</script>
 
-<script>
-  (function(){ var t = localStorage.getItem('pp-theme'); if (t) document.documentElement.setAttribute('data-theme', t); })();
-</script>
-
-<nav class="nav">
-  <div class="nav__inner">
-    <a href="./index.html" class="nav__brand">
-      <img src="assets/icon.svg" alt="">
-      Papyrus Papers
-    </a>
-    <ul class="nav__links">
-      <li class="hide-mobile"><a href="index.html#features">Features</a></li>
-      <li class="hide-mobile"><a href="support.html">Support</a></li>
-      <li class="hide-mobile"><a href="privacy.html">Privacy</a></li>
-      <li class="hide-mobile"><a href="terms.html">Terms</a></li>
-      <li><a href="download.html" class="nav__download">Download</a></li>
-      <li>
-        <button class="nav__theme" id="themeToggle" aria-label="Toggle theme">
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-        </button>
-      </li>
-      <li class="nav__hamburger-li">
-        <button class="nav__hamburger" id="navHamburger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navMobilePanel">
-          <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-          <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-        </button>
-      </li>
-    </ul>
-  </div>
-  <div class="nav__mobile-panel" id="navMobilePanel" hidden></div>
-</nav>
-
-<header class="page-header">
-  <div class="container container--narrow">
-    <span class="eyebrow">Support &amp; FAQ</span>
-    <h1 class="display" style="margin-top: 22px;">How can we<br><em>help today?</em></h1>
-    <p class="text-secondary" style="margin-top: 18px; font-size: 17px;">Common questions, troubleshooting, and how to file a good bug report.</p>
-  </div>
+<header class="runhead">
+  <span class="runhead__left"><img src="assets/icon.svg" alt=""><span class="hide-xs">Papyrus Papers&nbsp;·&nbsp;</span><span class="sc">Support</span></span>
+  <span class="runhead__sec">FAQ</span>
+  <span class="runhead__right">
+    <a class="runhead__get" href="index.html">Home</a>
+    <a class="runhead__get" href="download.html">Download</a>
+    <button class="runhead__theme" id="themeToggle" aria-label="Toggle light or dark">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </span>
 </header>
 
-<main class="page-content">
-  <div class="container container--narrow">
-
-    <div class="card">
-      <p><strong>Bug reports and feature requests:</strong> <a href="https://github.com/zendax673/papyrus-release/issues" target="_blank" rel="noopener">github.com/zendax673/papyrus-release/issues</a></p>
-      <p><strong>Email:</strong> <a href="mailto:zdfu189@gmail.com">zdfu189@gmail.com</a></p>
-      <p>Before opening an issue, check the in-app Help screens, the FAQ below, and the latest <a href="https://github.com/zendax673/papyrus-release/blob/gh-pages/CHANGELOG.md" target="_blank" rel="noopener">Changelog</a>.</p>
-    </div>
-
-    <div class="toc" aria-label="Quick links">
+<main class="doc-page">
+  <aside class="doc-margin" aria-label="Document navigation">
+    <nav class="doc-toc" aria-label="Support sections">
+      <div class="toc__head">Support</div>
+      <a href="#start">Start Here</a>
       <a href="#faq">FAQ</a>
-      <a href="#writing">Writing workflow</a>
-      <a href="#bug">Filing a bug</a>
-      <a href="#logs">Logs &amp; diagnostics</a>
-      <a href="#sensitive">Sensitive data</a>
+      <a href="#bugs">Bug Reports</a>
       <a href="#security">Security</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <nav class="doc-toc doc-toc--secondary" aria-label="Related pages">
+      <div class="toc__head">Pages</div>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="download.html">Download</a>
+    </nav>
+  </aside>
+
+  <article class="doc-body">
+    <div class="doc-titleblock">
+      <div class="doc-kicker">Support &amp; FAQ</div>
+      <h1>Help for the whole research workflow.</h1>
+      <p>Use this page for setup questions, library behavior, reading and annotation, project evidence, sync, exports, and clear bug reports.</p>
+      <div class="doc-meta">Last updated: June 13, 2026</div>
     </div>
 
-    <h2 id="faq">Frequently Asked Questions</h2>
+    <section class="doc-card" id="start">
+      <h2>Start Here</h2>
+      <div class="doc-grid">
+        <div>
+          <h3>Email</h3>
+          <p><a href="mailto:zdfu189@gmail.com">zdfu189@gmail.com</a></p>
+        </div>
+        <div>
+          <h3>Issues</h3>
+          <p><a href="https://github.com/zendax673/papyrus-release/issues" target="_blank" rel="noopener">Report bugs or request features</a></p>
+        </div>
+        <div>
+          <h3>Before Reporting</h3>
+          <p>Check the app version, note the affected paper or project, and include exact steps when possible.</p>
+        </div>
+      </div>
+    </section>
 
-    <h3>Is Papyrus Papers cloud-first?</h3>
-    <p>No. Papyrus Papers is local-first. Your library database, imported PDFs, notes, search indexes, and backups live on your Mac unless you explicitly export, share, or sync them.</p>
+    <section class="doc-section" id="faq">
+      <h2>FAQ</h2>
 
-    <h3>What is the difference between Copy Into Library and Keep PDFs In Place?</h3>
-    <p><strong>Copy Into Library</strong> copies the PDF into the managed library storage. <strong>Keep PDFs In Place</strong> leaves the file where it already lives and stores a security-scoped bookmark. Use Copy if you want Papyrus Papers to own the file lifecycle; use Keep if you already manage PDFs in Finder or a synced folder.</p>
+      <h3>Is Papyrus Papers cloud-first?</h3>
+      <p>No. Papyrus Papers is local-first. Your library database, PDFs, notes, search indexes, backups, and project evidence live on your device unless you explicitly export, share, or sync them.</p>
 
-    <h3>Does Papyrus Papers upload my PDFs automatically?</h3>
-    <p>No. Papyrus Papers only sends files off your Mac when you explicitly enable WebDAV sync, share via the macOS share sheet, or export. Metadata lookup sends identifiers and queries, not your library.</p>
+      <h3>What is the difference between Copy Into Library and Keep PDFs In Place?</h3>
+      <p>Copy Into Library stores the PDF inside Papyrus-managed library storage. Keep PDFs In Place leaves the file where it already lives and stores a system bookmark so Papyrus can reopen it later.</p>
 
-    <h3>Which metadata services does Papyrus Papers use?</h3>
-    <p>Papyrus Papers can use Crossref, arXiv, Semantic Scholar, OpenAlex, OpenLibrary, NCBI / PubMed / PMC identifier services, Zenodo, and doi.org links for metadata lookup, identifier conversion, title repair, and citation-count enrichment. It also reads embedded XMP metadata directly from PDFs without a network request. The resolver registry is pluggable, so additional sources can be added without changing the rest of the app.</p>
+      <h3>Which metadata sources are used?</h3>
+      <p>Papyrus Papers can look up metadata through Crossref, arXiv, Semantic Scholar, OpenAlex, OpenLibrary, NCBI / PubMed / PMC identifier services, Zenodo, and DOI links. It also reads embedded PDF metadata without a network request.</p>
 
-    <h3>Where is the library stored?</h3>
-    <p>Under <code>~/Library/Group Containers/group.com.zhendafu.Papyrus/Library/Application Support/</code>. Managed PDFs and the full-text index live in the same App Group container.</p>
+      <h3>Does Papyrus upload PDFs for metadata lookup?</h3>
+      <p>No. Metadata lookup sends identifiers or search terms such as DOI, title, author, ISBN, PMID, or arXiv ID. PDFs are not uploaded for ordinary metadata enrichment.</p>
 
-    <h3>Does Papyrus Papers keep backups?</h3>
-    <p>Yes. Rolling local database backups, up to seven snapshots. You can also trigger a manual backup from Settings.</p>
+      <h3>How does sync work?</h3>
+      <p>Sync is optional and uses a WebDAV server you configure. Papyrus Papers can keep dated restore points so you can inspect a previous synced library before restoring it.</p>
 
-    <h3>How does sync work?</h3>
-    <p>The built-in sync path is WebDAV. You choose the server, username, password, and remote folder. Papyrus Papers can also coexist with folders synced by other tools, but iCloud Drive sync is not part of the app.</p>
+      <h3>What is the Evidence Board?</h3>
+      <p>The Evidence Board is a project-level workspace for claims, quotes, page numbers, interpretations, section roles, confidence scores, and citation keys. It is meant to keep the reasoning behind a draft attached to the papers that support it.</p>
 
-    <h3>Can I restore an older synced library?</h3>
-    <p>Yes. Successful WebDAV syncs keep dated restore points. The restore flow inspects the remote copy first, shows the available snapshots, and applies the selected copy safely on the next launch.</p>
+      <h3>Can one paper appear in several projects?</h3>
+      <p>Yes. A paper can have different project-specific roles and evidence without changing its global library metadata.</p>
 
-    <h3>What is the Evidence Board?</h3>
-    <p>The Evidence Board is a project-level table for turning reading into writing material. It keeps the claim or theme, paper, quote, page, interpretation, manuscript section, citation key, and confidence together so you can draft from evidence instead of hunting through separate notes.</p>
+      <h3>What can Papyrus export?</h3>
+      <p>Individual papers and projects can export in open formats such as BibTeX, RIS, CSL JSON, Markdown, and project bundles. Export preflight can flag sparse metadata, duplicate cite keys, missing PDFs, and other handoff problems.</p>
 
-    <h3>Do project roles change the paper globally?</h3>
-    <p>No. Project roles are specific to one project. The same paper can be background reading in one manuscript, cited in the method section of another, and excluded from a third.</p>
+      <h3>Does Papyrus Papers require an account?</h3>
+      <p>No Papyrus Papers account is required.</p>
+    </section>
 
-    <h3>Does Papyrus Papers need an account?</h3>
-    <p>No Papyrus Papers account is required.</p>
+    <section class="doc-section" id="bugs">
+      <h2>Bug Reports</h2>
+      <p>A useful bug report includes:</p>
+      <ul>
+        <li>macOS or iPadOS version</li>
+        <li>Papyrus Papers version and build number</li>
+        <li>Whether the PDF was copied into the library or kept in place</li>
+        <li>Whether sync, metadata enrichment, project export, or App Store purchase state was involved</li>
+        <li>Step-by-step reproduction notes</li>
+        <li>Screenshots or screen recordings when they clarify the problem</li>
+      </ul>
+      <p>Do not post private PDFs, WebDAV passwords, access tokens, private server URLs, or confidential research material in a public issue.</p>
+    </section>
 
-    <h3>Does Papyrus Papers include AI features?</h3>
-    <p>On supported Macs and locales, Papyrus Papers can call Apple-provided Foundation Models for background metadata synthesis when an enrichment source returns ambiguous or partial data. Nothing in Papyrus Papers requires AI to function — every user-facing feature works without it, and enrichment falls back to non-AI heuristics on unsupported hardware.</p>
+    <section class="doc-section" id="security">
+      <h2>Security</h2>
+      <p>If you believe you found a security issue, avoid posting exploit details publicly. Email <a href="mailto:zdfu189@gmail.com">zdfu189@gmail.com</a> with a short description and a safe way to reproduce or discuss it.</p>
+    </section>
 
-    <h3>Does Papyrus Papers index my library in Spotlight?</h3>
-    <p>Yes. Core Spotlight integration lets papers appear in macOS system search. This is local, not a cloud service.</p>
+    <section class="doc-section" id="contact">
+      <h2>Contact</h2>
+      <p>Email <a href="mailto:zdfu189@gmail.com">zdfu189@gmail.com</a> or open an issue at <a href="https://github.com/zendax673/papyrus-release/issues" target="_blank" rel="noopener">github.com/zendax673/papyrus-release/issues</a>.</p>
+    </section>
 
-    <h2 id="writing">Writing Workflow</h2>
-    <p>For a manuscript, start with a Project. Add papers, assign project-specific roles, capture quotes or manual evidence into the Evidence Board, and use project-scoped synthesis search to find notes, highlights, and PDF text across only that working set.</p>
-    <p>Before exporting, run project preflight to catch missing DOI/year/pages, duplicate citation keys, project papers without PDFs, references mentioned in notes but missing from the project, and bibliography entries that are never cited in the project note.</p>
-
-    <h2 id="bug">Filing a Bug Report</h2>
-    <p>Include enough detail to reproduce the problem:</p>
-    <ul>
-      <li>macOS version</li>
-      <li>Papyrus Papers version, commit hash, or build date</li>
-      <li>Whether the PDF was copied into the library or kept in place</li>
-      <li>Step-by-step reproduction instructions</li>
-      <li>Whether sync, export, or metadata enrichment were involved</li>
-      <li>Screenshots or screen recordings when helpful</li>
-    </ul>
-
-    <h2 id="logs">Logs and Diagnostics</h2>
-    <p>Papyrus Papers writes to the macOS unified logging system. A relevant Console excerpt can help when reporting runtime issues. Also useful:</p>
-    <ul>
-      <li>Whether automatic backups were enabled</li>
-      <li>Whether the issue persists after restarting</li>
-      <li>Whether it affects one paper, one project, or the whole library</li>
-    </ul>
-
-    <h2 id="sensitive">Sensitive Data</h2>
-    <p>Do not post secrets or private material in a public issue. Avoid including WebDAV passwords, OAuth tokens, private server URLs, or confidential PDFs.</p>
-
-    <h2 id="security">Security Issues</h2>
-    <p>If you believe you found a security issue, avoid posting exploit details publicly. Email <a href="mailto:zdfu189@gmail.com">zdfu189@gmail.com</a> with a minimal description and we will follow up with a private reporting channel.</p>
-
-    <p class="updated-date">Last updated: June 1, 2026</p>
-  </div>
+    <footer class="doc-footer">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="download.html">Download</a>
+    </footer>
+  </article>
 </main>
-
-<footer class="footer">
-  <div class="footer__inner">
-    <div class="footer__top">
-      <div>
-        <div class="footer__brand"><img src="assets/icon.svg" alt="">Papyrus Papers</div>
-        <p class="footer__tagline">A native macOS workspace for researchers, engineers, and anyone who reads to think.</p>
-      </div>
-      <div class="footer__links">
-        <div class="footer__col">
-          <h4>Product</h4>
-          <ul>
-            <li><a href="index.html#features">Features</a></li>
-            <li><a href="index.html#workflow">Workflow</a></li>
-            <li><a href="download.html">Download</a></li>
-            <li><a href="https://github.com/zendax673/papyrus-release/blob/gh-pages/CHANGELOG.md" target="_blank" rel="noopener">Changelog</a></li>
-          </ul>
-        </div>
-        <div class="footer__col">
-          <h4>Support</h4>
-          <ul>
-            <li><a href="support.html">Support &amp; FAQ</a></li>
-            <li><a href="privacy.html">Privacy</a></li>
-            <li><a href="terms.html">Terms</a></li>
-            <li><a href="mailto:zdfu189@gmail.com">Contact</a></li>
-            <li><a href="https://github.com/zendax673/papyrus-release/issues" target="_blank" rel="noopener">Report an issue</a></li>
-          </ul>
-        </div>
-        <div class="footer__col">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="FAQ.md">FAQ</a></li>
-            <li><a href="CHANGELOG.md">Changelog</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <p class="footer__copy">© 2026 Papyrus Papers. Released under the MIT License.</p>
-      <p class="footer__req">Requires macOS 14.0 Sonoma or later.</p>
-    </div>
-  </div>
-</footer>
-
-<div class="tweaks-panel" id="tweaksPanel">
-  <div class="tweaks-panel__title"><span>Tweaks</span><button class="tweaks-panel__close" id="tweaksClose" aria-label="Close">×</button></div>
-  <div class="tweaks-row">
-    <span class="tweaks-row__label">Theme</span>
-    <div class="tweaks-seg" id="themeSeg">
-      <button data-theme="light">Light</button>
-      <button data-theme="dark">Dark</button>
-      <button data-theme="system">System</button>
-    </div>
-  </div>
-</div>
 
 <script>
 (function(){
   var root = document.documentElement;
-  function applyTheme(t){
-    if (t === 'system') {
-      root.removeAttribute('data-theme');
-      localStorage.removeItem('pp-theme');
-      var prefers = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      root.setAttribute('data-theme', prefers);
-      localStorage.setItem('pp-theme-mode', 'system');
-    } else {
-      root.setAttribute('data-theme', t);
-      localStorage.setItem('pp-theme', t);
-      localStorage.setItem('pp-theme-mode', t);
-    }
-    syncThemeUI();
-  }
-  function syncThemeUI(){
-    var mode = localStorage.getItem('pp-theme-mode') || (root.getAttribute('data-theme') || 'light');
-    document.querySelectorAll('#themeSeg button').forEach(function(b){ b.classList.toggle('is-active', b.dataset.theme === mode); });
-  }
-  document.getElementById('themeToggle').addEventListener('click', function(){
-    var explicit = root.getAttribute('data-theme');
-    var effective = explicit
-      || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    applyTheme(effective === 'dark' ? 'light' : 'dark');
-  });
-  var seg = document.getElementById('themeSeg');
-  if (seg) seg.addEventListener('click', function(e){
-    var b = e.target.closest('button[data-theme]'); if (!b) return;
-    applyTheme(b.dataset.theme);
-  });
-  syncThemeUI();
-  var panel = document.getElementById('tweaksPanel');
-  window.addEventListener('message', function(e){
-    if (!e.data || !e.data.type) return;
-    if (e.data.type === '__activate_edit_mode')   panel.classList.add('is-open');
-    if (e.data.type === '__deactivate_edit_mode') panel.classList.remove('is-open');
-  });
-  document.getElementById('tweaksClose').addEventListener('click', function(){
-    panel.classList.remove('is-open');
-    window.parent.postMessage({type:'__edit_mode_dismissed'}, '*');
-  });
-  window.parent.postMessage({type:'__edit_mode_available'}, '*');
-  // __papyrusMobileNavInit
-
-  // Mobile nav hamburger: clone .hide-mobile links into the panel and toggle
-  (function(){
-    var nav = document.querySelector('.nav');
-    var btn = document.getElementById('navHamburger');
-    var panel = document.getElementById('navMobilePanel');
-    if (!nav || !btn || !panel) return;
-    // Populate panel from existing nav__links .hide-mobile items so links
-    // stay in one place (no duplicate hardcoding per page).
-    document.querySelectorAll('.nav__links .hide-mobile a').forEach(function(a){
-      panel.appendChild(a.cloneNode(true));
-    });
-    function close(){
-      nav.classList.remove('is-menu-open');
-      panel.hidden = true;
-      btn.setAttribute('aria-expanded','false');
-    }
-    btn.addEventListener('click', function(){
-      var open = nav.classList.toggle('is-menu-open');
-      panel.hidden = !open;
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    panel.addEventListener('click', function(e){ if (e.target.tagName === 'A') close(); });
-    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
-    // Close if viewport grows past mobile breakpoint while menu is open.
-    window.matchMedia('(min-width: 721px)').addEventListener('change', function(e){
-      if (e.matches) close();
-    });
-  })();
-
+  function eff(){ return root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light'); }
+  document.getElementById('themeToggle').addEventListener('click', function(){ var n = eff()==='dark'?'light':'dark'; root.setAttribute('data-theme', n); localStorage.setItem('pp-theme', n); });
 })();
 </script>
 </body>

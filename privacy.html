@@ -4,277 +4,116 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy — Papyrus Papers</title>
-  <meta name="description" content="Privacy policy for Papyrus Papers, a local-first macOS research workspace.">
+  <meta name="description" content="Privacy policy for Papyrus Papers, a local-first research desk for macOS and iPad.">
+  <meta name="theme-color" content="#efeee9">
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
+<script>(function(){var t=localStorage.getItem('pp-theme');if(t)document.documentElement.setAttribute('data-theme',t);document.documentElement.classList.add('js');})();</script>
 
-<script>
-  (function(){ var t = localStorage.getItem('pp-theme'); if (t) document.documentElement.setAttribute('data-theme', t); })();
-</script>
-
-<nav class="nav">
-  <div class="nav__inner">
-    <a href="./index.html" class="nav__brand">
-      <img src="assets/icon.svg" alt="">
-      Papyrus Papers
-    </a>
-    <ul class="nav__links">
-      <li class="hide-mobile"><a href="index.html#features">Features</a></li>
-      <li class="hide-mobile"><a href="support.html">Support</a></li>
-      <li class="hide-mobile"><a href="privacy.html">Privacy</a></li>
-      <li class="hide-mobile"><a href="terms.html">Terms</a></li>
-      <li><a href="download.html" class="nav__download">Download</a></li>
-      <li>
-        <button class="nav__theme" id="themeToggle" aria-label="Toggle theme">
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-        </button>
-      </li>
-      <li class="nav__hamburger-li">
-        <button class="nav__hamburger" id="navHamburger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navMobilePanel">
-          <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-          <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-        </button>
-      </li>
-    </ul>
-  </div>
-  <div class="nav__mobile-panel" id="navMobilePanel" hidden></div>
-</nav>
-
-<header class="page-header">
-  <div class="container container--narrow">
-    <span class="eyebrow">Privacy Policy</span>
-    <h1 class="display" style="margin-top: 22px;">Your library<br><em>stays yours.</em></h1>
-    <p class="text-secondary" style="margin-top: 18px; font-size: 17px;">Last updated · May 19, 2026</p>
-  </div>
+<header class="runhead">
+  <span class="runhead__left"><img src="assets/icon.svg" alt=""><span class="hide-xs">Papyrus Papers&nbsp;·&nbsp;</span><span class="sc">Privacy</span></span>
+  <span class="runhead__sec">Policy</span>
+  <span class="runhead__right">
+    <a class="runhead__get" href="index.html">Home</a>
+    <a class="runhead__get" href="download.html">Download</a>
+    <button class="runhead__theme" id="themeToggle" aria-label="Toggle light or dark">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </span>
 </header>
 
-<main class="page-content">
-  <div class="container container--narrow">
+<main class="doc-page">
+  <aside class="doc-margin" aria-label="Document navigation">
+    <nav class="doc-toc" aria-label="Privacy sections">
+      <div class="toc__head">Privacy</div>
+      <a href="#summary">Summary</a>
+      <a href="#local">Local Data</a>
+      <a href="#network">Network Use</a>
+      <a href="#sync">Sync</a>
+      <a href="#choices">Your Choices</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <nav class="doc-toc doc-toc--secondary" aria-label="Related pages">
+      <div class="toc__head">Pages</div>
+      <a href="download.html">Download</a>
+      <a href="support.html">Support</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </aside>
 
-    <div class="card">
-      <p><strong>Papyrus Papers is local-first.</strong> Your library, notes, PDFs, indexes, and backups are stored on your Mac unless you explicitly choose to export, share, or sync them. No Papyrus Papers account is required.</p>
+  <article class="doc-body">
+    <div class="doc-titleblock">
+      <div class="doc-kicker">Privacy Policy</div>
+      <h1>Your library stays yours.</h1>
+      <p>Papyrus Papers is local-first. Your PDFs, notes, annotations, evidence, search index, and library database stay on your Mac or iPad unless you choose to export, share, look up metadata, or sync with a server you control.</p>
+      <div class="doc-meta">Last updated: June 13, 2026</div>
     </div>
 
-    <h2>Summary</h2>
-    <ul>
-      <li>Papyrus Papers does not require a Papyrus Papers account.</li>
-      <li>Papyrus Papers does not ship analytics, telemetry, or crash-report SDKs.</li>
-      <li>Your data is stored locally on your Mac.</li>
-      <li>Some features contact third-party services when you use them, including public metadata providers, your configured WebDAV server, and Apple-provided Foundation Models on supported systems.</li>
-    </ul>
+    <section class="doc-card" id="summary">
+      <h2>Summary</h2>
+      <ul>
+        <li>No Papyrus Papers account is required.</li>
+        <li>Papyrus Papers does not include advertising, telemetry, or third-party analytics SDKs.</li>
+        <li>Your library is stored locally by default.</li>
+        <li>Network requests happen only for features you choose, such as metadata lookup, App Store purchase handling, or WebDAV sync.</li>
+      </ul>
+    </section>
 
-    <h2>Data Stored Locally</h2>
-    <p>Papyrus Papers stores app data on your Mac, including:</p>
-    <ul>
-      <li>The main library database</li>
-      <li>Imported PDFs</li>
-      <li>Local full-text search indexes</li>
-      <li>Automatic database backups (up to seven rolling snapshots)</li>
-      <li>App preferences and state in macOS UserDefaults</li>
-      <li>Security-scoped bookmark data for linked PDFs</li>
-    </ul>
+    <section class="doc-section" id="local">
+      <h2>Local Data</h2>
+      <p>Papyrus Papers stores research data on your device, including the library database, imported PDFs, linked-file bookmarks, annotations, Markdown notes, project evidence, reading progress, local search indexes, preferences, and rolling local backups.</p>
+      <p>Credentials that should not be stored in plain text, such as WebDAV passwords, are stored through the system keychain where supported by the platform.</p>
+    </section>
 
-    <h2>Credentials and Sensitive Configuration</h2>
-    <p>Papyrus Papers uses the macOS Keychain for secrets that should not be stored in plain text, including WebDAV passwords. Preparatory OAuth configuration code exists for possible future cloud integrations, but the v1.0 app surfaces WebDAV sync and does not require a cloud account.</p>
+    <section class="doc-section" id="network">
+      <h2>Network Use</h2>
+      <p>Papyrus Papers does not upload your library to a Papyrus cloud. The app may contact outside services only when a feature needs a network request.</p>
+      <h3>Metadata lookup</h3>
+      <p>When you ask Papyrus Papers to enrich metadata, it may send public identifiers or search terms, such as DOI, arXiv ID, ISBN, PMID, title, or author names, to services including Crossref, arXiv, Semantic Scholar, OpenAlex, OpenLibrary, NCBI / PubMed / PMC identifier services, Zenodo, and doi.org.</p>
+      <h3>Apple services</h3>
+      <p>Downloads, trials, purchases, refunds, Family Sharing, and App Store account records are handled by Apple. Apple may process data according to Apple's own policies and the App Store account you use.</p>
+      <h3>System language models</h3>
+      <p>On supported systems, Papyrus Papers may use Apple-provided on-device Foundation Models for metadata synthesis when enrichment results are ambiguous or incomplete. Papyrus Papers does not run its own hosted AI backend.</p>
+    </section>
 
-    <h2>System Integrations</h2>
-    <ul>
-      <li><strong>Core Spotlight</strong> indexing for local system search</li>
-      <li><strong>Security-scoped bookmarks</strong> for reopening linked PDFs</li>
-      <li><strong>App Group storage</strong> for sharing library files between components</li>
-    </ul>
+    <section class="doc-section" id="sync">
+      <h2>Sync</h2>
+      <p>Sync is optional. If enabled, Papyrus Papers connects to the WebDAV destination you configure. Sync may include the library database, PDFs, notes, evidence, sync manifests, restore points, your server URL, and your username. The WebDAV server's storage, retention, security, and access controls are governed by that server.</p>
+    </section>
 
-    <h2>Network Requests and Third-Party Services</h2>
-    <p>Papyrus Papers makes network requests only when you use features that need them.</p>
+    <section class="doc-section" id="choices">
+      <h2>Your Choices</h2>
+      <ul>
+        <li>Use Papyrus Papers offline.</li>
+        <li>Skip metadata enrichment when you do not want identifier lookups.</li>
+        <li>Leave WebDAV sync disabled.</li>
+        <li>Use Copy Into Library when you want Papyrus to manage PDFs, or Keep PDFs In Place when you want files to remain where they are.</li>
+        <li>Delete exports or shared files from their destination when you no longer need them.</li>
+      </ul>
+      <p>Deleting items removes them from active use, but older local backups or WebDAV restore points may contain historical copies until they rotate or are removed according to your settings and server retention.</p>
+    </section>
 
-    <h3>Metadata and Citation Services</h3>
-    <p>Papyrus Papers may send public identifiers or search queries (such as DOI, arXiv ID, ISBN, PMID, title, or author names) to:</p>
-    <ul>
-      <li>Crossref</li>
-      <li>arXiv</li>
-      <li>Semantic Scholar</li>
-      <li>OpenAlex</li>
-      <li>OpenLibrary</li>
-      <li>NCBI / PubMed / PMC identifier services</li>
-      <li>Zenodo</li>
-      <li>doi.org links for DOI-based lookups</li>
-    </ul>
-    <p>These are used for metadata lookup, title repair, identifier conversion, and citation-count enrichment. Papyrus Papers also reads embedded XMP metadata directly from PDFs without a network request.</p>
+    <section class="doc-section" id="contact">
+      <h2>Contact</h2>
+      <p>For privacy questions, email <a href="mailto:zdfu189@gmail.com">zdfu189@gmail.com</a>, visit <a href="support.html">Support</a>, or open an issue on <a href="https://github.com/zendax673/papyrus-release/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+    </section>
 
-    <h3>WebDAV Sync</h3>
-    <p>If you enable sync, Papyrus Papers connects to the WebDAV server you configure. This can include the library database, imported PDFs, sync manifests, and your server URL and username. You are responsible for the WebDAV server you choose.</p>
-
-    <h3>Apple Foundation Models</h3>
-    <p>On supported Macs and locales, Papyrus Papers can call Apple's system language-model APIs for background metadata synthesis when an enrichment source returns ambiguous or partial data. Papyrus Papers does not operate its own hosted AI backend. Availability and processing behavior are controlled by Apple and the operating system.</p>
-
-    <h2>What Papyrus Papers Does Not Do by Default</h2>
-    <ul>
-      <li>Upload your library to a Papyrus Papers cloud service</li>
-      <li>Require an always-on internet connection</li>
-      <li>Share your data with an advertising network</li>
-      <li>Run a bundled third-party analytics SDK</li>
-    </ul>
-
-    <h2>Sharing, Export, and Sync</h2>
-    <p>Papyrus Papers can share or export data when you ask it to: sharing via the macOS share sheet, exporting BibTeX/RIS/Markdown, or syncing via WebDAV.</p>
-
-    <h2>Retention and Deletion</h2>
-    <ul>
-      <li>Deleting items removes them from active use, but older backup snapshots may contain historical data until rotated.</li>
-      <li>WebDAV retention depends on your server and backup practices.</li>
-      <li>Shared or exported files are controlled by the destination you choose.</li>
-    </ul>
-
-    <h2>Your Choices</h2>
-    <p>You can limit network exposure by:</p>
-    <ul>
-      <li>Using Papyrus Papers offline</li>
-      <li>Skipping metadata lookup features</li>
-      <li>Leaving WebDAV sync disabled</li>
-      <li>Avoiding metadata enrichment so the on-device language model never runs</li>
-      <li>Choosing Copy Into Library or Keep PDFs In Place</li>
-    </ul>
-
-    <h2>Questions</h2>
-    <p>For privacy or data-handling questions, email <a href="mailto:zdfu189@gmail.com">zdfu189@gmail.com</a>, see the <a href="support.html">Support page</a>, or open an issue on <a href="https://github.com/zendax673/papyrus-release/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-
-    <p class="updated-date">Last updated: May 19, 2026</p>
-  </div>
+    <footer class="doc-footer">
+      <a href="support.html">Support</a>
+      <a href="terms.html">Terms</a>
+      <a href="download.html">Download</a>
+    </footer>
+  </article>
 </main>
-
-<footer class="footer">
-  <div class="footer__inner">
-    <div class="footer__top">
-      <div>
-        <div class="footer__brand"><img src="assets/icon.svg" alt="">Papyrus Papers</div>
-        <p class="footer__tagline">A native macOS workspace for researchers, engineers, and anyone who reads to think.</p>
-      </div>
-      <div class="footer__links">
-        <div class="footer__col">
-          <h4>Product</h4>
-          <ul>
-            <li><a href="index.html#features">Features</a></li>
-            <li><a href="index.html#workflow">Workflow</a></li>
-            <li><a href="download.html">Download</a></li>
-            <li><a href="https://github.com/zendax673/papyrus-release/blob/gh-pages/CHANGELOG.md" target="_blank" rel="noopener">Changelog</a></li>
-          </ul>
-        </div>
-        <div class="footer__col">
-          <h4>Support</h4>
-          <ul>
-            <li><a href="support.html">Support &amp; FAQ</a></li>
-            <li><a href="privacy.html">Privacy</a></li>
-            <li><a href="terms.html">Terms</a></li>
-            <li><a href="mailto:zdfu189@gmail.com">Contact</a></li>
-            <li><a href="https://github.com/zendax673/papyrus-release/issues" target="_blank" rel="noopener">Report an issue</a></li>
-          </ul>
-        </div>
-        <div class="footer__col">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="FAQ.md">FAQ</a></li>
-            <li><a href="CHANGELOG.md">Changelog</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <p class="footer__copy">© 2026 Papyrus Papers. Released under the MIT License.</p>
-      <p class="footer__req">Requires macOS 14.0 Sonoma or later.</p>
-    </div>
-  </div>
-</footer>
-
-<div class="tweaks-panel" id="tweaksPanel">
-  <div class="tweaks-panel__title"><span>Tweaks</span><button class="tweaks-panel__close" id="tweaksClose" aria-label="Close">×</button></div>
-  <div class="tweaks-row">
-    <span class="tweaks-row__label">Theme</span>
-    <div class="tweaks-seg" id="themeSeg">
-      <button data-theme="light">Light</button>
-      <button data-theme="dark">Dark</button>
-      <button data-theme="system">System</button>
-    </div>
-  </div>
-</div>
 
 <script>
 (function(){
   var root = document.documentElement;
-  function applyTheme(t){
-    if (t === 'system') {
-      root.removeAttribute('data-theme');
-      localStorage.removeItem('pp-theme');
-      var prefers = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      root.setAttribute('data-theme', prefers);
-      localStorage.setItem('pp-theme-mode', 'system');
-    } else {
-      root.setAttribute('data-theme', t);
-      localStorage.setItem('pp-theme', t);
-      localStorage.setItem('pp-theme-mode', t);
-    }
-    syncThemeUI();
-  }
-  function syncThemeUI(){
-    var mode = localStorage.getItem('pp-theme-mode') || (root.getAttribute('data-theme') || 'light');
-    document.querySelectorAll('#themeSeg button').forEach(function(b){ b.classList.toggle('is-active', b.dataset.theme === mode); });
-  }
-  document.getElementById('themeToggle').addEventListener('click', function(){
-    var explicit = root.getAttribute('data-theme');
-    var effective = explicit
-      || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    applyTheme(effective === 'dark' ? 'light' : 'dark');
-  });
-  var seg = document.getElementById('themeSeg');
-  if (seg) seg.addEventListener('click', function(e){
-    var b = e.target.closest('button[data-theme]'); if (!b) return;
-    applyTheme(b.dataset.theme);
-  });
-  syncThemeUI();
-  var panel = document.getElementById('tweaksPanel');
-  window.addEventListener('message', function(e){
-    if (!e.data || !e.data.type) return;
-    if (e.data.type === '__activate_edit_mode')   panel.classList.add('is-open');
-    if (e.data.type === '__deactivate_edit_mode') panel.classList.remove('is-open');
-  });
-  document.getElementById('tweaksClose').addEventListener('click', function(){
-    panel.classList.remove('is-open');
-    window.parent.postMessage({type:'__edit_mode_dismissed'}, '*');
-  });
-  window.parent.postMessage({type:'__edit_mode_available'}, '*');
-  // __papyrusMobileNavInit
-
-  // Mobile nav hamburger: clone .hide-mobile links into the panel and toggle
-  (function(){
-    var nav = document.querySelector('.nav');
-    var btn = document.getElementById('navHamburger');
-    var panel = document.getElementById('navMobilePanel');
-    if (!nav || !btn || !panel) return;
-    // Populate panel from existing nav__links .hide-mobile items so links
-    // stay in one place (no duplicate hardcoding per page).
-    document.querySelectorAll('.nav__links .hide-mobile a').forEach(function(a){
-      panel.appendChild(a.cloneNode(true));
-    });
-    function close(){
-      nav.classList.remove('is-menu-open');
-      panel.hidden = true;
-      btn.setAttribute('aria-expanded','false');
-    }
-    btn.addEventListener('click', function(){
-      var open = nav.classList.toggle('is-menu-open');
-      panel.hidden = !open;
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    panel.addEventListener('click', function(e){ if (e.target.tagName === 'A') close(); });
-    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
-    // Close if viewport grows past mobile breakpoint while menu is open.
-    window.matchMedia('(min-width: 721px)').addEventListener('change', function(e){
-      if (e.matches) close();
-    });
-  })();
-
+  function eff(){ return root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light'); }
+  document.getElementById('themeToggle').addEventListener('click', function(){ var n = eff()==='dark'?'light':'dark'; root.setAttribute('data-theme', n); localStorage.setItem('pp-theme', n); });
 })();
 </script>
 </body>

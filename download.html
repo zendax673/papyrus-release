@@ -4,291 +4,127 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Download — Papyrus Papers</title>
-  <meta name="description" content="Download Papyrus Papers from the Mac App Store. A native macOS research workspace for reading, evidence, notes, and citations.">
-  <meta name="theme-color" content="#faf6ef">
+  <meta name="description" content="Download Papyrus Papers for Mac and iPad. Local-first reading, notes, evidence, citation export, and WebDAV sync.">
+  <meta name="theme-color" content="#efeee9">
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
+<script>(function(){var t=localStorage.getItem('pp-theme');if(t)document.documentElement.setAttribute('data-theme',t);document.documentElement.classList.add('js');})();</script>
 
-<script>
-  (function(){ var t = localStorage.getItem('pp-theme'); if (t) document.documentElement.setAttribute('data-theme', t); })();
-</script>
-
-<nav class="nav">
-  <div class="nav__inner">
-    <a href="./index.html" class="nav__brand">
-      <img src="assets/icon.svg" alt="">
-      Papyrus Papers
-    </a>
-    <ul class="nav__links">
-      <li class="hide-mobile"><a href="index.html#features">Features</a></li>
-      <li class="hide-mobile"><a href="index.html#workflow">Workflow</a></li>
-      <li class="hide-mobile"><a href="support.html">Support</a></li>
-      <li class="hide-mobile"><a href="privacy.html">Privacy</a></li>
-      <li class="hide-mobile"><a href="terms.html">Terms</a></li>
-      <li><a href="download.html" class="nav__download">Download</a></li>
-      <li>
-        <button class="nav__theme" id="themeToggle" aria-label="Toggle theme">
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-        </button>
-      </li>
-      <li class="nav__hamburger-li">
-        <button class="nav__hamburger" id="navHamburger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navMobilePanel">
-          <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-          <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-        </button>
-      </li>
-    </ul>
-  </div>
-  <div class="nav__mobile-panel" id="navMobilePanel" hidden></div>
-</nav>
-
-<header class="dl-hero">
-  <div class="container">
-    <span class="eyebrow">Mac App Store</span>
-    <h1 class="display" style="margin: 22px 0 24px;">Get Papyrus Papers<br><em>for your Mac.</em></h1>
-    <p class="hero__sub" style="margin: 0 auto; max-width: 700px;">A native macOS research workspace, available on the Mac App Store. Free to download, with a 30-day full-access trial and a $3.99 lifetime unlock through Apple's in-app purchase.</p>
-    <div class="dl-actions">
-      <a href="https://apps.apple.com/us/app/papyrus-papers/id6766133716?mt=12&uo=4" class="app-store-badge" aria-label="Download on the Mac App Store" target="_blank" rel="noopener">
-        <img class="app-store-badge__img app-store-badge__img--light" src="assets/app-store-badge-black.svg" alt="Download on the Mac App Store">
-        <img class="app-store-badge__img app-store-badge__img--dark" src="assets/app-store-badge-white.svg" alt="" aria-hidden="true">
-      </a>
-    </div>
-  </div>
+<header class="runhead">
+  <span class="runhead__left"><img src="assets/icon.svg" alt=""><span class="hide-xs">Papyrus Papers&nbsp;·&nbsp;</span><span class="sc">Download</span></span>
+  <span class="runhead__sec">Mac &amp; iPad</span>
+  <span class="runhead__right">
+    <a class="runhead__get" href="index.html">Home</a>
+    <a class="runhead__get" href="support.html">Support</a>
+    <button class="runhead__theme" id="themeToggle" aria-label="Toggle light or dark">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </span>
 </header>
 
-<main>
-  <section class="section section--white" style="padding-top: 64px;">
-    <div class="container">
+<main class="doc-page">
+  <aside class="doc-margin" aria-label="Document navigation">
+    <nav class="doc-toc" aria-label="Download sections">
+      <div class="toc__head">Download</div>
+      <a href="#get">Get the App</a>
+      <a href="#requirements">Requirements</a>
+      <a href="#pricing">Trial &amp; Pricing</a>
+      <a href="#included">Included</a>
+      <a href="#links">Policies</a>
+    </nav>
+    <nav class="doc-toc doc-toc--secondary" aria-label="Related pages">
+      <div class="toc__head">Pages</div>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </aside>
 
-      <div class="dl-grid">
-        <div class="dl-card">
-          <div class="dl-card__label">System</div>
-          <div class="dl-card__value">macOS 14.0+</div>
-          <p class="dl-card__sub">Apple Silicon and Intel. Built natively for macOS Sonoma with full SwiftUI, SwiftData, and PDFKit support.</p>
-        </div>
-        <div class="dl-card">
-          <div class="dl-card__label">Footprint</div>
-          <div class="dl-card__value">~17 MB</div>
-          <p class="dl-card__sub">Approximate app size for the architecture delivered to your Mac. Your library size depends on how many PDFs you import; files stay on your Mac.</p>
-        </div>
-        <div class="dl-card">
-          <div class="dl-card__label">Distribution</div>
-          <div class="dl-card__value">Mac App Store</div>
-          <p class="dl-card__sub">Download from the official Mac App Store listing. This site hosts product information, policies, support notes, and release notes.</p>
-        </div>
-      </div>
-
-      <!-- Pricing block -->
-      <div class="dl-pricing">
-        <span class="section-eyebrow" style="background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.12);">30-day trial, lifetime unlock</span>
-        <h2 class="section-title" style="margin-top: 18px;">A fair price.<br><em>No subscription.</em></h2>
-        <div class="dl-price-tag"><em>$</em>3.99</div>
-        <p class="dl-price-sub">The App Store build starts with a full-access 30-day free trial. The lifetime unlock is a non-consumable in-app purchase and is configured as family-shareable.</p>
-        <a href="terms.html" class="btn btn--outline">Read terms</a>
-      </div>
-
-      <!-- Official download strip -->
-      <div class="changelog-strip" style="margin-top: 64px; background: linear-gradient(180deg, var(--gold-tint), var(--paper-mid));">
-        <div class="changelog-strip__text">
-          <span class="section-eyebrow" style="margin-bottom: 12px;">Official download</span>
-          <h3 style="margin-top: 12px;">Now on the Mac App Store.</h3>
-          <p>Papyrus Papers is distributed through Apple's Mac App Store. Use the official listing for download, trial, purchase, and update handling.</p>
-        </div>
-        <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
-          <a href="https://apps.apple.com/us/app/papyrus-papers/id6766133716?mt=12&uo=4" class="app-store-badge" aria-label="Download on the Mac App Store" target="_blank" rel="noopener">
-            <img class="app-store-badge__img app-store-badge__img--light" src="assets/app-store-badge-black.svg" alt="Download on the Mac App Store">
-            <img class="app-store-badge__img app-store-badge__img--dark" src="assets/app-store-badge-white.svg" alt="" aria-hidden="true">
-          </a>
-          <a href="https://github.com/zendax673/papyrus-release/blob/gh-pages/CHANGELOG.md" class="btn btn--outline" target="_blank" rel="noopener">Read changelog</a>
-          <a href="terms.html" class="btn btn--outline">Read terms</a>
-        </div>
-      </div>
-
+  <article class="doc-body">
+    <div class="doc-titleblock">
+      <div class="doc-kicker">Download</div>
+      <h1>Get Papyrus Papers for Mac and iPad.</h1>
+      <p>A native, local-first research desk for importing papers, reading PDFs, writing notes, building project evidence, syncing with your own WebDAV server, and exporting open citation formats.</p>
+      <div class="doc-meta">Version 1.2.2 · macOS 14+ · iPadOS 17+</div>
     </div>
-  </section>
 
-  <!-- Reassurance grid -->
-  <section class="section section--cream">
-    <div class="container">
-      <div class="section-header reveal" style="text-align: center; margin-left: auto; margin-right: auto;">
-        <span class="section-eyebrow">What's included</span>
-        <h2 class="section-title" style="margin-top: 16px;">Everything in one app.<br><em>Nothing held back.</em></h2>
+    <section class="doc-card" id="get">
+      <h2>Get the App</h2>
+      <p>Download from Apple's App Store channels. Each edition includes a 30-day full-access trial and a one-time lifetime unlock.</p>
+      <div class="store-row doc-store-row">
+        <a class="store-badge" href="https://apps.apple.com/us/app/papyrus-papers/id6766133716?mt=12&amp;uo=4" target="_blank" rel="noopener" aria-label="Download Papyrus Papers on the Mac App Store">
+          <img class="app-store-badge__black" src="assets/app-store-badge-black.svg" alt="Download on the Mac App Store">
+          <img class="app-store-badge__white" src="assets/app-store-badge-white.svg" alt="" aria-hidden="true">
+          <span class="badge-note">Mac</span>
+        </a>
+        <a class="store-badge" href="https://apps.apple.com/app/id6766133716" target="_blank" rel="noopener" aria-label="Download Papyrus Papers for iPad on the App Store">
+          <img class="app-store-badge__black" src="assets/badge-appstore-black.svg" alt="Download on the App Store">
+          <img class="app-store-badge__white" src="assets/badge-appstore-white.svg" alt="" aria-hidden="true">
+          <span class="badge-note">iPad</span>
+        </a>
       </div>
-      <div class="pillars-grid">
-        <div class="pillar reveal">
-          <div class="pillar__icon"><svg viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M3 9h18"/></svg></div>
-          <h3>Native PDF reader</h3>
-          <p>Highlights, underlines, comments, ink annotations, bookmarks, and reading progress — built on PDFKit.</p>
+      <p class="testflight-line">Testing a pre-release build? <a href="https://testflight.apple.com/join/kWP3kCGs" target="_blank" rel="noopener">Join the public TestFlight beta ↗</a></p>
+    </section>
+
+    <section class="doc-section" id="requirements">
+      <h2>System Requirements</h2>
+      <div class="doc-grid">
+        <div>
+          <h3>Mac</h3>
+          <p>macOS 14 Sonoma or later. Built natively for SwiftUI, SwiftData, and PDFKit.</p>
         </div>
-        <div class="pillar reveal reveal-d1">
-          <div class="pillar__icon"><svg viewBox="0 0 24 24"><path d="M7 8h10M7 12h10M7 16h6"/></svg></div>
-          <h3>Evidence Board</h3>
-          <p>Capture quotes, page numbers, claims, themes, interpretations, sections, citation keys, and confidence inside a project.</p>
-        </div>
-        <div class="pillar reveal reveal-d2">
-          <div class="pillar__icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
-          <h3>Project synthesis</h3>
-          <p>Project-specific roles, theme maps, scoped search, note templates, and manuscript preflight checks.</p>
-        </div>
-        <div class="pillar reveal">
-          <div class="pillar__icon"><svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 4V7a4 4 0 0 1 4-4h6"/><path d="M16 3v4l4-2"/></svg></div>
-          <h3>WebDAV sync</h3>
-          <p>Optional. Bring your own server — Nextcloud, Synology, Fastmail, local NAS, or any standard WebDAV endpoint.</p>
-        </div>
-        <div class="pillar reveal reveal-d1">
-          <div class="pillar__icon"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0z"/><path d="M12 7v5l3 3"/></svg></div>
-          <h3>Restore points</h3>
-          <p>Successful WebDAV syncs keep dated restore points so you can inspect and restore an earlier library copy.</p>
-        </div>
-        <div class="pillar reveal reveal-d2">
-          <div class="pillar__icon"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-          <h3>Open exports</h3>
-          <p>BibTeX, RIS, CSL JSON, Markdown, evidence, cite commands, and full project bundles.</p>
+        <div>
+          <h3>iPad</h3>
+          <p>iPadOS 17 or later. Apple Pencil is supported for freehand ink and annotation workflows.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section class="doc-section" id="pricing">
+      <h2>Trial &amp; Pricing</h2>
+      <ul>
+        <li>30-day full-access trial for each edition.</li>
+        <li>Mac App Store lifetime unlock: US $3.99.</li>
+        <li>App Store for iPad lifetime unlock: US $5.99.</li>
+        <li>No recurring subscription and no Papyrus Papers account.</li>
+        <li>Final regional pricing, taxes, refunds, purchase records, and Family Sharing behavior are handled by Apple.</li>
+      </ul>
+    </section>
+
+    <section class="doc-section" id="included">
+      <h2>What's Included</h2>
+      <ul>
+        <li>Local-first research library with PDFs, metadata, tags, folders, Smart Collections, and Projects.</li>
+        <li>Native PDF reading with highlights, underlines, strikethrough, notes, bookmarks, and freehand ink.</li>
+        <li>Markdown notes with LaTeX math and code rendering.</li>
+        <li>Project Evidence Board with claims, quotes, page numbers, citation keys, roles, and confidence.</li>
+        <li>Full-text search across library metadata, notes, annotations, and extracted PDF text.</li>
+        <li>Optional WebDAV sync with restore points.</li>
+        <li>Export to BibTeX, RIS, CSL JSON, Markdown, copied citations, and project bundles.</li>
+      </ul>
+    </section>
+
+    <section class="doc-section" id="links">
+      <h2>Policies &amp; Help</h2>
+      <p>For purchase terms, privacy details, and troubleshooting, see <a href="terms.html">Terms</a>, <a href="privacy.html">Privacy</a>, and <a href="support.html">Support</a>.</p>
+    </section>
+
+    <footer class="doc-footer">
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </footer>
+  </article>
 </main>
-
-<footer class="footer">
-  <div class="footer__inner">
-    <div class="footer__top">
-      <div>
-        <div class="footer__brand"><img src="assets/icon.svg" alt="">Papyrus Papers</div>
-        <p class="footer__tagline">A native macOS workspace for researchers, engineers, and anyone who reads to think.</p>
-      </div>
-      <div class="footer__links">
-        <div class="footer__col">
-          <h4>Product</h4>
-          <ul>
-            <li><a href="index.html#features">Features</a></li>
-            <li><a href="index.html#workflow">Workflow</a></li>
-            <li><a href="download.html">Download</a></li>
-            <li><a href="https://github.com/zendax673/papyrus-release/blob/gh-pages/CHANGELOG.md" target="_blank" rel="noopener">Changelog</a></li>
-          </ul>
-        </div>
-        <div class="footer__col">
-          <h4>Support</h4>
-          <ul>
-            <li><a href="support.html">Support &amp; FAQ</a></li>
-            <li><a href="privacy.html">Privacy</a></li>
-            <li><a href="terms.html">Terms</a></li>
-            <li><a href="mailto:zdfu189@gmail.com">Contact</a></li>
-            <li><a href="https://github.com/zendax673/papyrus-release/issues" target="_blank" rel="noopener">Report an issue</a></li>
-          </ul>
-        </div>
-        <div class="footer__col">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="FAQ.md">FAQ</a></li>
-            <li><a href="CHANGELOG.md">Changelog</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <p class="footer__copy">© 2026 Papyrus Papers. Released under the MIT License.</p>
-      <p class="footer__req">Requires macOS 14.0 Sonoma or later.</p>
-    </div>
-  </div>
-</footer>
-
-<div class="tweaks-panel" id="tweaksPanel">
-  <div class="tweaks-panel__title"><span>Tweaks</span><button class="tweaks-panel__close" id="tweaksClose" aria-label="Close">×</button></div>
-  <div class="tweaks-row">
-    <span class="tweaks-row__label">Theme</span>
-    <div class="tweaks-seg" id="themeSeg">
-      <button data-theme="light">Light</button>
-      <button data-theme="dark">Dark</button>
-      <button data-theme="system">System</button>
-    </div>
-  </div>
-</div>
 
 <script>
 (function(){
   var root = document.documentElement;
-  function applyTheme(t){
-    if (t === 'system') {
-      root.removeAttribute('data-theme');
-      localStorage.removeItem('pp-theme');
-      var prefers = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      root.setAttribute('data-theme', prefers);
-      localStorage.setItem('pp-theme-mode', 'system');
-    } else {
-      root.setAttribute('data-theme', t);
-      localStorage.setItem('pp-theme', t);
-      localStorage.setItem('pp-theme-mode', t);
-    }
-    syncThemeUI();
-  }
-  function syncThemeUI(){
-    var mode = localStorage.getItem('pp-theme-mode') || (root.getAttribute('data-theme') || 'light');
-    document.querySelectorAll('#themeSeg button').forEach(function(b){ b.classList.toggle('is-active', b.dataset.theme === mode); });
-  }
-  document.getElementById('themeToggle').addEventListener('click', function(){
-    var explicit = root.getAttribute('data-theme');
-    var effective = explicit
-      || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    applyTheme(effective === 'dark' ? 'light' : 'dark');
-  });
-  var seg = document.getElementById('themeSeg');
-  if (seg) seg.addEventListener('click', function(e){
-    var b = e.target.closest('button[data-theme]'); if (!b) return;
-    applyTheme(b.dataset.theme);
-  });
-  syncThemeUI();
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); } });
-    }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
-    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
-  } else { document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('is-visible'); }); }
-  var panel = document.getElementById('tweaksPanel');
-  window.addEventListener('message', function(e){
-    if (!e.data || !e.data.type) return;
-    if (e.data.type === '__activate_edit_mode')   panel.classList.add('is-open');
-    if (e.data.type === '__deactivate_edit_mode') panel.classList.remove('is-open');
-  });
-  document.getElementById('tweaksClose').addEventListener('click', function(){
-    panel.classList.remove('is-open');
-    window.parent.postMessage({type:'__edit_mode_dismissed'}, '*');
-  });
-  window.parent.postMessage({type:'__edit_mode_available'}, '*');
-  // __papyrusMobileNavInit
-
-  // Mobile nav hamburger: clone .hide-mobile links into the panel and toggle
-  (function(){
-    var nav = document.querySelector('.nav');
-    var btn = document.getElementById('navHamburger');
-    var panel = document.getElementById('navMobilePanel');
-    if (!nav || !btn || !panel) return;
-    // Populate panel from existing nav__links .hide-mobile items so links
-    // stay in one place (no duplicate hardcoding per page).
-    document.querySelectorAll('.nav__links .hide-mobile a').forEach(function(a){
-      panel.appendChild(a.cloneNode(true));
-    });
-    function close(){
-      nav.classList.remove('is-menu-open');
-      panel.hidden = true;
-      btn.setAttribute('aria-expanded','false');
-    }
-    btn.addEventListener('click', function(){
-      var open = nav.classList.toggle('is-menu-open');
-      panel.hidden = !open;
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    panel.addEventListener('click', function(e){ if (e.target.tagName === 'A') close(); });
-    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
-    // Close if viewport grows past mobile breakpoint while menu is open.
-    window.matchMedia('(min-width: 721px)').addEventListener('change', function(e){
-      if (e.matches) close();
-    });
-  })();
-
+  function eff(){ return root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light'); }
+  document.getElementById('themeToggle').addEventListener('click', function(){ var n = eff()==='dark'?'light':'dark'; root.setAttribute('data-theme', n); localStorage.setItem('pp-theme', n); });
 })();
 </script>
 </body>

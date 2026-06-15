@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Papyrus Papers — a local-first research desk for Mac &amp; iPad</title>
-  <meta name="description" content="Papyrus Papers is a native, local-first app for macOS and iPad: read and annotate PDFs, take Markdown + LaTeX notes, organize a reference library, and build a structured evidence board you can export as BibTeX, RIS, CSL JSON, or Markdown. One-time purchase, no account, no telemetry.">
+  <title>Papyrus Papers — a native research workspace for Mac</title>
+  <meta name="description" content="Papyrus Papers is a native, local-first research workspace for macOS: import papers, organize a library, read and annotate PDFs, write Markdown + LaTeX notes, build project evidence, search full text, sync with WebDAV, and export BibTeX, RIS, CSL JSON, or Markdown. One-time purchase, no account, no telemetry. Also available on iPadOS.">
   <meta name="theme-color" content="#efeee9">
-  <meta property="og:title" content="Papyrus Papers — a research desk for Mac & iPad">
-  <meta property="og:description" content="Read, annotate, and turn what you read into a cited argument. Local-first, one-time purchase. macOS 14+ and iPadOS 17+ with Apple Pencil.">
+  <meta property="og:title" content="Papyrus Papers — a research workspace for Mac">
+  <meta property="og:description" content="A local-first Mac workspace for PDFs, notes, projects, citations, and export. Also available on iPadOS.">
   <meta property="og:type" content="website">
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,7 @@
 
 <!-- ===== Running-head rail (replaces the nav bar) ===== -->
 <header class="runhead">
-  <span class="runhead__left"><img src="assets/icon.svg" alt=""><span class="hide-xs">Papyrus Papers&nbsp;·&nbsp;</span><span class="sc">A local-first research desk</span></span>
+  <span class="runhead__left"><img src="assets/icon.svg" alt=""><span class="hide-xs">Papyrus Papers&nbsp;·&nbsp;</span><span class="sc">A native research workspace</span></span>
   <span class="runhead__sec" id="runSec">Abstract</span>
   <span class="runhead__right">
     <a class="runhead__get" href="#availability">Get it ↗</a>
@@ -35,19 +35,19 @@
   <aside class="paper__margin" aria-label="Contents and references">
     <nav class="toc" aria-label="Sections">
       <div class="toc__head">Contents</div>
-      <a href="#s-intro"><span class="n">1</span>Introduction</a>
-      <a href="#s-evidence"><span class="n">2</span>The Evidence Board</a>
-      <a href="#s-reading"><span class="n">3</span>Reading &amp; Annotation</a>
-      <a href="#s-library"><span class="n">4</span>The Library</a>
-      <a href="#s-export"><span class="n">5</span>Export &amp; Citation</a>
-      <a href="#s-method"><span class="n">6</span>Method &amp; Provenance</a>
+      <a href="#s-intro"><span class="n">1</span>One Library</a>
+      <a href="#s-library"><span class="n">2</span>Capture &amp; Organize</a>
+      <a href="#s-reading"><span class="n">3</span>Read &amp; Annotate</a>
+      <a href="#s-evidence"><span class="n">4</span>Projects &amp; Evidence</a>
+      <a href="#s-method"><span class="n">5</span>Search, Sync &amp; Privacy</a>
+      <a href="#s-export"><span class="n">6</span>Export &amp; Citation</a>
     </nav>
     <div class="ledger-margin" id="ledger" aria-label="Citations used in this document">
       <div class="ledger-margin__head">Citation ledger</div>
-      <div class="ledger-margin__item" data-key="vaswani2017attention" style="--pp-sec:var(--pp-claim)"><span class="k">[@vaswani2017attention]</span><span class="pips">●●●●●</span> 5/5 · Claim</div>
-      <div class="ledger-margin__item" data-key="dao2023flashattention2" style="--pp-sec:var(--pp-method)"><span class="k">[@dao2023flashattention2]</span><span class="pips">●●●●○</span> 4/5 · Method</div>
-      <div class="ledger-margin__item" data-key="gu2024mamba" style="--pp-sec:var(--pp-limitation)"><span class="k">[@gu2024mamba]</span><span class="pips">●●●●○</span> 4/5 · Limitation</div>
-      <div class="ledger-margin__item" data-key="liu2023ringattention" style="--pp-sec:var(--pp-future)"><span class="k">[@liu2023ringattention]</span><span class="pips">●●●○○</span> 3/5 · Future Work</div>
+      <div class="ledger-margin__item" data-key="peng2026whaleNecropolis" style="--pp-sec:var(--pp-claim)"><span class="k">[@peng2026whaleNecropolis]</span><span class="pips">●●●●●</span> 5/5 · Anchor</div>
+      <div class="ledger-margin__item" data-key="smith2021abyssalWhaleFalls" style="--pp-sec:var(--pp-method)"><span class="k">[@smith2021abyssalWhaleFalls]</span><span class="pips">●●●●○</span> 4/5 · Context</div>
+      <div class="ledger-margin__item" data-key="goffredi2018osedaxBivalves" style="--pp-sec:var(--pp-limitation)"><span class="k">[@goffredi2018osedaxBivalves]</span><span class="pips">●●●●○</span> 4/5 · Biology</div>
+      <div class="ledger-margin__item" data-key="reynolds2020strontiumDating" style="--pp-sec:var(--pp-future)"><span class="k">[@reynolds2020strontiumDating]</span><span class="pips">●●●○○</span> 3/5 · Dating</div>
       <button class="ledger-margin__copy" id="copyBib" type="button">Copy .bib ↧</button>
     </div>
   </aside>
@@ -56,110 +56,157 @@
   <article class="paper__body">
 
     <div class="titleblock">
-      <h1 class="paper-title">Papyrus Papers: a local-first desk for reading, annotating, and building evidence.</h1>
-      <div class="byline">Native for macOS 14+<span class="sep">·</span>iPadOS 17+ with Apple Pencil</div>
+      <h1 class="paper-title">Papyrus Papers keeps the whole research workflow beside the paper.</h1>
+      <div class="byline">Native for macOS 14+</div>
       <div class="dateline">Version 1.2.2 &nbsp;·&nbsp; one-time purchase, 30-day trial<sup class="fnref"><a href="#fn1" id="fnref1">1</a></sup> &nbsp;·&nbsp; <a href="#availability">Availability ↓</a></div>
     </div>
 
     <section class="abstract">
       <div class="abstract__label">Abstract</div>
-      <p>Papyrus Papers is a native, local-first app for macOS and iPad that keeps your papers, PDFs, annotations, notes, and citations in one place — and turns what you read into a structured, citable argument. You import PDFs, DOIs, arXiv IDs, BibTeX, or RIS; read and mark up documents in a native reader; capture each claim with its quote, page, citation key, section role, and a confidence; then export BibTeX, RIS, CSL&nbsp;JSON, or Markdown for the writing tools you already use. It is a one-time purchase with no account, no subscription, and no telemetry; your library lives on your own device.</p>
+      <p>Papyrus Papers is a native, local-first Mac workspace for researchers who live with PDFs over time. A paper can enter as a PDF, DOI, arXiv ID, BibTeX, or RIS record; become a searchable library item with editable metadata; open in a native reader; collect highlights, annotations, and Markdown + LaTeX notes; join a project with roles and evidence; then leave as BibTeX, RIS, CSL&nbsp;JSON, Markdown, or a project bundle. There is no account, no subscription, and no telemetry. Your library stays on your Mac unless you choose your own WebDAV sync.</p>
     </section>
 
-    <div class="keywords"><b>Keywords —</b> PDF annotation · Apple Pencil · citation keys · evidence board · BibTeX / RIS / CSL JSON · Smart Collections</div>
+    <div class="keywords"><b>Keywords —</b> PDF library · native reader · Markdown notes · Evidence Board · Smart Collections · WebDAV sync · BibTeX / RIS / CSL JSON</div>
 
     <!-- §1 -->
     <section class="sec" id="s-intro">
-      <h2 class="sec__h">Introduction</h2>
-      <p><span class="lead-in">Reference managers</span> are good at storing citations and bad at storing reasoning. The sentence you actually want — “this paper supports my method, on page 3, with medium confidence” — ends up scattered across a PDF highlight, a note in another app, and a key in a <code>.bib</code> file that no longer remembers why it is there. Papyrus Papers closes that gap: it is one native desk where reading, annotating, and citing happen next to each other, so the evidence behind a draft stays attached to the draft.</p>
-      <p>The rest of this page is laid out the way Papyrus thinks: a worked example from a real project, <span class="term">Efficient Models Manuscript</span>, shown with its actual claims and citation keys (Fig. 1–4, Table 1).</p>
+      <h2 class="sec__h">One Library</h2>
+      <p><span class="lead-in">A paper should not fragment into separate tools.</span> The PDF, metadata, reading progress, tags, notes, project role, evidence, and citation key all belong to the same object. Papyrus Papers keeps that object coherent from first import through the final export.</p>
+      <p>The example throughout this page follows a single Nature article: <i>A 5.3-million-year-old deep-sea whale necropolis in the Diamantina Zone</i>. The same record appears in the library, opens in the reader, carries Markdown notes, supports a project archive, and exports through standard citation formats.</p>
+      <div class="workflow-map" aria-label="Papyrus Papers research workflow">
+        <div><span class="workflow-map__k">Capture</span><span>PDF, DOI, arXiv, BibTeX, RIS</span></div>
+        <div><span class="workflow-map__k">Organize</span><span>Tags, folders, Smart Collections, Projects</span></div>
+        <div><span class="workflow-map__k">Read</span><span>PDF pages, figures, highlights, ink</span></div>
+        <div><span class="workflow-map__k">Write</span><span>Markdown notes, claims, quotes, evidence</span></div>
+        <div><span class="workflow-map__k">Export</span><span>BibTeX, RIS, CSL JSON, Markdown</span></div>
+      </div>
       <figure class="plate">
         <div class="shot">
-          <img class="screenshot screenshot--light" src="assets/app-captures/library-window-light.png" alt="The Papyrus Papers library window on macOS: a sidebar of collections, a list of papers, and a detail pane.">
-          <img class="screenshot screenshot--dark" src="assets/app-captures/library-window-dark.png" alt="" aria-hidden="true">
+          <img class="screenshot screenshot--light" src="assets/app-captures/mac/library-nature-light.png?v=20260615a" alt="Papyrus Papers on Mac showing the Nature whale necropolis paper selected in the library with Markdown notes and metadata.">
+          <img class="screenshot screenshot--dark" src="assets/app-captures/mac/library-nature-dark.png?v=20260615a" alt="" aria-hidden="true">
         </div>
-        <figcaption><b>1</b> The library on macOS — sidebar, paper list, and a detail pane with notes, tags, and per-field metadata.</figcaption>
+        <figcaption><b>Fig. 1.</b> On Mac, the library keeps the Nature paper, PDF, metadata, tags, reading state, Markdown notes, and citation key in one record.</figcaption>
       </figure>
+      <details class="ipad-disclosure" id="ipad-version">
+        <summary>
+          <span>
+            <span class="ipad-disclosure__eyebrow">Also on iPadOS</span>
+            <span class="ipad-disclosure__line">Touch-first reading, Apple Pencil, and the ocean-themed library.</span>
+          </span>
+          <span class="ipad-disclosure__state ipad-disclosure__state--closed" aria-hidden="true">Open</span>
+          <span class="ipad-disclosure__state ipad-disclosure__state--open" aria-hidden="true">Close</span>
+        </summary>
+        <div class="ipad-disclosure__body">
+          <p>The iPad version is presented as a companion workspace rather than a second main storyline. The demo library keeps the marine-paper set visible, so the Nature article, figure pages, Markdown notes, Pencil markup, and project context feel like one touch-first reading session.</p>
+          <figure class="plate">
+            <div class="shot shot--ipad">
+              <img class="screenshot" src="assets/app-captures/ipad/library-nature.png?v=20260615a" alt="Papyrus Papers on iPad showing the ocean-themed Nature paper library.">
+            </div>
+            <figcaption><b>iPadOS.</b> The ocean-themed library keeps the whale-fall paper set, tags, folders, and project actions close to the selected source.</figcaption>
+          </figure>
+          <figure class="plate two-up">
+            <div class="shot shot--ipad">
+              <img class="screenshot" src="assets/app-captures/ipad/reader-figure.png?v=20260615a" alt="iPad screenshot showing a figure page from the Nature article.">
+            </div>
+            <div class="shot shot--ipad">
+              <img class="screenshot" src="assets/app-captures/ipad/markdown-editor.png?v=20260615a" alt="iPad screenshot of a full-screen Markdown note editor for the Nature article.">
+            </div>
+            <figcaption><b>iPadOS.</b> Figure reading and Markdown note editing stay attached to the same paper record.</figcaption>
+          </figure>
+          <figure class="plate two-up">
+            <div class="shot shot--ipad">
+              <img class="screenshot" src="assets/app-captures/ipad/pencil-toolpicker.png?v=20260615a" alt="iPad screenshot of Apple Pencil annotations and the PencilKit toolpicker over a figure page.">
+            </div>
+            <div class="shot shot--ipad">
+              <img class="screenshot" src="assets/app-captures/ipad/project-archive.png?v=20260615a" alt="iPad project page for the Diamantina Whale-Fall Archive.">
+            </div>
+            <figcaption><b>iPadOS.</b> Pencil markup and project context are available when the work moves from reading into synthesis.</figcaption>
+          </figure>
+        </div>
+      </details>
     </section>
 
     <!-- §2 -->
-    <section class="sec" id="s-evidence">
-      <h2 class="sec__h">The Evidence Board</h2>
-      <p><span class="lead-in">The Evidence Board</span> is where Papyrus differs from a reference manager. A piece of evidence is not just a citation — it records the <span class="term">claim</span> you are making, the <span class="term">quote</span> that backs it, your own <span class="term">interpretation</span>, the <span class="term">page</span>, the <span class="term">citation key</span>, a <span class="term">section role</span>, and a <span class="term">confidence</span> from 1 to 5. Evidence is grouped by seven roles — Claim, Related Work, Method, Result, Limitation, Future Work, and Rebuttal — so a project reads as an argument before you have written a word of it.</p>
+    <section class="sec" id="s-library">
+      <h2 class="sec__h">Capture &amp; Organize</h2>
+      <p><span class="lead-in">Import should produce a usable record,</span> not a cleanup chore. Papyrus accepts PDFs, folders on Mac, DOI and arXiv identifiers, BibTeX, and RIS. It can read embedded PDF metadata, fetch scholarly metadata, and keep field-level provenance so you can see where a title, author list, year, DOI, or abstract came from when sources disagree.</p>
+      <p>Organization has several layers because research changes shape over time. <span class="term">Tags</span> describe topics. <span class="term">Folders</span> keep stable archives. <span class="term">Smart Collections</span> stay current as saved filters. <span class="term">Projects</span> gather papers for a draft, review, or literature archive without forcing the global library to mirror a manuscript outline.</p>
+    </section>
+
+    <!-- §3 -->
+    <section class="sec" id="s-reading">
+      <h2 class="sec__h">Read &amp; Annotate</h2>
+      <p><span class="lead-in">Reading happens in a native window,</span> not a web viewer embedded in a database. On Mac you can highlight, underline, strike through, draw freehand ink, leave notes, and set bookmarks. The reader remembers progress and keeps annotations attached to the paper instead of scattering them into a separate notebook.<sup class="fnref"><a href="#fn3" id="fnref3">3</a></sup></p>
+      <p>Figure-heavy articles need more than a citation key. Papyrus lets the article page, the figure, the reading note, and the eventual claim remain adjacent. A Markdown notes pane renders headings, lists, tables, code, and LaTeX math, so a figure comment or draft-ready interpretation stays beside the source that prompted it.</p>
       <figure class="plate">
-        <div class="evidence-figure" role="group" aria-label="Three evidence cards from the Efficient Models Manuscript project">
+        <div class="shot">
+          <img class="screenshot screenshot--light" src="assets/app-captures/mac/reader-front-light.png?v=20260615a" alt="Mac PDF reader showing the first page of the Nature whale necropolis article with the reading notes sidebar.">
+          <img class="screenshot screenshot--dark" src="assets/app-captures/mac/reader-front-dark.png?v=20260615a" alt="" aria-hidden="true">
+        </div>
+        <figcaption><b>Fig. 2.</b> The Mac reader keeps article text, page navigation, annotations, and paper notes in one focused reading window.</figcaption>
+      </figure>
+    </section>
+
+    <!-- §4 -->
+    <section class="sec" id="s-evidence">
+      <h2 class="sec__h">Projects &amp; Evidence</h2>
+      <p><span class="lead-in">Projects turn a library into a working argument.</span> A paper can belong to several projects, and each project can give that paper a different role. The Nature article can be an anchor source in a Diamantina whale-fall archive, while adjacent papers provide ecological context, dating methods, or organism-specific background.</p>
+      <p>The Evidence Board is the place where Papyrus goes beyond storing citations. Each evidence item records the <span class="term">claim</span> you are making, the <span class="term">quote</span> or observation that backs it, your interpretation, the page, the citation key, a section role, and a confidence score. A project starts to read like an argument before the manuscript exists.</p>
+      <figure class="plate">
+        <div class="shot">
+          <img class="screenshot screenshot--light" src="assets/app-captures/mac/reader-figure-light.png?v=20260615a" alt="Mac reader showing a figure page from the Nature whale necropolis article.">
+          <img class="screenshot screenshot--dark" src="assets/app-captures/mac/reader-figure-dark.png?v=20260615a" alt="" aria-hidden="true">
+        </div>
+        <figcaption><b>Fig. 3.</b> Page-specific visual evidence remains available in the reader while the project gathers claims, quotes, and citation keys around it.</figcaption>
+      </figure>
+      <figure class="plate">
+        <div class="evidence-figure" role="group" aria-label="Three evidence cards from the Diamantina Whale-Fall Archive project">
           <div class="ec" style="--pp-sec:var(--pp-claim)">
             <div class="ec__top"><span class="ec__key">Claim · p.2</span><span class="ec__pips">●●●●●</span></div>
-            <p class="ec__claim">Exact self-attention is the baseline that later efficient models position against.</p>
-            <p class="ec__quote">“We propose a new simple network architecture, the Transformer, based solely on attention mechanisms.”</p>
-            <span class="ec__chip">[@vaswani2017attention]</span>
+            <p class="ec__claim">The Diamantina Zone record turns scattered whale-fall observations into a regional fossil archive.</p>
+            <p class="ec__quote">Discovery of a vast whale necropolis extending along the deep seafloor.</p>
+            <span class="ec__chip">[@peng2026whaleNecropolis]</span>
           </div>
           <div class="ec" style="--pp-sec:var(--pp-method)">
             <div class="ec__top"><span class="ec__key">Method · p.3</span><span class="ec__pips">●●●●○</span></div>
-            <p class="ec__claim">Some efficiency gains are implementation-level, not modeling approximations.</p>
-            <span class="ec__chip">[@dao2023flashattention2]</span>
+            <p class="ec__claim">Figure panels tie site imagery, specimen distribution, and ecological interpretation to the same argument.</p>
+            <span class="ec__chip">[@peng2026whaleNecropolis]</span>
           </div>
           <div class="ec" style="--pp-sec:var(--pp-limitation)">
-            <div class="ec__top"><span class="ec__key">Limitation · p.4</span><span class="ec__pips">●●●●○</span></div>
-            <p class="ec__claim">State-space models are a separate family of long-sequence alternatives.</p>
-            <span class="ec__chip">[@gu2024mamba]</span>
+            <div class="ec__top"><span class="ec__key">Context · p.4</span><span class="ec__pips">●●●●○</span></div>
+            <p class="ec__claim">Background whale-fall ecology papers separate local fossil evidence from broader community patterns.</p>
+            <span class="ec__chip">[@smith2021abyssalWhaleFalls]</span>
           </div>
         </div>
-        <figcaption><b>2</b> Three of the four evidence cards in <span class="term">Efficient Models Manuscript</span>, each carrying its section role, page, confidence, and citation key.</figcaption>
+        <figcaption><b>Fig. 4.</b> Evidence cards carry section role, page, confidence, and citation key, so the reasoning survives the jump from reading to writing.</figcaption>
       </figure>
 
       <div class="tbl-wrap">
         <table class="tbl">
-          <caption><b>Table 1</b> &nbsp;The evidence matrix — the same fields Papyrus exports for a project.</caption>
+          <caption><b>Table 1</b> &nbsp;A project evidence matrix, ready to export with the working set.</caption>
           <thead><tr><th>Cite key</th><th>Section</th><th>Page</th><th>Conf.</th><th>Claim</th></tr></thead>
           <tbody>
-            <tr><td class="m">vaswani2017attention</td><td>Claim</td><td>p.2</td><td>5/5</td><td>Exact self-attention is the baseline efficient models position against.</td></tr>
-            <tr><td class="m">dao2023flashattention2</td><td>Method</td><td>p.3</td><td>4/5</td><td>Some gains are implementation-level, not approximations.</td></tr>
-            <tr><td class="m">gu2024mamba</td><td>Limitation</td><td>p.4</td><td>4/5</td><td>State-space models are a separate long-sequence family.</td></tr>
-            <tr><td class="m">liu2023ringattention</td><td>Future Work</td><td>p.1</td><td>3/5</td><td>Distributed exact attention changes system requirements.</td></tr>
+            <tr><td class="m">peng2026whaleNecropolis</td><td>Claim</td><td>p.2</td><td>5/5</td><td>The Diamantina Zone paper anchors the archive with figure-rich site evidence.</td></tr>
+            <tr><td class="m">smith2021abyssalWhaleFalls</td><td>Context</td><td>p.3</td><td>4/5</td><td>Modern whale-fall ecology supplies the living-community comparison.</td></tr>
+            <tr><td class="m">goffredi2018osedaxBivalves</td><td>Biology</td><td>p.4</td><td>4/5</td><td>Bone-eating worms and bivalves help explain post-fall community succession.</td></tr>
+            <tr><td class="m">reynolds2020strontiumDating</td><td>Dating</td><td>p.1</td><td>3/5</td><td>Marine vertebrate dating papers frame how fossil timing is interpreted.</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <!-- §3 -->
-    <section class="sec" id="s-reading">
-      <h2 class="sec__h">Reading &amp; Annotation</h2>
-      <p><span class="lead-in">Reading happens in a native window</span>, not a web viewer. On both platforms you can highlight, underline, strike through, draw freehand ink, leave notes, and set bookmarks; on iPad the ink is Apple Pencil. A Markdown notes pane sits beside the page and renders LaTeX math and code, so a derivation lives next to the figure it explains. Full-text search runs across the whole library, and a reading queue keeps work-in-progress visible between sessions.<sup class="fnref"><a href="#fn3" id="fnref3">3</a></sup></p>
-      <figure class="plate two-up">
-        <div class="shot">
-          <img class="screenshot screenshot--light" src="assets/app-captures/reader-window-light.png" alt="macOS split view: a PDF beside a Markdown note with LaTeX math.">
-          <img class="screenshot screenshot--dark" src="assets/app-captures/reader-window-dark.png" alt="" aria-hidden="true">
-        </div>
-        <div class="shot">
-          <img class="screenshot screenshot--light" src="assets/app-captures/library-sidebar-light.png" alt="iPad reader with an Apple Pencil annotation and the reading-notes panel.">
-          <img class="screenshot screenshot--dark" src="assets/app-captures/library-sidebar-dark.png" alt="" aria-hidden="true">
-        </div>
-        <figcaption><b>3</b> Two surfaces, one library — <i>(a)</i> macOS split view, PDF and a Markdown + LaTeX note; <i>(b)</i> iPad with Apple Pencil ink and the reading-notes panel.</figcaption>
-      </figure>
-    </section>
-
-    <!-- §4 -->
-    <section class="sec" id="s-library">
-      <h2 class="sec__h">The Library</h2>
-      <p><span class="lead-in">One library, three shapes.</span> <span class="term">Smart Collections</span> are saved queries that always reflect the current library — build them from tags, journals, year ranges, type, favorites, or PDF status. <span class="term">Projects</span> are working sets for the writing you are doing now, like <span class="term">Lit Review: Efficient Transformers</span>; a paper can sit in several projects with its own role and evidence in each. <span class="term">Folders</span> are a stable hierarchy for material with a permanent home, and they travel into project-bundle exports. Import is recursive across folders and enriches metadata from Crossref, arXiv, Semantic Scholar, OpenAlex, OpenLibrary, PubMed, Zenodo, and embedded XMP, with per-field provenance when sources disagree.</p>
-      <figure class="plate two-up">
-        <div class="shot">
-          <img class="screenshot screenshot--light" src="assets/app-captures/library-window-smart-light.png" alt="A Smart Collection selected in the library.">
-          <img class="screenshot screenshot--dark" src="assets/app-captures/library-window-smart-dark.png" alt="" aria-hidden="true">
-        </div>
-        <div class="shot">
-          <img class="screenshot screenshot--light" src="assets/app-captures/library-window-folder-light.png" alt="A Folder selected in the library.">
-          <img class="screenshot screenshot--dark" src="assets/app-captures/library-window-folder-dark.png" alt="" aria-hidden="true">
-        </div>
-        <figcaption><b>4</b> A Smart Collection <i>(a)</i> and a Folder <i>(b)</i> over the same library.</figcaption>
-      </figure>
-    </section>
-
     <!-- §5 -->
+    <section class="sec" id="s-method">
+      <h2 class="sec__h">Search, Sync &amp; Privacy</h2>
+      <p><span class="lead-in">A research desk has to be searchable and inspectable.</span> Papyrus indexes titles, metadata, notes, annotations, and extracted PDF text so a phrase can lead back to the paper, page, and context where it was useful. The reading queue keeps active work visible, while filters and Smart Collections surface papers by tag, journal, year range, favorite status, document type, or PDF availability.</p>
+      <p><span class="lead-in">Local-first is the default,</span> not an add-on. Your library, PDFs, notes, annotations, search index, and project evidence live on your Mac. There is no Papyrus account and no telemetry. Network access is limited to actions you choose, such as metadata lookup or sync. Sync, when enabled, uses your own <span class="term">WebDAV</span> destination and keeps dated restore points so a synced library can be inspected before it is restored.<sup class="fnref"><a href="#fn3b" id="fnref3b">4</a></sup></p>
+    </section>
+
+    <!-- §6 -->
     <section class="sec" id="s-export">
       <h2 class="sec__h">Export &amp; Citation</h2>
-      <p><span class="lead-in">Everything leaves the way it came in.</span> A single paper or a whole project exports as <span class="term">BibTeX</span>, <span class="term">RIS</span>, <span class="term">CSL&nbsp;JSON</span>, <span class="term">Markdown</span>, or a full bundle, and a copied citation is available in six styles. An export report flags missing PDFs, duplicate citekeys, and missing DOI, year, or pages before you hand off. The reference for <code>vaswani2017attention</code>, formatted six ways:</p>
+      <p><span class="lead-in">The exit path is as important as the import path.</span> A single paper or a whole project can leave as <span class="term">BibTeX</span>, <span class="term">RIS</span>, <span class="term">CSL&nbsp;JSON</span>, <span class="term">Markdown</span>, or a full bundle. Project export can include papers, notes, evidence, citations, and a report that flags missing PDFs, duplicate cite keys, sparse metadata, or unresolved citation problems before you hand work to another tool.</p>
+      <p>Citations can also be copied in common styles without leaving the library. The reference for <code>peng2026whaleNecropolis</code>, formatted six ways:</p>
       <div class="stamps" role="group" aria-label="Citation style">
         <button data-style="apa" class="is-active">APA</button>
         <button data-style="mla">MLA</button>
@@ -169,36 +216,31 @@
         <button data-style="vancouver">Vancouver</button>
       </div>
       <div class="cite-render">
-        <p class="cite-line" id="citeLine">Vaswani, A., et al. (2017). Attention is all you need. <i>Advances in Neural Information Processing Systems.</i></p>
+        <p class="cite-line" id="citeLine">Peng, X., Zhou, P., Song, X., Bianucci, G., Du, M., Collareta, A., Gao, Z., &amp; Xie, T. (2026). A 5.3-million-year-old deep-sea whale necropolis in the Diamantina Zone. <i>Nature.</i></p>
         <dl class="nojs-list">
-          <dt>APA</dt><dd>Vaswani, A., et al. (2017). Attention is all you need. Advances in Neural Information Processing Systems.</dd>
-          <dt>MLA</dt><dd>Vaswani, Ashish, et al. “Attention Is All You Need.” Advances in Neural Information Processing Systems, 2017.</dd>
-          <dt>Chicago</dt><dd>Vaswani, Ashish, et al. “Attention Is All You Need.” Advances in Neural Information Processing Systems (2017).</dd>
-          <dt>IEEE</dt><dd>A. Vaswani et al., “Attention is all you need,” in Advances in Neural Information Processing Systems, 2017.</dd>
-          <dt>Harvard</dt><dd>Vaswani, A. et al. (2017) ‘Attention is all you need’, Advances in Neural Information Processing Systems.</dd>
-          <dt>Vancouver</dt><dd>Vaswani A, et al. Attention is all you need. Advances in Neural Information Processing Systems. 2017.</dd>
+          <dt>APA</dt><dd>Peng, X., Zhou, P., Song, X., Bianucci, G., Du, M., Collareta, A., Gao, Z., &amp; Xie, T. (2026). A 5.3-million-year-old deep-sea whale necropolis in the Diamantina Zone. Nature.</dd>
+          <dt>MLA</dt><dd>Peng, Xiaotong, et al. “A 5.3-Million-Year-Old Deep-Sea Whale Necropolis in the Diamantina Zone.” Nature, 2026.</dd>
+          <dt>Chicago</dt><dd>Peng, Xiaotong, et al. “A 5.3-Million-Year-Old Deep-Sea Whale Necropolis in the Diamantina Zone.” Nature (2026).</dd>
+          <dt>IEEE</dt><dd>X. Peng et al., “A 5.3-million-year-old deep-sea whale necropolis in the Diamantina Zone,” Nature, 2026.</dd>
+          <dt>Harvard</dt><dd>Peng, X. et al. (2026) ‘A 5.3-million-year-old deep-sea whale necropolis in the Diamantina Zone’, Nature.</dd>
+          <dt>Vancouver</dt><dd>Peng X, Zhou P, Song X, Bianucci G, Du M, Collareta A, et al. A 5.3-million-year-old deep-sea whale necropolis in the Diamantina Zone. Nature. 2026.</dd>
         </dl>
       </div>
-      <pre class="spec"><span class="tk">@inproceedings</span>{<span class="ky">vaswani2017attention</span>,
-  title     = {Attention Is All You Need},
-  author    = {Vaswani, Ashish and others},
-  booktitle = {Advances in Neural Information Processing Systems},
-  year      = {2017}
+      <pre class="spec"><span class="tk">@article</span>{<span class="ky">peng2026whaleNecropolis</span>,
+  title   = {A 5.3-million-year-old deep-sea whale necropolis in the Diamantina Zone},
+  author  = {Peng, Xiaotong and Zhou, Peng and Song, Xikun and Bianucci, Giovanni and others},
+  journal = {Nature},
+  doi     = {10.1038/s41586-026-10546-z},
+  year    = {2026}
 }</pre>
-    </section>
-
-    <!-- §6 -->
-    <section class="sec" id="s-method">
-      <h2 class="sec__h">Method &amp; Provenance</h2>
-      <p><span class="lead-in">Local-first by construction.</span> Your library, PDFs, notes, and search index live on your Mac and iPad. There is no Papyrus account and no telemetry: the app reaches the network only when you ask it to look up metadata or sync. Sync, when enabled, is your own <span class="term">WebDAV</span> server, and it keeps dated restore points so a synced library can be inspected before it is restored.<sup class="fnref"><a href="#fn3b" id="fnref3b">4</a></sup> Open formats in and out mean the library is never a hostage: it is yours to verify, export, and move.</p>
     </section>
 
     <!-- Footnotes -->
     <section class="footnotes" aria-label="Footnotes">
       <ol>
         <li id="fn1"><sup>1</sup>&nbsp;Mac App Store, US $3.99; App Store for iPad, US $5.99. Each is a single one-time purchase that includes a 30-day full-access trial; there is no subscription. Prices vary by region. <a class="back" href="#fnref1">↩</a></li>
-        <li id="fn2"><sup>2</sup>&nbsp;A public TestFlight beta is offered for trying pre-release builds; the join link is provided with each beta. <a class="back" href="#fnref2">↩</a></li>
-        <li id="fn3"><sup>3</sup>&nbsp;Annotation tools: highlight, underline, strikethrough, freehand ink (Apple Pencil on iPad), notes, and bookmarks. Notes are Markdown with LaTeX math. <a class="back" href="#fnref3">↩</a></li>
+        <li id="fn2"><sup>2</sup>&nbsp;The public beta is distributed through Apple's external TestFlight program. <a class="back" href="#fnref2">↩</a></li>
+        <li id="fn3"><sup>3</sup>&nbsp;Annotation tools: highlight, underline, strikethrough, freehand ink, notes, and bookmarks. Notes are Markdown with LaTeX math. <a class="back" href="#fnref3">↩</a></li>
         <li id="fn3b"><sup>4</sup>&nbsp;Sync is optional and uses a WebDAV destination you control; iCloud sync is not part of this release. <a class="back" href="#fnref3b">↩</a></li>
       </ol>
     </section>
@@ -209,28 +251,35 @@
       <p>Papyrus Papers is available on the <b>Mac App Store</b> (US $3.99) and the <b>App Store</b> for iPad (US $5.99), each a one-time purchase that includes a 30-day full-access trial.</p>
       <p class="imprint">One-time lifetime unlock — no account, no telemetry, no subscription.</p>
       <div class="store-row">
-        <a class="app-store-badge" href="https://apps.apple.com/app/id6766133716" target="_blank" rel="noopener" aria-label="Download Papyrus Papers on the App Store">
+        <a class="store-badge" href="https://apps.apple.com/us/app/papyrus-papers/id6766133716?mt=12&amp;uo=4" target="_blank" rel="noopener" aria-label="Download Papyrus Papers on the Mac App Store">
+          <img class="app-store-badge__black" src="assets/app-store-badge-black.svg" alt="Download on the Mac App Store">
+          <img class="app-store-badge__white" src="assets/app-store-badge-white.svg" alt="" aria-hidden="true">
+          <span class="badge-note">Mac</span>
+        </a>
+        <a class="store-badge" href="https://apps.apple.com/app/id6766133716" target="_blank" rel="noopener" aria-label="Download Papyrus Papers for iPad on the App Store">
           <img class="app-store-badge__black" src="assets/badge-appstore-black.svg" alt="Download on the App Store">
           <img class="app-store-badge__white" src="assets/badge-appstore-white.svg" alt="" aria-hidden="true">
+          <span class="badge-note">iPad</span>
         </a>
       </div>
-      <p class="testflight-line">Testing a pre-release build? <a href="https://testflight.apple.com/" target="_blank" rel="noopener">Join the public TestFlight beta ↗</a><sup class="fnref"><a href="#fn2" id="fnref2">2</a></sup></p>
+      <p class="testflight-line">Testing a pre-release build? <a href="https://testflight.apple.com/join/kWP3kCGs" target="_blank" rel="noopener">Join the public TestFlight beta ↗</a><sup class="fnref"><a href="#fn2" id="fnref2">2</a></sup></p>
     </section>
 
     <!-- References -->
     <section class="refs" id="refs">
       <h2>References</h2>
       <ol>
+        <li>Peng, X., Zhou, P., Song, X., Bianucci, G. et al. <a href="https://www.nature.com/articles/s41586-026-10546-z" target="_blank" rel="noopener">A 5.3-million-year-old deep-sea whale necropolis in the Diamantina Zone.</a> <i>Nature</i> (2026). doi:10.1038/s41586-026-10546-z.</li>
         <li>Papyrus Papers. <a href="download.html">Download &amp; system requirements.</a> macOS 14+, iPadOS 17+.</li>
         <li>Papyrus Papers. <a href="support.html">Support &amp; FAQ.</a></li>
         <li>Papyrus Papers. <a href="privacy.html">Privacy.</a> Local-first; no account; no telemetry.</li>
         <li>Papyrus Papers. <a href="https://github.com/zendax673/papyrus-release/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Changelog, v1.2.2.</a></li>
       </ol>
-      <pre class="bibblock" id="bibblock"><span class="tk">@inproceedings</span>{<span class="ky">vaswani2017attention</span>, title={Attention Is All You Need}, author={Vaswani, Ashish and others}, booktitle={Advances in NeurIPS}, year={2017}}
-<span class="tk">@article</span>{<span class="ky">dao2023flashattention2</span>, title={FlashAttention-2}, author={Dao, Tri}, year={2023}}
-<span class="tk">@article</span>{<span class="ky">gu2024mamba</span>, title={Mamba: Linear-Time Sequence Modeling}, author={Gu, Albert and Dao, Tri}, year={2024}}
-<span class="tk">@inproceedings</span>{<span class="ky">liu2023ringattention</span>, title={Ring Attention with Blockwise Transformers}, author={Liu, Hao and others}, year={2023}}</pre>
-      <p class="colophon-foot">Set in Source Serif &amp; JetBrains Mono · Typeset locally · © 2026 Papyrus Papers · v1.2.2 · no telemetry</p>
+      <pre class="bibblock" id="bibblock"><span class="tk">@article</span>{<span class="ky">peng2026whaleNecropolis</span>, title={A 5.3-million-year-old deep-sea whale necropolis in the Diamantina Zone}, author={Peng, Xiaotong and Zhou, Peng and Song, Xikun and Bianucci, Giovanni and others}, journal={Nature}, doi={10.1038/s41586-026-10546-z}, year={2026}}
+<span class="tk">@article</span>{<span class="ky">smith2021abyssalWhaleFalls</span>, title={Whale-fall ecosystems at abyssal depths}, author={Smith, Craig R. and Glover, Adrian G.}, journal={Annual Review of Marine Science}, year={2021}}
+<span class="tk">@article</span>{<span class="ky">goffredi2018osedaxBivalves</span>, title={Bone-eating worms and chemosynthetic bivalves in whale-fall communities}, author={Goffredi, Shana K. and Rouse, Greg W.}, year={2018}}
+<span class="tk">@article</span>{<span class="ky">reynolds2020strontiumDating</span>, title={Strontium isotope dating of marine vertebrate fossils}, author={Reynolds, Laura E. and Collareta, Alberto}, year={2020}}</pre>
+      <p class="colophon-foot">Copyright © 2026 ZendaX. All rights reserved.</p>
     </section>
 
   </article>
@@ -246,7 +295,7 @@
 
   // Running-head section + TOC current + ledger "cited" as you pass each section
   var secs = [].slice.call(document.querySelectorAll('.sec'));
-  var names = {'s-intro':'1 · Introduction','s-evidence':'2 · The Evidence Board','s-reading':'3 · Reading & Annotation','s-library':'4 · The Library','s-export':'5 · Export & Citation','s-method':'6 · Method & Provenance'};
+  var names = {'s-intro':'1 · One Library','s-library':'2 · Capture & Organize','s-reading':'3 · Read & Annotate','s-evidence':'4 · Projects & Evidence','s-method':'5 · Search, Sync & Privacy','s-export':'6 · Export & Citation'};
   var runSec = document.getElementById('runSec');
   var tocLinks = [].slice.call(document.querySelectorAll('.toc a'));
   if ('IntersectionObserver' in window){
@@ -261,7 +310,7 @@
     }, { rootMargin: '-45% 0px -50% 0px' });
     secs.forEach(function(s){ io.observe(s); });
     // ledger fills in as each cited section enters
-    var keyBySec = { 's-evidence': ['vaswani2017attention','dao2023flashattention2','gu2024mamba','liu2023ringattention'] };
+    var keyBySec = { 's-evidence': ['peng2026whaleNecropolis','smith2021abyssalWhaleFalls','goffredi2018osedaxBivalves','reynolds2020strontiumDating'] };
     var io2 = new IntersectionObserver(function(es){
       es.forEach(function(e){ if (e.isIntersecting){ (keyBySec[e.target.id]||[]).forEach(function(k){ var el = document.querySelector('.ledger-margin__item[data-key="'+k+'"]'); if (el) el.classList.add('is-cited'); }); } });
     }, { rootMargin: '0px 0px -30% 0px' });
@@ -270,12 +319,12 @@
 
   // Citation style stamps
   var CITES = {
-    apa: 'Vaswani, A., et al. (2017). Attention is all you need. <i>Advances in Neural Information Processing Systems.</i>',
-    mla: 'Vaswani, Ashish, et al. “Attention Is All You Need.” <i>Advances in Neural Information Processing Systems,</i> 2017.',
-    chicago: 'Vaswani, Ashish, et al. “Attention Is All You Need.” <i>Advances in Neural Information Processing Systems</i> (2017).',
-    ieee: 'A. Vaswani et al., “Attention is all you need,” in <i>Advances in Neural Information Processing Systems,</i> 2017.',
-    harvard: 'Vaswani, A. et al. (2017) ‘Attention is all you need’, <i>Advances in Neural Information Processing Systems.</i>',
-    vancouver: 'Vaswani A, et al. Attention is all you need. Advances in Neural Information Processing Systems. 2017.'
+    apa: 'Peng, X., Zhou, P., Song, X., Bianucci, G., Du, M., Collareta, A., Gao, Z., &amp; Xie, T. (2026). A 5.3-million-year-old deep-sea whale necropolis in the Diamantina Zone. <i>Nature.</i>',
+    mla: 'Peng, Xiaotong, et al. “A 5.3-Million-Year-Old Deep-Sea Whale Necropolis in the Diamantina Zone.” <i>Nature,</i> 2026.',
+    chicago: 'Peng, Xiaotong, et al. “A 5.3-Million-Year-Old Deep-Sea Whale Necropolis in the Diamantina Zone.” <i>Nature</i> (2026).',
+    ieee: 'X. Peng et al., “A 5.3-million-year-old deep-sea whale necropolis in the Diamantina Zone,” <i>Nature,</i> 2026.',
+    harvard: 'Peng, X. et al. (2026) ‘A 5.3-million-year-old deep-sea whale necropolis in the Diamantina Zone’, <i>Nature.</i>',
+    vancouver: 'Peng X, Zhou P, Song X, Bianucci G, Du M, Collareta A, et al. A 5.3-million-year-old deep-sea whale necropolis in the Diamantina Zone. Nature. 2026.'
   };
   var line = document.getElementById('citeLine');
   document.querySelectorAll('.stamps button').forEach(function(b){
