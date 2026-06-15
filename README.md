@@ -1,3 +1,5 @@
+# Papyrus Papers
+
 <p align="center">
   <a href="https://zendax673.github.io/papyrus-release/">
     <img src="https://zendax673.github.io/papyrus-release/assets/icon.svg" width="128" height="128" alt="Papyrus Papers">
@@ -7,23 +9,24 @@
 <h1 align="center">Papyrus Papers</h1>
 
 <p align="center">
-  <strong>A native macOS research workspace.</strong><br>
-  Literature, technical documents, reading notes, citations &mdash; and the evidence behind your next draft.
+  <strong>A native Mac research workspace.</strong><br>
+  PDFs, reading notes, citations, projects, and the evidence behind your next draft.
 </p>
 
 <p align="center">
-  <a href="https://apps.apple.com/us/app/papyrus-papers/id6766133716?mt=12&uo=4">
+  <a href="https://apps.apple.com/us/app/papyrus-papers/id6766133716?mt=12&amp;uo=4">
     <img src="https://zendax673.github.io/papyrus-release/assets/app-store-badge-black.svg#gh-light-mode-only" height="56" alt="Download on the Mac App Store">
     <img src="https://zendax673.github.io/papyrus-release/assets/app-store-badge-white.svg#gh-dark-mode-only" height="56" alt="Download on the Mac App Store">
   </a>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/macOS-15.6+-000?style=flat-square&logo=apple&logoColor=white" alt="macOS 15.6+">
-  <img src="https://img.shields.io/badge/Swift-6-F05138?style=flat-square&logo=swift&logoColor=white" alt="Swift 6">
+  <img src="https://img.shields.io/badge/macOS-14%2B-000?style=flat-square&logo=apple&logoColor=white" alt="macOS 14+">
+  <img src="https://img.shields.io/badge/iPadOS-17%2B-111?style=flat-square&logo=apple&logoColor=white" alt="iPadOS 17+">
   <img src="https://img.shields.io/badge/SwiftUI-native-007AFF?style=flat-square" alt="SwiftUI">
-  <img src="https://img.shields.io/badge/PDFKit-bundled-1E88E5?style=flat-square" alt="PDFKit">
-  <img src="https://img.shields.io/badge/license-MIT-2DA44E?style=flat-square" alt="MIT License">
+  <img src="https://img.shields.io/badge/PDFKit-reader-1E88E5?style=flat-square" alt="PDFKit">
+  <img src="https://img.shields.io/badge/local--first-no%20telemetry-2DA44E?style=flat-square" alt="Local-first, no telemetry">
+  <img src="https://img.shields.io/badge/license-MIT-6E7781?style=flat-square" alt="MIT License">
 </p>
 
 <p align="center">
@@ -39,47 +42,76 @@
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://zendax673.github.io/papyrus-release/assets/app-captures/library-window-dark.png">
-    <img src="https://zendax673.github.io/papyrus-release/assets/app-captures/library-window-light.png" alt="Papyrus Papers library window — sidebar with smart collections, paper list, and detail panel with metadata, abstract, and Markdown notes">
+    <source media="(prefers-color-scheme: dark)" srcset="https://zendax673.github.io/papyrus-release/assets/app-captures/mac/library-nature-dark.png">
+    <img src="https://zendax673.github.io/papyrus-release/assets/app-captures/mac/library-nature-light.png" alt="Papyrus Papers Mac library showing a Nature paper, metadata, tags, Markdown notes, and project context">
   </picture>
 </p>
 
-## What it does
+## What It Does
 
-Papyrus Papers is a local-first macOS workspace that connects literature, technical documents, reading notes, citations, and the evidence behind your next draft. One native Mac app instead of a folder, a browser tab, a PDF reader, a knowledge base, a spreadsheet of claims, and a reference manager.
+Papyrus Papers is a local-first Mac workspace for people who work with PDFs over time. It keeps the paper, PDF, metadata, reading progress, tags, Markdown notes, project role, evidence, and citation key attached to the same record.
 
-- **Import once, keep context.** PDFs, DOIs, arXiv IDs, BibTeX, RIS, Zotero / Better-BibTeX exports, and recursive folders all flow through one dialog. Joint enrichment from Crossref, OpenAlex, embedded XMP, and arXiv-ID extraction. Per-field provenance and a conflict picker when sources disagree.
-- **Read and think in one place.** Native PDFKit reader paired with Markdown notes that understand LaTeX. Full-text search across titles, authors, abstracts, notes, highlights, and the PDF body. Reading progress is visible from the library and project views.
-- **Decide what to read next.** Build your own Smart Collections from any combination of tags, journals, year ranges, BibTeX type, favorites, and PDF status. The reading queue and a Needs-Metadata-Attention surface turn a pile of PDFs into a queue you can act on.
-- **Turn papers into an argument.** Projects now include paper roles, an Evidence Board, synthesis search, Theme Map, manuscript preflight checks, note templates, and lightweight note history. Capture claims, quotes, pages, interpretations, and citation keys before drafting.
-- **Three shapes for one library.** Smart Collections (saved queries), Projects (working sets that span the library), and Folders (classic hierarchy). A paper can sit in many projects without being moved or duplicated, and its role can be different in each project.
-- **Export the way you write.** Copy citation in 8 styles &mdash; APA, MLA, Chicago, IEEE, Harvard, Vancouver, BibTeX, RIS &mdash; plus Pandoc and LaTeX cite commands. Markdown snapshots per paper or project, CSL JSON, BibTeX, export reports, and full project bundles preserve folder hierarchy.
-- **Sync with recovery points.** WebDAV sync can keep dated restore points so a previous library copy can be inspected and restored safely on the next launch.
+- **Import papers without losing context.** Bring in PDFs, folders, DOI records, arXiv IDs, BibTeX, RIS, and Zotero / Better BibTeX exports.
+- **Clean metadata with provenance.** Combine embedded PDF metadata with Crossref, OpenAlex, arXiv, DOI, and other scholarly sources, then resolve field-level conflicts when sources disagree.
+- **Read in a native window.** Use a PDFKit-backed reader with highlights, underline, strikethrough, freehand ink, notes, bookmarks, resume state, and a Highlights & Notes inspector.
+- **Write beside the source.** Keep Markdown notes on each paper, including headings, task lists, tables, block quotes, code fences, links, images, footnotes, and LaTeX math.
+- **Organize the library three ways.** Use Smart Collections for saved filters, Projects for working sets, and Folders for classic hierarchy.
+- **Turn reading into evidence.** Project Evidence Boards connect claims, quotes, pages, interpretations, manuscript sections, confidence scores, and citation keys before drafting.
+- **Search across the whole workspace.** Search metadata, tags, projects, notes, annotations, highlights, and indexed PDF text.
+- **Export cleanly.** Copy citations in APA, MLA, Chicago, IEEE, Harvard, Vancouver, BibTeX, and RIS; export CSL JSON, Markdown notes, project bundles, and preflight reports.
+- **Sync only when you choose.** Optional WebDAV sync uses your own server and keeps dated restore points for safer recovery.
+
+<details>
+<summary><strong>Also on iPadOS</strong></summary>
+
+Papyrus Papers is also available as a touch-first iPadOS workspace with Apple Pencil support. The iPad version is a companion to the Mac app: useful for reading, figure inspection, Markdown notes, Pencil markup, and project review away from the desk.
+
+<p align="center">
+  <a href="https://apps.apple.com/app/id6766133716">
+    <img src="https://zendax673.github.io/papyrus-release/assets/badge-appstore-black.svg#gh-light-mode-only" height="56" alt="Download on the App Store">
+    <img src="https://zendax673.github.io/papyrus-release/assets/badge-appstore-white.svg#gh-dark-mode-only" height="56" alt="Download on the App Store">
+  </a>
+</p>
+
+<p align="center">
+  <img src="https://zendax673.github.io/papyrus-release/assets/app-captures/ipad/library-nature.png" alt="Papyrus Papers iPad library with an ocean-themed paper set">
+</p>
+
+</details>
+
+## Requirements
+
+- macOS 14 or later for the Mac app
+- iPadOS 17 or later for the iPad app
+- Disk space for PDFs, metadata, notes, annotations, full-text indexes, and backups
+- Optional: a WebDAV-compatible server for library sync
 
 ## Privacy
 
-Local-first by design. Your library, notes, PDFs, indexes, and backups stay on your Mac unless you explicitly export, share, or sync them.
+Papyrus Papers is local-first. Your PDFs, notes, metadata, annotations, reading state, search indexes, backups, and project evidence stay on your device unless you explicitly export, share, or sync them.
 
-Network requests only happen when you use a feature that needs them: metadata lookup (Crossref, OpenAlex), WebDAV sync, or Apple's on-device Foundation Models for background metadata synthesis. No Papyrus account. No analytics. No telemetry SDKs.
+No Papyrus account is required. No analytics or telemetry SDK is included. Network access is limited to user-initiated actions such as metadata lookup, DOI links, App Store purchase validation, and optional WebDAV sync.
 
-Full policy: <a href="https://zendax673.github.io/papyrus-release/privacy.html">Privacy</a>.
+Full policy: [Privacy](https://zendax673.github.io/papyrus-release/privacy.html).
 
-## System requirements
+## Public Website
 
-- **macOS 15.6 (Sequoia)** or later
-- **Apple Silicon (arm64) and Intel (x86_64)** &mdash; approximately 17 MB for the architecture delivered to your Mac
+- Website: <https://zendax673.github.io/papyrus-release/>
+- Download: <https://zendax673.github.io/papyrus-release/download.html>
+- Privacy: <https://zendax673.github.io/papyrus-release/privacy.html>
+- Support: <https://zendax673.github.io/papyrus-release/support.html>
+- Terms: <https://zendax673.github.io/papyrus-release/terms.html>
 
 ## Documentation
 
 - [FAQ](FAQ.md)
 - [Changelog](CHANGELOG.md)
-- <a href="https://zendax673.github.io/papyrus-release/privacy.html">Privacy Policy</a>
-- <a href="https://zendax673.github.io/papyrus-release/support.html">Support</a>
+- [Support](https://zendax673.github.io/papyrus-release/support.html)
 
 ## Contact
 
-- **Bug reports and feature requests:** [Issues](https://github.com/zendax673/papyrus-release/issues)
-- **Private:** [zdfu189@gmail.com](mailto:zdfu189@gmail.com)
+- Bug reports and feature requests: [GitHub Issues](https://github.com/zendax673/papyrus-release/issues)
+- Private contact: [zdfu189@gmail.com](mailto:zdfu189@gmail.com)
 
 ## License
 
