@@ -3,8 +3,8 @@
 ## Is Papyrus cloud-first?
 
 No. Papyrus is local-first. Your library database, imported PDFs, notes, search
-indexes, and backups live on your Mac unless you explicitly export, share, or
-sync them somewhere else.
+indexes, and backups live on your device unless you explicitly export, share,
+turn on iCloud Sync, or configure WebDAV sync.
 
 ## What Is The Difference Between `Copy Into Library` And `Keep PDFs In Place`?
 
@@ -18,10 +18,10 @@ folder.
 
 ## Does Papyrus Upload My PDFs Automatically?
 
-No, not by default. Papyrus only sends library files out of your Mac when you
+No, not by default. Papyrus only sends library files out of your device when you
 explicitly:
 
-- Enable WebDAV sync
+- Enable iCloud Sync or WebDAV sync
 - Share a PDF through the macOS share sheet
 - Export library or project data
 
@@ -64,12 +64,13 @@ snapshots. You can also trigger a manual backup from Settings.
 
 ## How Does Sync Work?
 
-The built-in sync path is WebDAV. You choose the server, username,
-password, and remote folder. Papyrus then syncs the library package to that
-destination.
+Papyrus supports two optional sync paths. iCloud Sync keeps your library current
+across Mac and iPad devices signed in to the same iCloud account, without a
+Papyrus server or Papyrus account.
 
-Papyrus can also coexist with local folders that you sync through tools you
-already use, but the in-app sync UI is currently centered on WebDAV.
+WebDAV sync remains available when you want to use a server, username, password,
+and remote folder you control. Papyrus can also coexist with local folders that
+you sync through tools you already use.
 
 ## Can I Restore From WebDAV?
 
@@ -141,7 +142,7 @@ Use the guidance on the [Support page](https://zendax673.github.io/papyrus-relea
 - Reproduction steps
 - Your macOS version and Papyrus build
 - Whether the affected PDF was copied or linked
-- Whether sync or export was involved
+- Whether iCloud Sync, WebDAV sync, or export was involved
 
 If the issue looks like data corruption, create a backup snapshot before trying
 large recovery steps.
