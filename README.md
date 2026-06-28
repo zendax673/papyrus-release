@@ -9,7 +9,7 @@
 <h1 align="center">Papyrus</h1>
 
 <p align="center">
-  <strong>A native Mac research workspace.</strong><br>
+  <strong>A native Mac and iPad research workspace.</strong><br>
   PDFs, reading notes, citations, projects, and the evidence behind your next draft.
 </p>
 
@@ -49,7 +49,7 @@
 
 ## What It Does
 
-Papyrus is a local-first Mac workspace for people who work with PDFs over time. It keeps the paper, PDF, metadata, reading progress, tags, Markdown notes, project role, evidence, and citation key attached to the same record.
+Papyrus is a local-first workspace for people who work with PDFs over time on Mac and iPad. It keeps the paper, PDF, metadata, reading progress, tags, Markdown notes, project role, evidence, and citation key attached to the same record.
 
 - **Import papers without losing context.** Bring in PDFs, folders, DOI records, arXiv IDs, BibTeX, RIS, and Zotero / Better BibTeX exports.
 - **Clean metadata with provenance.** Combine embedded PDF metadata with Crossref, OpenAlex, arXiv, DOI, and other scholarly sources, then resolve field-level conflicts when sources disagree.
@@ -59,7 +59,7 @@ Papyrus is a local-first Mac workspace for people who work with PDFs over time. 
 - **Turn reading into evidence.** Project Evidence Boards connect claims, quotes, pages, interpretations, manuscript sections, confidence scores, and citation keys before drafting.
 - **Search across the whole workspace.** Search metadata, tags, projects, notes, annotations, highlights, and indexed PDF text.
 - **Export cleanly.** Copy citations in APA, MLA, Chicago, IEEE, Harvard, Vancouver, BibTeX, and RIS; export CSL JSON, Markdown notes, project bundles, and preflight reports.
-- **Sync only when you choose.** Optional WebDAV sync uses your own server and keeps dated restore points for safer recovery.
+- **Sync only when you choose.** Optional iCloud Sync keeps your library current across Mac and iPad, while WebDAV sync uses your own server and keeps dated restore points for safer recovery.
 
 <details>
 <summary><strong>Also on iPadOS</strong></summary>
@@ -84,13 +84,13 @@ Papyrus is also available as a touch-first iPadOS workspace with Apple Pencil su
 - macOS 14 or later for the Mac app
 - iPadOS 17 or later for the iPad app
 - Disk space for PDFs, metadata, notes, annotations, full-text indexes, and backups
-- Optional: a WebDAV-compatible server for library sync
+- Optional: an iCloud account for iCloud Sync, or a WebDAV-compatible server for WebDAV sync
 
 ## Privacy
 
-Papyrus is local-first. Your PDFs, notes, metadata, annotations, reading state, search indexes, backups, and project evidence stay on your device unless you explicitly export, share, or sync them.
+Papyrus is local-first. Your PDFs, notes, metadata, annotations, reading state, search indexes, backups, and project evidence stay on your device unless you explicitly export, share, turn on iCloud Sync, or configure WebDAV sync.
 
-No Papyrus account is required. No analytics or telemetry SDK is included. Network access is limited to user-initiated actions such as metadata lookup, DOI links, App Store purchase validation, and optional WebDAV sync.
+No Papyrus account is required. No analytics or telemetry SDK is included. Network access is limited to user-initiated actions such as metadata lookup, DOI links, App Store purchase validation, optional iCloud Sync, and optional WebDAV sync.
 
 Full policy: [Privacy](https://zendax673.github.io/papyrus-release/privacy.html).
 
