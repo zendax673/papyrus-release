@@ -1,8 +1,8 @@
 # Papyrus
 
-A native, local-first research library, PDF reader, notes workspace, and evidence organizer for macOS.
+A native, local-first research library, PDF reader, notes workspace, and evidence organizer for macOS and iPadOS.
 
-Papyrus is built for researchers, graduate students, engineers, and anyone who works through large collections of academic PDFs. It brings importing, metadata cleanup, reading, annotation, notes, project-level evidence boards, citation export, and backup into one Mac-native workspace while keeping your library local by default.
+Papyrus is built for researchers, graduate students, engineers, and anyone who works through large collections of academic PDFs. It brings importing, metadata cleanup, reading, annotation, notes, project-level evidence boards, citation export, sync, and backup into one native workspace while keeping your library local by default.
 
 ![macOS](https://img.shields.io/badge/macOS-14.0%2B-black)
 ![SwiftUI](https://img.shields.io/badge/SwiftUI-native-blue)
@@ -68,11 +68,11 @@ Papyrus is built for researchers, graduate students, engineers, and anyone who w
 
 ### Privacy & Local-first
 
-- PDFs, notes, metadata, annotations, reading state, full-text indexes, and backups stay on your Mac by default.
+- PDFs, notes, metadata, annotations, reading state, full-text indexes, and backups stay on your device by default.
 - No Papyrus account is required.
 - No analytics, telemetry, or crash-report SDK is shipped by default.
-- Network access is limited to user-initiated metadata lookup, DOI links, optional WebDAV sync, and Apple-provided system intelligence where available.
-- WebDAV sync is optional and uses the server you configure.
+- Network access is limited to user-initiated metadata lookup, DOI links, optional iCloud Sync, optional WebDAV sync, and Apple-provided system intelligence where available.
+- iCloud Sync is optional and uses your own iCloud account. WebDAV sync is optional and uses the server you configure.
 
 ### macOS Native Workflow
 
@@ -80,7 +80,7 @@ Papyrus is built for researchers, graduate students, engineers, and anyone who w
 - Native menus, keyboard shortcuts, drag-and-drop import, Finder reveal, share sheet, and Settings panes.
 - Configurable shortcuts in Settings -> Shortcuts with conflict detection.
 - Automatic local backups and a Storage settings pane for backup management.
-- Optional WebDAV sync with dated restore points for recent successful syncs.
+- Optional iCloud Sync across Mac and iPad, plus WebDAV sync with dated restore points for recent successful syncs.
 - Built for Apple Silicon and Intel Macs.
 
 ---
@@ -100,7 +100,7 @@ The Mac App Store listing is the official public download path.
 - macOS 14.0 Sonoma or later
 - Apple Silicon or Intel Mac
 - Disk space for your PDFs, metadata, notes, annotations, full-text indexes, and backups
-- Optional: a WebDAV-compatible server if you want library sync across Macs
+- Optional: an iCloud account for iCloud Sync, or a WebDAV-compatible server for WebDAV sync
 
 Large libraries are mostly limited by the PDFs you import. The app itself is small compared with a real research archive.
 
@@ -242,15 +242,15 @@ Papyrus is designed as a local-first research tool.
 
 By default:
 
-- Your PDFs stay on your Mac.
-- Your notes stay on your Mac.
-- Your annotations stay on your Mac.
-- Your metadata database stays on your Mac.
-- Your reading state stays on your Mac.
-- Your full-text index stays on your Mac.
-- Your backups stay on your Mac.
+- Your PDFs stay on your device.
+- Your notes stay on your device.
+- Your annotations stay on your device.
+- Your metadata database stays on your device.
+- Your reading state stays on your device.
+- Your full-text index stays on your device.
+- Your backups stay on your device.
 
-Network access is limited to features you explicitly use, such as metadata lookup, DOI links, optional WebDAV sync, or Apple-provided system intelligence on supported Macs.
+Network access is limited to features you explicitly use, such as metadata lookup, DOI links, optional iCloud Sync, optional WebDAV sync, or Apple-provided system intelligence on supported Macs.
 
 Read the full policy here: <https://zendax673.github.io/papyrus-release/privacy.html>
 

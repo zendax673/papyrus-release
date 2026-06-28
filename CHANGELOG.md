@@ -9,6 +9,18 @@ and this project follows semantic versioning when tagged releases begin.
 
 No unreleased changes documented yet.
 
+## [1.3.3] - 2026-06-28
+
+### Added
+
+- **iCloud Sync.** Optional iCloud Sync keeps the library current across Mac and
+  iPad devices signed in to the same iCloud account.
+
+### Changed
+
+- Public website, privacy, terms, support, and FAQ copy now describe both
+  iCloud Sync and WebDAV sync instead of WebDAV-only sync.
+
 ## [1.2.1] - 2026-06-05
 
 ### Added
