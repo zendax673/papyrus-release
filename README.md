@@ -1,8 +1,8 @@
-# Papyrus Papers
+# Papyrus
 
 A native, local-first research library, PDF reader, notes workspace, and evidence organizer for macOS.
 
-Papyrus Papers is built for researchers, graduate students, engineers, and anyone who works through large collections of academic PDFs. It brings importing, metadata cleanup, reading, annotation, notes, project-level evidence boards, citation export, and backup into one Mac-native workspace while keeping your library local by default.
+Papyrus is built for researchers, graduate students, engineers, and anyone who works through large collections of academic PDFs. It brings importing, metadata cleanup, reading, annotation, notes, project-level evidence boards, citation export, and backup into one Mac-native workspace while keeping your library local by default.
 
 ![macOS](https://img.shields.io/badge/macOS-14.0%2B-black)
 ![SwiftUI](https://img.shields.io/badge/SwiftUI-native-blue)
@@ -21,7 +21,7 @@ Papyrus Papers is built for researchers, graduate students, engineers, and anyon
 
 - Import PDFs, folders, DOIs, arXiv IDs, BibTeX files, and RIS files.
 - Drag PDFs or folders from Finder into the library window.
-- Recursively import folders and mirror the source structure inside Papyrus Papers.
+- Recursively import folders and mirror the source structure inside Papyrus.
 - Choose whether PDFs are linked in place or copied into the managed library.
 - Organize papers with folders, projects, tags, favorites, read / unread state, Read Later, and Smart Collections.
 - Assign project-specific writing roles such as To Skim, Deep Read, Cite in Intro, Cite in Method, Excluded, and Need Re-check without changing the global paper record.
@@ -61,15 +61,15 @@ Papyrus Papers is built for researchers, graduate students, engineers, and anyon
 
 ### Optional Apple Intelligence Support
 
-- Papyrus Papers can use Apple Foundation Models on supported Macs and locales for metadata and abstract extraction support.
+- Papyrus can use Apple Foundation Models on supported Macs and locales for metadata and abstract extraction support.
 - These paths are optional and fall back to deterministic PDF parsing and non-AI heuristics when unavailable.
-- Papyrus Papers does not operate a hosted AI backend.
+- Papyrus does not operate a hosted AI backend.
 - AI is not required for importing, reading, search, notes, sync, or export.
 
 ### Privacy & Local-first
 
 - PDFs, notes, metadata, annotations, reading state, full-text indexes, and backups stay on your Mac by default.
-- No Papyrus Papers account is required.
+- No Papyrus account is required.
 - No analytics, telemetry, or crash-report SDK is shipped by default.
 - Network access is limited to user-initiated metadata lookup, DOI links, optional WebDAV sync, and Apple-provided system intelligence where available.
 - WebDAV sync is optional and uses the server you configure.
@@ -87,9 +87,9 @@ Papyrus Papers is built for researchers, graduate students, engineers, and anyon
 
 ## Install
 
-Papyrus Papers is distributed through the Mac App Store.
+Papyrus is distributed through the Mac App Store.
 
-[Download Papyrus Papers on the Mac App Store](https://apps.apple.com/us/app/papyrus-papers/id6766133716?mt=12&uo=4)
+[Download Papyrus on the Mac App Store](https://apps.apple.com/us/app/papyrus-papers/id6766133716?mt=12&uo=4)
 
 The Mac App Store listing is the official public download path.
 
@@ -108,7 +108,7 @@ Large libraries are mostly limited by the PDFs you import. The app itself is sma
 
 ## Quick Start
 
-1. Launch Papyrus Papers.
+1. Launch Papyrus.
 2. Import PDFs, a folder, a DOI / arXiv ID, a BibTeX file, or a RIS file.
 3. Choose whether to link PDFs in place or copy them into the managed library.
 4. Review extracted metadata and resolve conflicts when needed.
@@ -134,7 +134,7 @@ Large libraries are mostly limited by the PDFs you import. The app itself is sma
 | `Shift + Command + T` | Manage tags |
 | `Option + Command + U` | Toggle read / unread |
 | `Command + Delete` | Move selection to Trash |
-| `Shift + Command + /` | Open Papyrus Papers Help |
+| `Shift + Command + /` | Open Papyrus Help |
 
 Shortcuts can be changed in Settings -> Shortcuts. Conflicts are detected and cleared automatically.
 
@@ -207,7 +207,7 @@ Roadmap items may change based on App Store review, bug reports, and real resear
 
 ## Public Website
 
-This repository hosts public-facing materials for Papyrus Papers:
+This repository hosts public-facing materials for Papyrus:
 
 - Marketing site: <https://zendax673.github.io/papyrus-release/>
 - Download status: <https://zendax673.github.io/papyrus-release/download.html>
@@ -227,7 +227,7 @@ Issues and feature requests are welcome:
 For bug reports, include:
 
 - macOS version
-- Papyrus Papers version or build number
+- Papyrus version or build number
 - Steps to reproduce
 - Whether the issue involves import, metadata, PDF reading, annotations, notes, search, export, sync, backup, or purchase
 - Whether the PDF was linked in place or copied into the library
@@ -238,7 +238,7 @@ Research workflow suggestions are especially useful. If Zotero, Papers, Mendeley
 
 ## Privacy
 
-Papyrus Papers is designed as a local-first research tool.
+Papyrus is designed as a local-first research tool.
 
 By default:
 
