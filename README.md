@@ -1,12 +1,12 @@
-# Papyrus Papers
+# Papyrus
 
 <p align="center">
   <a href="https://zendax673.github.io/papyrus-release/">
-    <img src="https://zendax673.github.io/papyrus-release/assets/icon.svg" width="128" height="128" alt="Papyrus Papers">
+    <img src="https://zendax673.github.io/papyrus-release/assets/icon.svg" width="128" height="128" alt="Papyrus">
   </a>
 </p>
 
-<h1 align="center">Papyrus Papers</h1>
+<h1 align="center">Papyrus</h1>
 
 <p align="center">
   <strong>A native Mac research workspace.</strong><br>
@@ -43,13 +43,13 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://zendax673.github.io/papyrus-release/assets/app-captures/mac/library-nature-dark.png">
-    <img src="https://zendax673.github.io/papyrus-release/assets/app-captures/mac/library-nature-light.png" alt="Papyrus Papers Mac library showing a Nature paper, metadata, tags, Markdown notes, and project context">
+    <img src="https://zendax673.github.io/papyrus-release/assets/app-captures/mac/library-nature-light.png" alt="Papyrus Mac library showing a Nature paper, metadata, tags, Markdown notes, and project context">
   </picture>
 </p>
 
 ## What It Does
 
-Papyrus Papers is a local-first Mac workspace for people who work with PDFs over time. It keeps the paper, PDF, metadata, reading progress, tags, Markdown notes, project role, evidence, and citation key attached to the same record.
+Papyrus is a local-first Mac workspace for people who work with PDFs over time. It keeps the paper, PDF, metadata, reading progress, tags, Markdown notes, project role, evidence, and citation key attached to the same record.
 
 - **Import papers without losing context.** Bring in PDFs, folders, DOI records, arXiv IDs, BibTeX, RIS, and Zotero / Better BibTeX exports.
 - **Clean metadata with provenance.** Combine embedded PDF metadata with Crossref, OpenAlex, arXiv, DOI, and other scholarly sources, then resolve field-level conflicts when sources disagree.
@@ -64,7 +64,7 @@ Papyrus Papers is a local-first Mac workspace for people who work with PDFs over
 <details>
 <summary><strong>Also on iPadOS</strong></summary>
 
-Papyrus Papers is also available as a touch-first iPadOS workspace with Apple Pencil support. The iPad version is a companion to the Mac app: useful for reading, figure inspection, Markdown notes, Pencil markup, and project review away from the desk.
+Papyrus is also available as a touch-first iPadOS workspace with Apple Pencil support. The iPad version is a companion to the Mac app: useful for reading, figure inspection, Markdown notes, Pencil markup, and project review away from the desk.
 
 <p align="center">
   <a href="https://apps.apple.com/app/id6766133716">
@@ -74,7 +74,7 @@ Papyrus Papers is also available as a touch-first iPadOS workspace with Apple Pe
 </p>
 
 <p align="center">
-  <img src="https://zendax673.github.io/papyrus-release/assets/app-captures/ipad/library-nature.png" alt="Papyrus Papers iPad library with an ocean-themed paper set">
+  <img src="https://zendax673.github.io/papyrus-release/assets/app-captures/ipad/library-nature.png" alt="Papyrus iPad library with an ocean-themed paper set">
 </p>
 
 </details>
@@ -88,7 +88,7 @@ Papyrus Papers is also available as a touch-first iPadOS workspace with Apple Pe
 
 ## Privacy
 
-Papyrus Papers is local-first. Your PDFs, notes, metadata, annotations, reading state, search indexes, backups, and project evidence stay on your device unless you explicitly export, share, or sync them.
+Papyrus is local-first. Your PDFs, notes, metadata, annotations, reading state, search indexes, backups, and project evidence stay on your device unless you explicitly export, share, or sync them.
 
 No Papyrus account is required. No analytics or telemetry SDK is included. Network access is limited to user-initiated actions such as metadata lookup, DOI links, App Store purchase validation, and optional WebDAV sync.
 
