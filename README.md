@@ -1,261 +1,119 @@
 # Papyrus
 
-A native, local-first research library, PDF reader, notes workspace, and evidence organizer for macOS and iPadOS.
+<p align="center">
+  <a href="https://zendax673.github.io/papyrus-release/">
+    <img src="https://zendax673.github.io/papyrus-release/assets/icon.svg" width="128" height="128" alt="Papyrus">
+  </a>
+</p>
 
-Papyrus is built for researchers, graduate students, engineers, and anyone who works through large collections of academic PDFs. It brings importing, metadata cleanup, reading, annotation, notes, project-level evidence boards, citation export, sync, and backup into one native workspace while keeping your library local by default.
+<h1 align="center">Papyrus</h1>
 
-![macOS](https://img.shields.io/badge/macOS-14.0%2B-black)
-![SwiftUI](https://img.shields.io/badge/SwiftUI-native-blue)
-![SwiftData](https://img.shields.io/badge/SwiftData-local-green)
-![PDFKit](https://img.shields.io/badge/PDFKit-reader-orange)
-![License](https://img.shields.io/badge/License-MIT-lightgrey)
-![App Store](https://img.shields.io/badge/Mac%20App%20Store-available-black)
+<p align="center">
+  <strong>A native Mac and iPad research workspace.</strong><br>
+  PDFs, reading notes, citations, projects, and the evidence behind your next draft.
+</p>
 
-[Features](#features) · [Install](#install) · [Quick Start](#quick-start) · [Shortcuts](#default-shortcuts) · [Screenshots](#screenshots) · [Roadmap](#roadmap) · [Privacy](#privacy) · [License](#license)
+<p align="center">
+  <a href="https://apps.apple.com/us/app/papyrus-papers/id6766133716?mt=12&amp;uo=4">
+    <img src="https://zendax673.github.io/papyrus-release/assets/app-store-badge-black.svg#gh-light-mode-only" height="56" alt="Download on the Mac App Store">
+    <img src="https://zendax673.github.io/papyrus-release/assets/app-store-badge-white.svg#gh-dark-mode-only" height="56" alt="Download on the Mac App Store">
+  </a>
+</p>
 
----
+<p align="center">
+  <img src="https://img.shields.io/badge/macOS-14%2B-000?style=flat-square&logo=apple&logoColor=white" alt="macOS 14+">
+  <img src="https://img.shields.io/badge/iPadOS-17%2B-111?style=flat-square&logo=apple&logoColor=white" alt="iPadOS 17+">
+  <img src="https://img.shields.io/badge/SwiftUI-native-007AFF?style=flat-square" alt="SwiftUI">
+  <img src="https://img.shields.io/badge/PDFKit-reader-1E88E5?style=flat-square" alt="PDFKit">
+  <img src="https://img.shields.io/badge/local--first-no%20telemetry-2DA44E?style=flat-square" alt="Local-first, no telemetry">
+  <img src="https://img.shields.io/badge/license-MIT-6E7781?style=flat-square" alt="MIT License">
+</p>
 
-## Features
-
-### Research Library
-
-- Import PDFs, folders, DOIs, arXiv IDs, BibTeX files, and RIS files.
-- Drag PDFs or folders from Finder into the library window.
-- Recursively import folders and mirror the source structure inside Papyrus.
-- Choose whether PDFs are linked in place or copied into the managed library.
-- Organize papers with folders, projects, tags, favorites, read / unread state, Read Later, and Smart Collections.
-- Assign project-specific writing roles such as To Skim, Deep Read, Cite in Intro, Cite in Method, Excluded, and Need Re-check without changing the global paper record.
-- Store the library locally with SwiftData and app-group storage.
-
-### PDF Reading & Annotation
-
-- Open PDFs in a dedicated native reader window or hand them off to the system default PDF app.
-- Use PDFKit-backed reading with page bookmarks and resume state.
-- Highlight, underline, strikethrough, add note annotations, and place free-text blocks.
-- Import existing PDF annotations from Preview, PDF Expert, and other PDF apps when possible.
-- Browse annotations in a Highlights & Notes inspector, filter by color, edit comments, and retint markup.
-- Keep paper-linked Markdown notes beside the reader.
-
-### Metadata, Search & Organization
-
-- Extract identifiers and metadata from imported PDFs where possible.
-- Query open metadata sources including Crossref, arXiv, Semantic Scholar, OpenAlex, OpenLibrary, NCBI / PubMed / PMC, Zenodo, DOI links, and embedded XMP.
-- Preserve per-field provenance and show conflicts when sources disagree.
-- Edit metadata manually when automatic extraction is incomplete.
-- Detect duplicate imports using normalized title and file-size signals.
-- Search metadata, tags, projects, notes, annotations, and indexed PDF text.
-- Index papers into macOS Spotlight so library items can appear in system search.
-
-### Notes, Citations & Export
-
-- Write Markdown notes per paper with headings, task lists, tables, block quotes, code fences, links, images, footnotes, table of contents, and LaTeX math.
-- Open notes beside the PDF, in the detail panel, or in an independent note window.
-- Use project-level Evidence Boards to connect claims, themes, papers, quotes, pages, interpretations, manuscript sections, citation keys, and confidence.
-- Search within a project across metadata, notes, highlights, and PDF text, then send useful results into the Evidence Board.
-- Copy citations in APA 7, MLA 9, Chicago 17, IEEE, Harvard, Vancouver, BibTeX, and RIS formats.
-- Copy cite commands for LaTeX and Pandoc-style writing workflows.
-- Export a writing pack with citation, BibTeX, CSL JSON, notes, and annotation evidence.
-- Export Markdown notes for use in Obsidian, Apple Notes, or another knowledge base.
-- Export projects as bundles containing PDFs, BibTeX, RIS, CSL JSON, evidence, and optional Markdown notes.
-- Run project preflight to catch duplicate citekeys, missing DOI/year/pages, papers without PDFs, note references missing from the project, and unused bibliography entries.
-
-### Optional Apple Intelligence Support
-
-- Papyrus can use Apple Foundation Models on supported Macs and locales for metadata and abstract extraction support.
-- These paths are optional and fall back to deterministic PDF parsing and non-AI heuristics when unavailable.
-- Papyrus does not operate a hosted AI backend.
-- AI is not required for importing, reading, search, notes, sync, or export.
-
-### Privacy & Local-first
-
-- PDFs, notes, metadata, annotations, reading state, full-text indexes, and backups stay on your device by default.
-- No Papyrus account is required.
-- No analytics, telemetry, or crash-report SDK is shipped by default.
-- Network access is limited to user-initiated metadata lookup, DOI links, optional iCloud Sync, optional WebDAV sync, and Apple-provided system intelligence where available.
-- iCloud Sync is optional and uses your own iCloud account. WebDAV sync is optional and uses the server you configure.
-
-### macOS Native Workflow
-
-- SwiftUI interface designed for macOS Sonoma.
-- Native menus, keyboard shortcuts, drag-and-drop import, Finder reveal, share sheet, and Settings panes.
-- Configurable shortcuts in Settings -> Shortcuts with conflict detection.
-- Automatic local backups and a Storage settings pane for backup management.
-- Optional iCloud Sync across Mac and iPad, plus WebDAV sync with dated restore points for recent successful syncs.
-- Built for Apple Silicon and Intel Macs.
+<p align="center">
+  <a href="https://zendax673.github.io/papyrus-release/">Website</a> &middot;
+  <a href="https://zendax673.github.io/papyrus-release/download.html">Download</a> &middot;
+  <a href="https://zendax673.github.io/papyrus-release/support.html">Support</a> &middot;
+  <a href="https://zendax673.github.io/papyrus-release/privacy.html">Privacy</a> &middot;
+  <a href="FAQ.md">FAQ</a> &middot;
+  <a href="CHANGELOG.md">Changelog</a>
+</p>
 
 ---
 
-## Install
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://zendax673.github.io/papyrus-release/assets/app-captures/mac/library-nature-dark.png">
+    <img src="https://zendax673.github.io/papyrus-release/assets/app-captures/mac/library-nature-light.png" alt="Papyrus Mac library showing a Nature paper, metadata, tags, Markdown notes, and project context">
+  </picture>
+</p>
 
-Papyrus is distributed through the Mac App Store.
+## What It Does
 
-[Download Papyrus on the Mac App Store](https://apps.apple.com/us/app/papyrus-papers/id6766133716?mt=12&uo=4)
+Papyrus is a local-first workspace for people who work with PDFs over time on Mac and iPad. It keeps the paper, PDF, metadata, reading progress, tags, Markdown notes, project role, evidence, and citation key attached to the same record.
 
-The Mac App Store listing is the official public download path.
+- **Import papers without losing context.** Bring in PDFs, folders, DOI records, arXiv IDs, and BibTeX or RIS exports from other reference managers.
+- **Save papers straight from Safari.** The bundled Safari extension captures the paper on the current tab — with its PDF when one is available — or saves any PDF, DOI, or arXiv link from the right-click (Mac) or long-press (iPad) menu. Folder, tag, and project pickers in the popup let a paper land organized.
+- **Clean metadata with provenance.** Combine embedded PDF metadata with Crossref, OpenAlex, arXiv, DOI, and other scholarly sources, then resolve field-level conflicts when sources disagree.
+- **Read in a native window.** Use a PDFKit-backed reader with highlights, underline, strikethrough, freehand ink, notes, bookmarks, resume state, and a Highlights & Notes inspector.
+- **Write beside the source.** Keep Markdown notes on each paper, including headings, task lists, tables, block quotes, code fences, links, images, footnotes, and LaTeX math.
+- **Organize the library three ways.** Use Smart Collections for saved filters, Projects for working sets, and Folders for classic hierarchy.
+- **Turn reading into evidence.** Project Evidence Boards connect claims, quotes, pages, interpretations, manuscript sections, confidence scores, and citation keys before drafting.
+- **Search across the whole workspace.** Search metadata, tags, projects, notes, annotations, highlights, and indexed PDF text.
+- **Export cleanly.** Copy citations in APA, MLA, Chicago, IEEE, Harvard, Vancouver, BibTeX, and RIS; export CSL JSON, Markdown notes, project bundles, and preflight reports.
+- **Sync only when you choose.** Optional iCloud Sync keeps your library current across Mac and iPad, while WebDAV sync uses your own server and keeps dated restore points for safer recovery.
 
----
+<details>
+<summary><strong>Also on iPadOS</strong></summary>
+
+Papyrus is also available as a touch-first iPadOS workspace with Apple Pencil support. The iPad version is a companion to the Mac app: useful for reading, figure inspection, Markdown notes, Pencil markup, saving papers from Safari, and project review away from the desk.
+
+<p align="center">
+  <a href="https://apps.apple.com/app/id6766133716">
+    <img src="https://zendax673.github.io/papyrus-release/assets/badge-appstore-black.svg#gh-light-mode-only" height="56" alt="Download on the App Store">
+    <img src="https://zendax673.github.io/papyrus-release/assets/badge-appstore-white.svg#gh-dark-mode-only" height="56" alt="Download on the App Store">
+  </a>
+</p>
+
+<p align="center">
+  <img src="https://zendax673.github.io/papyrus-release/assets/app-captures/ipad/library-nature.png" alt="Papyrus iPad library with an ocean-themed paper set">
+</p>
+
+</details>
 
 ## Requirements
 
-- macOS 14.0 Sonoma or later
-- Apple Silicon or Intel Mac
-- Disk space for your PDFs, metadata, notes, annotations, full-text indexes, and backups
+- macOS 14 or later for the Mac app
+- iPadOS 17 or later for the iPad app
+- Disk space for PDFs, metadata, notes, annotations, full-text indexes, and backups
 - Optional: an iCloud account for iCloud Sync, or a WebDAV-compatible server for WebDAV sync
-
-Large libraries are mostly limited by the PDFs you import. The app itself is small compared with a real research archive.
-
----
-
-## Quick Start
-
-1. Launch Papyrus.
-2. Import PDFs, a folder, a DOI / arXiv ID, a BibTeX file, or a RIS file.
-3. Choose whether to link PDFs in place or copy them into the managed library.
-4. Review extracted metadata and resolve conflicts when needed.
-5. Organize papers with folders, projects, tags, favorites, Read Later, and Smart Collections.
-6. Open a PDF in the native reader.
-7. Add highlights, annotations, bookmarks, and Markdown notes.
-8. Capture quotes or manual entries into a project Evidence Board.
-9. Search metadata, notes, annotations, and PDF full text.
-10. Run project preflight when the manuscript is close to export.
-11. Export citations, notes, evidence, or project bundles when you are ready to write.
-
----
-
-## Default Shortcuts
-
-| Shortcut | Action |
-| --- | --- |
-| `Command + F` | Find in the active view |
-| `Command + I` | Import PDFs |
-| `Command + O` | Open PDF |
-| `Shift + Command + R` | Refresh library metadata |
-| `Command + D` | Toggle favorite |
-| `Shift + Command + T` | Manage tags |
-| `Option + Command + U` | Toggle read / unread |
-| `Command + Delete` | Move selection to Trash |
-| `Shift + Command + /` | Open Papyrus Help |
-
-Shortcuts can be changed in Settings -> Shortcuts. Conflicts are detected and cleared automatically.
-
----
-
-## Screenshots
-
-### Library View
-
-![Library View](assets/app-captures/library-window-light.png)
-
-### PDF Reader
-
-![PDF Reader](assets/app-captures/reader-window-light.png)
-
-### Smart Collections
-
-![Smart Collections](assets/app-captures/library-window-smart-light.png)
-
-### Projects
-
-![Projects](assets/app-captures/library-window-project-light.png)
-
-### Folders
-
-![Folders](assets/app-captures/library-window-folder-light.png)
-
----
-
-## Roadmap
-
-### Implemented in the current app build
-
-- PDF, folder, DOI / arXiv, BibTeX, and RIS import
-- Link-in-place and copy-into-library PDF storage modes
-- Metadata enrichment, provenance, and conflict picking
-- Duplicate detection for imports
-- Folders, projects, tags, favorites, Read Later, and Smart Collections
-- Project-specific writing roles and Evidence Board
-- Native PDF reader with highlights, note annotations, free text, bookmarks, and annotation inspector
-- Paper-linked Markdown notes
-- Citation copying, cite commands, CSL JSON export, and project export reports
-- Full-text PDF indexing and search
-- Project-scoped synthesis search, theme map, and manuscript preflight
-- Core Spotlight indexing
-- Automatic local backups and manual backup creation
-- Optional WebDAV sync, dated restore points, restore, and connection testing
-- Configurable keyboard shortcuts
-- StoreKit 2 lifetime unlock and 30-day trial flow
-
-### In progress for public release
-
-- Mac App Store listing and release packaging
-- App Store review polish
-- Documentation cleanup for public users
-- Import and metadata reliability hardening
-- Reader and annotation polish
-
-### Planned after 1.0
-
-- Continued metadata-source improvements
-- More export workflow polish
-- More keyboard-first library actions
-- Large-library performance tuning
-- Safer use of Apple Foundation Models where they improve metadata extraction without changing the local-first model
-
-Roadmap items may change based on App Store review, bug reports, and real research workflows.
-
----
-
-## Public Website
-
-This repository hosts public-facing materials for Papyrus:
-
-- Marketing site: <https://zendax673.github.io/papyrus-release/>
-- Download status: <https://zendax673.github.io/papyrus-release/download.html>
-- Privacy policy: <https://zendax673.github.io/papyrus-release/privacy.html>
-- Terms: <https://zendax673.github.io/papyrus-release/terms.html>
-- Support: <https://zendax673.github.io/papyrus-release/support.html>
-- FAQ and changelog
-
----
-
-## Contributing
-
-Issues and feature requests are welcome:
-
-<https://github.com/zendax673/papyrus-release/issues>
-
-For bug reports, include:
-
-- macOS version
-- Papyrus version or build number
-- Steps to reproduce
-- Whether the issue involves import, metadata, PDF reading, annotations, notes, search, export, sync, backup, or purchase
-- Whether the PDF was linked in place or copied into the library
-
-Research workflow suggestions are especially useful. If Zotero, Papers, Mendeley, ReadCube, DEVONthink, Obsidian, Finder folders, or a custom setup already works for part of your process, describe what works and where it breaks down.
-
----
 
 ## Privacy
 
-Papyrus is designed as a local-first research tool.
+Papyrus is local-first. Your PDFs, notes, metadata, annotations, reading state, search indexes, backups, and project evidence stay on your device unless you explicitly export, share, turn on iCloud Sync, or configure WebDAV sync.
 
-By default:
+No Papyrus account is required. No analytics or telemetry SDK is included. Network access is limited to user-initiated actions such as metadata lookup, DOI links, papers you send from Safari, App Store purchase validation, optional iCloud Sync, and optional WebDAV sync. The Safari extension runs only when you invoke it and reads only the page or link you chose.
 
-- Your PDFs stay on your device.
-- Your notes stay on your device.
-- Your annotations stay on your device.
-- Your metadata database stays on your device.
-- Your reading state stays on your device.
-- Your full-text index stays on your device.
-- Your backups stay on your device.
+Full policy: [Privacy](https://zendax673.github.io/papyrus-release/privacy.html).
 
-Network access is limited to features you explicitly use, such as metadata lookup, DOI links, optional iCloud Sync, optional WebDAV sync, or Apple-provided system intelligence on supported Macs.
+## Public Website
 
-Read the full policy here: <https://zendax673.github.io/papyrus-release/privacy.html>
+- Website: <https://zendax673.github.io/papyrus-release/>
+- Download: <https://zendax673.github.io/papyrus-release/download.html>
+- Privacy: <https://zendax673.github.io/papyrus-release/privacy.html>
+- Support: <https://zendax673.github.io/papyrus-release/support.html>
+- Terms: <https://zendax673.github.io/papyrus-release/terms.html>
 
----
+## Documentation
+
+- [FAQ](FAQ.md)
+- [Changelog](CHANGELOG.md)
+- [Support](https://zendax673.github.io/papyrus-release/support.html)
+
+## Contact
+
+- Bug reports and feature requests: [GitHub Issues](https://github.com/zendax673/papyrus-release/issues)
+- Private contact: [zdfu189@gmail.com](mailto:zdfu189@gmail.com)
 
 ## License
 
-This public website and documentation package is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+Released under the [MIT License](LICENSE).

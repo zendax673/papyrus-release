@@ -28,6 +28,25 @@ explicitly:
 Metadata lookup features send identifiers and search queries, not your entire
 library.
 
+## How Does Save From Safari Work?
+
+Papyrus ships with a Safari Web Extension for Mac and iPad. Enable it once —
+Safari → Settings → Extensions on the Mac, or the Settings app → Apps →
+Safari → Extensions on iPad — then open a paper page and press the Papyrus
+button in the Safari toolbar (Option-Shift-P also works on the Mac), or
+right-click / long-press any PDF, DOI, or arXiv link and choose
+`Save Link to Papyrus`.
+
+The popup shows what was captured, says whether the PDF will download or a
+citation-only record will be created, and offers folder, tag, and project
+pickers so the paper lands organized. Closing the popup is safe: a queued
+import finishes in Papyrus either way.
+
+The extension runs only when you invoke it, reads only the page or link you
+chose, and hands the capture to the Papyrus app on your device. It does not
+track browsing history. In-app, Settings → General → Import from Safari
+covers setup on both platforms.
+
 ## Which Metadata Services Does Papyrus Use?
 
 Papyrus currently uses:
@@ -140,9 +159,9 @@ This is a local system integration, not a Papyrus cloud service.
 Use the guidance on the [Support page](https://zendax673.github.io/papyrus-release/support.html). If possible, include:
 
 - Reproduction steps
-- Your macOS version and Papyrus build
+- Your macOS or iPadOS version and Papyrus build
 - Whether the affected PDF was copied or linked
-- Whether iCloud Sync, WebDAV sync, or export was involved
+- Whether iCloud Sync, WebDAV sync, Safari import, or export was involved
 
 If the issue looks like data corruption, create a backup snapshot before trying
 large recovery steps.
