@@ -28,23 +28,48 @@ explicitly:
 Metadata lookup features send identifiers and search queries, not your entire
 library.
 
+## How Does Save From Safari Work?
+
+Papyrus ships with a Safari Web Extension for Mac and iPad. Enable it once —
+Safari → Settings → Extensions on the Mac, or the Settings app → Apps →
+Safari → Extensions on iPad — then open a paper page and press the Papyrus
+button in the Safari toolbar (Option-Shift-P also works on the Mac), or
+right-click / long-press any PDF, DOI, or arXiv link and choose
+`Save Link to Papyrus`.
+
+The popup shows what was captured, says whether the PDF will download or a
+citation-only record will be created, and offers folder, tag, and project
+pickers so the paper lands organized. Closing the popup is safe: a queued
+import finishes in Papyrus either way.
+
+The extension runs only when you invoke it, reads only the page or link you
+chose, and hands the capture to the Papyrus app on your device. It does not
+track browsing history. In-app, Settings → General → Import from Safari
+covers setup on both platforms.
+
 ## Which Metadata Services Does Papyrus Use?
 
 Papyrus currently uses:
 
 - Crossref
+- arXiv
+- Semantic Scholar
 - OpenAlex
-- arXiv (identifier extraction from PDF text only — no API call)
+- OpenLibrary
+- NCBI / PubMed / PMC identifier services
+- Zenodo
+- doi.org links for DOI-based lookup and navigation
 - Embedded XMP metadata read directly from PDFs (no network)
 
-These services help with DOI or arXiv lookup, title repair, and metadata
-completion. The resolver registry is pluggable, so additional sources can be
-added without code changes. When several sources disagree on a field, Papyrus
+These services help with DOI, arXiv, ISBN, PMID, title repair, metadata
+completion, identifier conversion, and citation-count enrichment. The resolver
+registry is pluggable, so additional sources can be added without changing the
+rest of the app. When several sources disagree on a field, Papyrus
 records the provenance of each value and surfaces a conflict picker.
 
 ## Where Is The Library Stored?
 
-The current repository stores the main SwiftData store under:
+Papyrus stores the main SwiftData library under:
 
 `~/Library/Group Containers/group.com.zhendafu.Papyrus/Library/Application Support/`
 
@@ -63,38 +88,54 @@ across Mac and iPad devices signed in to the same iCloud account, without a
 Papyrus server or Papyrus account.
 
 WebDAV sync remains available when you want to use a server, username, password,
-and remote folder you control. Each successful WebDAV sync can keep dated restore points. Restore points are
-inspected before being applied, and the selected synced copy is staged so it can
-replace the local library safely on the next launch.
+and remote folder you control. Papyrus can also coexist with local folders that
+you sync through tools you already use.
 
-Papyrus can also coexist with local folders that you sync through tools you
-already use.
+## Can I Restore From WebDAV?
+
+Yes. Successful WebDAV syncs keep dated restore points. In Settings, inspect the
+remote copy, choose the restore point you want, and let Papyrus apply it
+safely on the next launch. You can use a local NAS, Nextcloud, Fastmail,
+Synology, or any standard WebDAV server; Synology is only one example.
 
 ## What Is A Project For?
 
-Projects are manuscript or research workspaces that span your library. A project
-can hold papers without moving them out of folders, and the same paper can play a
-different role in different projects.
+A Project is a writing or synthesis workspace. Use it for a literature review,
+thesis chapter, paper draft, proposal, reading group, or method comparison. A
+paper can belong to multiple projects without being duplicated.
 
-Project tools include an Evidence Board, project-specific paper roles, synthesis
-search, Theme Map, manuscript preflight checks, note templates, and note history.
-They are designed for the middle step between reading papers and writing a
-related-work section, thesis chapter, review, or rebuttal.
+Project-specific roles let the same paper be `Background Only` in one project,
+`Cite In Method` in another, and `Excluded` in a third without changing the
+global paper record.
 
 ## What Is The Evidence Board?
 
-The Evidence Board is a project-level table for claims and supporting material.
-It can track a claim or theme, the paper, quoted evidence, page, interpretation,
-section use, citation key, and confidence. Highlights and project search results
-can be collected into the board, then copied back out as Markdown, a matrix, a
-paragraph with citation, or a blockquote with citation.
+The Evidence Board is a project-level table for turning reading into writing
+material. It tracks:
+
+- Claim or theme
+- Paper
+- Evidence quote or manual note
+- Page
+- Your interpretation
+- Intended manuscript section
+- Citation key
+- Confidence
+
+Use it when you need to compare 30-100 papers around a related-work argument,
+method limitation, dataset choice, or claim/evidence matrix.
 
 ## What Can Project Export Produce?
 
-Project export can include Markdown notes, PDFs, BibTeX, CSL JSON, evidence,
-theme and method-comparison material, and an export report. The report calls out
-metadata gaps, duplicate citation keys, missing PDFs, and generated bibliography
-entries so manuscript packages are easier to audit before submission.
+Project export can produce writing material for common academic workflows:
+
+- BibTeX
+- RIS
+- CSL JSON
+- Markdown notes and evidence
+- Copyable LaTeX or Pandoc cite commands
+- Project bundles with PDFs when available
+- Export reports that call out missing PDFs, missing metadata, and duplicate citekeys
 
 ## Does Papyrus Need An Account?
 
@@ -118,9 +159,9 @@ This is a local system integration, not a Papyrus cloud service.
 Use the guidance on the [Support page](https://zendax673.github.io/papyrus-release/support.html). If possible, include:
 
 - Reproduction steps
-- Your macOS version and Papyrus build
+- Your macOS or iPadOS version and Papyrus build
 - Whether the affected PDF was copied or linked
-- Whether iCloud Sync, WebDAV sync, or export was involved
+- Whether iCloud Sync, WebDAV sync, Safari import, or export was involved
 
 If the issue looks like data corruption, create a backup snapshot before trying
 large recovery steps.

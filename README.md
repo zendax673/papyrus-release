@@ -51,7 +51,8 @@
 
 Papyrus is a local-first workspace for people who work with PDFs over time on Mac and iPad. It keeps the paper, PDF, metadata, reading progress, tags, Markdown notes, project role, evidence, and citation key attached to the same record.
 
-- **Import papers without losing context.** Bring in PDFs, folders, DOI records, arXiv IDs, BibTeX, RIS, and Zotero / Better BibTeX exports.
+- **Import papers without losing context.** Bring in PDFs, folders, DOI records, arXiv IDs, and BibTeX or RIS exports from other reference managers.
+- **Save papers straight from Safari.** The bundled Safari extension captures the paper on the current tab — with its PDF when one is available — or saves any PDF, DOI, or arXiv link from the right-click (Mac) or long-press (iPad) menu. Folder, tag, and project pickers in the popup let a paper land organized.
 - **Clean metadata with provenance.** Combine embedded PDF metadata with Crossref, OpenAlex, arXiv, DOI, and other scholarly sources, then resolve field-level conflicts when sources disagree.
 - **Read in a native window.** Use a PDFKit-backed reader with highlights, underline, strikethrough, freehand ink, notes, bookmarks, resume state, and a Highlights & Notes inspector.
 - **Write beside the source.** Keep Markdown notes on each paper, including headings, task lists, tables, block quotes, code fences, links, images, footnotes, and LaTeX math.
@@ -64,7 +65,7 @@ Papyrus is a local-first workspace for people who work with PDFs over time on Ma
 <details>
 <summary><strong>Also on iPadOS</strong></summary>
 
-Papyrus is also available as a touch-first iPadOS workspace with Apple Pencil support. The iPad version is a companion to the Mac app: useful for reading, figure inspection, Markdown notes, Pencil markup, and project review away from the desk.
+Papyrus is also available as a touch-first iPadOS workspace with Apple Pencil support. The iPad version is a companion to the Mac app: useful for reading, figure inspection, Markdown notes, Pencil markup, saving papers from Safari, and project review away from the desk.
 
 <p align="center">
   <a href="https://apps.apple.com/app/id6766133716">
@@ -90,7 +91,7 @@ Papyrus is also available as a touch-first iPadOS workspace with Apple Pencil su
 
 Papyrus is local-first. Your PDFs, notes, metadata, annotations, reading state, search indexes, backups, and project evidence stay on your device unless you explicitly export, share, turn on iCloud Sync, or configure WebDAV sync.
 
-No Papyrus account is required. No analytics or telemetry SDK is included. Network access is limited to user-initiated actions such as metadata lookup, DOI links, App Store purchase validation, optional iCloud Sync, and optional WebDAV sync.
+No Papyrus account is required. No analytics or telemetry SDK is included. Network access is limited to user-initiated actions such as metadata lookup, DOI links, papers you send from Safari, App Store purchase validation, optional iCloud Sync, and optional WebDAV sync. The Safari extension runs only when you invoke it and reads only the page or link you chose.
 
 Full policy: [Privacy](https://zendax673.github.io/papyrus-release/privacy.html).
 
