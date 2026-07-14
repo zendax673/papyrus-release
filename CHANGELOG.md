@@ -9,6 +9,49 @@ and this project follows semantic versioning when tagged releases begin.
 
 No unreleased changes documented yet.
 
+## [1.5.2] - 2026-07-13
+
+Papyrus is now free to download and use — every feature included, no
+in-app purchases, no subscription.
+
+### Added
+
+- **Papyrus for iPhone.** Read, browse, capture, and file your papers with a
+  companion designed for one hand — including Safari import, the reader, and
+  light per-paper filing.
+- **References & Related in the reader.** A References tab looks up the open
+  paper's reference list and related work (by DOI) and adds any of them to
+  your library with one tap; tap a row to open it on doi.org.
+- **Watched folder (Mac).** Pick a folder such as Downloads and new PDFs
+  import automatically from then on.
+- **Live BibTeX export (Mac).** Papyrus keeps a `papyrus-library.bib` file
+  continuously updated for LaTeX and Overleaf workflows.
+- **Colored flags.** Seven colored flags for quick triage alongside star
+  ratings, shown in the paper row and synced across devices.
+- **Paper Highlights notebook.** Every highlight across a project gathered in
+  one place — tap one to jump to that exact spot in the PDF, or copy the set
+  as Markdown.
+- **Review duplicates.** Settings → Advanced finds look-alike papers (same
+  PDF, DOI, or title and size) and merges each set after confirmation,
+  combining tags, folders, projects, notes, and highlights.
+
+### Changed
+
+- **Importing asks once.** One sheet confirms destination folder, tags,
+  projects, and link-vs-copy; imports land in the folder or project you're
+  viewing, and multiple PDFs can be dropped onto a sidebar folder at once.
+- **Sidebar polish.** Folders, Smart Collections, Projects, and Tags collapse
+  with one uniform header; clearer disclosure arrows and visible row
+  dividers on Mac.
+- **Papyrus for Mac now requires Apple Silicon** (M1 or later); the app is
+  smaller and faster for it.
+
+### Fixed
+
+- BibTeX and RIS files import cleanly — including libraries exported from
+  Mendeley or Zotero — and export as proper `.bib` / `.ris` files instead of
+  plain text.
+
 ## [1.4.1] - 2026-07-02
 
 ### Added
