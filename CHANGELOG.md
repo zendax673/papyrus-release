@@ -9,6 +9,40 @@ and this project follows semantic versioning when tagged releases begin.
 
 No unreleased changes documented yet.
 
+## [1.5.3] - 2026-07-19
+
+### Added
+
+- **Flags are a real organizing dimension.** Filter the library by flag,
+  build Smart Collections from a flag rule, and sort by flag (unflagged
+  papers last). Each of the seven colors can be given your own name — "To
+  Read", "Needs Reply" — and that name follows the color through the flag
+  menu, filter tokens, and Smart Collection summaries.
+
+### Changed
+
+- **Sharper metadata on import.** Author lists, years, and titles are read
+  far more accurately, especially on Springer, IEEE, and magazine-style
+  PDFs: bylines that wrap across several lines are captured in full instead
+  of stopping halfway, journal boilerplate no longer lands in the author
+  field, and a year mentioned in prose ("published in December 1919") is no
+  longer mistaken for the publication year.
+- **A calmer Projects workspace.** Papers, Evidence, and Draft each carry
+  their own accent so the current mode is always obvious. Captured evidence
+  now reads as a typeset note — claim, quote, and interpretation laid out
+  for reading — with the editing controls one click or tap away instead of
+  permanently on screen. Explanatory copy steps aside once a section holds
+  real content, the manual-evidence form stays folded until you open it,
+  and note previews show your prose instead of raw Markdown.
+
+### Fixed
+
+- Sidebar section arrows align with the badge column again on iPad.
+- The selection checkmark on the lighter flag swatches is legible in both
+  light and dark mode.
+- VoiceOver reads your custom flag names rather than the raw color, and the
+  shortcut-validation dismiss button is now labeled.
+
 ## [1.5.2] - 2026-07-13
 
 Papyrus is now free to download and use — every feature included, no
