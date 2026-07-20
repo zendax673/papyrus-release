@@ -7,7 +7,14 @@ and this project follows semantic versioning when tagged releases begin.
 
 ## [Unreleased]
 
-No unreleased changes documented yet.
+### Changed
+
+- **Each flag color now has its own shape.** All seven flags previously drew
+  the same icon and differed only in hue, so color was the only thing telling
+  them apart. Each color now carries a distinct symbol — flag, triangle,
+  drop, square, hexagon, diamond, circle — in the paper row, the flag menu,
+  the Smart Collection picker, and filter chips, so flags stay readable for
+  color-blind readers and in grayscale.
 
 ## [1.5.3] - 2026-07-19
 
