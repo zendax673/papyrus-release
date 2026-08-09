@@ -35,7 +35,8 @@
   <a href="https://zendax673.github.io/papyrus-release/support.html">Support</a> &middot;
   <a href="https://zendax673.github.io/papyrus-release/privacy.html">Privacy</a> &middot;
   <a href="FAQ.md">FAQ</a> &middot;
-  <a href="CHANGELOG.md">Changelog</a>
+  <a href="CHANGELOG.md">Changelog</a> &middot;
+  <a href="URL-SCHEME.md">URL Scheme</a>
 </p>
 
 ---
@@ -107,11 +108,13 @@ Full policy: [Privacy](https://zendax673.github.io/papyrus-release/privacy.html)
 - Privacy: <https://zendax673.github.io/papyrus-release/privacy.html>
 - Support: <https://zendax673.github.io/papyrus-release/support.html>
 - Terms: <https://zendax673.github.io/papyrus-release/terms.html>
+- URL scheme: <https://zendax673.github.io/papyrus-release/url-scheme.html>
 
 ## Documentation
 
 - [FAQ](FAQ.md)
 - [Changelog](CHANGELOG.md)
+- [URL Scheme](URL-SCHEME.md) — the `papyrus://` public contract for Hookmark and other link managers
 - [Support](https://zendax673.github.io/papyrus-release/support.html)
 
 ## Contact
