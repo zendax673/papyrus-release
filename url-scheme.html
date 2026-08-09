@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hookmark &amp; the papyrus:// URL scheme — Papyrus</title>
+  <meta name="description" content="Papyrus registers the papyrus:// URL scheme on macOS, iPadOS, and iOS. Link to a paper, to a page within it, or to a notebook, and ask the app what the user is currently reading via x-callback-url. The public contract for Hookmark, Obsidian, DEVONthink, Shortcuts, Alfred, and Keyboard Maestro.">
+  <meta name="theme-color" content="#efeee9">
+  <meta property="og:title" content="Hookmark & the papyrus:// URL scheme">
+  <meta property="og:description" content="Stable links to a paper, a page, or a notebook — and an x-callback-url query for what's on screen.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<script>(function(){var t=localStorage.getItem('pp-theme');if(t)document.documentElement.setAttribute('data-theme',t);document.documentElement.classList.add('js');})();</script>
+
+<header class="runhead">
+  <span class="runhead__left"><img src="assets/icon.svg" alt=""><span class="hide-xs">Papyrus&nbsp;·&nbsp;</span><span class="sc">URL scheme</span></span>
+  <span class="runhead__sec">Hookmark &amp; linking</span>
+  <span class="runhead__right">
+    <a class="runhead__get" href="index.html">Home</a>
+    <button class="runhead__theme" id="themeToggle" aria-label="Toggle light or dark">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </span>
+</header>
+
+<main class="doc-page">
+  <aside class="doc-margin" aria-label="Document navigation">
+    <nav class="doc-toc" aria-label="Sections">
+      <div class="toc__head">Contents</div>
+      <a href="#hookmark">Hookmark</a>
+      <a href="#paper">Paper links</a>
+      <a href="#getting">Getting a link</a>
+      <a href="#notebook">Notebook links</a>
+      <a href="#current">Current item</a>
+      <a href="#security">Callback safety</a>
+      <a href="#stability">Stability</a>
+      <a href="#notimpl">Not implemented</a>
+    </nav>
+    <nav class="doc-toc doc-toc--secondary" aria-label="Related pages">
+      <div class="toc__head">Pages</div>
+      <a href="index.html">Overview</a>
+      <a href="mac.html">Mac</a>
+      <a href="ipad.html">iPad</a>
+      <a href="iphone.html">iPhone</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </aside>
+
+  <article class="doc-body">
+    <div class="doc-titleblock">
+      <div class="doc-kicker">Integration</div>
+      <h1>Hookmark and the <code>papyrus://</code> URL scheme.</h1>
+      <p>Papyrus registers <code>papyrus://</code> on macOS, iPadOS, and iOS. This page is the public contract for it, so link-management tools can integrate without asking. There are three entry points: a link to a <b>paper</b>, a link to a <b>notebook</b>, and an <b>x-callback-url</b> query for whatever the user is looking at right now.</p>
+      <div class="doc-meta">Stable since 1.5.5 · macOS 14+ · iPadOS &amp; iOS 17+</div>
+    </div>
+
+    <section class="doc-card" id="hookmark">
+      <h2>Hookmark</h2>
+      <p><a href="https://hookproductivity.com/" target="_blank" rel="noopener">Hookmark</a> links a document to the notes, tasks, and emails that belong with it. Papyrus supports it the way Hookmark wants an app to: every paper and every notebook has a permanent address you can copy, and Papyrus can answer the question “what is the user looking at right now?”</p>
+      <p>The workflow it enables is the one researchers ask for — read a paper in Papyrus, press Hookmark's hotkey, and hook it to the manuscript section, the OmniFocus task, or the email from a co-author that prompted you to read it. Come back to any of those later and the paper is one click away, <em>on the page you were on</em>.</p>
+      <h3>Setting it up today</h3>
+      <p>Papyrus is not yet in Hookmark's bundled script library, so wire it up once in Hookmark Pro's script editor:</p>
+      <ul>
+        <li><b>Get Address</b> — Papyrus already puts the link on the clipboard with <b>Copy Link</b> (<kbd>⇧⌘C</kbd>), or <b>Copy Link to This Page</b> (<kbd>⌥⌘C</kbd>) while reading.</li>
+        <li><b>Get Name and Address</b> — call <code>get-current-item</code> (below) with a <code>hook:</code> callback; Papyrus replies with the title, the link, and the PDF's <code>file://</code> path.</li>
+        <li><b>Open</b> — Hookmark opens <code>papyrus://paper/…</code> directly; no script needed.</li>
+      </ul>
+      <p class="doc-note">An official integration script is on the way: the scheme has been documented here precisely so CogSci Apps can ship one. Until then, the three hooks above cover the round trip.</p>
+      <h3>Other tools</h3>
+      <p>Nothing here is Hookmark-specific. <b>Obsidian</b> and <b>DEVONthink</b> take a <code>papyrus://</code> link in a note; <b>Shortcuts</b>, <b>Alfred</b>, <b>Keyboard Maestro</b>, and <b>Drafts</b> can both open links and call <code>get-current-item</code> with their own custom-scheme callbacks.</p>
+    </section>
+
+    <section class="doc-section" id="paper">
+      <h2>Linking to a paper</h2>
+      <pre class="spec">papyrus://paper/&lt;paper-uuid&gt;
+papyrus://paper/&lt;paper-uuid&gt;?page=&lt;n&gt;</pre>
+      <p>For example:</p>
+      <pre class="spec">papyrus://paper/9F2C1A54-3E6B-4D0A-8C71-1B9E4F5A6D22
+papyrus://paper/9F2C1A54-3E6B-4D0A-8C71-1B9E4F5A6D22?page=7</pre>
+      <p>Opening the link asks Papyrus to open that paper:</p>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Platform</th><th>Behavior</th></tr></thead>
+          <tbody>
+            <tr><td>macOS</td><td>Brings Papyrus forward, selects the paper in the library, and opens its PDF in a reader window. If the paper is already open, the existing window comes forward rather than a duplicate.</td></tr>
+            <tr><td>iPadOS</td><td>Selects the paper in the library and presents the reader.</td></tr>
+            <tr><td>iOS</td><td>Opens the reader; a paper with no PDF opens its summary instead.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><code>page</code> is optional and 1-based. When present, the reader opens at that page instead of the saved reading position — including when a reader is already open on that paper, which simply jumps. An anchor that cannot address a real page (<code>page=0</code>, <code>page=-3</code>, <code>page=front-matter</code>) is ignored and the paper still opens: landing on page 1 of the right paper beats an error.</p>
+      <p>If the current sidebar item or search filter would hide the paper, Papyrus widens the view to All Papers so the selection is actually visible. A link to a paper in the Trash reveals it in the Trash and says so. A link that resolves to nothing — a different library, or a paper deleted since the link was made — reports that rather than failing silently.</p>
+    </section>
+
+    <section class="doc-section" id="getting">
+      <h2>Getting a link</h2>
+      <p><b>Copy Link</b> and <b>Copy Link to This Page</b> put the address on the clipboard as plain text:</p>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Where</th><th>Commands</th></tr></thead>
+          <tbody>
+            <tr><td><b>Paper</b> menu (macOS)</td><td>Copy Link (<kbd>⇧⌘C</kbd>), Copy Link to This Page (<kbd>⌥⌘C</kbd>) — both rebindable in Settings → Shortcuts</td></tr>
+            <tr><td>Library right-click menu (macOS, iPadOS)</td><td>Reference → Copy Link</td></tr>
+            <tr><td>Reader overflow menu (iPadOS, iOS)</td><td>Copy Link, Copy Link to This Page</td></tr>
+            <tr><td>Paper summary (iOS)</td><td>Citation &amp; Writing → Copy Link</td></tr>
+            <tr><td>Detail view's Copy button (macOS, iPadOS)</td><td>Link → Copy Link, Copy Markdown Link</td></tr>
+            <tr><td>Detail view's Reading card (macOS, iPadOS)</td><td>Right-click / touch and hold a bookmarked page → Copy Link to This Page</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>“Copy Link to This Page” needs a page to anchor to. In a reader that is the page on screen. Outside one, the only page you have actually pointed at is a bookmark, so the Reading card's bookmarked-page rows offer it and nothing else does.</p>
+      <p><b>Copy Markdown Link</b> wraps the same address for pasting into a note:</p>
+      <pre class="spec">[Ashish Vaswani et al. (2017) Attention Is All You Need](papyrus://paper/9F2C1A54-…)</pre>
+      <p>The label is <i>Author (Year) Title</i>. Authors follow the same “et al.” rule as the rest of the app, and any part the paper does not have is left out rather than filled with a placeholder — a link label should not invent metadata. Brackets and backslashes in a title are escaped, so a title like “Attention Is All You Need [sic]” cannot end the label early.</p>
+    </section>
+
+    <section class="doc-section" id="notebook">
+      <h2>Linking to a notebook</h2>
+      <pre class="spec">papyrus://notebook/&lt;notebook-uuid&gt;</pre>
+      <p>A notebook is a shelf of notes gathered by theme across any number of papers. Opening the link selects that notebook, so its workspace — every note filed on it — is what you land on.</p>
+      <p>The shape is deliberately the twin of a paper link: same scheme, the host names the kind, the first path component is the UUID. A tool that already parses paper links needs no new rules.</p>
+      <p>There is <b>no page-style anchor</b>. A notebook has no fixed positions to address — its order is a sort the reader chooses, so an index into it would name a different note tomorrow.</p>
+      <p>The Markdown form uses the notebook's name as the label, escaped the same way:</p>
+      <pre class="spec">[Optics](papyrus://notebook/4B7D0E12-9A3C-4F58-B6E1-2C8D5A9F0E31)</pre>
+      <p>Both are on a notebook's context menu in the sidebar, and in the notebook workspace's own header — on macOS that pane can be a detached window with no sidebar in reach.</p>
+    </section>
+
+    <section class="doc-section" id="current">
+      <h2>Asking what the user is looking at</h2>
+      <pre class="spec">papyrus://x-callback-url/get-current-item?x-success=&lt;url&gt;&amp;x-error=&lt;url&gt;</pre>
+      <p>Papyrus replies by opening <code>x-success</code> with these query items appended; existing query items on the callback are preserved.</p>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Item</th><th>Meaning</th></tr></thead>
+          <tbody>
+            <tr><td><code>title</code></td><td>The paper's title, or “Untitled Paper”.</td></tr>
+            <tr><td><code>url</code></td><td>The <code>papyrus://paper/…</code> link. Page-anchored when the answer came from a reader.</td></tr>
+            <tr><td><code>file</code></td><td>The PDF's location as a <code>file://</code> URL. Omitted for a metadata-only paper or a missing file.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The current item is the paper in the frontmost reader — and only then is <code>url</code> page-anchored, since a paper merely selected in the library has no page you could be pointing at. Failing that it is the library selection on macOS and iPadOS; on iPhone, which has no library selection, it is whatever the reader or a link-opened summary is showing.</p>
+      <p>When nothing is open or selected, Papyrus opens <code>x-error</code> with the x-callback-url standard pair <code>errorCode=no-current-item</code> and a human-readable <code>errorMessage</code>.</p>
+      <p>A worked example — the reply for a paper open at page 7:</p>
+      <pre class="spec">x-success://got?title=Attention%20Is%20All%20You%20Need
+              &amp;url=papyrus://paper/9F2C1A54-…?page%3D7
+              &amp;file=file:///…/Attention-Is-All-You-Need.pdf</pre>
+    </section>
+
+    <section class="doc-card" id="security">
+      <h2>Callback targets must not be web URLs</h2>
+      <p><code>get-current-item</code> hands the title and local file path of whatever you are reading to an address the <i>caller</i> chose, and a web page can trigger a custom scheme. Papyrus therefore refuses <code>x-success</code> and <code>x-error</code> targets using <code>http</code>, <code>https</code>, <code>file</code>, <code>ftp</code>, <code>ftps</code>, <code>data</code>, <code>javascript</code>, <code>about</code>, or <code>blob</code> — so a page that talks you through an “Open Papyrus?” prompt cannot post your current document to a server.</p>
+      <p>Every real client of this API — Hookmark (<code>hook:</code>), Shortcuts, Drafts, Keyboard Maestro, Alfred — uses a custom scheme and is unaffected. A refused callback is simply not opened.</p>
+    </section>
+
+    <section class="doc-section" id="stability">
+      <h2>Stability guarantees</h2>
+      <ul>
+        <li><b>The identifier is permanent.</b> It is the paper's sync identity, assigned once when the paper enters the library. Renaming the paper, editing its metadata, moving it between folders, trashing and restoring it, or replacing its PDF all leave the link working.</li>
+        <li><b>It is portable across your devices.</b> The same link resolves on every device signed in to the same iCloud library, so a link copied on a Mac opens on your iPad.</li>
+        <li><b>It is not portable across libraries.</b> It identifies a paper, not a work. Two people who each import the same PDF get different links.</li>
+        <li><b>The format will not change.</b> Additions will be backward compatible; <code>papyrus://paper/&lt;uuid&gt;</code> and <code>papyrus://notebook/&lt;uuid&gt;</code> will keep resolving.</li>
+        <li><b>Notebook links carry the same guarantees</b> — permanent across renames, reordering, trashing and restoring; portable across your own devices; not portable across libraries.</li>
+      </ul>
+      <p>Unrecognized query parameters are ignored, so links written against a future revision still open the right paper on an older build.</p>
+    </section>
+
+    <section class="doc-section" id="notimpl">
+      <h2>Deliberately not implemented</h2>
+      <p><b>Creating a paper.</b> Hookmark's create API takes a name and returns a link to the new item. Papyrus creates papers by importing a PDF or resolving a DOI or arXiv ID — a bare name does not identify anything to import, so there is nothing honest to return.</p>
+      <p><b>AppleScript.</b> An <code>sdef</code> on a sandboxed SwiftUI app is a large amount of scripting-class work for no capability the x-callback-url API above does not already provide.</p>
+      <p>One more address exists but is not part of this contract: <code>papyrus://extension-import?id=…</code> is a private wake URL the Safari extension uses to hand a capture to the app, and it may change.</p>
+    </section>
+
+    <footer class="doc-footer">
+      <a href="index.html">Overview</a>
+      <a href="download.html">Download</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </footer>
+  </article>
+</main>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

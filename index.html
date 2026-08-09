@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Papyrus — a native research workspace for Mac, iPad, and iPhone</title>
-  <meta name="description" content="Papyrus is a free, native, local-first research workspace for macOS, iPadOS, and iOS: import papers from files, identifiers, or straight from Safari, organize a library, read and annotate PDFs, write Markdown + LaTeX notes, gather notes into notebooks, build project evidence, search full text, sync through iCloud or WebDAV, and export BibTeX, RIS, CSL JSON, or Markdown. No account, no telemetry.">
+  <meta name="description" content="Papyrus is a free, native, local-first research workspace for Mac, iPad, and iPhone: import papers from Safari or a link, read and annotate PDFs, write Markdown + LaTeX notes, gather notes into notebooks, build project evidence, sync via iCloud or WebDAV, and export BibTeX, RIS, or CSL JSON. No account, no telemetry.">
   <meta name="theme-color" content="#efeee9">
   <meta property="og:title" content="Papyrus — a research workspace for Mac, iPad, and iPhone">
   <meta property="og:description" content="A local-first workspace for PDFs, notes, notebooks, projects, citations, sync, and export on Mac, iPad, and iPhone.">
@@ -40,9 +40,14 @@
       <a href="#s-reading"><span class="n">3</span>Read &amp; Annotate</a>
       <a href="#s-notebooks"><span class="n">4</span>Notebooks</a>
       <a href="#s-evidence"><span class="n">5</span>Projects &amp; Evidence</a>
-      <a href="#s-devices"><span class="n">6</span>Mac, iPad &amp; iPhone</a>
-      <a href="#s-method"><span class="n">7</span>Search, Sync &amp; Privacy</a>
-      <a href="#s-export"><span class="n">8</span>Export &amp; Citation</a>
+      <a href="#s-method"><span class="n">6</span>Search, Sync &amp; Privacy</a>
+      <a href="#s-export"><span class="n">7</span>Export &amp; Citation</a>
+    </nav>
+    <nav class="doc-toc doc-toc--secondary" aria-label="Platform pages">
+      <div class="toc__head">Platforms</div>
+      <a href="mac.html">Papyrus for Mac</a>
+      <a href="ipad.html">Papyrus for iPad</a>
+      <a href="iphone.html">Papyrus for iPhone</a>
     </nav>
     <div class="ledger-margin" id="ledger" aria-label="Citations used in this document">
       <div class="ledger-margin__head">Citation ledger</div>
@@ -74,7 +79,7 @@
     <section class="sec" id="s-intro">
       <h2 class="sec__h">One Library</h2>
       <p><span class="lead-in">A paper should not fragment into separate tools.</span> The PDF, metadata, reading progress, tags, notes, project role, evidence, and citation key all belong to the same object. Papyrus keeps that object coherent from first import through the final export.</p>
-      <p>The example throughout this page follows a single Nature article: <i>A 5.3-million-year-old deep-sea whale necropolis in the Diamantina Zone</i>. The same record appears in the library, opens in the reader, carries Markdown notes, files those notes onto a notebook, supports a project archive, and exports through standard citation formats.</p>
+      <p>The example throughout this page follows a single Nature article: <i>A 5.3-million-year-old deep-sea whale necropolis in the Diamantina Zone</i>. The same record appears in the library, opens in the reader, carries Markdown notes, files those notes onto a notebook, supports a project archive, and exports through standard citation formats. The figures here show the Mac; <a href="ipad.html">iPad</a> and <a href="iphone.html">iPhone</a> have pages of their own.</p>
       <div class="workflow-map" aria-label="Papyrus research workflow">
         <div><span class="workflow-map__k">Capture</span><span>PDF, DOI, arXiv, BibTeX, RIS, Safari</span></div>
         <div><span class="workflow-map__k">Organize</span><span>Tags, folders, Smart Collections, Projects</span></div>
@@ -84,10 +89,10 @@
       </div>
       <figure class="plate">
         <div class="shot">
-          <img class="screenshot screenshot--light" src="assets/app-captures/mac/library-light.jpg?v=20260808a" alt="Papyrus on Mac showing the Nature whale necropolis paper selected in the library with its abstract, Markdown notes, overview metadata, and a Reading card.">
-          <img class="screenshot screenshot--dark" src="assets/app-captures/mac/library-dark.jpg?v=20260808a" alt="" aria-hidden="true">
+          <img class="screenshot screenshot--light" width="1800" height="1004" src="assets/app-captures/mac/library-light.jpg?v=20260808b" alt="Papyrus on Mac showing the Nature whale necropolis paper selected in the library with its abstract, Markdown notes, overview metadata, and a Reading card.">
+          <img class="screenshot screenshot--dark" width="1800" height="1004" src="assets/app-captures/mac/library-dark.jpg?v=20260808b" alt="" aria-hidden="true">
         </div>
-        <figcaption><b>Fig. 1.</b> On Mac, the library keeps the Nature paper, PDF, metadata, tags, reading state, Markdown notes, and citation key in one record. The Reading card on the right remembers the page you stopped on.</figcaption>
+        <figcaption><b>Fig. 1.</b> The library keeps the Nature paper, PDF, metadata, tags, reading state, Markdown notes, and citation key in one record. The Reading card on the right remembers the page you stopped on.</figcaption>
       </figure>
     </section>
 
@@ -97,13 +102,6 @@
       <p><span class="lead-in">Import should produce a usable record,</span> not a cleanup chore. Papyrus accepts PDFs, folders on Mac, DOI and arXiv identifiers, BibTeX, and RIS. It can read embedded PDF metadata, fetch scholarly metadata, and keep field-level provenance so you can see where a title, author list, year, DOI, or abstract came from when sources disagree. After a library-wide refresh, the summary lists which papers changed and which fields moved.</p>
       <p>Safari can hand papers over directly. The bundled <span class="term">Safari extension</span> captures the paper on the current tab — with its PDF when one is available — or saves any PDF, DOI, or arXiv link from the right-click (Mac) or long-press (iPad) menu. It captures from inside your browser session, so a paper behind a publisher sign-in you already have access to saves too, not just open-access files. The popup shows exactly what was captured and offers folder, tag, and project pickers so a paper lands organized instead of joining an inbox pile.</p>
       <p>Organization has several layers because research changes shape over time. <span class="term">Tags</span> describe topics. <span class="term">Folders</span> keep stable archives, and a paper can live in more than one. <span class="term">Flags</span> give seven colors you can name yourself, each with its own shape so they stay tellable apart at a glance. <span class="term">Smart Collections</span> stay current as saved filters — several values per rule, matched on Any or All. <span class="term">Projects</span> gather papers for a draft, review, or literature archive without forcing the global library to mirror a manuscript outline.</p>
-      <figure class="plate">
-        <div class="shot">
-          <img class="screenshot screenshot--light" src="assets/app-captures/mac/smart-light.jpg?v=20260808a" alt="Papyrus on Mac with the Open Figure Papers Smart Collection selected, scoping the library to five figure-heavy papers.">
-          <img class="screenshot screenshot--dark" src="assets/app-captures/mac/smart-dark.jpg?v=20260808a" alt="" aria-hidden="true">
-        </div>
-        <figcaption><b>Fig. 2.</b> A Smart Collection is a saved filter that keeps itself current: “Open Figure Papers” scopes the library without moving anything out of it.</figcaption>
-      </figure>
     </section>
 
     <!-- §3 -->
@@ -113,17 +111,10 @@
       <p>Figure-heavy articles need more than a citation key. Papyrus lets the article page, the figure, the reading note, and the eventual claim remain adjacent. A Markdown notes pane renders headings, lists, tables, code, and LaTeX math, so a figure comment or draft-ready interpretation stays beside the source that prompted it.</p>
       <figure class="plate">
         <div class="shot">
-          <img class="screenshot screenshot--light" src="assets/app-captures/mac/reader-light.jpg?v=20260808a" alt="Mac PDF reader showing the first page of the Nature whale necropolis article with a highlight and the rendered reading note in the inspector.">
-          <img class="screenshot screenshot--dark" src="assets/app-captures/mac/reader-dark.jpg?v=20260808a" alt="" aria-hidden="true">
+          <img class="screenshot screenshot--light" width="1800" height="1004" src="assets/app-captures/mac/reader-light.jpg?v=20260808b" alt="Mac PDF reader showing the first page of the Nature whale necropolis article with a highlight and the rendered reading note in the inspector.">
+          <img class="screenshot screenshot--dark" width="1800" height="1004" src="assets/app-captures/mac/reader-dark.jpg?v=20260808b" alt="" aria-hidden="true">
         </div>
-        <figcaption><b>Fig. 3.</b> The reader keeps article text, page navigation, annotations, and the paper's reading note in one focused window.</figcaption>
-      </figure>
-      <figure class="plate">
-        <div class="shot">
-          <img class="screenshot screenshot--light" src="assets/app-captures/mac/reader-figure-light.jpg?v=20260808a" alt="Mac reader showing the Fig. 1 distribution-map page from the Nature whale necropolis article.">
-          <img class="screenshot screenshot--dark" src="assets/app-captures/mac/reader-figure-dark.jpg?v=20260808a" alt="" aria-hidden="true">
-        </div>
-        <figcaption><b>Fig. 4.</b> Page-specific visual evidence stays available in the reader while a project gathers claims, quotes, and citation keys around it.</figcaption>
+        <figcaption><b>Fig. 2.</b> The reader keeps article text, page navigation, annotations, and the paper's reading note in one focused window.</figcaption>
       </figure>
     </section>
 
@@ -135,10 +126,10 @@
       <p>A whole shelf exports as one Markdown document that matches what is on screen — the current order, the current search — and carries a <code>papyrus://</code> link so Hookmark, Obsidian, or a plain text plan can point straight back at it.</p>
       <figure class="plate">
         <div class="shot">
-          <img class="screenshot screenshot--light" src="assets/app-captures/mac/notebook-light.jpg?v=20260808a" alt="Papyrus on Mac showing the Efficient Sequence Models notebook: three notes drawn from three different papers, each carrying its source paper as a chip.">
-          <img class="screenshot screenshot--dark" src="assets/app-captures/mac/notebook-dark.jpg?v=20260808a" alt="" aria-hidden="true">
+          <img class="screenshot screenshot--light" width="1800" height="1004" src="assets/app-captures/mac/notebook-light.jpg?v=20260808b" alt="Papyrus on Mac showing the Efficient Sequence Models notebook: three notes drawn from three different papers, each carrying its source paper as a chip.">
+          <img class="screenshot screenshot--dark" width="1800" height="1004" src="assets/app-captures/mac/notebook-dark.jpg?v=20260808b" alt="" aria-hidden="true">
         </div>
-        <figcaption><b>Fig. 5.</b> One shelf, three papers. Every note wears its source paper as a chip with author and year, so a notebook drawing on a dozen papers stays legible at a glance.</figcaption>
+        <figcaption><b>Fig. 3.</b> One shelf, three papers. Every note wears its source paper as a chip with author and year, so a notebook drawing on a dozen papers stays legible at a glance.</figcaption>
       </figure>
     </section>
 
@@ -149,10 +140,10 @@
       <p>The Evidence Board is the place where Papyrus goes beyond storing citations. Each evidence item records the <span class="term">claim</span> you are making, the <span class="term">quote</span> or observation that backs it, your interpretation, the page, the citation key, a section role, and a confidence score. A project starts to read like an argument before the manuscript exists.</p>
       <figure class="plate">
         <div class="shot">
-          <img class="screenshot screenshot--light" src="assets/app-captures/mac/project-light.jpg?v=20260808a" alt="The Whale-Fall Evidence Review project on Mac, with its Papers, Evidence, and Draft tabs and a paper's project role, reading progress, and captured evidence.">
-          <img class="screenshot screenshot--dark" src="assets/app-captures/mac/project-dark.jpg?v=20260808a" alt="" aria-hidden="true">
+          <img class="screenshot screenshot--light" width="1800" height="1004" src="assets/app-captures/mac/project-light.jpg?v=20260808b" alt="The Whale-Fall Evidence Review project on Mac, with its Papers, Evidence, and Draft tabs and a paper's project role, reading progress, and captured evidence.">
+          <img class="screenshot screenshot--dark" width="1800" height="1004" src="assets/app-captures/mac/project-dark.jpg?v=20260808b" alt="" aria-hidden="true">
         </div>
-        <figcaption><b>Fig. 6.</b> A project workspace: Papers, Evidence, and Draft each carry their own accent, and a paper's role, reading progress, and captured evidence sit together.</figcaption>
+        <figcaption><b>Fig. 4.</b> A project workspace: Papers, Evidence, and Draft each carry their own accent, and a paper's role, reading progress, and captured evidence sit together.</figcaption>
       </figure>
       <figure class="plate">
         <div class="evidence-figure" role="group" aria-label="Three evidence cards from the Diamantina Whale-Fall Archive project">
@@ -173,7 +164,7 @@
             <span class="ec__chip">[@smith2021abyssalWhaleFalls]</span>
           </div>
         </div>
-        <figcaption><b>Fig. 7.</b> Evidence cards carry section role, page, confidence, and citation key, so the reasoning survives the jump from reading to writing.</figcaption>
+        <figcaption><b>Fig. 5.</b> Evidence cards carry section role, page, confidence, and citation key, so the reasoning survives the jump from reading to writing.</figcaption>
       </figure>
 
       <div class="tbl-wrap">
@@ -191,57 +182,18 @@
     </section>
 
     <!-- §6 -->
-    <section class="sec" id="s-devices">
-      <h2 class="sec__h">Mac, iPad &amp; iPhone</h2>
-      <p><span class="lead-in">One app, three shapes of the same library.</span> A Mac window with three columns, a touch-first iPad workspace with Apple Pencil, and an iPhone companion sized for one hand — all free, and all the same library. Turn on iCloud Sync and your papers, PDFs, notes, notebooks, highlights, and flags stay current on every device signed in to your account.</p>
-      <p>On <span class="term">iPad</span>, the same three-column layout works under touch: read a figure page, mark it up with Apple Pencil, write the Markdown note beside it, and file that note onto a shelf. Scrolling a heavily inked PDF stays responsive — Papyrus no longer re-reads and re-saves ink for pages you only scrolled past.</p>
-      <figure class="plate two-up">
-        <div class="shot shot--ipad">
-          <img class="screenshot screenshot--light" src="assets/app-captures/ipad/library-light.jpg?v=20260808a" alt="Papyrus on iPad showing the library with the Nature paper selected.">
-          <img class="screenshot screenshot--dark" src="assets/app-captures/ipad/library-dark.jpg?v=20260808a" alt="" aria-hidden="true">
-        </div>
-        <div class="shot shot--ipad">
-          <img class="screenshot screenshot--light" src="assets/app-captures/ipad/reader-light.jpg?v=20260808a" alt="Papyrus on iPad showing the reader with the paper's reading note in the inspector.">
-          <img class="screenshot screenshot--dark" src="assets/app-captures/ipad/reader-dark.jpg?v=20260808a" alt="" aria-hidden="true">
-        </div>
-        <figcaption><b>Fig. 8.</b> iPadOS: the library and the reader, with notes and annotations attached to the same paper record.</figcaption>
-      </figure>
-      <figure class="plate">
-        <div class="shot shot--ipad">
-          <img class="screenshot screenshot--light" src="assets/app-captures/ipad/notebook-light.jpg?v=20260808a" alt="Papyrus on iPad showing a notebook gathering notes from several papers.">
-          <img class="screenshot screenshot--dark" src="assets/app-captures/ipad/notebook-dark.jpg?v=20260808a" alt="" aria-hidden="true">
-        </div>
-        <figcaption><b>Fig. 9.</b> iPadOS: a notebook reads as one continuous set of notes, whichever papers they were written on.</figcaption>
-      </figure>
-      <p>On <span class="term">iPhone</span>, the app is built for reading, browsing, capturing, and filing away from the desk. Continue where you left off from the home screen, read the PDF, add or edit notes, and — as of 1.6.0 — flag a paper and filter by it, create and rename notebooks, move a paper to Trash, refresh its metadata, and make folders and projects without reaching for an iPad or Mac.</p>
-      <figure class="plate three-up">
-        <div class="shot shot--iphone">
-          <img class="screenshot screenshot--light" src="assets/app-captures/iphone/home-light.jpg?v=20260808a" alt="Papyrus on iPhone showing the home screen with a Continue Reading card.">
-          <img class="screenshot screenshot--dark" src="assets/app-captures/iphone/home-dark.jpg?v=20260808a" alt="" aria-hidden="true">
-        </div>
-        <div class="shot shot--iphone">
-          <img class="screenshot screenshot--light" src="assets/app-captures/iphone/detail-light.jpg?v=20260808a" alt="Papyrus on iPhone showing a paper's detail screen with its metadata and notes.">
-          <img class="screenshot screenshot--dark" src="assets/app-captures/iphone/detail-dark.jpg?v=20260808a" alt="" aria-hidden="true">
-        </div>
-        <div class="shot shot--iphone">
-          <img class="screenshot screenshot--light" src="assets/app-captures/iphone/notebook-light.jpg?v=20260808a" alt="Papyrus on iPhone showing a notebook of notes gathered from several papers.">
-          <img class="screenshot screenshot--dark" src="assets/app-captures/iphone/notebook-dark.jpg?v=20260808a" alt="" aria-hidden="true">
-        </div>
-        <figcaption><b>Fig. 10.</b> iOS: resume reading, work a paper, and open a notebook — the same library, one hand.</figcaption>
-      </figure>
-    </section>
-
-    <!-- §7 -->
     <section class="sec" id="s-method">
       <h2 class="sec__h">Search, Sync &amp; Privacy</h2>
       <p><span class="lead-in">A research desk has to be searchable and inspectable.</span> Papyrus indexes titles, metadata, notes, annotations, and extracted PDF text so a phrase can lead back to the paper, page, and context where it was useful. The reading queue keeps active work visible, while filters and Smart Collections surface papers by tag, journal, year range, favorite status, flag, document type, or PDF availability.</p>
       <p><span class="lead-in">Local-first is the default,</span> not an add-on. Your library, PDFs, notes, annotations, search index, and project evidence live on your device. There is no Papyrus account and no telemetry. Network access is limited to actions you choose, such as metadata lookup or sync. iCloud Sync uses your own iCloud account to keep a library current across Mac, iPad, and iPhone, while WebDAV sync remains available for a server destination you control and dated restore points.<sup class="fnref"><a href="#fn3b" id="fnref3b">4</a></sup></p>
     </section>
 
-    <!-- §8 -->
+    <!-- §7 -->
     <section class="sec" id="s-export">
       <h2 class="sec__h">Export &amp; Citation</h2>
-      <p><span class="lead-in">The exit path is as important as the import path.</span> A single paper, a notebook, or a whole project can leave as <span class="term">BibTeX</span>, <span class="term">RIS</span>, <span class="term">CSL&nbsp;JSON</span>, <span class="term">Markdown</span>, or a full bundle. Project export can include papers, notes, evidence, citations, and a report that flags missing PDFs, duplicate cite keys, sparse metadata, or unresolved citation problems before you hand work to another tool. On Mac, a watched folder can import new PDFs on its own and a live <code>.bib</code> file can stay continuously updated for LaTeX and Overleaf.</p>
+      <p><span class="lead-in">The exit path is as important as the import path.</span> A single paper, a notebook, or a whole project can leave as <span class="term">BibTeX</span>, <span class="term">RIS</span>, <span class="term">CSL&nbsp;JSON</span>, <span class="term">Markdown</span>, or a full bundle. Project export can include papers, notes, evidence, citations, and a report that flags missing PDFs, duplicate cite keys, sparse metadata, or unresolved citation problems before you hand work to another tool.</p>
+      <p><span class="lead-in">A paper can also be linked to, not just exported.</span> Every paper and every notebook has a permanent <code>papyrus://</code> address — copyable as a plain link or as Markdown, and anchorable to the page you are on. Because the identifier is the paper's sync identity, the link survives renaming, re-tagging, moving between folders, trashing and restoring, even replacing the PDF, and it resolves on every device signed in to your library.</p>
+      <p>That is what makes <span class="term">Hookmark</span> work properly: hook a paper to the manuscript section, the task, or the email that sent you to it, and come back to it later on the page you left. Papyrus also answers <code>get-current-item</code> over x-callback-url, so Hookmark, Shortcuts, Alfred, Keyboard Maestro, or Drafts can ask what you are reading right now and get back the title, the link, and the PDF's path. <a href="url-scheme.html">Read the full URL scheme →</a></p>
       <p>Citations can also be copied in common styles without leaving the library. The reference for <code>peng2026whaleNecropolis</code>, formatted six ways:</p>
       <div class="stamps" role="group" aria-label="Citation style">
         <button data-style="apa" class="is-active">APA</button>
@@ -269,6 +221,32 @@
   doi     = {10.1038/s41586-026-10546-z},
   year    = {2026}
 }</pre>
+    </section>
+
+    <!-- Platform pages -->
+    <section class="colophon" id="platforms">
+      <div class="colophon__label">Three platforms</div>
+      <p>The same library, in the shape each device wants. Every screenshot on these pages comes from the running app, in light and dark.</p>
+      <div class="platforms">
+        <a class="platform-card" href="mac.html">
+          <span class="platform-card__k">macOS 14+</span>
+          <span class="platform-card__h">Papyrus for Mac</span>
+          <span class="platform-card__d">Three columns, a watched folder that imports on its own, and a live <code>.bib</code> for LaTeX.</span>
+          <span class="platform-card__go">See the Mac →</span>
+        </a>
+        <a class="platform-card" href="ipad.html">
+          <span class="platform-card__k">iPadOS 17+</span>
+          <span class="platform-card__h">Papyrus for iPad</span>
+          <span class="platform-card__d">The same workspace under touch, with Apple Pencil markup straight onto the page.</span>
+          <span class="platform-card__go">See the iPad →</span>
+        </a>
+        <a class="platform-card" href="iphone.html">
+          <span class="platform-card__k">iOS 17+</span>
+          <span class="platform-card__h">Papyrus for iPhone</span>
+          <span class="platform-card__d">Read, capture, and file one-handed — and pick up on the page you left.</span>
+          <span class="platform-card__go">See the iPhone →</span>
+        </a>
+      </div>
     </section>
 
     <!-- Footnotes -->
@@ -307,6 +285,7 @@
       <ol>
         <li>Peng, X., Zhou, P., Song, X., Bianucci, G. et al. <a href="https://www.nature.com/articles/s41586-026-10546-z" target="_blank" rel="noopener">A 5.3-million-year-old deep-sea whale necropolis in the Diamantina Zone.</a> <i>Nature</i> (2026). doi:10.1038/s41586-026-10546-z.</li>
         <li>Papyrus. <a href="download.html">Download &amp; system requirements.</a> macOS 14+, iPadOS &amp; iOS 17+.</li>
+        <li>Papyrus. <a href="url-scheme.html">Hookmark &amp; the <code>papyrus://</code> URL scheme.</a> Paper links, page anchors, notebook links, x-callback-url.</li>
         <li>Papyrus. <a href="support.html">Support &amp; FAQ.</a></li>
         <li>Papyrus. <a href="privacy.html">Privacy.</a> Local-first; no account; no telemetry.</li>
         <li>Papyrus. <a href="https://github.com/zendax673/papyrus-release/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Changelog, v1.6.0.</a></li>
@@ -323,15 +302,12 @@
 
 <div class="lightbox" aria-hidden="true"><button class="lightbox__close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button><img alt=""></div>
 
+<script src="assets/site.js"></script>
 <script>
 (function(){
-  var root = document.documentElement;
-  function eff(){ return root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light'); }
-  document.getElementById('themeToggle').addEventListener('click', function(){ var n = eff()==='dark'?'light':'dark'; root.setAttribute('data-theme', n); localStorage.setItem('pp-theme', n); });
-
   // Running-head section + TOC current + ledger "cited" as you pass each section
   var secs = [].slice.call(document.querySelectorAll('.sec'));
-  var names = {'s-intro':'1 · One Library','s-library':'2 · Capture & Organize','s-reading':'3 · Read & Annotate','s-notebooks':'4 · Notebooks','s-evidence':'5 · Projects & Evidence','s-devices':'6 · Mac, iPad & iPhone','s-method':'7 · Search, Sync & Privacy','s-export':'8 · Export & Citation'};
+  var names = {'s-intro':'1 · One Library','s-library':'2 · Capture & Organize','s-reading':'3 · Read & Annotate','s-notebooks':'4 · Notebooks','s-evidence':'5 · Projects & Evidence','s-method':'6 · Search, Sync & Privacy','s-export':'7 · Export & Citation'};
   var runSec = document.getElementById('runSec');
   var tocLinks = [].slice.call(document.querySelectorAll('.toc a'));
   if ('IntersectionObserver' in window){
@@ -376,20 +352,6 @@
   if (copyBtn) copyBtn.addEventListener('click', function(){
     var txt = document.getElementById('bibblock').innerText;
     navigator.clipboard && navigator.clipboard.writeText(txt).then(function(){ var o = copyBtn.textContent; copyBtn.textContent = 'Copied ✓'; setTimeout(function(){ copyBtn.textContent = o; }, 1400); });
-  });
-
-  // Lightbox
-  var lb = document.querySelector('.lightbox'), lbImg = lb.querySelector('img'), lbClose = lb.querySelector('.lightbox__close'), last=null;
-  function open(src, alt, t){ lbImg.src = src; lbImg.alt = alt||''; lb.classList.add('is-open'); document.body.style.overflow='hidden'; last=t; }
-  function close(){ lb.classList.remove('is-open'); document.body.style.overflow=''; if(last)last.focus(); }
-  lbClose.addEventListener('click', close);
-  lb.addEventListener('click', function(e){ if (e.target===lb) close(); });
-  document.addEventListener('keydown', function(e){ if (e.key==='Escape') close(); });
-  var zoom='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>';
-  document.querySelectorAll('.shot').forEach(function(host){
-    if (!host.querySelector('.screenshot')) return;
-    var t = document.createElement('button'); t.type='button'; t.className='zoom'; t.setAttribute('aria-label','Enlarge'); t.innerHTML=zoom; host.appendChild(t);
-    t.addEventListener('click', function(){ var v = Array.prototype.find.call(host.querySelectorAll('.screenshot'), function(i){ return i.offsetParent!==null; }) || host.querySelector('.screenshot'); if (v) open(v.currentSrc||v.src, v.alt, t); });
   });
 })();
 </script>
