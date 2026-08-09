@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Papyrus for Mac — a native research workspace</title>
+  <meta name="description" content="Papyrus on macOS: a three-column research library with a native PDF reader, Markdown notes, notebooks, Smart Collections, project evidence, a watched import folder, a live BibTeX file for LaTeX, and papyrus:// links for Hookmark. Free, local-first, no telemetry.">
+  <meta name="theme-color" content="#efeee9">
+  <meta property="og:title" content="Papyrus for Mac">
+  <meta property="og:description" content="A three-column research library with a native reader, notebooks, project evidence, a watched folder, and a live .bib for LaTeX.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<script>(function(){var t=localStorage.getItem('pp-theme');if(t)document.documentElement.setAttribute('data-theme',t);document.documentElement.classList.add('js');})();</script>
+
+<header class="runhead">
+  <span class="runhead__left"><img src="assets/icon.svg" alt=""><span class="hide-xs">Papyrus&nbsp;·&nbsp;</span><span class="sc">For Mac</span></span>
+  <span class="runhead__plat">
+    <a href="index.html">Overview</a>
+    <a href="mac.html" class="is-current" aria-current="page">Mac</a>
+    <a href="ipad.html">iPad</a>
+    <a href="iphone.html">iPhone</a>
+  </span>
+  <span class="runhead__right">
+    <a class="runhead__get" href="#availability">Get it ↗</a>
+    <button class="runhead__theme" id="themeToggle" aria-label="Toggle light or dark">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </span>
+</header>
+
+<main class="paper">
+  <aside class="paper__margin" aria-label="Contents and platforms">
+    <nav class="toc" aria-label="Sections">
+      <div class="toc__head">Contents</div>
+      <a href="#s-window"><span class="n">1</span>The Window</a>
+      <a href="#s-scope"><span class="n">2</span>Scoping the Library</a>
+      <a href="#s-read"><span class="n">3</span>Reading &amp; Markup</a>
+      <a href="#s-desk"><span class="n">4</span>Desk Automation</a>
+    </nav>
+    <nav class="doc-toc doc-toc--secondary" aria-label="Platform pages">
+      <div class="toc__head">Platforms</div>
+      <a href="index.html">Overview</a>
+      <a href="ipad.html">Papyrus for iPad</a>
+      <a href="iphone.html">Papyrus for iPhone</a>
+    </nav>
+  </aside>
+
+  <article class="paper__body">
+    <div class="titleblock">
+      <h1 class="paper-title">Papyrus for Mac</h1>
+      <div class="byline">macOS 14 Sonoma or later, on Apple Silicon</div>
+      <div class="dateline">Version 1.6.0 &nbsp;·&nbsp; free on the Mac App Store &nbsp;·&nbsp; <a href="#availability">Availability ↓</a></div>
+    </div>
+
+    <section class="abstract">
+      <div class="abstract__label">In short</div>
+      <p>The Mac is where a library gets built and a draft gets written. Papyrus gives it a real three-column window — sidebar, paper list, and a detail pane that holds the abstract, the metadata, the Markdown notes, and the reading state at once — plus the two pieces of desk automation the other platforms have no use for: a folder that imports itself, and a <code>.bib</code> file that stays current while you write.</p>
+    </section>
+
+    <section class="sec" id="s-window">
+      <h2 class="sec__h">The Window</h2>
+      <p><span class="lead-in">Everything about a paper in one pass of the eye.</span> The sidebar carries the library's shapes — folders, tags, flags, Smart Collections, projects, notebooks. The middle column is the paper list with its filter row. The detail pane on the right holds the abstract, tags and folder and project membership, the Markdown notes, the overview metadata with its citation count, and the Reading card that remembers where you stopped and which pages you bookmarked.</p>
+      <figure class="plate">
+        <div class="shot">
+          <img class="screenshot screenshot--light" width="1800" height="1004" src="assets/app-captures/mac/library-light.jpg?v=20260808b" alt="Papyrus on Mac: the sidebar, the paper list, and a detail pane showing the Nature paper's abstract, Markdown notes, overview metadata, and Reading card.">
+          <img class="screenshot screenshot--dark" width="1800" height="1004" src="assets/app-captures/mac/library-dark.jpg?v=20260808b" alt="" aria-hidden="true">
+        </div>
+        <figcaption><b>Fig. 1.</b> The library window. Nothing about the selected paper is more than one glance away.</figcaption>
+      </figure>
+    </section>
+
+    <section class="sec" id="s-scope">
+      <h2 class="sec__h">Scoping the Library</h2>
+      <p><span class="lead-in">A Smart Collection is a saved filter that keeps itself current.</span> Set rules — text match, tag, document type, year, flag, PDF availability — and the collection re-evaluates as the library changes. Text Match, Tag Filter, and Document Type each take several values, and you choose whether a paper has to match <i>any</i> of them or <i>all</i> of them.</p>
+      <p>Selecting one scopes the whole window to it without moving a single paper out of the library. Folders, projects, and notebooks scope it the same way.</p>
+      <figure class="plate">
+        <div class="shot">
+          <img class="screenshot screenshot--light" loading="lazy" decoding="async" width="1800" height="1004" src="assets/app-captures/mac/smart-light.jpg?v=20260808b" alt="Papyrus on Mac with the Open Figure Papers Smart Collection selected, scoping the library to five figure-heavy papers.">
+          <img class="screenshot screenshot--dark" loading="lazy" decoding="async" width="1800" height="1004" src="assets/app-captures/mac/smart-dark.jpg?v=20260808b" alt="" aria-hidden="true">
+        </div>
+        <figcaption><b>Fig. 2.</b> “Open Figure Papers” — a rule, not a pile. Nothing was filed anywhere to build it.</figcaption>
+      </figure>
+      <p>Alongside the rules there is a manual pass worth knowing about: <span class="term">Review Duplicates</span>, in Settings → Advanced, finds look-alike papers by PDF, DOI, or title and size, and merges each set only after you confirm — combining their tags, folders, projects, notes, and highlights rather than picking one and discarding the rest.</p>
+    </section>
+
+    <section class="sec" id="s-read">
+      <h2 class="sec__h">Reading &amp; Markup</h2>
+      <p><span class="lead-in">The reader is a native PDFKit window,</span> not a viewer embedded in a database. Highlight, underline, strike through, draw freehand ink, leave notes, and bookmark pages; the inspector beside the page carries the markup list and the paper's reading note, rendered from Markdown with LaTeX math. A <span class="term">References</span> tab looks up the open paper's reference list and related work by DOI, so you can follow a citation trail and add what matters without leaving the page.</p>
+      <figure class="plate">
+        <div class="shot">
+          <img class="screenshot screenshot--light" loading="lazy" decoding="async" width="1800" height="1004" src="assets/app-captures/mac/reader-figure-light.jpg?v=20260808b" alt="Mac reader showing the Fig. 1 distribution-map page of the Nature whale necropolis article with the markup inspector open.">
+          <img class="screenshot screenshot--dark" loading="lazy" decoding="async" width="1800" height="1004" src="assets/app-captures/mac/reader-figure-dark.jpg?v=20260808b" alt="" aria-hidden="true">
+        </div>
+        <figcaption><b>Fig. 3.</b> A figure page with the markup inspector. The note, the page, and the eventual claim stay adjacent.</figcaption>
+      </figure>
+    </section>
+
+    <section class="sec" id="s-desk">
+      <h2 class="sec__h">Desk Automation</h2>
+      <p><span class="lead-in">Two things the Mac can do that a tablet cannot.</span></p>
+      <p><span class="term">Watched Folder.</span> Point Papyrus at a folder — Downloads is the obvious one — and every PDF that lands in it from then on imports itself, metadata lookup included. The papers you save from a browser stop needing a second step.</p>
+      <p><span class="term">Live BibTeX export.</span> Papyrus keeps a <code>papyrus-library.bib</code> file continuously up to date on disk. Point <code>\bibliography{}</code> at it once and LaTeX or Overleaf sees every paper you have added since, with no export step in the loop.</p>
+      <p>Both are opt-in, and both are ordinary files in ordinary places — nothing is hidden inside a container you cannot reach.</p>
+      <p>The bundled <span class="term">Safari extension</span> adds the third: capture the paper on the current tab, or right-click any PDF, DOI, or arXiv link and save it. It captures from inside your Safari session, so a paper behind a publisher sign-in you already have access to saves too. Folder, tag, and project pickers sit in the popup, so a paper lands organized.</p>
+      <p>For linking Papyrus into the rest of your desk — Hookmark, Obsidian, Shortcuts, Keyboard Maestro — see <a href="url-scheme.html">the <code>papyrus://</code> URL scheme</a>.</p>
+    </section>
+
+    <section class="colophon" id="availability">
+      <div class="colophon__label">Availability</div>
+      <p>Papyrus for Mac is free on the <b>Mac App Store</b>. Every feature included.</p>
+      <p class="imprint">macOS 14 Sonoma or later · Apple Silicon · no account, no telemetry, no subscription.</p>
+      <div class="store-row">
+        <a class="store-badge" href="https://apps.apple.com/us/app/papyrus-papers/id6766133716?mt=12&amp;uo=4" target="_blank" rel="noopener" aria-label="Download Papyrus on the Mac App Store">
+          <img class="app-store-badge__black" src="assets/app-store-badge-black.svg" alt="Download on the Mac App Store">
+          <img class="app-store-badge__white" src="assets/app-store-badge-white.svg" alt="" aria-hidden="true">
+          <span class="badge-note">Mac</span>
+        </a>
+      </div>
+      <p class="testflight-line">Also on <a href="ipad.html">iPad</a> and <a href="iphone.html">iPhone</a>, sharing one library over iCloud.</p>
+    </section>
+
+    <footer class="doc-footer">
+      <a href="index.html">Overview</a>
+      <a href="download.html">Download</a>
+      <a href="url-scheme.html">URL scheme</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </footer>
+  </article>
+</main>
+
+<div class="lightbox" aria-hidden="true"><button class="lightbox__close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button><img alt=""></div>
+<script src="assets/site.js"></script>
+</body>
+</html>

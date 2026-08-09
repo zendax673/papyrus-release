@@ -6,6 +6,9 @@
   <title>Download — Papyrus</title>
   <meta name="description" content="Download Papyrus for Mac and iPad. Local-first reading, notes, evidence, citation export, Safari paper import, and optional iCloud or WebDAV sync.">
   <meta name="theme-color" content="#efeee9">
+  <meta property="og:title" content="Download Papyrus">
+  <meta property="og:description" content="Get Papyrus for Mac, iPad, and iPhone — free, local-first, every feature included.">
+  <meta property="og:type" content="website">
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
@@ -37,6 +40,11 @@
     </nav>
     <nav class="doc-toc doc-toc--secondary" aria-label="Related pages">
       <div class="toc__head">Pages</div>
+      <a href="index.html">Overview</a>
+      <a href="mac.html">Mac</a>
+      <a href="ipad.html">iPad</a>
+      <a href="iphone.html">iPhone</a>
+      <a href="url-scheme.html">URL scheme</a>
       <a href="support.html">Support</a>
       <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
@@ -112,6 +120,8 @@
     </section>
 
     <footer class="doc-footer">
+      <a href="index.html">Overview</a>
+      <a href="url-scheme.html">URL scheme</a>
       <a href="support.html">Support</a>
       <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
@@ -119,12 +129,6 @@
   </article>
 </main>
 
-<script>
-(function(){
-  var root = document.documentElement;
-  function eff(){ return root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light'); }
-  document.getElementById('themeToggle').addEventListener('click', function(){ var n = eff()==='dark'?'light':'dark'; root.setAttribute('data-theme', n); localStorage.setItem('pp-theme', n); });
-})();
-</script>
+<script src="assets/site.js"></script>
 </body>
 </html>

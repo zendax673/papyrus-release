@@ -220,45 +220,84 @@ sup.fnref a { color: var(--pp-blue); padding: 0 1px; }
 
 /* ---------------- Figures / plates ---------------- */
 figure.plate { margin: var(--pp-s8) 0; }
+/* The image sizes the frame, rather than being fitted into a fixed slot.
+   A slot whose aspect ratio is even slightly off the capture's makes
+   `object-fit: cover` shave the edges off a screenshot — which on a window
+   shot means losing the sidebar or the inspector. Letting height follow the
+   image makes cropping impossible for any capture, at any size. Each <img>
+   carries width/height attributes so the box is reserved before it loads. */
 figure.plate .shot {
   position: relative;
-  display: grid;
-  /* Mac captures are 16:9 window shots — matching the slot exactly means
-     `cover` fits without cropping either edge of the window. */
-  aspect-ratio: 16 / 9;
+  line-height: 0;
   border: 0.5px solid var(--pp-hairline-2);
   border-radius: var(--pp-r-md);
   overflow: hidden;
   box-shadow: var(--pp-shadow-plate);
   background: var(--pp-card);
 }
-figure.plate .shot--ipad {
-  aspect-ratio: 4 / 3;
-  background: var(--pp-card);
-}
-figure.plate .shot--iphone {
-  /* iPhone 17 Pro Max framebuffer, 1320 x 2868. */
-  aspect-ratio: 1320 / 2868;
-  background: var(--pp-card);
-}
 figure.plate img {
-  position: absolute;
-  inset: 0;
   width: 100%;
-  height: 100%;
+  height: auto;
   display: block;
-  object-fit: cover;
-  object-position: center top;
-}
-figure.plate .shot--ipad img,
-figure.plate .shot--iphone img {
-  object-fit: contain;
-  object-position: center;
 }
 figure.plate.two-up { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--pp-s4); align-items: start; }
 figure.plate.two-up figcaption { grid-column: 1 / -1; }
 figure.plate.three-up { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--pp-s4); align-items: start; }
 figure.plate.three-up figcaption { grid-column: 1 / -1; }
+/* ---------------- Platform cards (index → per-platform pages) ---------------- */
+.platforms {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--pp-s4);
+  margin: var(--pp-s8) 0;
+}
+.platform-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border: 0.5px solid var(--pp-hairline);
+  border-radius: var(--pp-r-md);
+  background: var(--pp-card);
+  padding: 16px 17px 15px;
+  box-shadow: var(--pp-shadow-card);
+  transition: border-color .15s ease, transform .15s ease;
+}
+.platform-card:hover { border-color: var(--pp-hairline-2); transform: translateY(-1px); }
+.platform-card__k {
+  display: block;
+  font-family: var(--pp-mono);
+  font-size: 10px;
+  letter-spacing: .07em;
+  font-variant-caps: all-small-caps;
+  color: var(--pp-ink-2);
+  margin-bottom: 5px;
+}
+.platform-card__h {
+  display: block;
+  font-family: var(--pp-serif);
+  font-size: 1.12rem;
+  font-weight: var(--pp-w-semibold);
+  margin-bottom: 6px;
+}
+.platform-card__d {
+  display: block;
+  font-size: .87rem;
+  line-height: 1.45;
+  color: var(--pp-ink-2);
+}
+.platform-card__go {
+  display: block;
+  margin-top: 10px;
+  font-family: var(--pp-mono);
+  font-size: .78rem;
+  color: var(--pp-blue);
+}
+/* Running-head platform rail, on the per-platform pages */
+.runhead__plat { display: inline-flex; gap: 12px; align-items: center; }
+.runhead__plat a { font-family: var(--pp-mono); font-size: .76rem; letter-spacing: .04em; color: var(--pp-ink-2); text-decoration: none; }
+.runhead__plat a:hover { color: var(--pp-ink); }
+.runhead__plat a.is-current { color: var(--pp-ink); border-bottom: 1px solid var(--pp-blue); }
+
 figcaption { font-family: var(--pp-serif); font-style: italic; font-size: .9rem; color: var(--pp-ink-2); margin-top: 9px; line-height: 1.45; }
 figcaption b { font-style: normal; font-variant-caps: all-small-caps; letter-spacing: .04em; font-weight: var(--pp-w-semibold); color: var(--pp-ink); }
 .shot .screenshot--dark { display: none; }
@@ -502,6 +541,29 @@ table.tbl .m { font-family: var(--pp-mono); font-size: .92em; color: var(--pp-in
   color: var(--pp-ink-2);
 }
 
+/* An aside inside a doc card — a status note next to the instructions it
+   qualifies, set apart without shouting. */
+.doc-note {
+  border-left: 2px solid var(--pp-gold-deep);
+  padding: 2px 0 2px 12px;
+  color: var(--pp-ink-2);
+  font-size: .92rem;
+}
+
+/* Inline code — used for papyrus:// URLs, filenames, query items. Wraps at
+   any character so a long URL can't push the page into horizontal scroll. */
+code {
+  font-family: var(--pp-mono);
+  font-size: .86em;
+  color: var(--pp-ink);
+  background: var(--pp-card-raised);
+  border: 0.5px solid var(--pp-hairline);
+  border-radius: 4px;
+  padding: 0.1em 0.34em;
+  overflow-wrap: anywhere;
+}
+.spec code, pre code { background: none; border: 0; padding: 0; font-size: inherit; }
+
 /* kbd */
 kbd { display: inline-flex; align-items: center; min-width: 18px; height: 18px; padding: 0 5px; font-family: var(--pp-mono); font-size: 10.5px; color: var(--pp-ink); background: var(--pp-card-raised); border: 0.5px solid var(--pp-hairline-2); border-bottom-width: 1.5px; border-radius: 4px; }
 
@@ -528,10 +590,12 @@ kbd { display: inline-flex; align-items: center; min-width: 18px; height: 18px; 
   .workflow-map { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .abstract p, .sec p, .doc-titleblock p, .doc-card p, .doc-section p { text-align: left; hyphens: none; }
   figure.plate.two-up { grid-template-columns: 1fr; }
+  .platforms { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
   /* Three phones across a 375pt screen is ~110px each — unreadable. */
   figure.plate.three-up { grid-template-columns: 1fr; }
+  .runhead__plat { display: none; }
   body { font-size: 1rem; }
   .runhead { padding: 0 12px; gap: 10px; }
   .runhead__left span.hide-xs { display: none; }
