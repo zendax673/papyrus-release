@@ -84,8 +84,8 @@ snapshots. You can also trigger a manual backup from Settings.
 ## How Does Sync Work?
 
 Papyrus supports two optional sync paths. iCloud Sync keeps your library current
-across Mac and iPad devices signed in to the same iCloud account, without a
-Papyrus server or Papyrus account.
+across Mac, iPad, and iPhone devices signed in to the same iCloud account,
+without a Papyrus server or Papyrus account.
 
 WebDAV sync remains available when you want to use a server, username, password,
 and remote folder you control. Papyrus can also coexist with local folders that
@@ -159,7 +159,7 @@ This is a local system integration, not a Papyrus cloud service.
 Use the guidance on the [Support page](https://zendax673.github.io/papyrus-release/support.html). If possible, include:
 
 - Reproduction steps
-- Your macOS or iPadOS version and Papyrus build
+- Your macOS, iPadOS, or iOS version and Papyrus build
 - Whether the affected PDF was copied or linked
 - Whether iCloud Sync, WebDAV sync, Safari import, or export was involved
 
