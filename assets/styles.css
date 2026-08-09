@@ -223,7 +223,9 @@ figure.plate { margin: var(--pp-s8) 0; }
 figure.plate .shot {
   position: relative;
   display: grid;
-  aspect-ratio: 16 / 10;
+  /* Mac captures are 16:9 window shots — matching the slot exactly means
+     `cover` fits without cropping either edge of the window. */
+  aspect-ratio: 16 / 9;
   border: 0.5px solid var(--pp-hairline-2);
   border-radius: var(--pp-r-md);
   overflow: hidden;
@@ -232,6 +234,11 @@ figure.plate .shot {
 }
 figure.plate .shot--ipad {
   aspect-ratio: 4 / 3;
+  background: var(--pp-card);
+}
+figure.plate .shot--iphone {
+  /* iPhone 17 Pro Max framebuffer, 1320 x 2868. */
+  aspect-ratio: 1320 / 2868;
   background: var(--pp-card);
 }
 figure.plate img {
@@ -243,12 +250,15 @@ figure.plate img {
   object-fit: cover;
   object-position: center top;
 }
-figure.plate .shot--ipad img {
+figure.plate .shot--ipad img,
+figure.plate .shot--iphone img {
   object-fit: contain;
   object-position: center;
 }
 figure.plate.two-up { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--pp-s4); align-items: start; }
 figure.plate.two-up figcaption { grid-column: 1 / -1; }
+figure.plate.three-up { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--pp-s4); align-items: start; }
+figure.plate.three-up figcaption { grid-column: 1 / -1; }
 figcaption { font-family: var(--pp-serif); font-style: italic; font-size: .9rem; color: var(--pp-ink-2); margin-top: 9px; line-height: 1.45; }
 figcaption b { font-style: normal; font-variant-caps: all-small-caps; letter-spacing: .04em; font-weight: var(--pp-w-semibold); color: var(--pp-ink); }
 .shot .screenshot--dark { display: none; }
@@ -520,6 +530,8 @@ kbd { display: inline-flex; align-items: center; min-width: 18px; height: 18px; 
   figure.plate.two-up { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
+  /* Three phones across a 375pt screen is ~110px each — unreadable. */
+  figure.plate.three-up { grid-template-columns: 1fr; }
   body { font-size: 1rem; }
   .runhead { padding: 0 12px; gap: 10px; }
   .runhead__left span.hide-xs { display: none; }

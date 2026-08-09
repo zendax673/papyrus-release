@@ -7,14 +7,106 @@ and this project follows semantic versioning when tagged releases begin.
 
 ## [Unreleased]
 
+## [1.6.0] - 2026-08-08
+
+### Added
+
+- **Notebooks.** Gather notes from across your library onto themed shelves — a
+  topic, a chapter you're drafting, a reading group. Filing a note copies
+  nothing and moves nothing: it still belongs to its paper, still says which
+  paper that is, and one click or tap takes you there and back. A note can sit
+  on several shelves at once, so "Optics" and "Chapter 3" never have to fight
+  over it.
+- **Filling and working a shelf.** Add Notes… lists every note in your library
+  with a search field and a not-in-a-notebook filter, so filling a new notebook
+  from years of existing notes takes moments rather than a note-by-note pass.
+  Search a shelf by a note's text or by the paper it was written on, and order
+  it four ways: recently edited, grouped by paper, by title, or oldest paper
+  first — which reads your own notes forward through the literature. Select
+  several notes to move, unfile, or trash them together; grouped by paper, each
+  paper's heading handles its notes as a unit.
+- **All Notes.** The first row of the Notebooks section reads every note in
+  your library, filed or not, with the same search, orders, and bulk actions a
+  shelf has.
+- **Export or link a shelf.** Export turns what you're looking at into one
+  Markdown document, matching the current order and search. Copy Link gives a
+  `papyrus://` address that reopens the notebook.
+- **A Reading card on each paper.** The detail pane now shows the page you
+  stopped on, how far into the PDF you are, and every page you bookmarked while
+  reading. Page bookmarks previously lived four steps away in the reader's
+  sidebar, invisible to anyone who never opened that tab.
+- **Link controls for papers and notebooks.** Each has its own Link control
+  with Copy Link and Copy Markdown Link, so Hookmark and other link managers
+  can address them directly instead of the link being filed away beside BibTeX
+  and RIS.
+- **A large round of iPhone catch-up.** Flags now work on the phone — set one
+  from the quick-state strip, filter by Flagged, and read each flag by its
+  shape as well as its color. Notebooks can be created, renamed, and deleted
+  there; papers can be moved to Trash, refreshed, and edited; and folders and
+  projects can be created without reaching for an iPad or Mac.
+
 ### Changed
 
+- **Smoother Apple Pencil ink on iPad.** Scrolling an inked PDF does far less
+  work per page — Papyrus no longer re-reads and re-saves ink for pages you
+  only scrolled past.
+- **Room to breathe on iPad.** The notebook header no longer crams four
+  spelled-out controls into a split-view column; the PDF row offers the one
+  action the paper's state actually calls for instead of wrapping "Replace PDF"
+  onto two lines; and the Library title no longer drags down when you overscroll
+  the paper list.
+- **Deleting a notebook is undoable.** Notebooks move to the Trash rather than
+  vanishing, and the Trash says how many notes are still filed on each. The
+  notes are never deleted with the shelf.
+- More of the app is translated.
+
+### Fixed
+
+- **Notes and highlights no longer come adrift from their paper during sync.**
+  A syncing bug could disconnect a note or a highlight from the paper it
+  belonged to, on every device at once, with no way to reattach it. Notes that
+  came adrift before this release keep their text, stay editable, and now read
+  "No linked paper" rather than going missing.
+- Moving a note to Trash now updates the Trash count.
+- Add Notes, Add Papers, and the other editing panels are no longer clipped on
+  both edges in a narrow window.
+- A notebook's badge now shows that it counts notes, not papers.
+
+## [1.5.5] - 2026-08-04
+
+### Added
+
+- **Link to a paper from anywhere.** Papers have a `papyrus://` address and a
+  Copy Link command, so Hookmark, Obsidian, or a plain text plan can point at
+  the exact paper — and at the page you were on.
+- **Smart Collections match more.** Text Match, Tag Filter, and Document Type
+  each take several values, and for Text Match and Tag Filter you choose
+  whether a paper must match Any of them or All of them.
+
+### Changed
+
+- **Save what you're signed in to read.** The Safari extension captures the PDF
+  from inside your browser session, so a paper behind a publisher sign-in you
+  have access to saves with the Papyrus button — not just open-access files.
+- **See what a metadata refresh changed.** After refreshing metadata across the
+  library, the summary lists which papers were updated and which fields —
+  title, authors, year, or abstract — changed.
 - **Each flag color now has its own shape.** All seven flags previously drew
   the same icon and differed only in hue, so color was the only thing telling
   them apart. Each color now carries a distinct symbol — flag, triangle,
   drop, square, hexagon, diamond, circle — in the paper row, the flag menu,
   the Smart Collection picker, and filter chips, so flags stay readable for
   color-blind readers and in grayscale.
+- **The detail pane shows where a paper lives.** Folder and project membership
+  are visible on the paper itself, and notes link back to the paper they were
+  written on.
+
+### Fixed
+
+- Refreshing metadata is idempotent: a second pass over unchanged papers no
+  longer reports them as updated.
+- Tag removal buttons in the inspector are reachable, and the Add pills share
+  one width.
 
 ## [1.5.3] - 2026-07-19
 
