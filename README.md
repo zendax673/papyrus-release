@@ -54,8 +54,8 @@ Papyrus is a local-first workspace for people who work with PDFs over time on Ma
 
 - **Import papers without losing context.** Bring in PDFs, folders, DOI records, arXiv IDs, and BibTeX or RIS exports from other reference managers.
 - **Save papers straight from Safari.** The bundled Safari extension captures the paper on the current tab — with its PDF when one is available, including papers behind a publisher sign-in you already have access to — or saves any PDF, DOI, or arXiv link from the right-click (Mac) or long-press (iPad) menu. Folder, tag, and project pickers in the popup let a paper land organized.
-- **Clean metadata with provenance.** Combine embedded PDF metadata with Crossref, OpenAlex, arXiv, DOI, and other scholarly sources, then resolve field-level conflicts when sources disagree.
-- **Read in a native window.** Use a PDFKit-backed reader with highlights, underline, strikethrough, freehand ink, notes, bookmarks, resume state, and a Highlights & Notes inspector.
+- **Clean metadata with provenance.** Combine embedded PDF metadata with Crossref, OpenAlex, arXiv, DOI, and other scholarly sources, then resolve field-level conflicts when sources disagree. Scanned and image-only pages are read with bounded on-device OCR, so a photocopied chapter still arrives with a title, byline, year, and abstract.
+- **Read in a native window.** Use a PDFKit-backed reader with highlights, underline, strikethrough, freehand ink, notes, bookmarks, resume state, and a Highlights & Notes inspector. On iPad and iPhone the reader also does two-up page layout and split-view reading — two panes over the same document, at two different pages.
 - **Write beside the source.** Keep Markdown notes on each paper, including headings, task lists, tables, block quotes, code fences, links, images, footnotes, and LaTeX math.
 - **Gather notes by theme, not by paper.** Notebooks are shelves for a topic, a chapter, or a reading group. Filing a note copies nothing and moves nothing — it still belongs to its paper, and one click takes you there and back. A note can sit on several shelves at once, and a whole shelf exports as one Markdown document.
 - **Organize the library several ways.** Use Smart Collections for saved filters, Projects for working sets, Folders for classic hierarchy (a paper can live in several), and seven nameable colored flags — each with its own shape — for triage.
@@ -63,6 +63,7 @@ Papyrus is a local-first workspace for people who work with PDFs over time on Ma
 - **Search across the whole workspace.** Search metadata, tags, projects, notes, annotations, highlights, and indexed PDF text.
 - **Export cleanly.** Copy citations in APA, MLA, Chicago, IEEE, Harvard, Vancouver, BibTeX, and RIS; export CSL JSON, Markdown notes, project bundles, and preflight reports.
 - **Link in from anywhere.** Papers and notebooks each have a `papyrus://` address with Copy Link and Copy Markdown Link, so Hookmark, Obsidian, or a plain text plan can point at the exact paper — and the page you were on.
+- **Work in your language.** The interface is available in English, French, Japanese, and Simplified Chinese, with an in-app picker so Papyrus can run in a different language from the rest of the system.
 - **Sync only when you choose.** Optional iCloud Sync keeps your library current across Mac, iPad, and iPhone, while WebDAV sync uses your own server and keeps dated restore points for safer recovery.
 
 <details>
