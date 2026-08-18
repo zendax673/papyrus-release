@@ -7,6 +7,83 @@ and this project follows semantic versioning when tagged releases begin.
 
 ## [Unreleased]
 
+## [1.6.3] - 2026-08-17
+
+### Added
+
+- **Papyrus in four languages.** The interface — menus, settings, Help, alerts,
+  App Shortcuts, and the Safari extension — now reads in French, Japanese, and
+  Simplified Chinese as well as English. Settings carries its own language
+  picker, so Papyrus can run in a different language from the rest of the
+  system; each language names itself in its own script, and a change takes
+  effect at the next launch.
+- **Page layout and split-view reading on iPad and iPhone.** A Layout Options
+  panel — a popover on iPad, a sheet on iPhone — sets the page layout to a
+  single column or two-up, with an option to show the first page alone so
+  two-up spreads fall the way a bound book does. It can also split the reader
+  into two panes, side by side or one above the other, each showing the same
+  document at a different page, so a figure and the discussion of it can sit
+  together. Search highlights reach both panes, and page reporting and
+  navigation follow whichever pane you last touched; the active one carries an
+  accent border. Apple Pencil markup stays deliberately on the primary pane.
+
+### Changed
+
+- **Scanned papers now yield metadata.** An opening page with no extractable
+  text — a photocopy, a raster-only scan — is read with bounded on-device
+  Vision OCR, recovering title, byline, identifiers, year, and abstract from
+  the image. Nothing is uploaded to do it. OCR evidence is marked as such and
+  held below structured and publisher metadata, so it widens coverage without
+  impersonating a source, and a watermark or page number no longer suppresses
+  OCR on an otherwise raster title page.
+- **An unresolved DOI no longer ends the lookup.** Papyrus falls through to the
+  paper's arXiv, PubMed, or ISBN identifier instead of stopping at the first
+  exact identifier that fails to resolve.
+- **A refresh says what actually happened.** Already current, local-only, no
+  supported identifier, enrichment disabled, a field locked against a
+  conflicting source, and outright failure are each reported as themselves
+  rather than all as "Metadata Refreshed" — and a refresh that finds nothing
+  can no longer quietly hide a conflict that is still unresolved.
+- **Import is quicker, and a batch can be stopped.** PDF ingest, text
+  extraction, hashing, and XMP reading moved off the main actor, and
+  independent extractors now run concurrently, so import latency approaches the
+  slowest step rather than the sum of them. Refreshing many papers at once
+  shows completed-of-total progress and has a Stop that works.
+- **Metadata-only papers no longer get stuck.** A metadata-only refresh with no
+  PDF present always finishes now, instead of leaving the detail pane and the
+  iPhone spinning on a callback that never fired.
+
+## [1.6.2] - 2026-08-16
+
+### Changed
+
+- **Help became somewhere to learn the app.** Guided onboarding walkthroughs
+  and a search field over the Help content, so a question has an answer inside
+  the app rather than in a screenshot on a website.
+- **Settings, and what "reset" means.** Clearer Settings organisation, plus
+  sync and advanced panes that say what a reset will and will not touch.
+- **A correctness round across the library.** Notebooks were hardened across
+  sync, restore, and iPhone; Markdown note editing and preview, Apple Pencil
+  input persistence and export, project workflows and export integrity, smart
+  collection and folder integrity, and iCloud sync convergence and durability
+  all received fixes.
+- **iPhone.** Companion UX improvements, and a first-run presentation fix.
+
+## [1.6.1] - 2026-08-10
+
+### Fixed
+
+- **Trash no longer breaks the window when it holds no deleted papers.** A
+  Trash containing only deleted notes or notebooks took a non-scrolling branch,
+  so once the recovery panels grew past the column the content overflowed and
+  dragged the window's title-bar inset with it — the sidebar slid behind the
+  traffic lights and the "Deleted Notes" heading was clipped by the toolbar.
+- **Empty Trash covers everything.** It now appears for a Trash holding only
+  deleted notes or notebooks (previously it counted papers and folders only,
+  leaving them to be cleared one row at a time), and it now deletes trashed
+  notebooks rather than leaving a shelf sitting in the panel afterwards.
+  Deleting a notebook still never deletes the notes filed on it.
+
 ## [1.6.0] - 2026-08-08
 
 ### Added

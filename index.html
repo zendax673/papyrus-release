@@ -65,15 +65,15 @@
     <div class="titleblock">
       <h1 class="paper-title">Papyrus keeps the whole research workflow beside the paper.</h1>
       <div class="byline">Native for macOS 14+ (Apple Silicon), iPadOS and iOS 17+</div>
-      <div class="dateline">Version 1.6.0 &nbsp;·&nbsp; free on the App Store<sup class="fnref"><a href="#fn1" id="fnref1">1</a></sup> &nbsp;·&nbsp; <a href="#availability">Availability ↓</a></div>
+      <div class="dateline">Version 1.6.3 &nbsp;·&nbsp; free on the App Store<sup class="fnref"><a href="#fn1" id="fnref1">1</a></sup> &nbsp;·&nbsp; <a href="#availability">Availability ↓</a></div>
     </div>
 
     <section class="abstract">
       <div class="abstract__label">Abstract</div>
-      <p>Papyrus is a native, local-first workspace for researchers who live with PDFs over time. A paper can enter as a PDF, DOI, arXiv ID, BibTeX or RIS record, or straight from a Safari tab; become a searchable library item with editable metadata; open in a native reader; collect highlights, annotations, and Markdown + LaTeX notes; gather those notes onto themed notebooks without leaving the papers they belong to; join a project with roles and evidence; then leave as BibTeX, RIS, CSL&nbsp;JSON, Markdown, or a project bundle. There is no account, no subscription, and no telemetry. Your library stays on your device unless you turn on iCloud Sync or configure your own WebDAV sync.</p>
+      <p>Papyrus is a native, local-first workspace for researchers who live with PDFs over time. A paper can enter as a PDF, DOI, arXiv ID, BibTeX or RIS record, or straight from a Safari tab; become a searchable library item with editable metadata; open in a native reader; collect highlights, annotations, and Markdown + LaTeX notes; gather those notes onto themed notebooks without leaving the papers they belong to; join a project with roles and evidence; then leave as BibTeX, RIS, CSL&nbsp;JSON, Markdown, or a project bundle. There is no account, no subscription, and no telemetry. Your library stays on your device unless you turn on iCloud Sync or configure your own WebDAV sync. The interface reads in English, French, Japanese, and Simplified Chinese, and can be set to any of them independently of the system language.</p>
     </section>
 
-    <div class="keywords"><b>Keywords —</b> PDF library · Safari import · native reader · Markdown notes · Notebooks · Evidence Board · Smart Collections · iCloud / WebDAV sync · BibTeX / RIS / CSL JSON</div>
+    <div class="keywords"><b>Keywords —</b> PDF library · Safari import · native reader · Markdown notes · Notebooks · Evidence Board · Smart Collections · iCloud / WebDAV sync · BibTeX / RIS / CSL JSON · Four interface languages</div>
 
     <!-- §1 -->
     <section class="sec" id="s-intro">
@@ -100,6 +100,8 @@
     <section class="sec" id="s-library">
       <h2 class="sec__h">Capture &amp; Organize</h2>
       <p><span class="lead-in">Import should produce a usable record,</span> not a cleanup chore. Papyrus accepts PDFs, folders on Mac, DOI and arXiv identifiers, BibTeX, and RIS. It can read embedded PDF metadata, fetch scholarly metadata, and keep field-level provenance so you can see where a title, author list, year, DOI, or abstract came from when sources disagree. After a library-wide refresh, the summary lists which papers changed and which fields moved.</p>
+      <p><span class="lead-in">Scanned papers used to arrive empty.</span> When an opening page carries no extractable text — a photocopied chapter, a raster-only scan — Papyrus reads it with bounded on-device OCR and recovers the title, byline, identifiers, year, and abstract from the image itself. Nothing is uploaded to do it, and OCR-derived fields are marked as such and ranked below publisher metadata, so a reading of the page never outranks a source. An unresolved DOI no longer stops the lookup either: Papyrus falls through to the paper's arXiv, PubMed, or ISBN identifier instead of giving up on the first one that fails.</p>
+      <p>A refresh that changes nothing now says <i>why</i>. Already current, no identifier we can look up, offline, a field you locked against a conflicting source — each is reported as itself rather than as a uniform “Metadata Refreshed”, and a run over many papers shows its progress and can be stopped partway.</p>
       <p>Safari can hand papers over directly. The bundled <span class="term">Safari extension</span> captures the paper on the current tab — with its PDF when one is available — or saves any PDF, DOI, or arXiv link from the right-click (Mac) or long-press (iPad) menu. It captures from inside your browser session, so a paper behind a publisher sign-in you already have access to saves too, not just open-access files. The popup shows exactly what was captured and offers folder, tag, and project pickers so a paper lands organized instead of joining an inbox pile.</p>
       <p>Organization has several layers because research changes shape over time. <span class="term">Tags</span> describe topics. <span class="term">Folders</span> keep stable archives, and a paper can live in more than one. <span class="term">Flags</span> give seven colors you can name yourself, each with its own shape so they stay tellable apart at a glance. <span class="term">Smart Collections</span> stay current as saved filters — several values per rule, matched on Any or All. <span class="term">Projects</span> gather papers for a draft, review, or literature archive without forcing the global library to mirror a manuscript outline.</p>
     </section>
@@ -108,6 +110,7 @@
     <section class="sec" id="s-reading">
       <h2 class="sec__h">Read &amp; Annotate</h2>
       <p><span class="lead-in">Reading happens in a native window,</span> not a web viewer embedded in a database. On Mac and iPad you can highlight, underline, strike through, draw freehand ink, leave notes, and set bookmarks. The reader remembers progress and keeps annotations attached to the paper instead of scattering them into a separate notebook.<sup class="fnref"><a href="#fn3" id="fnref3">3</a></sup> Where you stopped, how far in you are, and every page you bookmarked also surface on the paper itself, in the Reading card.</p>
+      <p><span class="lead-in">On iPad and iPhone the page can be laid out two ways at once.</span> A Layout Options panel sets the page layout — one column or two-up, with the first page shown alone so spreads line up the way a bound book does — and can split the reader into two panes, side by side or stacked, each holding the same document at a different place. Comparing a figure on page 3 against the discussion on page 14 stops being a scrolling exercise. Search highlights fan out to both panes, and navigation follows whichever pane you touched last.</p>
       <p>Figure-heavy articles need more than a citation key. Papyrus lets the article page, the figure, the reading note, and the eventual claim remain adjacent. A Markdown notes pane renders headings, lists, tables, code, and LaTeX math, so a figure comment or draft-ready interpretation stays beside the source that prompted it.</p>
       <figure class="plate">
         <div class="shot">
@@ -262,7 +265,7 @@
     <!-- Availability colophon = conversion -->
     <section class="colophon" id="availability">
       <div class="colophon__label">Availability</div>
-      <p>Papyrus is free on the <b>Mac App Store</b> and the <b>App Store</b> for iPhone and iPad.</p>
+      <p>Papyrus is free on the <b>Mac App Store</b> and the <b>App Store</b> for iPhone and iPad. The app ships in English, French, Japanese, and Simplified Chinese.</p>
       <p class="imprint">Free — no account, no telemetry, no subscription.</p>
       <div class="store-row">
         <a class="store-badge" href="https://apps.apple.com/us/app/papyrus-papers/id6766133716?mt=12&amp;uo=4" target="_blank" rel="noopener" aria-label="Download Papyrus on the Mac App Store">
@@ -288,7 +291,7 @@
         <li>Papyrus. <a href="url-scheme.html">Hookmark &amp; the <code>papyrus://</code> URL scheme.</a> Paper links, page anchors, notebook links, x-callback-url.</li>
         <li>Papyrus. <a href="support.html">Support &amp; FAQ.</a></li>
         <li>Papyrus. <a href="privacy.html">Privacy.</a> Local-first; no account; no telemetry.</li>
-        <li>Papyrus. <a href="https://github.com/zendax673/papyrus-release/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Changelog, v1.6.0.</a></li>
+        <li>Papyrus. <a href="https://github.com/zendax673/papyrus-release/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Changelog, v1.6.3.</a></li>
       </ol>
       <pre class="bibblock" id="bibblock"><span class="tk">@article</span>{<span class="ky">peng2026whaleNecropolis</span>, title={A 5.3-million-year-old deep-sea whale necropolis in the Diamantina Zone}, author={Peng, Xiaotong and Zhou, Peng and Song, Xikun and Bianucci, Giovanni and others}, journal={Nature}, doi={10.1038/s41586-026-10546-z}, year={2026}}
 <span class="tk">@article</span>{<span class="ky">smith2021abyssalWhaleFalls</span>, title={Whale-fall ecosystems at abyssal depths}, author={Smith, Craig R. and Glover, Adrian G.}, journal={Annual Review of Marine Science}, year={2021}}
