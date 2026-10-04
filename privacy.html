@@ -7,7 +7,7 @@
   <meta name="description" content="Privacy policy for Papyrus, a local-first research desk for macOS and iPad.">
   <meta name="theme-color" content="#efeee9">
   <meta property="og:title" content="Papyrus Privacy Policy">
-  <meta property="og:description" content="Local-first by default: no account, no telemetry, and network use only for features you choose.">
+  <meta property="og:description" content="Local-first by default: no account required, no developer-operated advertising or tracking, and optional sign-in and sync.">
   <meta property="og:type" content="website">
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/styles.css">
@@ -34,6 +34,7 @@
       <div class="toc__head">Privacy</div>
       <a href="#summary">Summary</a>
       <a href="#local">Local Data</a>
+      <a href="#accounts">Sign-In and Deletion</a>
       <a href="#network">Network Use</a>
       <a href="#sync">Sync</a>
       <a href="#choices">Your Choices</a>
@@ -57,14 +58,15 @@
       <div class="doc-kicker">Privacy Policy</div>
       <h1>Your library stays yours.</h1>
       <p>Papyrus is local-first. Your PDFs, notes, annotations, evidence, search index, and library database stay on your Mac or iPad unless you choose to export, share, look up metadata, turn on iCloud Sync, or configure WebDAV sync.</p>
-      <div class="doc-meta">Last updated: July 2, 2026</div>
+      <div class="doc-meta">Last updated: October 3, 2026</div>
     </div>
 
     <section class="doc-card" id="summary">
       <h2>Summary</h2>
       <ul>
         <li>No Papyrus account is required.</li>
-        <li>Papyrus does not include advertising, telemetry, or third-party analytics SDKs.</li>
+        <li>Apple and Google sign-in are optional. Your default device library stays independent of sign-in.</li>
+        <li>Papyrus does not run developer-operated advertising, tracking, or analytics services. Optional Google sign-in uses Google's SDK and the data practices described below.</li>
         <li>Your library is stored locally by default.</li>
         <li>Network requests happen only for features you choose, such as metadata lookup, iCloud Sync, or WebDAV sync.</li>
         <li>The optional Safari extension runs only when you invoke it and hands captured papers to the app on your device.</li>
@@ -77,6 +79,17 @@
       <p>Credentials that should not be stored in plain text, such as WebDAV passwords, are stored through the system keychain where supported by the platform. iCloud Sync uses the Apple ID and iCloud account already configured on your device; Papyrus does not ask for or store your iCloud password.</p>
     </section>
 
+    <section class="doc-section" id="accounts">
+      <h2>Sign-In and Account Deletion</h2>
+      <p>If you choose Sign in with Apple, Apple provides an app-scoped identifier and, when you consent, a name and email address, which may be an Apple private relay address. Papyrus stores this profile in the device-only Keychain, not on a Papyrus server. Your default device library and its own sync configuration are preserved. If you have a separate Apple library, signing in may reopen it according to your saved choice or when the current device library is empty, or offer it through recovery. This does not change the system's iCloud account; iCloud sync uses that system account independently of this optional profile.</p>
+      <p>If you choose Sign in with Google, Google's official SDK authenticates your Google Account. Papyrus stores the provider-specific user identifier, name, and email in the device-only Keychain; the SDK manages its authorization session and credentials through the system Keychain. Email addresses do not merge identities. Google sign-in keeps your independent device library and iCloud sync settings unchanged. It requests basic sign-in/profile access, not Google Drive access.</p>
+      <p>If you have a separate Apple library, it retains its own data and sync settings. You can open it explicitly using its Apple identity; libraries are not automatically merged.</p>
+      <p>To request deletion, open <strong>Settings → Account → Sign-In → Delete Papyrus Account</strong>. You can cancel the destructive confirmation before deletion starts. For Apple sign-in, deletion removes your Papyrus sign-in profile and any separate library owned by that Apple identity, including its managed files, database, app-managed backups, library preferences, credentials, and associated account-scoped iCloud and configured WebDAV data. Your independent default device library and its sync configuration are kept. Linked original files outside Papyrus are not deleted. If deletion cannot finish, Papyrus keeps the request pending and offers a retry; completion is shown only after the required steps succeed. Deleting the currently open separate Apple library requires reopening Papyrus to use your independent device library.</p>
+      <p>To prevent another device from recreating a deleted account library through sync, Papyrus retains minimal deletion controls in the associated private iCloud and configured WebDAV storage. These include deletion markers, otherwise empty iCloud record zones with a lifecycle guard in each zone, and a WebDAV marker. They identify the opaque library namespace and its deleted status; they contain no name, email address, authorization token, or library content. These controls remain after account data is removed for the purpose of preventing that library from being synced again.</p>
+      <p>Deleting Apple sign-in account data does not automatically revoke Apple authorization. After completion, open <a href="https://account.apple.com/" target="_blank" rel="noopener">your Apple Account</a>, choose <strong>Sign-In &amp; Security → Sign in with Apple</strong>, select <strong>Papyrus</strong>, and stop using Sign in with Apple. See <a href="https://support.apple.com/102571" target="_blank" rel="noopener">Apple's revocation instructions</a> for the device and website steps. Signing out is not account deletion or authorization revocation.</p>
+      <p>For Google sign-in, deletion removes your Papyrus Google profile and uses the official SDK's disconnect operation to revoke Papyrus's Google authorization. A failed disconnect remains pending for retry and is not shown as complete; if the session is missing, sign in with the same Google Account to finish. Your independent device library, Google Account, and Google Drive files are not deleted. Ordinary Sign Out clears this device's session without claiming to revoke access. Google may retain authentication and service records under its own policies.</p>
+    </section>
+
     <section class="doc-section" id="network">
       <h2>Network Use</h2>
       <p>Papyrus does not upload your library to a Papyrus cloud. The app may contact outside services only when a feature needs a network request.</p>
@@ -86,6 +99,8 @@
       <p>The optional Papyrus Import extension for Safari runs only when you invoke it — from the toolbar button, the Save Link to Papyrus context-menu item, or its keyboard shortcut. It reads the page or link you chose in order to extract citation details (title, authors, year, venue, DOI or arXiv ID) and locate a PDF, then hands that capture to the Papyrus app on your device. Papyrus may then download the paper's PDF from its source when you ask for one. The extension does not run on pages you have not invoked it on, does not collect browsing history, and sends nothing to any Papyrus server — there are none.</p>
       <h3>Apple services</h3>
       <p>Downloads, App Store account records, iCloud storage, CloudKit sync, and push delivery are handled by Apple. Apple may process data according to Apple's own policies and the Apple ID you use.</p>
+      <h3>Optional Google sign-in</h3>
+      <p>Google Sign-In uses Google's authentication service, not a Papyrus account server. Google documents collection of a user identifier to record authorized OAuth grants and an IP address that may estimate general location for fraud prevention. Its SDK also sends platform/version information for service operation. The SDK's privacy manifest lists name, email, phone number, coarse location, user and device identifiers, usage data, and other data categories for app functionality and/or analytics; it marks these categories as linked to the user and not used for tracking. These are SDK-level declarations, not a claim that Papyrus receives every category or that the SDK is free of analytics. Google controls its authentication, security, service diagnostics, and retention. See <a href="https://developers.google.com/identity/sign-in/ios/app-privacy" target="_blank" rel="noopener">Google's Apple-platform SDK privacy explanation</a>, its <a href="https://github.com/google/GoogleSignIn-iOS/blob/10.0.0/GoogleSignIn/Sources/Resources/PrivacyInfo.xcprivacy" target="_blank" rel="noopener">SDK privacy manifest</a>, and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
       <h3>System language models</h3>
       <p>On supported systems, Papyrus may use Apple-provided on-device Foundation Models for metadata synthesis when enrichment results are ambiguous or incomplete. Papyrus does not run its own hosted AI backend.</p>
     </section>
@@ -100,12 +115,14 @@
       <h2>Your Choices</h2>
       <ul>
         <li>Use Papyrus offline.</li>
+        <li>Use the default library without signing in, or delete your optional Papyrus account through Settings.</li>
         <li>Skip metadata enrichment when you do not want identifier lookups.</li>
         <li>Leave iCloud Sync and WebDAV sync disabled.</li>
         <li>Use Copy Into Library when you want Papyrus to manage PDFs, or Keep PDFs In Place when you want files to remain where they are.</li>
         <li>Delete exports or shared files from their destination when you no longer need them.</li>
       </ul>
       <p>Deleting items removes them from active use, but older local backups, iCloud records, or WebDAV restore points may contain historical copies until they rotate or are removed according to your settings and provider retention.</p>
+      <p>Account deletion removes app-managed backups and the associated account-scoped iCloud and configured WebDAV library. It cannot automatically remove previously exported backups, copies on other devices, provider backups, or historical unscoped sync copies outside that account's current library namespace. Remove those copies separately through their storage or provider controls.</p>
     </section>
 
     <section class="doc-section" id="contact">
