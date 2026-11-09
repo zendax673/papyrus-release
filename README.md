@@ -89,7 +89,7 @@ Papyrus is one universal app. On iPad it is a touch-first workspace with Apple P
 
 ## Requirements
 
-- macOS 14 or later on Apple Silicon for the Mac app
+- macOS 14 or later on Apple Silicon or Intel for the Mac app
 - iPadOS or iOS 17 or later for the iPad and iPhone app
 - Disk space for PDFs, metadata, notes, annotations, full-text indexes, and backups
 - Optional: an iCloud account for iCloud Sync, or a WebDAV-compatible server for WebDAV sync
