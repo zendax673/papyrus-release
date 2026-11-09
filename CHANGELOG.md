@@ -7,6 +7,176 @@ and this project follows semantic versioning when tagged releases begin.
 
 ## [Unreleased]
 
+## [2.2] - 2026-11-09
+
+### Added
+
+- **Key Findings, written on device.** On a device with Apple Intelligence, a
+  paper's detail has a Key Findings card after the abstract: Summarize writes
+  an overview and three to five findings from the abstract, introduction, and
+  conclusion with Apple's on-device model, streaming in as it writes. The card
+  says why when Apple Intelligence is off or still preparing, is hidden on
+  devices that cannot run it, and notes that the result can be wrong.
+- **Bring your library from Zotero or Mendeley.** A new guide (Add menu, File
+  menu on Mac, and the empty Library) walks through Zotero's Export Library…
+  with Export Files, then imports the exported folder: each paper arrives with
+  its PDF and tags, and the PDFs are indexed for search. The import is filed in
+  a **From Zotero** / **From Mendeley** folder so it is easy to find, check, or
+  remove in one go; importing the same library again reuses that folder.
+- **Many tags, kept tidy.** Past 15 tags, the Mac/iPad sidebar, the iPhone
+  Browse sheet, and the Filter menu list the ten most used; **All Tags** opens
+  every tag with a search field, sorted by use or by name.
+- **Read a note in full.** Note cards have Read, which opens the rendered note
+  full-screen on iPad (a sheet on Mac), with Edit in its toolbar.
+- **Rename a note from the iPad reader.** The note pane's name is now a menu
+  that switches notes and renames the one on screen.
+- **Report a problem** in Settings › Advanced opens a new GitHub issue with the
+  app version filled in and copies a diagnostic report, which you choose
+  whether to paste (issues are public).
+
+### Changed
+
+- **Explanations stream.** Explain Connections (Similar Papers) and Explain
+  Figure (reader) show text as the on-device model writes it.
+- **Concept tagging runs.** The on-device concept, method, and dataset tagger
+  that Similar Papers ranks with now tags a few papers each launch, in the
+  background and never in Low Power Mode.
+- **A redesigned sidebar on iPad and Mac.** Groups run Library, Projects,
+  Folders, Smart Collections, Notebooks, Tags; Library collapses like every
+  other group; empty groups are hidden; a group header offers "New …" on
+  long-press (iPad) or right-click (Mac).
+- **Similar Papers, round trip.** Opening a suggestion on iPad or Mac shows
+  "‹ Back to" the paper you came from; Back (⌘[ with a keyboard) restores it
+  with the sidebar and search you had.
+- **BibTeX import, checked against a real 1,170-item Zotero library.** Markup
+  and LaTeX accents are decoded; Zotero child notes import as notes; authors
+  show in reading order; a `.bib` brings its PDFs along when they can be
+  reached; duplicates pass their PDF and tags to the copy that is kept.
+- **Faster with a large library.** Large imports on iPad and Mac are much
+  faster, opening the library no longer freezes the screen for seconds, opening
+  and scrolling a PDF stall far less, and iPad shows import progress with a
+  Stop Import that actually stops.
+- iPhone in landscape gives a selected project paper most of the screen; text
+  fields use a softer filled style; following a link between notes opens the
+  linked note on top of the one you were reading.
+
+### Fixed
+
+- A broad stability sweep: opening a project, a notebook, the note editor, or
+  a paper's detail can no longer exhaust the iPad's stack; the paper detail no
+  longer spins the CPU after a first note is added; views no longer read
+  deleted tags, projects, and notes; and a BibTeX decoder crash is fixed.
+- An iPad launch crash in the redesigned sidebar (build 787; Mac unaffected).
+- Search no longer loses characters typed after a short pause.
+
+## [2.1] - 2026-11-07
+
+### Added
+
+- **Similar Papers.** Each paper lists related papers already in your library,
+  ranked on the device with the reason for each, plus optional related-paper
+  suggestions from OpenAlex (off by default).
+
+### Changed
+
+- **iCloud sync converges across devices.** Concurrent edits merge field by
+  field; tags, folders, notebooks, and project papers combine as sets; sync
+  continues when another device runs a newer Papyrus; and the whole library is
+  no longer re-uploaded on launch. Settings shows pending uploads.
+- A redesigned iPhone Home: summary counts, Continue Reading, Up Next (every
+  Read Later paper, with read ones labelled), Recently Added, Recent Notes,
+  Projects, and a specific Needs Attention list.
+- One button style across iPhone and iPad, with consistent titles, margins, and
+  corner radii; tapping a note opens it, in a cleaner editor.
+- PDF author lines are read more accurately, and the Safari extension says when
+  a page is already in the library and why a PDF could not be added.
+
+### Fixed
+
+- A crash when closing the iPad reader while the comparison pane was active.
+
+## [2.0.1] - 2026-10-28
+
+macOS 2.0 / iOS 2.0.1.
+
+### Changed
+
+- Better iPhone navigation, import feedback, PDF actions, and adaptive layouts.
+- Clearer paper, notebook, and project actions with consistent completion
+  feedback, and Undo after moving papers or notes to the Trash.
+- Metadata sidebar selections and reader zoom controls, including Actual Size,
+  are restored.
+
+## [2.0] - 2026-10-05
+
+### Added
+
+- **Optional sign-in** with Apple or Google, alongside the independent device
+  library and iCloud sync, and **account deletion** from Settings.
+- Standalone notes created directly in a notebook.
+- PDFs for recent, queued, and favorite papers are prepared ahead of time on
+  suitable Wi-Fi, respecting Low Power Mode and storage limits.
+
+### Changed
+
+- iPad reader tools stay available across reading and drawing modes, with a
+  Liquid Glass quick toolbar on supported systems.
+- A simpler iPhone Home, Library, Projects, and Notes, with native search and
+  labelled menus; iPhone Notes get List and Grid layouts.
+- More reliable iCloud download recovery, Quick Import, note saving, and PDF
+  export (including handwriting on rotated pages).
+
+### Fixed
+
+- An iPhone cold-launch crash reported in TestFlight.
+
+## [1.7.2] - 2026-09-25
+
+### Changed
+
+- iCloud shows a searchable list of papers with their PDF upload status.
+
+### Fixed
+
+- A crash when uploading PDFs after sync, and a crash when closing paper
+  details after deletion; stalled iCloud PDF downloads now recover.
+
+## [1.7.1] - 2026-09-23
+
+### Added
+
+- **Intel Macs are supported again** on macOS 14 and later, with universal
+  app, Safari extension, and helper builds.
+- Component datasheets are recognized on import, with part numbers,
+  manufacturers, device categories, and revisions.
+
+### Changed
+
+- PDF zoom and reading position survive window resizing; more readable
+  larger-text layouts on iPhone and iPad; more reliable PDF attachment from
+  Files and iCloud PDF uploads.
+- All four PDF search modes stay visible on iPhone and iPad.
+
+### Fixed
+
+- Concurrent Apple Pencil edits across reader windows are preserved, and
+  deleted imported PDF annotations stay deleted.
+
+## [1.7.0] - 2026-09-11
+
+### Changed
+
+- Improved project writing, publisher PDF attachment, reader controls, and
+  library organization across Mac, iPhone, and iPad.
+- Siri Shortcuts phrases are translated in the Mac app.
+
+### Fixed
+
+- Hardened backup recovery and merging; newer metadata and attachments are
+  preserved when imports, refreshes, or sync finish after a paper changed;
+  fixes for delayed Pencil saves, annotation rendering, and stale search
+  results.
+
 ## [1.6.3] - 2026-08-17
 
 ### Added

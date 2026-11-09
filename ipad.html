@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Papyrus for iPad — read, annotate, and write with Apple Pencil</title>
-  <meta name="description" content="Papyrus on iPadOS: the same three-column research library under touch, with Apple Pencil markup on the page, Markdown notes beside the source, notebooks, a References tab, and Safari import. Free, local-first, no telemetry.">
+  <meta name="description" content="Papyrus on iPadOS: the same three-column research library under touch, with Apple Pencil markup on the page, Markdown notes beside the source, notebooks, Similar Papers, on-device Key Findings with Apple Intelligence, a References tab, Safari import, and Zotero or Mendeley import. Free, local-first, no telemetry.">
   <meta name="theme-color" content="#efeee9">
   <meta property="og:title" content="Papyrus for iPad">
   <meta property="og:description" content="The research library under touch, with Apple Pencil markup, Markdown notes, and notebooks.">
@@ -53,7 +53,7 @@
     <div class="titleblock">
       <h1 class="paper-title">Papyrus for iPad</h1>
       <div class="byline">iPadOS 17 or later · Apple Pencil supported</div>
-      <div class="dateline">Version 1.6.3 &nbsp;·&nbsp; free on the App Store &nbsp;·&nbsp; <a href="#availability">Availability ↓</a></div>
+      <div class="dateline">Version 2.2 &nbsp;·&nbsp; free on the App Store &nbsp;·&nbsp; <a href="#availability">Availability ↓</a></div>
     </div>
 
     <section class="abstract">
@@ -63,7 +63,7 @@
 
     <section class="sec" id="s-library">
       <h2 class="sec__h">The Library, Under Touch</h2>
-      <p><span class="lead-in">Nothing is cut down.</span> Folders, tags, flags, Smart Collections, projects, and notebooks all appear in the sidebar; the paper list carries the same filters and sorts; the detail pane holds the abstract, membership, Markdown notes, overview metadata, and the Reading card. A paper's actions — Open PDF, Copy, Link, Add Note, Read Later, Share — sit as a row of buttons where a Mac would use a menu bar.</p>
+      <p><span class="lead-in">Nothing is cut down.</span> Folders, tags, flags, Smart Collections, projects, and notebooks all appear in the sidebar; the paper list carries the same filters and sorts; the detail pane holds the abstract, membership, Markdown notes, overview metadata, the Reading card, and a Similar Papers card of related papers already in your library — open one and “‹ Back to” returns you to the paper you came from. A paper's actions — Open PDF, Copy, Link, Add Note, Read Later, Share — sit as a row of buttons where a Mac would use a menu bar.</p>
       <figure class="plate">
         <div class="shot shot--ipad">
           <img class="screenshot screenshot--light" width="1500" height="1125" src="assets/app-captures/ipad/library-light.jpg?v=20260808b" alt="Papyrus on iPad in landscape: sidebar, paper list, and the Nature paper's detail pane with tags, folders, projects, and overview metadata.">
@@ -71,13 +71,14 @@
         </div>
         <figcaption><b>Fig. 1.</b> The library in landscape. The same three columns the Mac has, sized for a finger.</figcaption>
       </figure>
-      <p>In 1.6.0 the crowded spots got room to breathe: the notebook header no longer crams four spelled-out controls into a split-view column, the PDF row offers the one action the paper's state actually calls for instead of wrapping “Replace PDF” onto two lines, and the Library title no longer drags down when you overscroll the list.</p>
+      <p><span class="lead-in">The sidebar leads with what you use.</span> Groups now run Library, Projects, Folders, Smart Collections, Notebooks, Tags, so your projects and a <span class="term">From Zotero</span> folder sit just below the Library instead of off the first screen. Every group collapses, the Library included; empty groups stay out of the way (the + menu still creates each kind); and a long-press on a group header offers “New …”. Past fifteen tags, the sidebar lists the ten you use most, with <span class="term">All Tags</span> one tap away.</p>
+      <p>A large library got markedly lighter in 2.2. Measured with a real library of more than a thousand papers, opening the app no longer freezes the screen for seconds while it tidies up, opening a PDF and scrolling it stall far less, and search keeps every character you type. A big Zotero import shows its progress at the foot of the library, with a <span class="term">Stop Import</span> that actually stops.</p>
     </section>
 
     <section class="sec" id="s-read">
       <h2 class="sec__h">Reading &amp; Apple Pencil</h2>
       <p><span class="lead-in">Mark up a PDF directly on the page.</span> Annotate a proof, sketch beside a figure, work a derivation out in the margin. The ink belongs to the paper and travels with it — encrypted — to your other devices. Highlights, underlines, strikethrough, notes, and bookmarks work as they do everywhere else, and the inspector beside the page carries the markup list and the reading note.</p>
-      <p>Scrolling a heavily inked paper is markedly cheaper in 1.6.0: Papyrus no longer re-reads and re-saves a page's ink just because you scrolled past it, so a long annotated PDF stays responsive under the Pencil.</p>
+      <p>The reader's tools stay within reach whether you are reading or drawing, on a Liquid Glass quick toolbar where the system supports it, and scrolling a heavily inked paper stays cheap: Papyrus does not re-read and re-save a page's ink just because you scrolled past it, so a long annotated PDF stays responsive under the Pencil.</p>
       <figure class="plate">
         <div class="shot shot--ipad">
           <img class="screenshot screenshot--light" loading="lazy" decoding="async" width="1500" height="1125" src="assets/app-captures/ipad/reader-light.jpg?v=20260808b" alt="Papyrus on iPad showing the reader with the article's first page and the reading note rendered in the inspector.">
@@ -88,6 +89,8 @@
       <p><span class="lead-in">The page column is no longer fixed.</span> <span class="term">Layout Options</span> opens a popover with two independent settings. <b>Page layout</b> puts the document in one column or two-up, and can show the first page alone so a two-up spread falls the way a bound journal does. <b>Split view</b> divides the reader into two panes — side by side, or one above the other — each showing the same PDF at a different page. The methods section can sit against the figure it describes without either one leaving the screen.</p>
       <p>Both panes stay live: a search highlights its hits in each, and page number, selection, and navigation follow whichever pane you last touched, which carries an accent border while it is the active one. Apple Pencil markup stays deliberately on the primary pane — ink belongs to one editing surface, so inking from the second pane draws on the first rather than splitting your annotations in two.</p>
       <p>A <span class="term">References</span> tab looks up the open paper's reference list and related work by DOI, so a citation trail can be followed — and anything worth keeping added to the library — without leaving the reader.</p>
+      <p><span class="lead-in">With Apple Intelligence, the iPad can talk a paper through.</span> <span class="term">Explain Figure</span> in the reader explains the figure on the page, and a paper's <span class="term">Key Findings</span> card writes an overview and three to five findings from its abstract, introduction, and conclusion; both stream in as the model writes. They run only when you ask, with Apple's on-device model — the paper does not leave the iPad — on an iPad that supports Apple Intelligence with it turned on. A model can misread a paper, and the card says so.</p>
+      <p>The note pane beside the page names the note you are on as a menu: switch to another note on the same paper, or rename this one, so a note started in the reader no longer stays “Untitled Note”.</p>
     </section>
 
     <section class="sec" id="s-notebooks">
@@ -101,6 +104,7 @@
         <figcaption><b>Fig. 3.</b> A shelf reads as one continuous set of notes. Each carries the paper it came from, with author and year.</figcaption>
       </figure>
       <p>Fill a new shelf from what you have already written with <span class="term">Add Notes…</span>, search it by a note's text or by the paper behind it, and order it four ways — including oldest paper first, which reads your notes forward through the literature. Export the shelf as one Markdown document, or copy a link to it.</p>
+      <p>A note on a paper's card can be <span class="term">Read</span> in full: the rendered note opens full-screen, with Edit in its toolbar when you want to change it.</p>
     </section>
 
     <section class="sec" id="s-capture">
@@ -112,7 +116,7 @@
     <section class="colophon" id="availability">
       <div class="colophon__label">Availability</div>
       <p>Papyrus for iPad is free on the <b>App Store</b>. One universal app for iPad and iPhone.</p>
-      <p class="imprint">iPadOS 17 or later · no account, no telemetry, no subscription.</p>
+      <p class="imprint">iPadOS 17 or later · no account required, no telemetry, no subscription.</p>
       <div class="store-row">
         <a class="store-badge" href="https://apps.apple.com/app/id6766133716" target="_blank" rel="noopener" aria-label="Download Papyrus for iPhone and iPad on the App Store">
           <img class="app-store-badge__black" src="assets/badge-appstore-black.svg" alt="Download on the App Store">

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Papyrus — a native research workspace for Mac, iPad, and iPhone</title>
-  <meta name="description" content="Papyrus is a free, native, local-first research workspace for Mac, iPad, and iPhone: import papers from Safari or a link, read and annotate PDFs, write Markdown + LaTeX notes, gather notes into notebooks, build project evidence, sync via iCloud or WebDAV, and export BibTeX, RIS, or CSL JSON. No account, no telemetry.">
+  <meta name="description" content="Papyrus is a free, native, local-first research workspace for Mac, iPad, and iPhone: import papers from Safari, a link, or a Zotero or Mendeley library, read and annotate PDFs, find similar papers, get on-device key findings with Apple Intelligence, write Markdown + LaTeX notes, gather notes into notebooks, build project evidence, sync via iCloud or WebDAV, and export BibTeX, RIS, or CSL JSON. No account required, no telemetry.">
   <meta name="theme-color" content="#efeee9">
   <meta property="og:title" content="Papyrus — a research workspace for Mac, iPad, and iPhone">
   <meta property="og:description" content="A local-first workspace for PDFs, notes, notebooks, projects, citations, sync, and export on Mac, iPad, and iPhone.">
@@ -40,8 +40,9 @@
       <a href="#s-reading"><span class="n">3</span>Read &amp; Annotate</a>
       <a href="#s-notebooks"><span class="n">4</span>Notebooks</a>
       <a href="#s-evidence"><span class="n">5</span>Projects &amp; Evidence</a>
-      <a href="#s-method"><span class="n">6</span>Search, Sync &amp; Privacy</a>
-      <a href="#s-export"><span class="n">7</span>Export &amp; Citation</a>
+      <a href="#s-connect"><span class="n">6</span>Similar Papers &amp; Apple Intelligence</a>
+      <a href="#s-method"><span class="n">7</span>Search, Sync &amp; Privacy</a>
+      <a href="#s-export"><span class="n">8</span>Export &amp; Citation</a>
     </nav>
     <nav class="doc-toc doc-toc--secondary" aria-label="Platform pages">
       <div class="toc__head">Platforms</div>
@@ -64,16 +65,16 @@
 
     <div class="titleblock">
       <h1 class="paper-title">Papyrus keeps the whole research workflow beside the paper.</h1>
-      <div class="byline">Native for macOS 14+ (Apple Silicon), iPadOS and iOS 17+</div>
-      <div class="dateline">Version 1.6.3 &nbsp;·&nbsp; free on the App Store<sup class="fnref"><a href="#fn1" id="fnref1">1</a></sup> &nbsp;·&nbsp; <a href="#availability">Availability ↓</a></div>
+      <div class="byline">Native for macOS 14+ (Apple Silicon and Intel), iPadOS and iOS 17+</div>
+      <div class="dateline">Version 2.2 &nbsp;·&nbsp; free on the App Store<sup class="fnref"><a href="#fn1" id="fnref1">1</a></sup> &nbsp;·&nbsp; <a href="#availability">Availability ↓</a></div>
     </div>
 
     <section class="abstract">
       <div class="abstract__label">Abstract</div>
-      <p>Papyrus is a native, local-first workspace for researchers who live with PDFs over time. A paper can enter as a PDF, DOI, arXiv ID, BibTeX or RIS record, or straight from a Safari tab; become a searchable library item with editable metadata; open in a native reader; collect highlights, annotations, and Markdown + LaTeX notes; gather those notes onto themed notebooks without leaving the papers they belong to; join a project with roles and evidence; then leave as BibTeX, RIS, CSL&nbsp;JSON, Markdown, or a project bundle. There is no account, no subscription, and no telemetry. Your library stays on your device unless you turn on iCloud Sync or configure your own WebDAV sync. The interface reads in English, French, Japanese, and Simplified Chinese, and can be set to any of them independently of the system language.</p>
+      <p>Papyrus is a native, local-first workspace for researchers who live with PDFs over time. A paper can enter as a PDF, DOI, arXiv ID, BibTeX or RIS record, straight from a Safari tab, or as part of a whole Zotero or Mendeley library; become a searchable library item with editable metadata; open in a native reader; turn up beside the related papers you already own; collect highlights, annotations, and Markdown + LaTeX notes; gather those notes onto themed notebooks without leaving the papers they belong to; join a project with roles and evidence; then leave as BibTeX, RIS, CSL&nbsp;JSON, Markdown, or a project bundle. On a device with Apple Intelligence, Papyrus can also write a paper's key findings on the device, when you ask. No account is required, and there is no subscription and no telemetry. Your library stays on your device unless you turn on iCloud Sync or configure your own WebDAV sync. The interface reads in English, French, Japanese, and Simplified Chinese, and can be set to any of them independently of the system language.</p>
     </section>
 
-    <div class="keywords"><b>Keywords —</b> PDF library · Safari import · native reader · Markdown notes · Notebooks · Evidence Board · Smart Collections · iCloud / WebDAV sync · BibTeX / RIS / CSL JSON · Four interface languages</div>
+    <div class="keywords"><b>Keywords —</b> PDF library · Safari import · native reader · Markdown notes · Notebooks · Evidence Board · Smart Collections · Zotero / Mendeley import · Similar Papers · On-device Apple Intelligence · iCloud / WebDAV sync · BibTeX / RIS / CSL JSON · Four interface languages</div>
 
     <!-- §1 -->
     <section class="sec" id="s-intro">
@@ -81,7 +82,7 @@
       <p><span class="lead-in">A paper should not fragment into separate tools.</span> The PDF, metadata, reading progress, tags, notes, project role, evidence, and citation key all belong to the same object. Papyrus keeps that object coherent from first import through the final export.</p>
       <p>The example throughout this page follows a single Nature article: <i>A 5.3-million-year-old deep-sea whale necropolis in the Diamantina Zone</i>. The same record appears in the library, opens in the reader, carries Markdown notes, files those notes onto a notebook, supports a project archive, and exports through standard citation formats. The figures here show the Mac; <a href="ipad.html">iPad</a> and <a href="iphone.html">iPhone</a> have pages of their own.</p>
       <div class="workflow-map" aria-label="Papyrus research workflow">
-        <div><span class="workflow-map__k">Capture</span><span>PDF, DOI, arXiv, BibTeX, RIS, Safari</span></div>
+        <div><span class="workflow-map__k">Capture</span><span>PDF, DOI, arXiv, BibTeX, RIS, Safari, Zotero, Mendeley</span></div>
         <div><span class="workflow-map__k">Organize</span><span>Tags, folders, Smart Collections, Projects</span></div>
         <div><span class="workflow-map__k">Read</span><span>PDF pages, figures, highlights, ink</span></div>
         <div><span class="workflow-map__k">Write</span><span>Markdown notes, notebooks, claims, evidence</span></div>
@@ -103,7 +104,8 @@
       <p><span class="lead-in">Scanned papers used to arrive empty.</span> When an opening page carries no extractable text — a photocopied chapter, a raster-only scan — Papyrus reads it with bounded on-device OCR and recovers the title, byline, identifiers, year, and abstract from the image itself. Nothing is uploaded to do it, and OCR-derived fields are marked as such and ranked below publisher metadata, so a reading of the page never outranks a source. An unresolved DOI no longer stops the lookup either: Papyrus falls through to the paper's arXiv, PubMed, or ISBN identifier instead of giving up on the first one that fails.</p>
       <p>A refresh that changes nothing now says <i>why</i>. Already current, no identifier we can look up, offline, a field you locked against a conflicting source — each is reported as itself rather than as a uniform “Metadata Refreshed”, and a run over many papers shows its progress and can be stopped partway.</p>
       <p>Safari can hand papers over directly. The bundled <span class="term">Safari extension</span> captures the paper on the current tab — with its PDF when one is available — or saves any PDF, DOI, or arXiv link from the right-click (Mac) or long-press (iPad) menu. It captures from inside your browser session, so a paper behind a publisher sign-in you already have access to saves too, not just open-access files. The popup shows exactly what was captured and offers folder, tag, and project pickers so a paper lands organized instead of joining an inbox pile.</p>
-      <p>Organization has several layers because research changes shape over time. <span class="term">Tags</span> describe topics. <span class="term">Folders</span> keep stable archives, and a paper can live in more than one. <span class="term">Flags</span> give seven colors you can name yourself, each with its own shape so they stay tellable apart at a glance. <span class="term">Smart Collections</span> stay current as saved filters — several values per rule, matched on Any or All. <span class="term">Projects</span> gather papers for a draft, review, or literature archive without forcing the global library to mirror a manuscript outline.</p>
+      <p><span class="lead-in">A library from Zotero or Mendeley comes across whole.</span> A guide — in the Add menu, the File menu on Mac, and the empty Library — walks through Zotero's <i>Export Library…</i> with its files, then imports the exported folder: each paper arrives with its PDF and its tags, and the PDFs are indexed for search. Everything lands in a <span class="term">From Zotero</span> or <span class="term">From Mendeley</span> folder, so the import is easy to find, check, or remove in one go, and importing the same library again uses the same folder. BibTeX markup — case-protecting braces, escapes, LaTeX accents — is decoded rather than kept, Zotero's child notes come across as notes, and authors read in natural order. A <code>.bib</code> on its own now brings its PDFs along when they can be reached, and says plainly when they can't.</p>
+      <p>Organization has several layers because research changes shape over time. <span class="term">Tags</span> describe topics; past fifteen of them, the sidebar and the Filter menu list the ten you use most, and <span class="term">All Tags</span> opens every one with a search field, sorted by use or by name — so the hundreds of publisher keywords a Zotero library brings no longer bury the few you made. <span class="term">Folders</span> keep stable archives, and a paper can live in more than one. <span class="term">Flags</span> give seven colors you can name yourself, each with its own shape so they stay tellable apart at a glance. <span class="term">Smart Collections</span> stay current as saved filters — several values per rule, matched on Any or All. <span class="term">Projects</span> gather papers for a draft, review, or literature archive without forcing the global library to mirror a manuscript outline.</p>
     </section>
 
     <!-- §3 -->
@@ -185,13 +187,21 @@
     </section>
 
     <!-- §6 -->
-    <section class="sec" id="s-method">
-      <h2 class="sec__h">Search, Sync &amp; Privacy</h2>
-      <p><span class="lead-in">A research desk has to be searchable and inspectable.</span> Papyrus indexes titles, metadata, notes, annotations, and extracted PDF text so a phrase can lead back to the paper, page, and context where it was useful. The reading queue keeps active work visible, while filters and Smart Collections surface papers by tag, journal, year range, favorite status, flag, document type, or PDF availability.</p>
-      <p><span class="lead-in">Local-first is the default,</span> not an add-on. Your library, PDFs, notes, annotations, search index, and project evidence live on your device. There is no Papyrus account and no telemetry. Network access is limited to actions you choose, such as metadata lookup or sync. iCloud Sync uses your own iCloud account to keep a library current across Mac, iPad, and iPhone, while WebDAV sync remains available for a server destination you control and dated restore points.<sup class="fnref"><a href="#fn3b" id="fnref3b">4</a></sup></p>
+    <section class="sec" id="s-connect">
+      <h2 class="sec__h">Similar Papers &amp; Apple Intelligence</h2>
+      <p><span class="lead-in">Every paper lists its neighbours already in your library.</span> The <span class="term">Similar Papers</span> card ranks related papers on the device and gives the reason for each. Opening one on iPad or Mac shows “‹ Back to” the paper you came from, so a trail of jumps can be walked back one step at a time. Below the local list, Papyrus can also suggest related papers <span class="term">From OpenAlex</span> — off until you turn it on, and then it sends only the paper's DOI.<sup class="fnref"><a href="#fn5" id="fnref5">5</a></sup></p>
+      <p><span class="lead-in">On a device with Apple Intelligence, the model works on the paper, on the device.</span> A <span class="term">Key Findings</span> card after the abstract writes an overview and three to five findings from the paper's own abstract, introduction, and conclusion, streaming in as it writes. <span class="term">Explain Connections</span> says how the papers on a Similar Papers card relate, and <span class="term">Explain Figure</span> in the reader talks through the figure in front of you; both stream too. Each runs only when you ask. In the background, a few papers at a time and never in Low Power Mode, the same model tags papers with the concepts, methods, and datasets they use, which Similar Papers ranks with.</p>
+      <p>All of it runs with Apple's on-device model: the paper's text does not leave the device for these features, and Papyrus has no AI server of its own. It needs a device that supports Apple Intelligence, with Apple Intelligence turned on; the card says why when it is off or still preparing, and stays hidden on devices that cannot run it. A model can misread a paper, and the card says so — treat its findings as a pointer back into the text, not a substitute for it.</p>
     </section>
 
     <!-- §7 -->
+    <section class="sec" id="s-method">
+      <h2 class="sec__h">Search, Sync &amp; Privacy</h2>
+      <p><span class="lead-in">A research desk has to be searchable and inspectable.</span> Papyrus indexes titles, metadata, notes, annotations, and extracted PDF text so a phrase can lead back to the paper, page, and context where it was useful. The reading queue keeps active work visible, while filters and Smart Collections surface papers by tag, journal, year range, favorite status, flag, document type, or PDF availability.</p>
+      <p><span class="lead-in">Local-first is the default,</span> not an add-on. Your library, PDFs, notes, annotations, search index, and project evidence live on your device. No account is required, and there is no telemetry. Network access is limited to actions you choose, such as metadata lookup, OpenAlex suggestions, or sync. iCloud Sync uses your own iCloud account to keep a library current across Mac, iPad, and iPhone — edits made on two devices merge field by field, and tags, folders, notebooks, and project papers combine rather than overwrite — while WebDAV sync remains available for a server destination you control and dated restore points.<sup class="fnref"><a href="#fn3b" id="fnref3b">4</a></sup></p>
+    </section>
+
+    <!-- §8 -->
     <section class="sec" id="s-export">
       <h2 class="sec__h">Export &amp; Citation</h2>
       <p><span class="lead-in">The exit path is as important as the import path.</span> A single paper, a notebook, or a whole project can leave as <span class="term">BibTeX</span>, <span class="term">RIS</span>, <span class="term">CSL&nbsp;JSON</span>, <span class="term">Markdown</span>, or a full bundle. Project export can include papers, notes, evidence, citations, and a report that flags missing PDFs, duplicate cite keys, sparse metadata, or unresolved citation problems before you hand work to another tool.</p>
@@ -240,7 +250,7 @@
         <a class="platform-card" href="ipad.html">
           <span class="platform-card__k">iPadOS 17+</span>
           <span class="platform-card__h">Papyrus for iPad</span>
-          <span class="platform-card__d">The same workspace under touch, with Apple Pencil markup straight onto the page.</span>
+          <span class="platform-card__d">The same workspace under touch, with Apple Pencil markup straight onto the page and a sidebar that leads with what you use.</span>
           <span class="platform-card__go">See the iPad →</span>
         </a>
         <a class="platform-card" href="iphone.html">
@@ -259,6 +269,7 @@
         <li id="fn2"><sup>2</sup>&nbsp;The public beta is distributed through Apple's external TestFlight program. <a class="back" href="#fnref2">↩</a></li>
         <li id="fn3"><sup>3</sup>&nbsp;Annotation tools: highlight, underline, strikethrough, freehand ink, notes, and bookmarks. Notes are Markdown with LaTeX math. <a class="back" href="#fnref3">↩</a></li>
         <li id="fn3b"><sup>4</sup>&nbsp;Sync is optional. iCloud Sync uses your Apple ID and iCloud account; WebDAV sync uses a destination you control. Both can stay off. <a class="back" href="#fnref3b">↩</a></li>
+        <li id="fn5"><sup>5</sup>&nbsp;OpenAlex suggestions are off by default and ask before they turn on. When on, Papyrus sends the DOI of the paper you are viewing to OpenAlex (api.openalex.org), with your contact email if you set one in Settings; titles, abstracts, notes, and the rest of the library stay on the device. See <a href="privacy.html#network">Privacy</a>. <a class="back" href="#fnref5">↩</a></li>
       </ol>
     </section>
 
@@ -266,7 +277,7 @@
     <section class="colophon" id="availability">
       <div class="colophon__label">Availability</div>
       <p>Papyrus is free on the <b>Mac App Store</b> and the <b>App Store</b> for iPhone and iPad. The app ships in English, French, Japanese, and Simplified Chinese.</p>
-      <p class="imprint">Free — no account, no telemetry, no subscription.</p>
+      <p class="imprint">Free — no account required, no telemetry, no subscription.</p>
       <div class="store-row">
         <a class="store-badge" href="https://apps.apple.com/us/app/papyrus-papers/id6766133716?mt=12&amp;uo=4" target="_blank" rel="noopener" aria-label="Download Papyrus on the Mac App Store">
           <img class="app-store-badge__black" src="assets/app-store-badge-black.svg" alt="Download on the Mac App Store">
@@ -291,7 +302,7 @@
         <li>Papyrus. <a href="url-scheme.html">Hookmark &amp; the <code>papyrus://</code> URL scheme.</a> Paper links, page anchors, notebook links, x-callback-url.</li>
         <li>Papyrus. <a href="support.html">Support &amp; FAQ.</a></li>
         <li>Papyrus. <a href="privacy.html">Privacy.</a> Local-first; no account; no telemetry.</li>
-        <li>Papyrus. <a href="https://github.com/zendax673/papyrus-release/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Changelog, v1.6.3.</a></li>
+        <li>Papyrus. <a href="https://github.com/zendax673/papyrus-release/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Changelog, v2.2.</a></li>
       </ol>
       <pre class="bibblock" id="bibblock"><span class="tk">@article</span>{<span class="ky">peng2026whaleNecropolis</span>, title={A 5.3-million-year-old deep-sea whale necropolis in the Diamantina Zone}, author={Peng, Xiaotong and Zhou, Peng and Song, Xikun and Bianucci, Giovanni and others}, journal={Nature}, doi={10.1038/s41586-026-10546-z}, year={2026}}
 <span class="tk">@article</span>{<span class="ky">smith2021abyssalWhaleFalls</span>, title={Whale-fall ecosystems at abyssal depths}, author={Smith, Craig R. and Glover, Adrian G.}, journal={Annual Review of Marine Science}, year={2021}}
@@ -310,7 +321,7 @@
 (function(){
   // Running-head section + TOC current + ledger "cited" as you pass each section
   var secs = [].slice.call(document.querySelectorAll('.sec'));
-  var names = {'s-intro':'1 · One Library','s-library':'2 · Capture & Organize','s-reading':'3 · Read & Annotate','s-notebooks':'4 · Notebooks','s-evidence':'5 · Projects & Evidence','s-method':'6 · Search, Sync & Privacy','s-export':'7 · Export & Citation'};
+  var names = {'s-intro':'1 · One Library','s-library':'2 · Capture & Organize','s-reading':'3 · Read & Annotate','s-notebooks':'4 · Notebooks','s-evidence':'5 · Projects & Evidence','s-connect':'6 · Similar Papers & Apple Intelligence','s-method':'7 · Search, Sync & Privacy','s-export':'8 · Export & Citation'};
   var runSec = document.getElementById('runSec');
   var tocLinks = [].slice.call(document.querySelectorAll('.toc a'));
   if ('IntersectionObserver' in window){

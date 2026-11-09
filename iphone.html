@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Papyrus for iPhone — your library, one-handed</title>
-  <meta name="description" content="Papyrus on iOS: pick up the paper you were reading, browse and search the whole library, read PDFs offline, capture from Safari or a pasted link, and file, flag, and edit a paper without reaching for another device. Free, local-first, no telemetry.">
+  <meta name="description" content="Papyrus on iOS: pick up the paper you were reading, browse and search the whole library, read PDFs offline, capture from Safari, a pasted link, or a Zotero or Mendeley library, see similar papers, and file, flag, and edit a paper without reaching for another device. Free, local-first, no telemetry.">
   <meta name="theme-color" content="#efeee9">
   <meta property="og:title" content="Papyrus for iPhone">
   <meta property="og:description" content="Resume where you left off, read offline, capture from Safari, and file a paper one-handed.">
@@ -53,17 +53,17 @@
     <div class="titleblock">
       <h1 class="paper-title">Papyrus for iPhone</h1>
       <div class="byline">iOS 17 or later · included in the same free app</div>
-      <div class="dateline">Version 1.6.3 &nbsp;·&nbsp; free on the App Store &nbsp;·&nbsp; <a href="#availability">Availability ↓</a></div>
+      <div class="dateline">Version 2.2 &nbsp;·&nbsp; free on the App Store &nbsp;·&nbsp; <a href="#availability">Availability ↓</a></div>
     </div>
 
     <section class="abstract">
       <div class="abstract__label">In short</div>
-      <p>The phone is for the twenty minutes you did not plan on: a queue, a train, a corridor between meetings. Papyrus on iPhone is built around reading and capture rather than library administration — but it is the same library, and as of 1.6.0 the everyday filing you actually want to do from a phone is all there.</p>
+      <p>The phone is for the twenty minutes you did not plan on: a queue, a train, a corridor between meetings. Papyrus on iPhone is built around reading and capture rather than library administration — but it is the same library, and the everyday filing you actually want to do from a phone is all there.</p>
     </section>
 
     <section class="sec" id="s-continue">
       <h2 class="sec__h">Pick Up Where You Left</h2>
-      <p><span class="lead-in">Home leads with the paper you were reading.</span> A full-width Continue card carries the title, the authors, a progress bar, and the page you stopped on — one tap back into the reader, on the page you left, whichever device you left it on. Below it sit the counts, a way into the library, and what you added recently.</p>
+      <p><span class="lead-in">Home leads with the paper you were reading.</span> A full-width Continue card carries the title, the authors, a progress bar, and the page you stopped on — one tap back into the reader, on the page you left, whichever device you left it on. Around it Home gathers the library's counts, <span class="term">Up Next</span> with every Read Later paper (the ones you have read are labelled), what you added recently, your recent notes, your projects, and a specific <span class="term">Needs Attention</span> list rather than a vague badge.</p>
       <p>Ask Siri, or search from the Home Screen, and you land in the same place without opening the app first.</p>
       <figure class="plate three-up">
         <div class="shot shot--iphone">
@@ -87,31 +87,36 @@
       <p><span class="lead-in">Read Later is a download instruction, not just a list.</span> Queueing a paper is an explicit “I will read this on the go”, so its PDF is fetched ahead of time while the queue still has papers waiting. A flight or a commute does not need a connection.</p>
       <p>The reader remembers your zoom per paper — as a ratio over fit-to-page, so it survives rotation — and offers Fit Width beside Fit Page, which is the zoom a phone actually wants for a two-column paper.</p>
       <p>A <span class="term">Layout Options</span> sheet carries the same page and split controls the iPad reader has: one column or two-up, and a second pane above or beside the first holding another part of the same paper. On a phone the split earns its keep in landscape — a table on one half, the paragraph that reads it on the other.</p>
+      <p>On an iPhone that supports Apple Intelligence, with it turned on, <span class="term">Explain Figure</span> in the reader's menu explains the figure on the page, streaming in as Apple's on-device model writes. It runs only when you ask, the page does not leave the phone, and like any model it can misread a figure.</p>
     </section>
 
     <section class="sec" id="s-file">
       <h2 class="sec__h">Filing From the Phone</h2>
-      <p><span class="lead-in">1.6.0 closed most of the gap with the bigger screens.</span> The things you reach for while reading no longer wait until you are back at a desk:</p>
+      <p><span class="lead-in">The phone does most of what the bigger screens do.</span> The things you reach for while reading no longer wait until you are back at a desk:</p>
       <ul>
         <li><b>Flags.</b> Set one from the quick-state strip, filter the library by Flagged, and tell each flag apart by its shape as well as its color.</li>
         <li><b>Notebooks.</b> Create, rename, and delete them; file notes onto them and read a shelf straight through.</li>
         <li><b>Papers.</b> Move to Trash, refresh metadata, and edit the record.</li>
         <li><b>Folders and projects.</b> Create either one without reaching for an iPad or Mac.</li>
         <li><b>Per-paper filing.</b> Move a paper between folders and edit its tags.</li>
+        <li><b>Tags, kept tidy.</b> Past fifteen tags, the Browse sheet and the Filter menu list the ten you use most; <span class="term">All Tags</span> opens every one with a search field, sorted by use or by name.</li>
+        <li><b>Similar Papers.</b> Each paper lists related papers already in your library, ranked on the phone with the reason for each, plus optional suggestions from OpenAlex that stay off until you turn them on.</li>
+        <li><b>Notes.</b> Tap a note to open it; follow a link to another note and Done brings you back to the one you were reading.</li>
       </ul>
-      <p>What stays on the larger screens is the work that wants room: the Evidence Board, project drafting and export, Apple Pencil markup, and the Mac's watched folder and live <code>.bib</code>.</p>
+      <p>In landscape, a project's Papers / Evidence / Draft switcher moves into the navigation bar and the tab bar shrinks as you scroll, so a selected paper gets most of the screen. What stays on the larger screens is the work that wants room: Apple Pencil markup, the Apple Intelligence Key Findings card, and the Mac's watched folder and live <code>.bib</code>.</p>
     </section>
 
     <section class="sec" id="s-capture">
       <h2 class="sec__h">Capture on the Move</h2>
       <p><span class="lead-in">A paper you find on your phone belongs in the same library.</span> Paste an arXiv link, a DOI, or a PDF URL into the capture sheet and Papyrus imports it through the same pipeline the Safari extension uses — deduplicated, metadata looked up, PDF downloaded, with progress shown. The Safari extension itself works here too, from the share and long-press menus.</p>
+      <p><span class="lead-in">A whole Zotero or Mendeley library can start here too.</span> The guide in the Add menu walks through exporting from Zotero on your computer and picking the exported folder in Files; each paper arrives with its PDF and tags, filed in a <span class="term">From Zotero</span> or <span class="term">From Mendeley</span> folder, with “Importing N of M references…” while it works.</p>
       <p>Everything captured syncs to your Mac and iPad through your own iCloud account, so the paper is waiting when you sit down.</p>
     </section>
 
     <section class="colophon" id="availability">
       <div class="colophon__label">Availability</div>
       <p>Papyrus for iPhone is free on the <b>App Store</b> — the same universal app as iPad.</p>
-      <p class="imprint">iOS 17 or later · no account, no telemetry, no subscription.</p>
+      <p class="imprint">iOS 17 or later · no account required, no telemetry, no subscription.</p>
       <div class="store-row">
         <a class="store-badge" href="https://apps.apple.com/app/id6766133716" target="_blank" rel="noopener" aria-label="Download Papyrus for iPhone and iPad on the App Store">
           <img class="app-store-badge__black" src="assets/badge-appstore-black.svg" alt="Download on the App Store">

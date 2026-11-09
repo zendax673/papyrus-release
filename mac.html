@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Papyrus for Mac — a native research workspace</title>
-  <meta name="description" content="Papyrus on macOS: a three-column research library with a native PDF reader, Markdown notes, notebooks, Smart Collections, project evidence, a watched import folder, a live BibTeX file for LaTeX, and papyrus:// links for Hookmark. Free, local-first, no telemetry.">
+  <meta name="description" content="Papyrus on macOS: a three-column research library with a native PDF reader, Markdown notes, notebooks, Smart Collections, project evidence, a watched import folder, a live BibTeX file for LaTeX, Zotero and Mendeley import, Similar Papers, on-device Key Findings with Apple Intelligence, and papyrus:// links for Hookmark. Free, local-first, no telemetry.">
   <meta name="theme-color" content="#efeee9">
   <meta property="og:title" content="Papyrus for Mac">
   <meta property="og:description" content="A three-column research library with a native reader, notebooks, project evidence, a watched folder, and a live .bib for LaTeX.">
@@ -52,8 +52,8 @@
   <article class="paper__body">
     <div class="titleblock">
       <h1 class="paper-title">Papyrus for Mac</h1>
-      <div class="byline">macOS 14 Sonoma or later, on Apple Silicon</div>
-      <div class="dateline">Version 1.6.3 &nbsp;·&nbsp; free on the Mac App Store &nbsp;·&nbsp; <a href="#availability">Availability ↓</a></div>
+      <div class="byline">macOS 14 Sonoma or later, on Apple Silicon or Intel</div>
+      <div class="dateline">Version 2.2 &nbsp;·&nbsp; free on the Mac App Store &nbsp;·&nbsp; <a href="#availability">Availability ↓</a></div>
     </div>
 
     <section class="abstract">
@@ -63,7 +63,7 @@
 
     <section class="sec" id="s-window">
       <h2 class="sec__h">The Window</h2>
-      <p><span class="lead-in">Everything about a paper in one pass of the eye.</span> The sidebar carries the library's shapes — folders, tags, flags, Smart Collections, projects, notebooks. The middle column is the paper list with its filter row. The detail pane on the right holds the abstract, tags and folder and project membership, the Markdown notes, the overview metadata with its citation count, and the Reading card that remembers where you stopped and which pages you bookmarked.</p>
+      <p><span class="lead-in">Everything about a paper in one pass of the eye.</span> The sidebar carries the library's shapes — Library, then projects, folders, Smart Collections, notebooks, and tags, each group collapsible and a right-click on its header away from a new one. The middle column is the paper list with its filter row. The detail pane on the right holds the abstract, tags and folder and project membership, the Markdown notes, the overview metadata with its citation count, the Reading card that remembers where you stopped and which pages you bookmarked, and a Similar Papers card.</p>
       <figure class="plate">
         <div class="shot">
           <img class="screenshot screenshot--light" width="1800" height="1004" src="assets/app-captures/mac/library-light.jpg?v=20260808b" alt="Papyrus on Mac: the sidebar, the paper list, and a detail pane showing the Nature paper's abstract, Markdown notes, overview metadata, and Reading card.">
@@ -71,6 +71,8 @@
         </div>
         <figcaption><b>Fig. 1.</b> The library window. Nothing about the selected paper is more than one glance away.</figcaption>
       </figure>
+      <p><span class="lead-in">Similar Papers is a trail you can walk back.</span> The card ranks related papers already in your library, on the Mac, with the reason for each. Open one and “‹ Back to” sits above it; Back — or <kbd>⌘[</kbd> — restores the paper you came from with the sidebar and search you had, landing on its Similar Papers card, ready for the next jump. Online suggestions from OpenAlex are there too, off until you turn them on.</p>
+      <p><span class="lead-in">On a Mac with Apple Intelligence,</span> a <span class="term">Key Findings</span> card after the abstract writes an overview and three to five findings from the paper's abstract, introduction, and conclusion, and <span class="term">Explain Connections</span> says how the similar papers relate; both stream in as Apple's on-device model writes, and only when you ask. Nothing about the paper leaves the Mac to do it. Apple Intelligence has to be supported by the Mac and turned on in System Settings, and a model can misread a paper — the card says so.</p>
     </section>
 
     <section class="sec" id="s-scope">
@@ -106,13 +108,14 @@
       <p><span class="term">Live BibTeX export.</span> Papyrus keeps a <code>papyrus-library.bib</code> file continuously up to date on disk. Point <code>\bibliography{}</code> at it once and LaTeX or Overleaf sees every paper you have added since, with no export step in the loop.</p>
       <p>Both are opt-in, and both are ordinary files in ordinary places — nothing is hidden inside a container you cannot reach.</p>
       <p>The bundled <span class="term">Safari extension</span> adds the third: capture the paper on the current tab, or right-click any PDF, DOI, or arXiv link and save it. It captures from inside your Safari session, so a paper behind a publisher sign-in you already have access to saves too. Folder, tag, and project pickers sit in the popup, so a paper lands organized.</p>
+      <p><span class="term">Zotero and Mendeley.</span> <span class="term">File › Import from Zotero or Mendeley…</span> walks through Zotero's <i>Export Library…</i> with its files and imports the exported folder — each paper with its PDF and tags, filed in a <span class="term">From Zotero</span> or <span class="term">From Mendeley</span> folder so the whole import is easy to check or remove. A 1,170-item test library imported in about two minutes without blocking the window, and Stop Import stops it.</p>
       <p>For linking Papyrus into the rest of your desk — Hookmark, Obsidian, Shortcuts, Keyboard Maestro — see <a href="url-scheme.html">the <code>papyrus://</code> URL scheme</a>.</p>
     </section>
 
     <section class="colophon" id="availability">
       <div class="colophon__label">Availability</div>
       <p>Papyrus for Mac is free on the <b>Mac App Store</b>. Every feature included.</p>
-      <p class="imprint">macOS 14 Sonoma or later · Apple Silicon · no account, no telemetry, no subscription.</p>
+      <p class="imprint">macOS 14 Sonoma or later · Apple Silicon or Intel · no account required, no telemetry, no subscription.</p>
       <div class="store-row">
         <a class="store-badge" href="https://apps.apple.com/us/app/papyrus-papers/id6766133716?mt=12&amp;uo=4" target="_blank" rel="noopener" aria-label="Download Papyrus on the Mac App Store">
           <img class="app-store-badge__black" src="assets/app-store-badge-black.svg" alt="Download on the Mac App Store">

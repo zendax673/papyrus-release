@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy — Papyrus</title>
-  <meta name="description" content="Privacy policy for Papyrus, a local-first research desk for macOS and iPad.">
+  <meta name="description" content="Privacy policy for Papyrus, a local-first research desk for Mac, iPad, and iPhone.">
   <meta name="theme-color" content="#efeee9">
   <meta property="og:title" content="Papyrus Privacy Policy">
   <meta property="og:description" content="Local-first by default: no account required, no developer-operated advertising or tracking, and optional sign-in and sync.">
@@ -57,8 +57,8 @@
     <div class="doc-titleblock">
       <div class="doc-kicker">Privacy Policy</div>
       <h1>Your library stays yours.</h1>
-      <p>Papyrus is local-first. Your PDFs, notes, annotations, evidence, search index, and library database stay on your Mac or iPad unless you choose to export, share, look up metadata, turn on iCloud Sync, or configure WebDAV sync.</p>
-      <div class="doc-meta">Last updated: October 3, 2026</div>
+      <p>Papyrus is local-first. Your PDFs, notes, annotations, evidence, search index, and library database stay on your Mac, iPad, or iPhone unless you choose to export, share, look up metadata, turn on iCloud Sync, or configure WebDAV sync.</p>
+      <div class="doc-meta">Last updated: November 9, 2026</div>
     </div>
 
     <section class="doc-card" id="summary">
@@ -68,7 +68,8 @@
         <li>Apple and Google sign-in are optional. Your default device library stays independent of sign-in.</li>
         <li>Papyrus does not run developer-operated advertising, tracking, or analytics services. Optional Google sign-in uses Google's SDK and the data practices described below.</li>
         <li>Your library is stored locally by default.</li>
-        <li>Network requests happen only for features you choose, such as metadata lookup, iCloud Sync, or WebDAV sync.</li>
+        <li>Network requests happen only for features you choose, such as metadata lookup, optional OpenAlex suggestions in Similar Papers, iCloud Sync, or WebDAV sync.</li>
+        <li>Apple Intelligence features — Key Findings, Explain Connections, Explain Figure, and concept tagging — run with Apple's on-device model. The text and images they work on do not leave your device for them, and Papyrus does not use Private Cloud Compute or any hosted AI service for them.</li>
         <li>The optional Safari extension runs only when you invoke it and hands captured papers to the app on your device.</li>
       </ul>
     </section>
@@ -95,14 +96,26 @@
       <p>Papyrus does not upload your library to a Papyrus cloud. The app may contact outside services only when a feature needs a network request.</p>
       <h3>Metadata lookup</h3>
       <p>When you ask Papyrus to enrich metadata, it may send public identifiers or search terms, such as DOI, arXiv ID, ISBN, PMID, title, or author names, to services including Crossref, arXiv, Semantic Scholar, OpenAlex, OpenLibrary, NCBI / PubMed / PMC identifier services, Zenodo, and doi.org.</p>
+      <h3>Similar Papers</h3>
+      <p>Similar papers from your own library are ranked on your device; nothing is sent to rank them. Online suggestions of related papers you do not have yet, shown under <strong>From OpenAlex</strong>, are a separate option. It is off by default, asks before it turns on, and is available only while online metadata lookup is enabled. When it is on, viewing a paper's Similar Papers sends that paper's DOI to OpenAlex (api.openalex.org), along with the contact email you entered for metadata lookup, if any. Papyrus then requests details of the related works OpenAlex returned, using OpenAlex's own identifiers for them. Titles, abstracts, notes, and the rest of your library are not sent. You can turn it off in the Similar Papers section or in Settings. OpenAlex processes these requests under its own terms; Papyrus does not control its logs or retention.</p>
       <h3>Safari extension</h3>
       <p>The optional Papyrus Import extension for Safari runs only when you invoke it — from the toolbar button, the Save Link to Papyrus context-menu item, or its keyboard shortcut. It reads the page or link you chose in order to extract citation details (title, authors, year, venue, DOI or arXiv ID) and locate a PDF, then hands that capture to the Papyrus app on your device. Papyrus may then download the paper's PDF from its source when you ask for one. The extension does not run on pages you have not invoked it on, does not collect browsing history, and sends nothing to any Papyrus server — there are none.</p>
       <h3>Apple services</h3>
       <p>Downloads, App Store account records, iCloud storage, CloudKit sync, and push delivery are handled by Apple. Apple may process data according to Apple's own policies and the Apple ID you use.</p>
       <h3>Optional Google sign-in</h3>
       <p>Google Sign-In uses Google's authentication service, not a Papyrus account server. Google documents collection of a user identifier to record authorized OAuth grants and an IP address that may estimate general location for fraud prevention. Its SDK also sends platform/version information for service operation. The SDK's privacy manifest lists name, email, phone number, coarse location, user and device identifiers, usage data, and other data categories for app functionality and/or analytics; it marks these categories as linked to the user and not used for tracking. These are SDK-level declarations, not a claim that Papyrus receives every category or that the SDK is free of analytics. Google controls its authentication, security, service diagnostics, and retention. See <a href="https://developers.google.com/identity/sign-in/ios/app-privacy" target="_blank" rel="noopener">Google's Apple-platform SDK privacy explanation</a>, its <a href="https://github.com/google/GoogleSignIn-iOS/blob/10.0.0/GoogleSignIn/Sources/Resources/PrivacyInfo.xcprivacy" target="_blank" rel="noopener">SDK privacy manifest</a>, and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
-      <h3>System language models</h3>
-      <p>On supported systems, Papyrus may use Apple-provided on-device Foundation Models for metadata synthesis when enrichment results are ambiguous or incomplete. Papyrus does not run its own hosted AI backend.</p>
+      <h3>Apple Intelligence</h3>
+      <p>On a device that supports Apple Intelligence, with Apple Intelligence turned on, Papyrus uses Apple's on-device Foundation Models for:</p>
+      <ul>
+        <li><strong>Key Findings</strong>, which writes an overview and key findings from a paper's abstract, introduction, and conclusion when you choose Summarize. The result is kept in memory for display and is not saved to your library.</li>
+        <li><strong>Explain Connections</strong>, which uses the titles and abstract excerpts of the papers on a Similar Papers card when you ask it to.</li>
+        <li><strong>Explain Figure</strong>, which uses an image of the figure you select and a short excerpt of the surrounding page when you ask it to.</li>
+        <li><strong>Concept tagging</strong>, which runs in the background on a few papers per launch (not in Low Power Mode) and stores concept, method, and dataset tags with each paper. Those tags sync like the rest of the paper's data if you use iCloud or WebDAV sync.</li>
+        <li><strong>Metadata synthesis</strong>, when enrichment results are ambiguous or incomplete.</li>
+      </ul>
+      <p>These features run on your device. Papyrus does not send their input to Private Cloud Compute, to the developer, or to any other AI service, and does not run its own hosted AI backend. Generated text can be wrong, and the Key Findings card says so.</p>
+      <h3>Report a problem</h3>
+      <p><strong>Settings → Advanced → Report a problem</strong> opens a new issue on Papyrus's public GitHub repository in your browser, with the app version, build, and system version filled in, and copies a diagnostic report to your clipboard. Opening that page sends GitHub the prefilled version details as part of the page address; an issue is created only if you submit it, and the diagnostic report is included only if you paste it. GitHub issues are public.</p>
     </section>
 
     <section class="doc-section" id="sync">
@@ -117,6 +130,8 @@
         <li>Use Papyrus offline.</li>
         <li>Use the default library without signing in, or delete your optional Papyrus account through Settings.</li>
         <li>Skip metadata enrichment when you do not want identifier lookups.</li>
+        <li>Leave OpenAlex suggestions in Similar Papers off, or turn them off at any time.</li>
+        <li>Not use the Apple Intelligence features, or turn Apple Intelligence off in your device's settings.</li>
         <li>Leave iCloud Sync and WebDAV sync disabled.</li>
         <li>Use Copy Into Library when you want Papyrus to manage PDFs, or Keep PDFs In Place when you want files to remain where they are.</li>
         <li>Delete exports or shared files from their destination when you no longer need them.</li>
