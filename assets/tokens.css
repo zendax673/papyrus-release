@@ -11,7 +11,19 @@
    is set by the in-page toggle. Forced light via [data-theme="light"].
    ============================================================ */
 
+/* ---------- Self-hosted fonts (latin subset, variable; OFL — see fonts/) ---------- */
+@font-face { font-family: "Source Serif 4"; font-style: normal; font-weight: 400 600; font-display: swap;
+  src: url("fonts/source-serif-4-latin.woff2") format("woff2"); }
+@font-face { font-family: "Source Serif 4"; font-style: italic; font-weight: 400 600; font-display: swap;
+  src: url("fonts/source-serif-4-italic-latin.woff2") format("woff2"); }
+@font-face { font-family: "Inter"; font-style: normal; font-weight: 400 600; font-display: swap;
+  src: url("fonts/inter-latin.woff2") format("woff2"); }
+@font-face { font-family: "JetBrains Mono"; font-style: normal; font-weight: 400 500; font-display: swap;
+  src: url("fonts/jetbrains-mono-latin.woff2") format("woff2"); }
+
 :root {
+  /* Native UI (scrollbars, canvas, controls) follows the theme. */
+  color-scheme: light dark;
   /* ---------- Surface: "the desk" (light) ---------- */
   --pp-desk:         #EFEEE9;  /* page canvas — warm paper stock      */
   --pp-desk-sunk:    #E7E4DB;  /* recessed wells (citation drawer)    */
@@ -19,7 +31,7 @@
   --pp-card-raised:  #FFFFFF;  /* hover / active rows                 */
   --pp-ink:          #1D1D1F;  /* primary text  (≈14:1 on card)       */
   --pp-ink-2:        #5E5E63;  /* secondary text                      */
-  --pp-ink-3:        #86868B;  /* captions / meta                     */
+  --pp-ink-3:        #646469;  /* captions / meta (≥4.5:1 on desk/card) */
   --pp-hairline:     #E3DCCB;  /* card rules, dividers                */
   --pp-hairline-2:   #D8CDB8;  /* stronger rule                       */
 
@@ -116,6 +128,7 @@
 /* ---------- Dark = "oxidized manuscript" ---------- */
 :root[data-theme="dark"],
 .pp-dark-vars {
+  color-scheme: dark;
   --pp-desk:         #1C1C1E;  /* warm charcoal desk, never pure black */
   --pp-desk-sunk:    #161617;
   --pp-card:         #252528;  /* card paper stays WARM, never gray    */
@@ -199,3 +212,5 @@
 @media (prefers-reduced-motion: reduce) {
   :root { --pp-dur: 0.001s; --pp-dur-fast: 0.001s; }
 }
+
+:root[data-theme="light"] { color-scheme: light; }

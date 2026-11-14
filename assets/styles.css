@@ -7,8 +7,7 @@
    No nav bar, no hero, no marketing bands. Tokens live in tokens.css.
    ============================================================ */
 
-@import url("tokens.css");
-@import url("https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap");
+/* tokens.css (fonts + colour tokens) is linked from each page's <head>, ahead of this file — no @import chain. */
 
 /* ---------------- Reset / base ---------------- */
 *, *::before, *::after { box-sizing: border-box; }
@@ -32,6 +31,9 @@ img { max-width: 100%; display: block; }
 a { color: var(--pp-blue); text-decoration: none; }
 a:hover { text-decoration: underline; text-underline-offset: 2px; }
 ::selection { background: rgba(200,146,42,0.20); }
+.skip-link { position: fixed; top: 6px; left: 6px; z-index: 200; padding: 8px 14px; border-radius: 6px; background: var(--pp-card-raised); color: var(--pp-ink); font-family: var(--pp-sans); font-size: .9rem; box-shadow: var(--pp-shadow-plate); transform: translateY(-160%); }
+.skip-link:focus-visible, .skip-link:focus { transform: none; }
+h1[tabindex="-1"]:focus { outline: none; } /* programmatic focus target only; never reachable by Tab */
 .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 .mono { font-family: var(--pp-mono); }
 .sc { font-variant-caps: all-small-caps; letter-spacing: .03em; }
@@ -52,7 +54,8 @@ a:hover { text-decoration: underline; text-underline-offset: 2px; }
 .runhead__right { display: flex; align-items: center; gap: 14px; }
 .runhead__get { color: var(--pp-ink); border: 0.5px solid var(--pp-hairline-2); border-radius: 6px; padding: 3px 10px; }
 .runhead__get:hover { background: var(--pp-card); text-decoration: none; border-color: var(--pp-gold); }
-.runhead__theme { background: transparent; border: none; color: var(--pp-ink-3); cursor: pointer; padding: 0; display: inline-flex; }
+.runhead__theme { background: transparent; border: none; border-radius: 6px; color: var(--pp-ink-3); cursor: pointer; padding: 0; display: inline-flex; align-items: center; justify-content: center; min-inline-size: 32px; min-block-size: 32px; }
+.runhead__theme:hover { color: var(--pp-ink); background: var(--pp-card); }
 .runhead__theme svg { width: 15px; height: 15px; }
 .icon-sun { display: none; }
 :root[data-theme="dark"] .icon-moon { display: none; }
@@ -81,11 +84,12 @@ a:hover { text-decoration: underline; text-underline-offset: 2px; }
 
 .ledger-margin { margin-top: var(--pp-s8); border-top: 0.5px solid var(--pp-hairline); padding-top: var(--pp-s4); }
 .ledger-margin__head { font-family: var(--pp-mono); font-size: 10.5px; font-variant-caps: all-small-caps; letter-spacing: .1em; color: var(--pp-ink-3); margin-bottom: 10px; }
-.ledger-margin__item { font-family: var(--pp-mono); font-size: 10.5px; line-height: 1.4; margin-bottom: 9px; opacity: .45; transition: opacity var(--pp-dur) var(--pp-ease); border-left: 2px solid var(--pp-sec, var(--pp-gold)); padding-left: 8px; }
+.ledger-margin__item { font-family: var(--pp-mono); font-size: 10.5px; line-height: 1.4; margin-bottom: 9px; opacity: .72; transition: opacity var(--pp-dur) var(--pp-ease); border-left: 2px solid var(--pp-sec, var(--pp-gold)); padding-left: 8px; }
 .ledger-margin__item.is-cited { opacity: 1; }
 .ledger-margin__item .k { color: var(--pp-blue); display: block; }
 .ledger-margin__item .pips { color: var(--pp-sec, var(--pp-gold)); letter-spacing: 1px; }
-.ledger-margin__copy { font-family: var(--pp-mono); font-size: 10.5px; color: var(--pp-ink-2); background: var(--pp-card); border: 0.5px solid var(--pp-hairline-2); border-radius: 5px; padding: 4px 9px; cursor: pointer; margin-top: 6px; }
+.ledger-margin__copy { font-family: var(--pp-mono); font-size: 10.5px; color: var(--pp-ink-2); background: var(--pp-card); border: 0.5px solid var(--pp-hairline-2); border-radius: 5px; padding: 4px 9px; min-block-size: 28px; cursor: pointer; margin-top: 6px; }
+.ledger-margin__status { display: block; min-height: 1.4em; margin-top: 4px; font-family: var(--pp-mono); font-size: 11px; color: var(--pp-ink-2); }
 .ledger-margin__copy:hover { border-color: var(--pp-gold); color: var(--pp-ink); }
 
 /* ---------------- Title block ---------------- */
@@ -300,13 +304,8 @@ figure.plate.three-up figcaption { grid-column: 1 / -1; }
 
 figcaption { font-family: var(--pp-serif); font-style: italic; font-size: .9rem; color: var(--pp-ink-2); margin-top: 9px; line-height: 1.45; }
 figcaption b { font-style: normal; font-variant-caps: all-small-caps; letter-spacing: .04em; font-weight: var(--pp-w-semibold); color: var(--pp-ink); }
-.shot .screenshot--dark { display: none; }
-:root[data-theme="dark"] .shot .screenshot--light { display: none; }
-:root[data-theme="dark"] .shot .screenshot--dark { display: block; }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .shot .screenshot--light { display: none; }
-  :root:not([data-theme="light"]) .shot .screenshot--dark { display: block; }
-}
+/* Light/dark screenshots are one <picture> each; its <source media> picks the file, so only one downloads. */
+.shot picture { display: block; }
 
 /* claim-card (figure content built from real ProjectEvidence) */
 .evidence-figure { display: grid; gap: 12px; background: var(--pp-card); border: 0.5px solid var(--pp-hairline); border-radius: var(--pp-r-md); padding: 18px; box-shadow: var(--pp-shadow-card); }
@@ -340,7 +339,7 @@ table.tbl .m { font-family: var(--pp-mono); font-size: .92em; color: var(--pp-in
 .cite-render .cite-line { display: none; }
 .js .cite-render .cite-line { display: block; }
 .js .cite-render .nojs-list { display: none; }
-.stamps button { font-family: var(--pp-mono); font-size: 11px; font-variant-caps: all-small-caps; letter-spacing: .05em; color: var(--pp-ink-2); background: var(--pp-card); border: 0.5px solid var(--pp-hairline-2); border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.stamps button { font-family: var(--pp-mono); font-size: 11px; font-variant-caps: all-small-caps; letter-spacing: .05em; color: var(--pp-ink-2); background: var(--pp-card); border: 0.5px solid var(--pp-hairline-2); border-radius: 6px; padding: 4px 10px; min-block-size: 28px; cursor: pointer; }
 .stamps button.is-active { background: var(--pp-gold); color: #3a2a06; border-color: var(--pp-gold); }
 .cite-render { font-size: .9rem; color: var(--pp-ink); margin-top: 6px; min-height: 2.6em; }
 .cite-render .nojs-list { font-size: .82rem; color: var(--pp-ink-2); }
@@ -571,10 +570,15 @@ kbd { display: inline-flex; align-items: center; min-width: 18px; height: 18px; 
 .shot { position: relative; }
 .zoom { position: absolute; top: 9px; right: 9px; z-index: 4; width: 28px; height: 28px; border-radius: 6px; border: 0.5px solid var(--pp-hairline-2); background: var(--pp-nav-bg); -webkit-backdrop-filter: var(--pp-nav-blur); backdrop-filter: var(--pp-nav-blur); color: var(--pp-ink-2); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
 .zoom svg { width: 14px; height: 14px; }
-.lightbox { position: fixed; inset: 0; z-index: 100; background: rgba(20,16,8,.85); display: none; align-items: center; justify-content: center; padding: 4vw; }
-.lightbox.is-open { display: flex; }
+/* A native modal <dialog>: the browser makes the page inert, traps focus,
+   closes on Esc, and returns focus to the zoom button. */
+.lightbox { border: 0; padding: 0; background: transparent; max-width: 94vw; max-height: 88vh; overflow: visible; }
+.lightbox:modal { overscroll-behavior: contain; }
+.lightbox::backdrop { background: rgba(20,16,8,.85); overflow: hidden; overscroll-behavior: contain; }
 .lightbox img { max-width: 94vw; max-height: 88vh; border-radius: 8px; box-shadow: var(--pp-shadow-plate); }
-.lightbox__close { position: absolute; top: 18px; right: 18px; width: 38px; height: 38px; border-radius: 8px; border: none; background: rgba(255,255,255,.14); color: #fff; cursor: pointer; }
+.lightbox form { margin: 0; }
+.lightbox__close { position: fixed; top: 18px; right: 18px; width: 38px; height: 38px; border-radius: 8px; border: none; background: rgba(255,255,255,.14); color: #fff; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
+.lightbox__close svg { width: 18px; height: 18px; }
 
 /* ---------------- Responsive ---------------- */
 @media (max-width: 900px) {

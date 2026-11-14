@@ -3,17 +3,34 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-Gi++w1ISsgEhNur8ndN3uKKrCL/vSGjTBYJ+EKb2GxM='; style-src 'self'; style-src-attr 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="color-scheme" content="light dark">
+  <script>try{var t=localStorage.getItem('pp-theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);document.querySelector('meta[name="color-scheme"]').content=t;}}catch(e){}document.documentElement.classList.add('js');</script>
   <title>Papyrus for iPhone — your library, one-handed</title>
   <meta name="description" content="Papyrus on iOS: pick up the paper you were reading, browse and search the whole library, read PDFs offline, capture from Safari, a pasted link, or a Zotero or Mendeley library, see similar papers, and file, flag, and edit a paper without reaching for another device. Free, local-first, no telemetry.">
   <meta name="theme-color" content="#efeee9">
   <meta property="og:title" content="Papyrus for iPhone">
   <meta property="og:description" content="Resume where you left off, read offline, capture from Safari, and file a paper one-handed.">
   <meta property="og:type" content="website">
+  <link rel="canonical" href="https://zendax673.github.io/papyrus-release/iphone.html">
+  <meta property="og:url" content="https://zendax673.github.io/papyrus-release/iphone.html">
+  <meta property="og:site_name" content="Papyrus">
+  <meta property="og:image" content="https://zendax673.github.io/papyrus-release/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Papyrus library window on Mac, with a Nature paper selected.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="apple-itunes-app" content="app-id=6766133716">
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/tokens.css">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-<script>(function(){var t=localStorage.getItem('pp-theme');if(t)document.documentElement.setAttribute('data-theme',t);document.documentElement.classList.add('js');})();</script>
+<a class="skip-link" href="#content">Skip to content</a>
 
 <header class="runhead">
   <span class="runhead__left"><img src="assets/icon.svg" alt=""><span class="hide-xs">Papyrus&nbsp;·&nbsp;</span><span class="sc">For iPhone</span></span>
@@ -25,9 +42,9 @@
   </span>
   <span class="runhead__right">
     <a class="runhead__get" href="#availability">Get it ↗</a>
-    <button class="runhead__theme" id="themeToggle" aria-label="Toggle light or dark">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    <button class="runhead__theme" id="themeToggle" type="button">
+      <span class="icon-moon"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><span class="sr-only">Switch to dark theme</span></span>
+      <span class="icon-sun"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><span class="sr-only">Switch to light theme</span></span>
     </button>
   </span>
 </header>
@@ -51,7 +68,7 @@
 
   <article class="paper__body">
     <div class="titleblock">
-      <h1 class="paper-title">Papyrus for iPhone</h1>
+      <h1 id="content" tabindex="-1" class="paper-title">Papyrus for iPhone</h1>
       <div class="byline">iOS 17 or later · included in the same free app</div>
       <div class="dateline">Version 2.2 &nbsp;·&nbsp; free on the App Store &nbsp;·&nbsp; <a href="#availability">Availability ↓</a></div>
     </div>
@@ -67,16 +84,28 @@
       <p>Ask Siri, or search from the Home Screen, and you land in the same place without opening the app first.</p>
       <figure class="plate three-up">
         <div class="shot shot--iphone">
-          <img class="screenshot screenshot--light" width="660" height="1434" src="assets/app-captures/iphone/home-light.jpg?v=20260808b" alt="Papyrus on iPhone: the Home tab with a Continue card for the Nature paper showing progress and page number.">
-          <img class="screenshot screenshot--dark" width="660" height="1434" src="assets/app-captures/iphone/home-dark.jpg?v=20260808b" alt="" aria-hidden="true">
+          <picture>
+            <source data-scheme="dark" media="(prefers-color-scheme: dark)" type="image/avif" srcset="assets/app-captures/iphone/home-dark.avif">
+            <source data-scheme="dark" media="(prefers-color-scheme: dark)" srcset="assets/app-captures/iphone/home-dark.jpg">
+            <source type="image/avif" srcset="assets/app-captures/iphone/home-light.avif">
+            <img class="screenshot" src="assets/app-captures/iphone/home-light.jpg" width="660" height="1434" fetchpriority="high" decoding="async" alt="Papyrus on iPhone: the Home tab with a Continue card for the Nature paper showing progress and page number.">
+          </picture>
         </div>
         <div class="shot shot--iphone">
-          <img class="screenshot screenshot--light" width="660" height="1434" src="assets/app-captures/iphone/detail-light.jpg?v=20260808b" alt="Papyrus on iPhone: a paper's detail screen with its metadata, quick-state strip, and notes.">
-          <img class="screenshot screenshot--dark" width="660" height="1434" src="assets/app-captures/iphone/detail-dark.jpg?v=20260808b" alt="" aria-hidden="true">
+          <picture>
+            <source data-scheme="dark" media="(prefers-color-scheme: dark)" type="image/avif" srcset="assets/app-captures/iphone/detail-dark.avif">
+            <source data-scheme="dark" media="(prefers-color-scheme: dark)" srcset="assets/app-captures/iphone/detail-dark.jpg">
+            <source type="image/avif" srcset="assets/app-captures/iphone/detail-light.avif">
+            <img class="screenshot" src="assets/app-captures/iphone/detail-light.jpg" width="660" height="1434" decoding="async" alt="Papyrus on iPhone: a paper's detail screen with its metadata, quick-state strip, and notes.">
+          </picture>
         </div>
         <div class="shot shot--iphone">
-          <img class="screenshot screenshot--light" width="660" height="1434" src="assets/app-captures/iphone/notebook-light.jpg?v=20260808b" alt="Papyrus on iPhone: a notebook of notes gathered from three different papers.">
-          <img class="screenshot screenshot--dark" width="660" height="1434" src="assets/app-captures/iphone/notebook-dark.jpg?v=20260808b" alt="" aria-hidden="true">
+          <picture>
+            <source data-scheme="dark" media="(prefers-color-scheme: dark)" type="image/avif" srcset="assets/app-captures/iphone/notebook-dark.avif">
+            <source data-scheme="dark" media="(prefers-color-scheme: dark)" srcset="assets/app-captures/iphone/notebook-dark.jpg">
+            <source type="image/avif" srcset="assets/app-captures/iphone/notebook-light.avif">
+            <img class="screenshot" src="assets/app-captures/iphone/notebook-light.jpg" width="660" height="1434" decoding="async" alt="Papyrus on iPhone: a notebook of notes gathered from three different papers.">
+          </picture>
         </div>
         <figcaption><b>Fig. 1.</b> Home, a paper, and a notebook. The whole library, one hand.</figcaption>
       </figure>
@@ -119,8 +148,8 @@
       <p class="imprint">iOS 17 or later · no account required, no telemetry, no subscription.</p>
       <div class="store-row">
         <a class="store-badge" href="https://apps.apple.com/app/id6766133716" target="_blank" rel="noopener" aria-label="Download Papyrus for iPhone and iPad on the App Store">
-          <img class="app-store-badge__black" src="assets/badge-appstore-black.svg" alt="Download on the App Store">
-          <img class="app-store-badge__white" src="assets/badge-appstore-white.svg" alt="" aria-hidden="true">
+          <img class="app-store-badge__black" loading="lazy" src="assets/badge-appstore-black.svg" alt="Download on the App Store">
+          <img class="app-store-badge__white" loading="lazy" src="assets/badge-appstore-white.svg" alt="" aria-hidden="true">
           <span class="badge-note">iPhone &amp; iPad</span>
         </a>
       </div>
@@ -138,7 +167,7 @@
   </article>
 </main>
 
-<div class="lightbox" aria-hidden="true"><button class="lightbox__close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button><img alt=""></div>
+<dialog class="lightbox" id="lightbox" closedby="any" aria-label="Enlarged screenshot"><form method="dialog"><button class="lightbox__close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button></form><img alt=""></dialog>
 <script src="assets/site.js"></script>
 </body>
 </html>

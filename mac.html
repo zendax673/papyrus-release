@@ -3,17 +3,34 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-Gi++w1ISsgEhNur8ndN3uKKrCL/vSGjTBYJ+EKb2GxM='; style-src 'self'; style-src-attr 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="color-scheme" content="light dark">
+  <script>try{var t=localStorage.getItem('pp-theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);document.querySelector('meta[name="color-scheme"]').content=t;}}catch(e){}document.documentElement.classList.add('js');</script>
   <title>Papyrus for Mac — a native research workspace</title>
   <meta name="description" content="Papyrus on macOS: a three-column research library with a native PDF reader, Markdown notes, notebooks, Smart Collections, project evidence, a watched import folder, a live BibTeX file for LaTeX, Zotero and Mendeley import, Similar Papers, on-device Key Findings with Apple Intelligence, and papyrus:// links for Hookmark. Free, local-first, no telemetry.">
   <meta name="theme-color" content="#efeee9">
   <meta property="og:title" content="Papyrus for Mac">
   <meta property="og:description" content="A three-column research library with a native reader, notebooks, project evidence, a watched folder, and a live .bib for LaTeX.">
   <meta property="og:type" content="website">
+  <link rel="canonical" href="https://zendax673.github.io/papyrus-release/mac.html">
+  <meta property="og:url" content="https://zendax673.github.io/papyrus-release/mac.html">
+  <meta property="og:site_name" content="Papyrus">
+  <meta property="og:image" content="https://zendax673.github.io/papyrus-release/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Papyrus library window on Mac, with a Nature paper selected.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="apple-itunes-app" content="app-id=6766133716">
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/tokens.css">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-<script>(function(){var t=localStorage.getItem('pp-theme');if(t)document.documentElement.setAttribute('data-theme',t);document.documentElement.classList.add('js');})();</script>
+<a class="skip-link" href="#content">Skip to content</a>
 
 <header class="runhead">
   <span class="runhead__left"><img src="assets/icon.svg" alt=""><span class="hide-xs">Papyrus&nbsp;·&nbsp;</span><span class="sc">For Mac</span></span>
@@ -25,9 +42,9 @@
   </span>
   <span class="runhead__right">
     <a class="runhead__get" href="#availability">Get it ↗</a>
-    <button class="runhead__theme" id="themeToggle" aria-label="Toggle light or dark">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    <button class="runhead__theme" id="themeToggle" type="button">
+      <span class="icon-moon"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><span class="sr-only">Switch to dark theme</span></span>
+      <span class="icon-sun"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><span class="sr-only">Switch to light theme</span></span>
     </button>
   </span>
 </header>
@@ -51,7 +68,7 @@
 
   <article class="paper__body">
     <div class="titleblock">
-      <h1 class="paper-title">Papyrus for Mac</h1>
+      <h1 id="content" tabindex="-1" class="paper-title">Papyrus for Mac</h1>
       <div class="byline">macOS 14 Sonoma or later, on Apple Silicon or Intel</div>
       <div class="dateline">Version 2.2 &nbsp;·&nbsp; free on the Mac App Store &nbsp;·&nbsp; <a href="#availability">Availability ↓</a></div>
     </div>
@@ -66,8 +83,12 @@
       <p><span class="lead-in">Everything about a paper in one pass of the eye.</span> The sidebar carries the library's shapes — Library, then projects, folders, Smart Collections, notebooks, and tags, each group collapsible and a right-click on its header away from a new one. The middle column is the paper list with its filter row. The detail pane on the right holds the abstract, tags and folder and project membership, the Markdown notes, the overview metadata with its citation count, the Reading card that remembers where you stopped and which pages you bookmarked, and a Similar Papers card.</p>
       <figure class="plate">
         <div class="shot">
-          <img class="screenshot screenshot--light" width="1800" height="1004" src="assets/app-captures/mac/library-light.jpg?v=20260808b" alt="Papyrus on Mac: the sidebar, the paper list, and a detail pane showing the Nature paper's abstract, Markdown notes, overview metadata, and Reading card.">
-          <img class="screenshot screenshot--dark" width="1800" height="1004" src="assets/app-captures/mac/library-dark.jpg?v=20260808b" alt="" aria-hidden="true">
+          <picture>
+            <source data-scheme="dark" media="(prefers-color-scheme: dark)" type="image/avif" srcset="assets/app-captures/mac/library-dark-900.avif 900w, assets/app-captures/mac/library-dark.avif 1800w" sizes="(max-width: 900px) calc(100vw - 48px), 1040px">
+            <source data-scheme="dark" media="(prefers-color-scheme: dark)" srcset="assets/app-captures/mac/library-dark-900.jpg 900w, assets/app-captures/mac/library-dark.jpg 1800w" sizes="(max-width: 900px) calc(100vw - 48px), 1040px">
+            <source type="image/avif" srcset="assets/app-captures/mac/library-light-900.avif 900w, assets/app-captures/mac/library-light.avif 1800w" sizes="(max-width: 900px) calc(100vw - 48px), 1040px">
+            <img class="screenshot" src="assets/app-captures/mac/library-light.jpg" srcset="assets/app-captures/mac/library-light-900.jpg 900w, assets/app-captures/mac/library-light.jpg 1800w" sizes="(max-width: 900px) calc(100vw - 48px), 1040px" width="1800" height="1004" fetchpriority="high" decoding="async" alt="Papyrus on Mac: the sidebar, the paper list, and a detail pane showing the Nature paper's abstract, Markdown notes, overview metadata, and Reading card.">
+          </picture>
         </div>
         <figcaption><b>Fig. 1.</b> The library window. Nothing about the selected paper is more than one glance away.</figcaption>
       </figure>
@@ -81,8 +102,12 @@
       <p>Selecting one scopes the whole window to it without moving a single paper out of the library. Folders, projects, and notebooks scope it the same way.</p>
       <figure class="plate">
         <div class="shot">
-          <img class="screenshot screenshot--light" loading="lazy" decoding="async" width="1800" height="1004" src="assets/app-captures/mac/smart-light.jpg?v=20260808b" alt="Papyrus on Mac with the Open Figure Papers Smart Collection selected, scoping the library to five figure-heavy papers.">
-          <img class="screenshot screenshot--dark" loading="lazy" decoding="async" width="1800" height="1004" src="assets/app-captures/mac/smart-dark.jpg?v=20260808b" alt="" aria-hidden="true">
+          <picture>
+            <source data-scheme="dark" media="(prefers-color-scheme: dark)" type="image/avif" srcset="assets/app-captures/mac/smart-dark-900.avif 900w, assets/app-captures/mac/smart-dark.avif 1800w" sizes="(max-width: 900px) calc(100vw - 48px), 1040px">
+            <source data-scheme="dark" media="(prefers-color-scheme: dark)" srcset="assets/app-captures/mac/smart-dark-900.jpg 900w, assets/app-captures/mac/smart-dark.jpg 1800w" sizes="(max-width: 900px) calc(100vw - 48px), 1040px">
+            <source type="image/avif" srcset="assets/app-captures/mac/smart-light-900.avif 900w, assets/app-captures/mac/smart-light.avif 1800w" sizes="(max-width: 900px) calc(100vw - 48px), 1040px">
+            <img class="screenshot" src="assets/app-captures/mac/smart-light.jpg" srcset="assets/app-captures/mac/smart-light-900.jpg 900w, assets/app-captures/mac/smart-light.jpg 1800w" sizes="(max-width: 900px) calc(100vw - 48px), 1040px" width="1800" height="1004" loading="lazy" decoding="async" alt="Papyrus on Mac with the Open Figure Papers Smart Collection selected, scoping the library to five figure-heavy papers.">
+          </picture>
         </div>
         <figcaption><b>Fig. 2.</b> “Open Figure Papers” — a rule, not a pile. Nothing was filed anywhere to build it.</figcaption>
       </figure>
@@ -94,8 +119,12 @@
       <p><span class="lead-in">The reader is a native PDFKit window,</span> not a viewer embedded in a database. Highlight, underline, strike through, draw freehand ink, leave notes, and bookmark pages; the inspector beside the page carries the markup list and the paper's reading note, rendered from Markdown with LaTeX math. A <span class="term">References</span> tab looks up the open paper's reference list and related work by DOI, so you can follow a citation trail and add what matters without leaving the page.</p>
       <figure class="plate">
         <div class="shot">
-          <img class="screenshot screenshot--light" loading="lazy" decoding="async" width="1800" height="1004" src="assets/app-captures/mac/reader-figure-light.jpg?v=20260808b" alt="Mac reader showing the Fig. 1 distribution-map page of the Nature whale necropolis article with the markup inspector open.">
-          <img class="screenshot screenshot--dark" loading="lazy" decoding="async" width="1800" height="1004" src="assets/app-captures/mac/reader-figure-dark.jpg?v=20260808b" alt="" aria-hidden="true">
+          <picture>
+            <source data-scheme="dark" media="(prefers-color-scheme: dark)" type="image/avif" srcset="assets/app-captures/mac/reader-figure-dark-900.avif 900w, assets/app-captures/mac/reader-figure-dark.avif 1800w" sizes="(max-width: 900px) calc(100vw - 48px), 1040px">
+            <source data-scheme="dark" media="(prefers-color-scheme: dark)" srcset="assets/app-captures/mac/reader-figure-dark-900.jpg 900w, assets/app-captures/mac/reader-figure-dark.jpg 1800w" sizes="(max-width: 900px) calc(100vw - 48px), 1040px">
+            <source type="image/avif" srcset="assets/app-captures/mac/reader-figure-light-900.avif 900w, assets/app-captures/mac/reader-figure-light.avif 1800w" sizes="(max-width: 900px) calc(100vw - 48px), 1040px">
+            <img class="screenshot" src="assets/app-captures/mac/reader-figure-light.jpg" srcset="assets/app-captures/mac/reader-figure-light-900.jpg 900w, assets/app-captures/mac/reader-figure-light.jpg 1800w" sizes="(max-width: 900px) calc(100vw - 48px), 1040px" width="1800" height="1004" loading="lazy" decoding="async" alt="Mac reader showing the Fig. 1 distribution-map page of the Nature whale necropolis article with the markup inspector open.">
+          </picture>
         </div>
         <figcaption><b>Fig. 3.</b> A figure page with the markup inspector. The note, the page, and the eventual claim stay adjacent.</figcaption>
       </figure>
@@ -118,8 +147,8 @@
       <p class="imprint">macOS 14 Sonoma or later · Apple Silicon or Intel · no account required, no telemetry, no subscription.</p>
       <div class="store-row">
         <a class="store-badge" href="https://apps.apple.com/us/app/papyrus-papers/id6766133716?mt=12&amp;uo=4" target="_blank" rel="noopener" aria-label="Download Papyrus on the Mac App Store">
-          <img class="app-store-badge__black" src="assets/app-store-badge-black.svg" alt="Download on the Mac App Store">
-          <img class="app-store-badge__white" src="assets/app-store-badge-white.svg" alt="" aria-hidden="true">
+          <img class="app-store-badge__black" loading="lazy" src="assets/app-store-badge-black.svg" alt="Download on the Mac App Store">
+          <img class="app-store-badge__white" loading="lazy" src="assets/app-store-badge-white.svg" alt="" aria-hidden="true">
           <span class="badge-note">Mac</span>
         </a>
       </div>
@@ -137,7 +166,7 @@
   </article>
 </main>
 
-<div class="lightbox" aria-hidden="true"><button class="lightbox__close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button><img alt=""></div>
+<dialog class="lightbox" id="lightbox" closedby="any" aria-label="Enlarged screenshot"><form method="dialog"><button class="lightbox__close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button></form><img alt=""></dialog>
 <script src="assets/site.js"></script>
 </body>
 </html>
