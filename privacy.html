@@ -75,7 +75,7 @@
       <div class="doc-kicker">Privacy Policy</div>
       <h1 id="content" tabindex="-1">Your library stays yours.</h1>
       <p>Papyrus is local-first. Your PDFs, notes, annotations, evidence, search index, and library database stay on your Mac, iPad, or iPhone unless you choose to export, share, look up metadata, turn on iCloud Sync, or configure WebDAV sync.</p>
-      <div class="doc-meta">Last updated: November 9, 2026</div>
+      <div class="doc-meta">Last updated: November 15, 2026</div>
     </div>
 
     <section class="doc-card" id="summary">
@@ -86,7 +86,7 @@
         <li>Papyrus does not run developer-operated advertising, tracking, or analytics services. Optional Google sign-in uses Google's SDK and the data practices described below.</li>
         <li>Your library is stored locally by default.</li>
         <li>Network requests happen only for features you choose, such as metadata lookup, optional OpenAlex suggestions in Similar Papers, iCloud Sync, or WebDAV sync.</li>
-        <li>Apple Intelligence features — Key Findings, Explain Connections, Explain Figure, and concept tagging — run with Apple's on-device model. The text and images they work on do not leave your device for them, and Papyrus does not use Private Cloud Compute or any hosted AI service for them.</li>
+        <li>Apple Intelligence features — Key Findings, Explain Connections, Explain Figure, and concept tagging — run with Apple's on-device model. The text and images they work on do not leave your device for them, and Papyrus does not use Private Cloud Compute or any hosted AI service for them. Optional <a href="#pcc">Private Cloud Compute metadata refinement</a> is separate, off by default, asks for consent first, and is not in the versions currently on the App Store.</li>
         <li>The optional Safari extension runs only when you invoke it and hands captured papers to the app on your device.</li>
       </ul>
     </section>
@@ -131,6 +131,21 @@
         <li><strong>Metadata synthesis</strong>, when enrichment results are ambiguous or incomplete.</li>
       </ul>
       <p>These features run on your device. Papyrus does not send their input to Private Cloud Compute, to the developer, or to any other AI service, and does not run its own hosted AI backend. Generated text can be wrong, and the Key Findings card says so.</p>
+      <h3 id="pcc">Private Cloud Compute metadata refinement</h3>
+      <p><strong>Availability:</strong> this optional feature is not included in the versions of Papyrus currently on the App Store. Where a version does include it, it requires macOS 27, iOS 27, or iPadOS 27 or later, Apple Intelligence, and an eligible device, account, language, and region. If Settings says <strong>Not enabled in this build</strong>, your version does not include it. The rest of this section describes how it works in versions that do.</p>
+      <p>Private Cloud Compute (PCC) metadata refinement is separate from the on-device features above and is off by default. It fills in missing bibliographic details — such as title, authors, venue, and identifiers — from the opening pages of your papers. Before it can use Apple's cloud model, Papyrus shows a versioned consent notice in <strong>Settings → Advanced → Apple Intelligence</strong> and requires an explicit choice. Once enabled, it applies to all eligible papers in your library and can run after app launch, after importing papers, after attaching or replacing a PDF, and when you press <strong>Refine Now</strong>.</p>
+      <p>For an eligible paper, Papyrus creates an opening excerpt of extracted PDF text on your device, capped at 12,000 characters. The excerpt may include a title, author names, affiliations, abstract, journal or publisher details, identifiers, and keywords. Before routing, Papyrus:</p>
+      <ul>
+        <li>removes email addresses and ORCID identifiers;</li>
+        <li>stops before a recognized body heading such as “Introduction” where possible;</li>
+        <li>keeps excerpts of 7,000 characters or fewer on your device when the on-device model is available; and</li>
+        <li>keeps a document on your device when it detects common confidentiality or restricted-use markings.</li>
+      </ul>
+      <p>Detection cannot identify every sensitive document. Before enabling refinement, mark confidential, privileged, embargoed, proprietary, patient- or participant-level, or otherwise restricted papers with <strong>Keep this paper's AI processing on device</strong>. That control also blocks OpenAI metadata requests, and it syncs with the paper to your other devices.</p>
+      <p>Papyrus does not provide PCC with the PDF file, its file name or path, notes, annotations, reading activity, tags, folders, projects, library identifiers, Papyrus account identifiers, or existing metadata as separate fields.</p>
+      <p>Apple states that PCC request content is used only to fulfill the request, is not stored, and is not accessible to Apple. Apple's framework may process model, protocol, security, and service-operation metadata, limited non-content request metrics, and optional device analytics if you enabled analytics sharing with Apple. Papyrus's developer does not receive the request or its content. See <a href="https://www.apple.com/legal/privacy/data/en/intelligence-engine/" target="_blank" rel="noopener">Apple Intelligence &amp; Privacy</a> and Apple's <a href="https://security.apple.com/documentation/private-cloud-compute/" target="_blank" rel="noopener">Private Cloud Compute security guide</a>.</p>
+      <p>Generated fields must be supported by quotes from the document, are marked with their source, and do not replace existing metadata or your edits. A failed PCC request may retry on your device.</p>
+      <p>You can turn PCC refinement off at any time. Turning it off withdraws your consent, stops new requests, and cancels queued work; a request already handed to Apple's system may finish. Turning it back on asks for consent again. When PCC is unavailable, Papyrus stays on your device or skips the model step.</p>
       <h3>Report a problem</h3>
       <p><strong>Settings → Advanced → Report a problem</strong> opens a new issue on Papyrus's public GitHub repository in your browser, with the app version, build, and system version filled in, and copies a diagnostic report to your clipboard. Opening that page sends GitHub the prefilled version details as part of the page address; an issue is created only if you submit it, and the diagnostic report is included only if you paste it. GitHub issues are public.</p>
     </section>
@@ -149,6 +164,7 @@
         <li>Skip metadata enrichment when you do not want identifier lookups.</li>
         <li>Leave OpenAlex suggestions in Similar Papers off, or turn them off at any time.</li>
         <li>Not use the Apple Intelligence features, or turn Apple Intelligence off in your device's settings.</li>
+        <li>Leave Private Cloud Compute metadata refinement off, turn it off at any time, or keep individual papers on device.</li>
         <li>Leave iCloud Sync and WebDAV sync disabled.</li>
         <li>Use Copy Into Library when you want Papyrus to manage PDFs, or Keep PDFs In Place when you want files to remain where they are.</li>
         <li>Delete exports or shared files from their destination when you no longer need them.</li>
