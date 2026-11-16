@@ -75,7 +75,7 @@
       <div class="doc-kicker">Privacy Policy</div>
       <h1 id="content" tabindex="-1">Your library stays yours.</h1>
       <p>Papyrus is local-first. Your PDFs, notes, annotations, evidence, search index, and library database stay on your Mac, iPad, or iPhone unless you choose to export, share, look up metadata, turn on iCloud Sync, or configure WebDAV sync.</p>
-      <div class="doc-meta">Last updated: November 15, 2026</div>
+      <div class="doc-meta">Last updated: November 16, 2026</div>
     </div>
 
     <section class="doc-card" id="summary">
@@ -146,6 +146,20 @@
       <p>Apple states that PCC request content is used only to fulfill the request, is not stored, and is not accessible to Apple. Apple's framework may process model, protocol, security, and service-operation metadata, limited non-content request metrics, and optional device analytics if you enabled analytics sharing with Apple. Papyrus's developer does not receive the request or its content. See <a href="https://www.apple.com/legal/privacy/data/en/intelligence-engine/" target="_blank" rel="noopener">Apple Intelligence &amp; Privacy</a> and Apple's <a href="https://security.apple.com/documentation/private-cloud-compute/" target="_blank" rel="noopener">Private Cloud Compute security guide</a>.</p>
       <p>Generated fields must be supported by quotes from the document, are marked with their source, and do not replace existing metadata or your edits. A failed PCC request may retry on your device.</p>
       <p>You can turn PCC refinement off at any time. Turning it off withdraws your consent, stops new requests, and cancels queued work; a request already handed to Apple's system may finish. Turning it back on asks for consent again. When PCC is unavailable, Papyrus stays on your device or skips the model step.</p>
+      <p><strong>Regions:</strong> Papyrus does not use Private Cloud Compute at all for App Store accounts in mainland China, the European Economic Area, the United Kingdom, Switzerland, Canada, or Japan. There, metadata refinement and Ask This Paper run on your device only, and the PCC controls say it is not offered in your region. With no App Store account, your device's region setting decides. Apple's documentation says PCC requests are served from Apple silicon servers and from dedicated Google Cloud hardware running under the same PCC protections, and Apple does not publish where those servers are located.</p>
+      <h3 id="pcc-questions">Questions and digests about a paper</h3>
+      <p><strong>Availability:</strong> Ask This Paper is part of Papyrus 2.3, which is currently distributed as a TestFlight beta; the versions on the App Store do not include it yet. Its Private Cloud Compute option additionally requires macOS 27, iOS 27, or iPadOS 27 or later, Apple Intelligence, and an eligible device, account, language, and region.</p>
+      <p><strong>Ask This Paper</strong> answers a question about the paper you have open, and <strong>Digest</strong> summarizes its method, data, results, limitations, and future work. With <strong>Compare With</strong> you can add up to two other papers from your library, and a question is then answered across them. All of this runs on Apple's on-device model by default, and that input does not leave your device through Papyrus.</p>
+      <p>You can instead choose <strong>Private Cloud Compute</strong> in the Ask This Paper panel. This is a separate optional purpose with its own versioned consent notice: consent to metadata refinement does not cover it, and neither consent depends on the other. It is used only when you submit a question or request a digest with Private Cloud Compute selected. It never runs in the background.</p>
+      <p>For each request, the content Papyrus supplies to PCC is:</p>
+      <ul>
+        <li>your question, capped at 500 characters, together with your two previous questions in that conversation and the answers Papyrus showed for them (a digest sends a fixed request instead); and</li>
+        <li>passages from the open paper and from any papers you added with Compare With, capped at 40,000 characters in total across all of them and excluding reference lists: those Papyrus selects on your device, and any text you have selected in the PDF when you ask.</li>
+      </ul>
+      <p>Papyrus removes email addresses and ORCID identifiers from the question and the passages. The passages are body text and may include author names, affiliations, and whatever the paper itself describes. Papyrus does not provide PCC with a paper's title as a separate field, the PDF file, its file name or path, notes, annotations, reading activity, tags, folders, projects, papers you have not added to the question, library identifiers, or Papyrus account identifiers. In a comparison the papers are labelled “Paper A”, “Paper B”, and “Paper C”.</p>
+      <p>Papers marked <strong>Keep this paper's AI processing on device</strong> and papers with detected confidentiality or restricted-use markings stay on your device, and a comparison that includes one of them is answered on your device as a whole. Detection cannot identify every sensitive document: do not choose Private Cloud Compute for confidential, privileged, embargoed, or patient- or participant-level papers.</p>
+      <p>Every point of an answer must be supported by a quote that Papyrus finds in the paper on your device; unsupported points are discarded. Answers are kept in memory until you quit the app and are not saved or synced, unless you choose <strong>Add to Notes</strong>; that saves the answer and its quotes to the paper's notes, where it is stored and synced like any note you write. If PCC cannot be used, does not respond, or a request fails, Papyrus answers on your device and says why. Generated text can be wrong; check it against the paper.</p>
+      <p>You can switch back to <strong>This Device</strong> at any time, or withdraw this consent in Settings under Private Cloud Compute. Withdrawal stops new requests; a request already handed to Apple's system may finish. Apple's handling of PCC requests is as described in the section above.</p>
       <h3>Report a problem</h3>
       <p><strong>Settings → Advanced → Report a problem</strong> opens a new issue on Papyrus's public GitHub repository in your browser, with the app version, build, and system version filled in, and copies a diagnostic report to your clipboard. Opening that page sends GitHub the prefilled version details as part of the page address; an issue is created only if you submit it, and the diagnostic report is included only if you paste it. GitHub issues are public.</p>
     </section>
@@ -165,6 +179,7 @@
         <li>Leave OpenAlex suggestions in Similar Papers off, or turn them off at any time.</li>
         <li>Not use the Apple Intelligence features, or turn Apple Intelligence off in your device's settings.</li>
         <li>Leave Private Cloud Compute metadata refinement off, turn it off at any time, or keep individual papers on device.</li>
+        <li>Answer questions about a paper on your device only, by leaving <strong>This Device</strong> selected in Ask This Paper, or withdraw the Private Cloud Compute permission for questions at any time.</li>
         <li>Leave iCloud Sync and WebDAV sync disabled.</li>
         <li>Use Copy Into Library when you want Papyrus to manage PDFs, or Keep PDFs In Place when you want files to remain where they are.</li>
         <li>Delete exports or shared files from their destination when you no longer need them.</li>
