@@ -616,7 +616,8 @@ kbd { display: inline-flex; align-items: center; min-width: 18px; height: 18px; 
 
 /* Command blocks with a Copy button (site.js adds the wrapper and button). */
 .copyblock { position: relative; }
-.copyblock > pre.spec { padding-right: 84px; }
-.copyblock__btn { position: absolute; top: var(--pp-s4); bottom: 0; margin-block: auto; block-size: 28px; right: 10px; font-family: var(--pp-mono); font-size: 10.5px; color: var(--pp-ink-2); background: var(--pp-card-raised, var(--pp-card)); border: 0.5px solid var(--pp-hairline-2); border-radius: 5px; padding: 4px 9px; min-block-size: 28px; min-inline-size: 64px; cursor: pointer; }
-.copyblock__btn:hover, .copyblock__btn:focus-visible { border-color: var(--pp-gold); color: var(--pp-ink); }
+.copyblock > pre.spec { padding-right: 52px; }
+.copyblock__btn { position: absolute; top: var(--pp-s4); bottom: 0; margin-block: auto; right: 8px; inline-size: 32px; block-size: 32px; display: grid; place-items: center; padding: 0; color: var(--pp-ink-3); background: transparent; border: 0.5px solid transparent; border-radius: 6px; cursor: pointer; }
+.copyblock__btn:hover, .copyblock__btn:focus-visible { color: var(--pp-ink); background: var(--pp-card-raised, var(--pp-card)); border-color: var(--pp-hairline-2); }
+.copyblock__btn.is-done { color: var(--pp-gold); }
 .visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }

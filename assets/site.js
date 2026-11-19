@@ -106,6 +106,8 @@
 
 /* Copy buttons for command blocks: <pre class="spec" data-copy>. */
 (function () {
+  var copyIcon = '<svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="5.5" width="8" height="8" rx="1.6"/><path d="M10.5 5.5V4.1a1.6 1.6 0 0 0-1.6-1.6H4.1a1.6 1.6 0 0 0-1.6 1.6v4.8a1.6 1.6 0 0 0 1.6 1.6h1.4"/></svg>';
+  var doneIcon = '<svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.2 8.4l3 3 6.6-6.8"/></svg>';
   var blocks = document.querySelectorAll('pre.spec[data-copy]');
   Array.prototype.forEach.call(blocks, function (pre) {
     var wrap = document.createElement('div');
@@ -115,7 +117,8 @@
     var btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'copyblock__btn';
-    btn.textContent = 'Copy';
+    btn.innerHTML = copyIcon;
+    btn.title = 'Copy';
     btn.setAttribute('aria-label', 'Copy command');
     var status = document.createElement('span');
     status.className = 'visually-hidden';
@@ -123,11 +126,15 @@
     wrap.appendChild(btn);
     wrap.appendChild(status);
     var timer;
-    function say(label, announce) {
-      btn.textContent = label;
+    function say(icon, tip, announce, done) {
+      btn.innerHTML = icon;
+      btn.title = tip;
+      btn.classList.toggle('is-done', !!done);
       status.textContent = announce;
       clearTimeout(timer);
-      timer = setTimeout(function () { btn.textContent = 'Copy'; status.textContent = ''; }, 2400);
+      timer = setTimeout(function () {
+        btn.innerHTML = copyIcon; btn.title = 'Copy'; btn.classList.remove('is-done'); status.textContent = '';
+      }, 2400);
     }
     function select() {
       var range = document.createRange();
@@ -135,12 +142,12 @@
       var sel = window.getSelection();
       sel.removeAllRanges();
       sel.addRange(range);
-      say('Press ⌘C', 'Selected. Press Command C to copy.');
+      say(copyIcon, 'Selected. Press ⌘C to copy', 'Selected. Press Command C to copy.', false);
     }
     btn.addEventListener('click', function () {
       var text = pre.innerText.replace(/\n$/, '');
       if (!navigator.clipboard) { select(); return; }
-      navigator.clipboard.writeText(text).then(function () { say('Copied ✓', 'Copied'); }, select);
+      navigator.clipboard.writeText(text).then(function () { say(doneIcon, 'Copied', 'Copied', true); }, select);
     });
   });
 })();
