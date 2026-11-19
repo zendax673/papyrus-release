@@ -75,7 +75,7 @@
       <div class="doc-kicker">Privacy Policy</div>
       <h1 id="content" tabindex="-1">Your library stays yours.</h1>
       <p>Papyrus is local-first. Your PDFs, notes, annotations, evidence, search index, and library database stay on your Mac, iPad, or iPhone unless you choose to export, share, look up metadata, turn on iCloud Sync, or configure WebDAV sync.</p>
-      <div class="doc-meta">Last updated: November 16, 2026</div>
+      <div class="doc-meta">Last updated: November 18, 2026</div>
     </div>
 
     <section class="doc-card" id="summary">
@@ -85,8 +85,9 @@
         <li>Apple and Google sign-in are optional. Your default device library stays independent of sign-in.</li>
         <li>Papyrus does not run developer-operated advertising, tracking, or analytics services. Optional Google sign-in uses Google's SDK and the data practices described below.</li>
         <li>Your library is stored locally by default.</li>
-        <li>Network requests happen only for features you choose, such as metadata lookup, optional OpenAlex suggestions in Similar Papers, iCloud Sync, or WebDAV sync.</li>
-        <li>Apple Intelligence features — Key Findings, Explain Connections, Explain Figure, and concept tagging — run with Apple's on-device model. The text and images they work on do not leave your device for them, and Papyrus does not use Private Cloud Compute or any hosted AI service for them. Optional <a href="#pcc">Private Cloud Compute metadata refinement</a> is separate, off by default, asks for consent first, and is not in the versions currently on the App Store.</li>
+        <li>Network requests happen only for features you choose, such as metadata lookup, optional OpenAlex suggestions in Similar Papers, iCloud Sync, WebDAV sync, a web search you start from selected text, or an AI provider you set up with your own API key.</li>
+        <li>Apple Intelligence features — Key Findings, Explain Connections, Explain Figure, and concept tagging — run with Apple's on-device model. The text and images they work on do not leave your device for them, and Papyrus does not use Private Cloud Compute or any hosted AI service for them unless you choose one, as described below. Optional <a href="#pcc">Private Cloud Compute metadata refinement</a> is separate, off by default, asks for consent first, and is not in the versions currently on the App Store.</li>
+        <li>You can optionally use <a href="#ai-provider">OpenAI or Anthropic as your AI provider</a> with your own API key. It is off by default and asks for consent first. Requests go directly from your device to that company; Papyrus's developer receives nothing.</li>
         <li>The optional Safari extension runs only when you invoke it and hands captured papers to the app on your device.</li>
       </ul>
     </section>
@@ -95,6 +96,7 @@
       <h2>Local Data</h2>
       <p>Papyrus stores research data on your device, including the library database, imported PDFs, linked-file bookmarks, annotations, Markdown notes, project evidence, reading progress, local search indexes, preferences, and rolling local backups.</p>
       <p>Credentials that should not be stored in plain text, such as WebDAV passwords, are stored through the system keychain where supported by the platform. iCloud Sync uses the Apple ID and iCloud account already configured on your device; Papyrus does not ask for or store your iCloud password.</p>
+      <p>Optional OpenAI and Anthropic API keys are stored only in this device's Keychain. They do not sync, and they are not included in backups, sync packages, the library database, preferences, or logs.</p>
     </section>
 
     <section class="doc-section" id="accounts">
@@ -130,7 +132,7 @@
         <li><strong>Concept tagging</strong>, which runs in the background on a few papers per launch (not in Low Power Mode) and stores concept, method, and dataset tags with each paper. Those tags sync like the rest of the paper's data if you use iCloud or WebDAV sync.</li>
         <li><strong>Metadata synthesis</strong>, when enrichment results are ambiguous or incomplete.</li>
       </ul>
-      <p>These features run on your device. Papyrus does not send their input to Private Cloud Compute, to the developer, or to any other AI service, and does not run its own hosted AI backend. Generated text can be wrong, and the Key Findings card says so.</p>
+      <p>By default these features run on your device. Papyrus does not send their input to the developer and does not run its own hosted AI backend. Their input goes to another AI service only if you choose one yourself: Private Cloud Compute, or <a href="#ai-provider">OpenAI or Anthropic with your own API key</a>, each described below. Generated text can be wrong, and the Key Findings card says so.</p>
       <h3 id="pcc">Private Cloud Compute metadata refinement</h3>
       <p><strong>Availability:</strong> this optional feature is not included in the versions of Papyrus currently on the App Store. Where a version does include it, it requires macOS 27, iOS 27, or iPadOS 27 or later, Apple Intelligence, and an eligible device, account, language, and region. If Settings says <strong>Not enabled in this build</strong>, your version does not include it. The rest of this section describes how it works in versions that do.</p>
       <p>Private Cloud Compute (PCC) metadata refinement is separate from the on-device features above and is off by default. It fills in missing bibliographic details — such as title, authors, venue, and identifiers — from the opening pages of your papers. Before it can use Apple's cloud model, Papyrus shows a versioned consent notice in <strong>Settings → Advanced → Apple Intelligence</strong> and requires an explicit choice. Once enabled, it applies to all eligible papers in your library and can run after app launch, after importing papers, after attaching or replacing a PDF, and when you press <strong>Refine Now</strong>.</p>
@@ -160,6 +162,25 @@
       <p>Papers marked <strong>Keep this paper's AI processing on device</strong> and papers with detected confidentiality or restricted-use markings stay on your device, and a comparison that includes one of them is answered on your device as a whole. Detection cannot identify every sensitive document: do not choose Private Cloud Compute for confidential, privileged, embargoed, or patient- or participant-level papers.</p>
       <p>Every point of an answer must be supported by a quote that Papyrus finds in the paper on your device; unsupported points are discarded. Answers are kept in memory until you quit the app and are not saved or synced, unless you choose <strong>Add to Notes</strong>; that saves the answer and its quotes to the paper's notes, where it is stored and synced like any note you write. If PCC cannot be used, does not respond, or a request fails, Papyrus answers on your device and says why. Generated text can be wrong; check it against the paper.</p>
       <p>You can switch back to <strong>This Device</strong> at any time, or withdraw this consent in Settings under Private Cloud Compute. Withdrawal stops new requests; a request already handed to Apple's system may finish. Apple's handling of PCC requests is as described in the section above.</p>
+      <h3 id="ai-provider">Optional OpenAI or Anthropic as your AI provider</h3>
+      <p><strong>Availability:</strong> Papyrus 2.4 and later, wherever Papyrus offers AI features. It is not offered on the mainland China App Store storefront.</p>
+      <p>In <strong>Settings → Advanced → AI Provider</strong> you can choose OpenAI (ChatGPT) or Anthropic (Claude) instead of Apple Intelligence for <strong>Ask This Paper</strong>, <strong>Digest</strong>, paper summaries, and <strong>Explain Figure</strong>. It is off by default. It needs your own API key from that company and your acceptance of a notice for that provider before anything is sent; consent to one provider does not cover the other, and neither covers Private Cloud Compute. Import, metadata, concept tagging, and Similar Papers explanations stay with Apple Intelligence.</p>
+      <p>Requests go directly from your device to the company you chose (api.openai.com or api.anthropic.com) under your own API account. Papyrus's developer does not receive your key, the requests, or the answers. Each request contains only what the feature you used needs:</p>
+      <ul>
+        <li><strong>Ask This Paper and Digest:</strong> your question, your two previous questions in that conversation and the answers Papyrus showed for them, and up to 40,000 characters of passages Papyrus selects from the open paper and from any papers you add with Compare With, including text you have selected in the PDF. The PDF file is not sent.</li>
+        <li><strong>Summaries:</strong> the paper's title, abstract, and excerpts from its introduction and conclusion. This includes summaries you request through Siri or Shortcuts.</li>
+        <li><strong>Explain Figure:</strong> an image of the area you select and up to 6,000 characters of that page's text.</li>
+      </ul>
+      <p>Papyrus removes email addresses and ORCID identifiers before sending. It does not send the PDF file, its file name or path, notes, annotations, reading activity, tags, folders, projects, papers you did not include, library identifiers, or Papyrus account identifiers. The provider receives your API key to authenticate the request, and, as with any internet request, your IP address.</p>
+      <p>Papers marked <strong>Keep this paper's AI processing on device</strong>, and papers with detected confidentiality or restricted-use markings, are not sent; they are handled on your device instead. Detection cannot identify every sensitive document, and passages can contain author names and anything else the paper describes. Do not use a third-party provider for confidential, privileged, embargoed, or patient- or participant-level papers.</p>
+      <p>Answers show which provider produced them. They are kept in memory and are not saved or synced unless you choose <strong>Add to Notes</strong>. Generated text can be wrong; check it against the paper.</p>
+      <p>Each company processes requests under its own terms, retention periods, and privacy policy, which Papyrus does not control. OpenAI requests are sent with storage turned off (<code>store: false</code>); this is not a guarantee that nothing is retained, and both companies may keep request content for a limited time for abuse monitoring. API usage is billed by the provider to your account. See the <a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener">OpenAI Privacy Policy</a>, <a href="https://developers.openai.com/api/docs/guides/your-data" target="_blank" rel="noopener">OpenAI API data controls</a>, and the <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic Privacy Policy</a>.</p>
+      <p>You can withdraw permission in Settings at any time. That stops new requests at once and returns these features to Apple Intelligence; a request already sent may finish. <strong>Remove Key</strong> deletes the key from this device. Neither revokes the key at the provider or deletes data the provider already holds; do that in your account with that company.</p>
+
+      <h3 id="extensions">Extensions</h3>
+      <p>Extensions are actions on text you select in a PDF, a note, or an abstract. They run only when you choose one. Most work entirely on your device: Copy, Add to Note, Search in Library, Remove Line Breaks, Copy as Citation, and Define, which uses the system dictionary. Translate uses Apple's system translation. Ask This Paper follows the AI provider described above.</p>
+      <p>Extensions that open a website — Google Scholar, Semantic Scholar, Wikipedia, Open DOI, Open arXiv, Open Link, and any website search you add — open that site in your browser with the selected text, or the identifier found in it, as part of the address. That site then handles the request under its own policy. A Shortcut extension passes the selected text to the shortcut you named.</p>
+      <p>Extensions you write or install are stored on your device and do not sync. Before installing one, Papyrus lists what it does, including any website it opens. Script extensions are a single text-transforming function that runs on your device with no network and no file access, for at most two seconds; they cannot send your text anywhere.</p>
       <h3>Report a problem</h3>
       <p><strong>Settings → Advanced → Report a problem</strong> opens a new issue on Papyrus's public GitHub repository in your browser, with the app version, build, and system version filled in, and copies a diagnostic report to your clipboard. Opening that page sends GitHub the prefilled version details as part of the page address; an issue is created only if you submit it, and the diagnostic report is included only if you paste it. GitHub issues are public.</p>
     </section>
@@ -178,8 +199,10 @@
         <li>Skip metadata enrichment when you do not want identifier lookups.</li>
         <li>Leave OpenAlex suggestions in Similar Papers off, or turn them off at any time.</li>
         <li>Not use the Apple Intelligence features, or turn Apple Intelligence off in your device's settings.</li>
+        <li>Leave the AI provider set to Apple Intelligence, withdraw permission for OpenAI or Anthropic at any time, remove your API key, or keep individual papers on device.</li>
         <li>Leave Private Cloud Compute metadata refinement off, turn it off at any time, or keep individual papers on device.</li>
         <li>Answer questions about a paper on your device only, by leaving <strong>This Device</strong> selected in Ask This Paper, or withdraw the Private Cloud Compute permission for questions at any time.</li>
+        <li>Turn individual extensions off in Settings → Extensions, and review what an extension does before installing it.</li>
         <li>Leave iCloud Sync and WebDAV sync disabled.</li>
         <li>Use Copy Into Library when you want Papyrus to manage PDFs, or Keep PDFs In Place when you want files to remain where they are.</li>
         <li>Delete exports or shared files from their destination when you no longer need them.</li>
