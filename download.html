@@ -118,7 +118,7 @@
       <h2>Command Line Tool for Mac</h2>
       <p><code>papyrus</code> lets you search, cite, open, and add papers from Terminal and from scripts. It is a separate, free download for Mac and is not part of the App Store app. It needs <strong>Papyrus 2.4 or later</strong> for Mac (2.4 is in App Store review) and macOS 14 or later, on Apple Silicon or Intel.</p>
       <p><a href="https://github.com/zendax673/papyrus-release/releases/latest/download/papyrus-cli.zip">Download papyrus-cli.zip</a> from the project's <a href="https://github.com/zendax673/papyrus-release/releases/latest" target="_blank" rel="noopener">GitHub Releases</a>, unzip it, and run the installer in Terminal:</p>
-      <pre class="spec"><code>zsh ~/Downloads/papyrus-cli/"Install papyrus.command"</code></pre>
+      <pre class="spec" data-copy><code>zsh ~/Downloads/papyrus-cli/"Install papyrus.command"</code></pre>
       <p>The installer copies <code>papyrus</code> into <code>~/.local/bin</code> and changes nothing else. macOS may refuse to open it on a double-click because it is a downloaded script; running it from Terminal works. The <code>papyrus</code> program itself is signed with a Developer ID and notarized by Apple. To remove it, delete <code>~/.local/bin/papyrus</code>.</p>
       <p>Then connect it: in Papyrus, open <strong>Settings → Advanced → Codex access</strong>, choose <strong>Connect Codex…</strong>, save the connection file, and run <code>papyrus connect</code> with that file. The command talks to the running app and never opens the library database itself; what it may read or change follows the permissions you set there. The README inside the download lists every command.</p>
     </section>

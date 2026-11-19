@@ -103,3 +103,44 @@
     });
   });
 })();
+
+/* Copy buttons for command blocks: <pre class="spec" data-copy>. */
+(function () {
+  var blocks = document.querySelectorAll('pre.spec[data-copy]');
+  Array.prototype.forEach.call(blocks, function (pre) {
+    var wrap = document.createElement('div');
+    wrap.className = 'copyblock';
+    pre.parentNode.insertBefore(wrap, pre);
+    wrap.appendChild(pre);
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'copyblock__btn';
+    btn.textContent = 'Copy';
+    btn.setAttribute('aria-label', 'Copy command');
+    var status = document.createElement('span');
+    status.className = 'visually-hidden';
+    status.setAttribute('role', 'status');
+    wrap.appendChild(btn);
+    wrap.appendChild(status);
+    var timer;
+    function say(label, announce) {
+      btn.textContent = label;
+      status.textContent = announce;
+      clearTimeout(timer);
+      timer = setTimeout(function () { btn.textContent = 'Copy'; status.textContent = ''; }, 2400);
+    }
+    function select() {
+      var range = document.createRange();
+      range.selectNodeContents(pre);
+      var sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      say('Press ⌘C', 'Selected. Press Command C to copy.');
+    }
+    btn.addEventListener('click', function () {
+      var text = pre.innerText.replace(/\n$/, '');
+      if (!navigator.clipboard) { select(); return; }
+      navigator.clipboard.writeText(text).then(function () { say('Copied ✓', 'Copied'); }, select);
+    });
+  });
+})();
