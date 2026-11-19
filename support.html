@@ -73,7 +73,7 @@
       <div class="doc-kicker">Support &amp; FAQ</div>
       <h1 id="content" tabindex="-1">Help for the whole research workflow.</h1>
       <p>Use this page for setup questions, library behavior, reading and annotation, project evidence, sync, exports, and clear bug reports.</p>
-      <div class="doc-meta">Last updated: July 2, 2026</div>
+      <div class="doc-meta">Last updated: November 18, 2026</div>
     </div>
 
     <section class="doc-card" id="start">
@@ -100,20 +100,26 @@
       <h3>Is Papyrus cloud-first?</h3>
       <p>No. Papyrus is local-first. Your library database, PDFs, notes, search indexes, backups, and project evidence live on your device unless you explicitly export, share, turn on iCloud Sync, or configure WebDAV sync.</p>
 
-      <h3>What is the difference between Copy Into Library and Keep PDFs In Place?</h3>
-      <p>Copy Into Library stores the PDF inside Papyrus-managed library storage. Keep PDFs In Place leaves the file where it already lives and stores a system bookmark so Papyrus can reopen it later.</p>
+      <h3>What is the difference between Copy into library and Link to original?</h3>
+      <p>On the Mac, each import can <strong>Copy into library</strong>, which stores the PDF inside Papyrus-managed library storage, or <strong>Link to original</strong>, which leaves the file where it already lives and stores a system bookmark so Papyrus can reopen it later. The default is under Settings → General → When importing PDFs. Linked PDFs stay on that Mac and do not sync. iPhone and iPad always copy.</p>
 
       <h3>How do I set up Save from Safari?</h3>
-      <p>Enable the Papyrus extension once: on the Mac in Safari → Settings → Extensions, on iPad in the Settings app under Apps → Safari → Extensions. Then open a paper page and press the Papyrus button in the Safari toolbar (Option-Shift-P also works on the Mac), or right-click / long-press any PDF, DOI, or arXiv link and choose Save Link to Papyrus. The popup shows what was captured, whether the PDF will download or a citation-only record will be created, and lets you pick a folder, tags, or a project before the import lands. Closing the popup is safe — a queued import finishes in Papyrus. In-app, Settings → General → Import from Safari and Help → Import Papers → Save from Safari cover the same steps.</p>
+      <p>Enable the Papyrus extension once: on the Mac in Safari → Settings → Extensions, on iPad and iPhone in the Settings app under Apps → Safari → Extensions. Then open a paper page and press the Papyrus button in the Safari toolbar (Option-Shift-P also works on the Mac), or right-click / long-press any PDF, DOI, or arXiv link and choose Save Link to Papyrus. The popup shows what was captured, whether the PDF will download or a citation-only record will be created, and lets you pick a folder, tags, or a project before the import lands. Closing the popup is safe — a queued import finishes in Papyrus. In-app, Settings → General → Import from Safari and Help → Import Papers → Save from Safari cover the same steps.</p>
 
       <h3>Which metadata sources are used?</h3>
-      <p>Papyrus can look up metadata through Crossref, arXiv, Semantic Scholar, OpenAlex, OpenLibrary, NCBI / PubMed / PMC identifier services, Zenodo, and DOI links. It also reads embedded PDF metadata without a network request.</p>
+      <p>Papyrus can look up metadata through Crossref, arXiv, Semantic Scholar, OpenAlex, OpenLibrary, NCBI / PubMed / PMC identifier services, Zenodo, and DOI links. For component datasheets, it searches DuckDuckGo for the printed part number and reads the manufacturer's public page. It also reads embedded PDF metadata without a network request. Online lookup is on by default and can be turned off in Settings → General.</p>
+
+      <h3>Do the AI features send my papers anywhere?</h3>
+      <p>Not by default. Key Findings, Explain Connections, Explain Figure, Ask This Paper, and concept tagging run with Apple's on-device model. Two alternatives are off until you choose them and ask before anything is sent: Apple's Private Cloud Compute for Ask This Paper (United States App Store accounts, on version 27 systems), and, from Papyrus 2.4, OpenAI or Anthropic with your own API key, which that company bills to your account. AI features are not offered on the mainland China App Store. See <a href="privacy.html#ai-provider">Privacy</a> for exactly what is sent.</p>
+
+      <h3>How do I get the <code>papyrus</code> command for Terminal?</h3>
+      <p>It is a separate free download for Mac that works with Papyrus 2.4 or later. See <a href="download.html#cli">Command Line Tool for Mac</a> for the download and the install and connect steps.</p>
 
       <h3>Does Papyrus upload PDFs for metadata lookup?</h3>
       <p>No. Metadata lookup sends identifiers or search terms such as DOI, title, author, ISBN, PMID, or arXiv ID. PDFs are not uploaded for ordinary metadata enrichment.</p>
 
       <h3>How does sync work?</h3>
-      <p>Sync is optional. iCloud Sync keeps your library current across Mac and iPad devices signed in to the same iCloud account. WebDAV sync is also available when you want to use your own server destination and keep dated restore points you can inspect before restoring.</p>
+      <p>Sync is optional. iCloud Sync keeps your library current across the Macs, iPads, and iPhones signed in to the same iCloud account. WebDAV sync is also available when you want to use your own server destination and keep dated restore points you can inspect before restoring.</p>
 
       <h3>What is the Evidence Board?</h3>
       <p>The Evidence Board is a project-level workspace for claims, quotes, page numbers, interpretations, section roles, confidence scores, and citation keys. It is meant to keep the reasoning behind a draft attached to the papers that support it.</p>
@@ -122,7 +128,7 @@
       <p>Yes. A paper can have different project-specific roles and evidence without changing its global library metadata.</p>
 
       <h3>What can Papyrus export?</h3>
-      <p>Individual papers and projects can export in open formats such as BibTeX, RIS, CSL JSON, Markdown, and project bundles. Export preflight can flag sparse metadata, duplicate cite keys, missing PDFs, and other handoff problems.</p>
+      <p>Papers export as BibTeX, RIS, or formatted citations; notebooks as Markdown; projects as bundles with BibTeX, RIS, CSL JSON, and Markdown. Export preflight can flag sparse metadata, duplicate cite keys, missing PDFs, and other handoff problems.</p>
 
       <h3>Does Papyrus require an account?</h3>
       <p>No Papyrus account is required.</p>
@@ -132,9 +138,9 @@
       <h2>Bug Reports</h2>
       <p>A useful bug report includes:</p>
       <ul>
-        <li>macOS or iPadOS version</li>
+        <li>macOS, iPadOS, or iOS version</li>
         <li>Papyrus version and build number</li>
-        <li>Whether the PDF was copied into the library or kept in place</li>
+        <li>Whether the PDF was copied into the library or linked to the original</li>
         <li>Whether iCloud Sync, WebDAV sync, Safari import, metadata enrichment, or project export was involved</li>
         <li>Step-by-step reproduction notes</li>
         <li>Screenshots or screen recordings when they clarify the problem</li>

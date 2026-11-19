@@ -6,14 +6,14 @@ No. Papyrus is local-first. Your library database, imported PDFs, notes, search
 indexes, and backups live on your device unless you explicitly export, share,
 turn on iCloud Sync, or configure WebDAV sync.
 
-## What Is The Difference Between `Copy Into Library` And `Keep PDFs In Place`?
+## What Is The Difference Between `Copy into library` And `Link to original`?
 
-`Copy Into Library` makes Papyrus copy the PDF into its managed storage folder.
-`Keep PDFs In Place` leaves the file where it already lives and stores a
+`Copy into library` makes Papyrus copy the PDF into its managed storage folder.
+`Link to original` leaves the file where it already lives and stores a
 security-scoped bookmark so Papyrus can reopen it later.
 
-Use `Copy Into Library` if you want Papyrus to own the file lifecycle. Use
-`Keep PDFs In Place` if you already manage PDFs in Finder or another synced
+Use `Copy into library` if you want Papyrus to own the file lifecycle. Use
+`Link to original` if you already manage PDFs in Finder or another synced
 folder.
 
 ## Does Papyrus Upload My PDFs Automatically?

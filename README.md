@@ -98,7 +98,7 @@ Papyrus is one universal app. On iPad it is a touch-first workspace with Apple P
 
 Papyrus is local-first. Your PDFs, notes, metadata, annotations, reading state, search indexes, backups, and project evidence stay on your device unless you explicitly export, share, turn on iCloud Sync, or configure WebDAV sync.
 
-No Papyrus account is required. No analytics or telemetry SDK is included. Network access is limited to user-initiated actions such as metadata lookup, DOI links, papers you send from Safari, optional iCloud Sync, and optional WebDAV sync. The Safari extension runs only when you invoke it and reads only the page or link you chose.
+No Papyrus account is required. Papyrus has no analytics or telemetry of its own. Network access is limited to user-initiated actions such as metadata lookup, DOI links, papers you send from Safari, optional iCloud Sync, and optional WebDAV sync. The Safari extension runs only when you invoke it and reads only the page or link you chose.
 
 Full policy: [Privacy](https://zendax673.github.io/papyrus-release/privacy.html).
 

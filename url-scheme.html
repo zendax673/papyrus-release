@@ -72,7 +72,7 @@
       <div class="doc-kicker">Integration</div>
       <h1 id="content" tabindex="-1">Hookmark and the <code>papyrus://</code> URL scheme.</h1>
       <p>Papyrus registers <code>papyrus://</code> on macOS, iPadOS, and iOS. This page is the public contract for it, so link-management tools can integrate without asking. There are three entry points: a link to a <b>paper</b>, a link to a <b>notebook</b>, and an <b>x-callback-url</b> query for whatever the user is looking at right now.</p>
-      <div class="doc-meta">Stable since 1.5.5 · macOS 14+ · iPadOS &amp; iOS 17+</div>
+      <div class="doc-meta">Paper links since 1.5.5 · notebook links since 1.6.0 · macOS 14+ · iPadOS &amp; iOS 17+</div>
     </div>
 
     <section class="doc-card" id="hookmark">
@@ -80,13 +80,14 @@
       <p><a href="https://hookproductivity.com/" target="_blank" rel="noopener">Hookmark</a> links a document to the notes, tasks, and emails that belong with it. Papyrus supports it the way Hookmark wants an app to: every paper and every notebook has a permanent address you can copy, and Papyrus can answer the question “what is the user looking at right now?”</p>
       <p>The workflow it enables is the one researchers ask for — read a paper in Papyrus, press Hookmark's hotkey, and hook it to the manuscript section, the OmniFocus task, or the email from a co-author that prompted you to read it. Come back to any of those later and the paper is one click away, <em>on the page you were on</em>.</p>
       <h3>Setting it up today</h3>
-      <p>Papyrus is not yet in Hookmark's bundled script library, so wire it up once in Hookmark Pro's script editor:</p>
+      <p>Hookmark asks an app for its current address with a script that must answer at once, so it cannot wait for the x-callback reply described below. On the Mac, set it up once with a script instead:</p>
       <ul>
-        <li><b>Get Address</b> — Papyrus already puts the link on the clipboard with <b>Copy Link</b> (<kbd>⇧⌘C</kbd>), or <b>Copy Link to This Page</b> (<kbd>⌥⌘C</kbd>) while reading.</li>
-        <li><b>Get Name and Address</b> — call <code>get-current-item</code> (below) with a <code>hook:</code> callback; Papyrus replies with the title, the link, and the PDF's <code>file://</code> path.</li>
-        <li><b>Open</b> — Hookmark opens <code>papyrus://paper/…</code> directly; no script needed.</li>
+        <li>In Papyrus, open <b>Help → Cite &amp; Export → Set up Hookmark</b> and copy the AppleScript shown there.</li>
+        <li>In Hookmark's <b>Settings → Scripts</b>, add <b>Papyrus</b> and paste the script into <b>Get Address</b>. Leave <b>Get Name</b> and <b>Open Item</b> empty.</li>
+        <li>macOS asks once to let Hookmark control Papyrus. After that, invoking Hookmark captures the selected paper or, from a reader window, the page you are on.</li>
+        <li><b>Open</b> needs no script: Hookmark opens <code>papyrus://paper/…</code> directly.</li>
       </ul>
-      <p class="doc-note">An official integration script is on the way: the scheme has been documented here precisely so CogSci Apps can ship one. Until then, the three hooks above cover the round trip.</p>
+      <p class="doc-note">The script needs Papyrus 1.6 or later. Papyrus is not in Hookmark's bundled script library, which is why this one-time step is needed.</p>
       <h3>Other tools</h3>
       <p>Nothing here is Hookmark-specific. <b>Obsidian</b> and <b>DEVONthink</b> take a <code>papyrus://</code> link in a note; <b>Shortcuts</b>, <b>Alfred</b>, <b>Keyboard Maestro</b>, and <b>Drafts</b> can both open links and call <code>get-current-item</code> with their own custom-scheme callbacks.</p>
     </section>
@@ -123,8 +124,8 @@ papyrus://paper/9F2C1A54-3E6B-4D0A-8C71-1B9E4F5A6D22?page=7</pre>
             <tr><td><b>Paper</b> menu (macOS)</td><td>Copy Link (<kbd>⇧⌘C</kbd>), Copy Link to This Page (<kbd>⌥⌘C</kbd>) — both rebindable in Settings → Shortcuts</td></tr>
             <tr><td>Library right-click menu (macOS, iPadOS)</td><td>Reference → Copy Link</td></tr>
             <tr><td>Reader overflow menu (iPadOS, iOS)</td><td>Copy Link, Copy Link to This Page</td></tr>
-            <tr><td>Paper summary (iOS)</td><td>Citation &amp; Writing → Copy Link</td></tr>
-            <tr><td>Detail view's Copy button (macOS, iPadOS)</td><td>Link → Copy Link, Copy Markdown Link</td></tr>
+            <tr><td>Paper summary (iOS)</td><td>Cite or Export → Copy Link, Copy Markdown Link</td></tr>
+            <tr><td>Detail view's Link button (macOS, iPadOS)</td><td>Copy Link, Copy Markdown Link</td></tr>
             <tr><td>Detail view's Reading card (macOS, iPadOS)</td><td>Right-click / touch and hold a bookmarked page → Copy Link to This Page</td></tr>
           </tbody>
         </table>
@@ -171,7 +172,7 @@ papyrus://paper/9F2C1A54-3E6B-4D0A-8C71-1B9E4F5A6D22?page=7</pre>
     <section class="doc-card" id="security">
       <h2>Callback targets must not be web URLs</h2>
       <p><code>get-current-item</code> hands the title and local file path of whatever you are reading to an address the <i>caller</i> chose, and a web page can trigger a custom scheme. Papyrus therefore refuses <code>x-success</code> and <code>x-error</code> targets using <code>http</code>, <code>https</code>, <code>file</code>, <code>ftp</code>, <code>ftps</code>, <code>data</code>, <code>javascript</code>, <code>about</code>, or <code>blob</code> — so a page that talks you through an “Open Papyrus?” prompt cannot post your current document to a server.</p>
-      <p>Every real client of this API — Hookmark (<code>hook:</code>), Shortcuts, Drafts, Keyboard Maestro, Alfred — uses a custom scheme and is unaffected. A refused callback is simply not opened.</p>
+      <p>Every real client of this API — Shortcuts, Drafts, Keyboard Maestro, Alfred — uses a custom scheme and is unaffected. A refused callback is simply not opened.</p>
     </section>
 
     <section class="doc-section" id="stability">
@@ -190,6 +191,7 @@ papyrus://paper/9F2C1A54-3E6B-4D0A-8C71-1B9E4F5A6D22?page=7</pre>
       <h2>Deliberately not implemented</h2>
       <p><b>Creating a paper.</b> Hookmark's create API takes a name and returns a link to the new item. Papyrus creates papers by importing a PDF or resolving a DOI or arXiv ID — a bare name does not identify anything to import, so there is nothing honest to return.</p>
       <p><b>AppleScript.</b> An <code>sdef</code> on a sandboxed SwiftUI app is a large amount of scripting-class work for no capability the x-callback-url API above does not already provide.</p>
+      <p><b>From version 2.4:</b> <code>papyrus://search?q=&lt;text&gt;</code> opens a library search for that text (up to 500 characters). <code>papyrus://extension?data=…</code> is the install link Papyrus generates when you share an extension; it always shows what the extension does and asks before installing.</p>
       <p>One more address exists but is not part of this contract: <code>papyrus://extension-import?id=…</code> is a private wake URL the Safari extension uses to hand a capture to the app, and it may change.</p>
     </section>
 

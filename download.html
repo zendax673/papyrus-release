@@ -28,7 +28,7 @@
   <link rel="preload" href="assets/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/tokens.css">
   <link rel="stylesheet" href="assets/styles.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Papyrus", "description": "A native, local-first research workspace for Mac, iPad, and iPhone: PDF library, reader, Markdown notes, notebooks, project evidence, sync, and BibTeX / RIS / CSL JSON export.", "applicationCategory": "EducationalApplication", "operatingSystem": "macOS 14, iPadOS 17, iOS 17", "softwareVersion": "2.2", "url": "https://zendax673.github.io/papyrus-release/", "downloadUrl": "https://apps.apple.com/app/id6766133716", "image": "https://zendax673.github.io/papyrus-release/assets/og-image.jpg", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "inLanguage": ["en", "fr", "ja", "zh-Hans"]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Papyrus", "description": "A native, local-first research workspace for Mac, iPad, and iPhone: PDF library, reader, Markdown notes, notebooks, project evidence, sync, and BibTeX / RIS / CSL JSON export.", "applicationCategory": "EducationalApplication", "operatingSystem": "macOS 14, iPadOS 17, iOS 17", "softwareVersion": "2.3", "url": "https://zendax673.github.io/papyrus-release/", "downloadUrl": "https://apps.apple.com/app/id6766133716", "image": "https://zendax673.github.io/papyrus-release/assets/og-image.jpg", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "inLanguage": ["en", "fr", "ja", "zh-Hans"]}</script>
 </head>
 <body>
 <a class="skip-link" href="#content">Skip to content</a>
@@ -52,7 +52,8 @@
       <div class="toc__head">Download</div>
       <a href="#get">Get the App</a>
       <a href="#requirements">Requirements</a>
-      <a href="#pricing">Pricing</a>
+      <a href="#cli">Command line</a>
+        <a href="#pricing">Pricing</a>
       <a href="#included">Included</a>
       <a href="#links">Policies</a>
     </nav>
@@ -74,7 +75,7 @@
       <div class="doc-kicker">Download</div>
       <h1 id="content" tabindex="-1">Get Papyrus for Mac, iPad, and iPhone.</h1>
       <p>A native, local-first research desk for importing papers — from files, identifiers, or straight from Safari — reading PDFs, writing notes, building project evidence, syncing through iCloud or your own WebDAV server, and exporting open citation formats.</p>
-      <div class="doc-meta">Version 2.2 · macOS 14+ (Apple Silicon and Intel) · iPadOS &amp; iOS 17+ · English, French, Japanese, Simplified Chinese</div>
+      <div class="doc-meta">Version 2.3 on iPhone and iPad, 2.2 on Mac · 2.4 in App Store review · macOS 14+ (Apple Silicon and Intel) · iPadOS &amp; iOS 17+ · English, French, Japanese, Simplified Chinese</div>
     </div>
 
     <section class="doc-card" id="get">
@@ -108,16 +109,26 @@
         </div>
         <div>
           <h3>Apple Intelligence</h3>
-          <p>Key Findings, Explain Connections, Explain Figure, and concept tagging need a device that supports Apple Intelligence, with Apple Intelligence turned on. They run on the device with Apple's on-device model; everything else in Papyrus works without them.</p>
+          <p>Key Findings, Explain Connections, Explain Figure, Ask This Paper (version 2.3 and later), and concept tagging need a device that supports Apple Intelligence, on macOS, iOS, or iPadOS 26 or later, with Apple Intelligence turned on; a few need version 27. By default they run on the device with Apple's on-device model. Two alternatives stay off until you choose them: Apple's Private Cloud Compute for Ask This Paper (United States App Store accounts, on version 27 systems), and, from Papyrus 2.4, OpenAI or Anthropic with your own API key. AI features are not offered on the mainland China App Store. Everything else in Papyrus works without them.</p>
         </div>
       </div>
+    </section>
+
+    <section class="doc-section" id="cli">
+      <h2>Command Line Tool for Mac</h2>
+      <p><code>papyrus</code> lets you search, cite, open, and add papers from Terminal and from scripts. It is a separate, free download for Mac and is not part of the App Store app. It needs <strong>Papyrus 2.4 or later</strong> for Mac (2.4 is in App Store review) and macOS 14 or later, on Apple Silicon or Intel.</p>
+      <p><a href="https://github.com/zendax673/papyrus-release/releases/latest/download/papyrus-cli.zip">Download papyrus-cli.zip</a> from the project's <a href="https://github.com/zendax673/papyrus-release/releases/latest" target="_blank" rel="noopener">GitHub Releases</a>, unzip it, and run the installer in Terminal:</p>
+      <pre class="spec"><code>zsh ~/Downloads/papyrus-cli/"Install papyrus.command"</code></pre>
+      <p>The installer copies <code>papyrus</code> into <code>~/.local/bin</code> and changes nothing else. macOS may refuse to open it on a double-click because it is a downloaded script; running it from Terminal works. The <code>papyrus</code> program itself is signed with a Developer ID and notarized by Apple. To remove it, delete <code>~/.local/bin/papyrus</code>.</p>
+      <p>Then connect it: in Papyrus, open <strong>Settings → Advanced → Codex access</strong>, choose <strong>Connect Codex…</strong>, save the connection file, and run <code>papyrus connect</code> with that file. The command talks to the running app and never opens the library database itself; what it may read or change follows the permissions you set there. The README inside the download lists every command.</p>
     </section>
 
     <section class="doc-section" id="pricing">
       <h2>Pricing</h2>
       <ul>
         <li>Papyrus is free to download and use, with every feature included.</li>
-        <li>No in-app purchases, no recurring subscription, and no Papyrus account required.</li>
+        <li>No in-app purchases, no recurring subscription, and no Papyrus account required; signing in with Apple or Google is optional.</li>
+        <li>If you choose OpenAI or Anthropic as your AI provider (version 2.4), usage is billed by that company to your own API account, not by Papyrus.</li>
       </ul>
     </section>
 
@@ -135,7 +146,9 @@
         <li>Project Evidence Board with claims, quotes, page numbers, citation keys, roles, and confidence.</li>
         <li>Full-text search across library metadata, notes, annotations, and extracted PDF text.</li>
         <li>Optional iCloud Sync across Mac, iPad, and iPhone, plus WebDAV sync with restore points.</li>
-        <li>Export to BibTeX, RIS, CSL JSON, Markdown, copied citations, and project bundles — and <code>papyrus://</code> links to any paper or notebook for Hookmark and other link managers.</li>
+        <li>Export papers as BibTeX, RIS, or formatted citations, notebooks as Markdown, and projects as bundles with BibTeX, RIS, CSL JSON, and Markdown — and <code>papyrus://</code> links to any paper or notebook for Hookmark and other link managers.</li>
+        <li>Ask This Paper, Digest, and Compare With (version 2.3 and later; on iPhone and iPad now, on Mac from 2.4): answers from the paper's own text, with the quote and page behind every point.</li>
+        <li>New in 2.4, which is in App Store review: Extensions that act on selected text, an optional OpenAI or Anthropic AI provider with your own API key, Ask My Library and other features for version 27 systems, and the <a href="#cli"><code>papyrus</code> command line tool</a> for Mac.</li>
       </ul>
     </section>
 
